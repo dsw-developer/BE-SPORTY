@@ -111,8 +111,32 @@ margin-top: 16px;
     })(document, window, 'Chatra');
 </script>
 <!-- /Chatra {/literal} -->
+	
+  <!-- Links para os arquivos CSS do Swiper -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+  <!-- Seu restante de código -->
+
+
 </head>
 <body>
+	<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img src="fotos/d.jpg" alt="Imagem 1">
+    </div>
+    <div class="swiper-slide">
+      <img src="fotos/d.jpg" alt="Imagem 2">
+    </div>
+    <div class="swiper-slide">
+      <img src="fotos/d.jpg" alt="Imagem 3">
+    </div>
+  </div>
+  <!-- Adicione as setas de navegação -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
+
     <div class="container">
         <div class="header">
             <h1>Be Sporty</h1>
@@ -377,6 +401,23 @@ margin-top: 16px;
 	  	
 	  
   </main>
+<body>
+  <!-- Seu conteúdo existente -->
+
+  <!-- Links para os arquivos JS do Swiper -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <script>
+    // Inicializando o Swiper
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 1,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+</body>
 
 </body>
 </html>
