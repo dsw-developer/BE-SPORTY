@@ -10,10 +10,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
     <style>
-	     <style>
+	 @media only screen and (max-width: 600px) {
+            /* Estilos para dispositivos com largura de tela de até 600px (como telefones) */
 
-        }
-    </style>
+            /* Exemplo de ajuste para o cabeçalho */
+            header h1 {
+                font-size: 20px; /* Reduz o tamanho da fonte do cabeçalho */
+            }
+
+            /* Exemplo de ajuste para a navegação */
+            nav ul li {
+                margin-left: 10px; /* Reduz a margem entre os itens de navegação */
+            }
+
+            /* Exemplo de ajuste para os produtos */
+            .product {
+                flex: 1 0 100%; /* Altera o layout dos produtos para preencher a largura da tela */
+            }
+             
+    
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
