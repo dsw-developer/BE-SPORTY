@@ -99,7 +99,21 @@ footer {
       padding: 0;
       background-color: #F0F0F0;
     }
-    
+    /* Estilos do cabeçalho */
+    header {
+      background-color: #1C415E;
+      color: white;
+      padding: 15px 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    header .logo {
+      max-width: 150px;
+      height: auto;
+    }
     .whatsapp-link {
       position: fixed;
       width: 60px;
@@ -261,21 +275,7 @@ body, ul {
                 right: 20px;
             }
         }
-header {
-            background-color: #1C415E;
-            color: white;
-            padding: 15px 20px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
 
-        header .logo {
-            max-width: 150px;
-            height: auto;
-        }
 
         nav ul {
             display: flex;
