@@ -316,6 +316,31 @@ nav ul.active {
             right: 20px;
         }
     }
+		    .menu {
+        position: fixed;
+        top: 0;
+        right: -300px; /* Esconde o menu inicialmente */
+        width: 300px;
+        height: 100%;
+        background: #333;
+        transition: right 0.3s ease; /* Adiciona uma transição suave */
+    }
+    .menu.active {
+        right: 0; /* Mostra o menu quando estiver ativo */
+    }
+    .menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .menu ul li {
+        padding: 10px;
+        border-bottom: 1px solid #444;
+    }
+    .menu ul li a {
+        color: #fff;
+        text-decoration: none;
+    }
 
   </style>
 
