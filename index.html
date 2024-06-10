@@ -222,7 +222,7 @@ body, ul {
             font-size: 24px;
             cursor: pointer;
         }
-
+estilos */
         /* Estilo para dispositivos móveis */
         @media screen and (max-width: 768px) {
             nav ul {
@@ -230,13 +230,15 @@ body, ul {
                 background-color: #1C415E;
                 position: absolute;
                 top: 50px;
-                right: 0; /* Alterado para abrir no lado direito */
+                left: 0; /* Alterado para abrir no lado esquerdo */
                 width: 100%;
                 text-align: center;
             }
             nav ul.active {
                 display: flex; /* Exibe o menu quando estiver ativo */
                 flex-direction: column;
+                right: 0; /* Adicionado para alinhar à direita */
+                left: auto; /* Adicionado para alinhar à direita */
             }
             .menu-icon {
                 display: block; /* Exibe o ícone de menu em telas menores */
@@ -272,7 +274,18 @@ body, ul {
   </style>
 
 	<!-- Chatra {literal} -->
-<script>
+
+
+	<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuIcon = document.querySelector('.menu-icon');
+            const navMenu = document.querySelector('nav ul');
+
+            menuIcon.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+        });
+    
 	$(document).ready(function(){
     $('.slider').slick({
         autoplay: true,
