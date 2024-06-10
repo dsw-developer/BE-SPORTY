@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	
   <title>BE SPORTY</title>
 <link rel="shortcut icon" href="fotos/937.png" type="image/x-icon">
   <meta charset="UTF-8">
@@ -10,93 +11,187 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-	<style>
-	.whatsapp-link {
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
-position: fixed;
-width: 60px;
-height: 60px; bottom: 40px; right: 40px;
-background-color: #25d366;
-color: #fff;
-border-radius: 50px;
-text-align: center;
-font-size: 30px;
-box-shadow: 1px 1px 2px #888;
- z-index: 1000;
-}
-.fa-whatsapp {
-margin-top: 16px;
+	  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #F0F0F0;
+    }
+    /* Estilos do cabeçalho */
+    header {
+      background-color: #1C415E;
+      color: white;
+      padding: 15px 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    header .logo {
+      max-width: 150px;
+      height: auto;
+    }
+    .whatsapp-link {
+      position: fixed;
+      width: 60px;
+      height: 60px; 
+      bottom: 40px; 
+      right: 40px;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 50px;
+      text-align: center; 
+      font-size: 30px;
+      box-shadow: 1px 1px 2px #888;
+      z-index: 1000;
+    }
+    .fa-whatsapp {
+      margin-top: 16px;
+    }
+    background-color: #F5F5F5;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+    background-color: #fff;
+  }
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .header h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .image-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .image-container img {
+    max-width: 30%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+  }
+  .description {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .button-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  .button-list li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .button-list li:last-child {
+    margin-right: 0;
+  }
+  .button {
+    display: inline-block;
+    background-color:#1C415E;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+  }
+  footer {
+    background-color: #1C415E;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+  }
+  footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  footer ul li {
+    display: inline;
+    margin: 0 10px;
+  }
+  footer ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .button:hover {
+    background-color: #005082;
+  }
+	
+		  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
 }
 
-            background-color: #F5F5F5;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
-            background-color: #fff;
-        }
-        .header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .header h1 {
-            font-size: 36px;
-            color: #333;
-            margin-bottom: 10px;
-        }
-        .image-container {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .image-container img {
-            max-width: 30%;
-            height: auto;
-            border-radius: 50%;
-            box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
-        }
-        .description {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .button-list {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        .button-list li {
-            display: inline-block;
-            margin-right: 10px;
-        }
-        .button-list li:last-child {
-            margin-right: 0;
-        }
-        .button {
-            display: inline-block;
-            background-color:#1C415E;
-            color: #fff;
-            font-size: 16px;
-            font-weight: bold;
-            text-transform: uppercase;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-            box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
-        }
-        .button:hover {
-            background-color: #005082;
-        }
-    </style>
+.slider {
+    max-width: 100%; /* Ensure slider occupies full width */
+    width: 100%; /* Ensure slider fills its container */
+    text-align: center; /* Center slider contents */
+}
+
+.slider img {
+    max-width: 100%; /* Ensure images inside the slider are responsive */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the image horizontally */
+}
+		  /* Reset some default browser styles */
+body, ul {
+    margin: 0;
+    padding: 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f8f8; /* Background color for header */
+}
+
+
+
+
+
+  </style>
+
 	<!-- Chatra {literal} -->
 <script>
+	$(document).ready(function(){
+    $('.slider').slick({
+        autoplay: true,
+        autoplaySpeed: 2000,
+        arrows: false,
+        dots: true
+    });
+});
+
     (function(d, w, c) {
         w.ChatraID = 'ypLqvwmBBAGaWGQ6J';
         var s = d.createElement('script');
@@ -109,34 +204,42 @@ margin-top: 16px;
     })(document, window, 'Chatra');
 </script>
 <!-- /Chatra {/literal} -->
+	
+
+
+
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Be Sporty</h1>
-        </div>
-        <div class="image-container">
-            <img src="fotos/k.jpg" alt="Imagem da Empresa">
-        </div>
-        <p class="description">Loja de Materiais Desportivos "Be Sporty" </p>
-           </ul>
-	    <ul class="button-list">
-           <li> <a href="index.html"  class="button">Chuteira </a></li>
-          <li> <a href="bolas.html"  class="button">Bolas  </a></li>
-		
-		<li> <a href="meias.html"  class="button">Meias </a></li>
-		    
-		     <br> </br>
-		    <li> <a href="promo.html"  class="button">Promoções e Acessórios</a></li>
-		</ul>
+    <header>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <img src="fotos/IMG_4480.png"  style="height:40px; width: auto;">
+        <nav>
+            <ul style="display: flex; list-style: none; padding: 0; margin: 0;">
+		    <li><a href="index.html">INÍCIO</a></li>
+                <li><a href="bolas.html">BOLAS</a></li>
+                <li><a href="meias.html">MEIAS</a></li>
+                <li><a href="promo.html">ACESSÓRIOS</a></li>
+		     <li><a href="#"></a></li>
+		     <li><a href="#"></a></li>
+            </ul>
+        </nav>
     </div>
+</header>
+	
 
+	 
 
-	<a class="whatsapp-link" href="https://api.whatsapp.com/send?phone=244943379573"target="_blank"> <i class="fa fa-whatsapp"></i> </a>
+       <div class="slider">
+    <div><img src="fotos/IMG_4481.png" alt="Imagem da Empresa"></div>
+    <div><img src="fotos/IMG_4482.png" alt="Slide 2"></div>
+    <div><img src="fotos/IMG_4483.png" alt="Slide 3"></div>
+</div>
+	   
 
+<a class="whatsapp-link" href="https://api.whatsapp.com/send?phone=244943379573"target="_blank"> <i class="fa fa-whatsapp"></i> </a>
+	 
 
   <main>
-	 
 
 	   <div class="product">
       <h2> Pasta desportiva Be Sporty </h2>
