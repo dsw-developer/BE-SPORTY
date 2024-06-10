@@ -300,14 +300,13 @@ body, ul {
 
 </head>
 <body>
-  <header>
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-            <img src="fotos/IMG_4480.png" style="height:40px; width: auto;" class="logo">
+ <header>
+        <div class="header-container">
+            <img src="fotos/IMG_4480.png" class="logo">
             <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
             <nav>
                 <ul>
-                    <li><a href="bolas.html"><br>Bolas</br></a></li>
-		 <li><a href="#"><br></br></a></li>
+                    <li><a href="bolas.html">Bolas</a></li>
                     <li><a href="pastas.html">Pastas</a></li>
                     <li><a href="meias.html">Meias</a></li>
                     <li><a href="promo.html">Promo</a></li>
@@ -732,6 +731,10 @@ body, ul {
         <p>&copy; 2024 Be Sporty. Todos os direitos reservados.</p>
     </footer>
  <script>
+	   function toggleMenu() {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('open');
+        }
         // Função para alternar a exibição do menu em dispositivos móveis
         function toggleMenu() {
             var navUl = document.querySelector('nav ul');
