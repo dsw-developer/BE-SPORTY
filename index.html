@@ -267,7 +267,28 @@ body, ul {
             margin-top: 16px;
         }
 
-/* Outros estilos permanecem iguais */
+ @media screen and (max-width: 768px) {
+            nav ul {
+                display: none;
+                background-color: #1C415E;
+                position: absolute;
+                top: 50px;
+                right: 0;
+                width: 100%;
+                text-align: center;
+            }
+            nav ul.active {
+                display: block;
+            }
+            .menu-icon {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                color: white;
+                cursor: pointer;
+            }
+        }/* Outros estilos permanecem iguais */
     @media screen and (max-width: 768px) {
         nav ul {
             display: none;
