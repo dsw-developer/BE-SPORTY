@@ -223,29 +223,28 @@ body, ul {
             cursor: pointer;
         }
 
-        /* Estilo para dispositivos móveis */
         @media screen and (max-width: 768px) {
             nav ul {
-                display: none; /* Esconde o menu por padrão em telas menores */
+                display: none;
                 background-color: #1C415E;
-                position: absolute;
-                top: 50px;
-                right: 0; /* Alterado para abrir no lado direito */
-                width: 100%;
-                text-align: center;
+                position: fixed;
+                top: 0;
+                right: 0;
+                height: 100%;
+                width: 200px;
+                padding-top: 50px;
             }
             nav ul.active {
-                display: flex; /* Exibe o menu quando estiver ativo */
-                flex-direction: column;
+                display: block;
             }
-            .menu-icon {
-                display: block; /* Exibe o ícone de menu em telas menores */
-                position: absolute;
-                top: 20px;
-                right: 20px; /* Ajustado para alinhar à direita */
+            nav ul li {
+                list-style: none;
+                padding: 10px;
             }
-        }
-
+            nav ul li a {
+                color: white;
+                text-decoration: none;
+            }
 
         }
     .whatsapp-link {
