@@ -161,6 +161,50 @@
     height: auto; /* Maintain aspect ratio */
     margin: 0 auto; /* Center the image horizontally */
 }
+		  /* Reset some default browser styles */
+body, ul {
+    margin: 0;
+    padding: 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f8f8; /* Background color for header */
+}
+
+.logo {
+    height: 30px;
+    width: auto;
+}
+
+nav {
+    flex-grow: 1;
+    text-align: right; /* Align nav to the right */
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+}
+
+.nav-list li {
+    margin-left: 20px; /* Space between menu items */
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #333; /* Link color */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-list a:hover {
+    color: #007BFF; /* Link color on hover */
+}
+
 
 
   </style>
@@ -194,21 +238,22 @@
 
 </head>
 <body>
-    <header>
-    <div style="display: flex; justify-content: space-between; align-items: center;">
-        <img src="fotos/IMG_4465.png"  style="height: 30px; width: auto;">
+   <header>
+    <div class="header-container">
+        <img src="fotos/IMG_4465.png" alt="Logo" class="logo">
         <nav>
-            <ul style="display: flex; list-style: none; padding: 0; margin: 0;">
+            <ul class="nav-list">
                 <li><a href="bolas.html">BOLAS</a></li>
                 <li><a href="pastas.html">PASTAS</a></li>
                 <li><a href="meias.html">MEIAS</a></li>
                 <li><a href="promo.html">ACESSÓRIOS</a></li>
-		     <li><a href="#"></a></li>
-		     <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
             </ul>
         </nav>
     </div>
 </header>
+
 	
  <div class="container">
         <div class="header">
