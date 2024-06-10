@@ -138,3 +138,15 @@ footer {
   margin: 10px 0;
   color: #333;
 }
+
+  /* Estilos para o slider */
+.slider {
+    width: 100%;
+    max-width: 600px; /* Defina a largura máxima que deseja para o slider */
+    margin: 0 auto; /* Centraliza o slider na página */
+}
+.slider img {
+    width: 100%; /* Garante que as imagens no slider se ajustem à largura do slider */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
