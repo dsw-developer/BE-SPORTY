@@ -142,14 +142,26 @@
   .button:hover {
     background-color: #005082;
   }
-		  .slider {
+	
+		  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+}
+
+.slider {
     max-width: 100%; /* Ensure slider occupies full width */
+    width: 100%; /* Ensure slider fills its container */
+    text-align: center; /* Center slider contents */
 }
 
 .slider img {
     max-width: 100%; /* Ensure images inside the slider are responsive */
     height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the image horizontally */
 }
+
 
   </style>
 
