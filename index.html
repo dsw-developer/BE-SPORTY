@@ -267,7 +267,29 @@ body, ul {
             margin-top: 16px;
         }
 
-
+/* Outros estilos permanecem iguais */
+    @media screen and (max-width: 768px) {
+        nav ul {
+            display: none;
+            background-color: #1C415E;
+            position: absolute;
+            top: 50px;
+            left: 0; /* Alterado para abrir no lado esquerdo */
+            width: 100%;
+            text-align: center;
+        }
+        /* Novo estilo para o menu quando estiver ativo */
+        nav ul.active {
+            left: auto;
+            right: 0; /* Ajustado para abrir no lado direito */
+        }
+        .menu-icon {
+            display: block;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+    }
 
   </style>
 
@@ -731,11 +753,12 @@ body, ul {
         <p>&copy; 2024 Be Sporty. Todos os direitos reservados.</p>
     </footer>
  <script>
-        // Função para alternar a exibição do menu em dispositivos móveis
-        function toggleMenu() {
-            var navUl = document.querySelector('nav ul');
-            navUl.classList.toggle('active');
-        }
+	    function toggleMenu() {
+        var navUl = document.querySelector('nav ul');
+        navUl.classList.toggle('active');
+    }
+	 
+       
     </script>
 	
 </body>
