@@ -16,9 +16,7 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
-Entendi, você deseja remover a repetição das definições para o cabeçalho (`header`) que aparecem abaixo da definição inicial. Vou ajustar o código removendo essas duplicações:
 
-```css
 <style>
     /* Estilo global */
     body {
@@ -169,31 +167,35 @@ Entendi, você deseja remover a repetição das definições para o cabeçalho (
         font-size: 14px;
     }
 
-    /* Estilos responsivos */
-    @media screen and (max-width: 768px) {
-        /* Estilos do menu de navegação */
-        nav ul {
-            display: none;
-            background-color: #1C415E;
-            position: absolute;
-            top: 50px;
-            left: 0;
-            width: 100%;
-            text-align: center;
-        }
 
-        nav ul.active {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .menu-icon {
-            display: block;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
+/* Estilos responsivos */
+@media screen and (max-width: 768px) {
+    /* Estilos do menu de navegação */
+    nav ul {
+        display: none;
+        background-color: #1C415E;
+        position: absolute;
+        top: 50px;
+        left: 0; /* Alterado para abrir no lado esquerdo */
+        width: 100%;
+        text-align: center;
     }
+
+    nav ul.active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu-icon {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+}
+
+
+Com essa alteração, o menu agora abrirá no lado esquerdo quando clicado em dispositivos com largura de tela de até 768 pixels.
 </style>
 
 	<!-- Chatra {literal} -->
