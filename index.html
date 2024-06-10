@@ -219,36 +219,28 @@ body, ul {
         nav ul li a:hover {
             background-color: #005082;
         }
-        /* Ícone de menu para dispositivos móveis */
-        .menu-icon {
-            display: none; /* Esconde o ícone por padrão */
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
+       @media screen and (max-width: 768px) {
+            nav ul {
+                display: none;
+                background-color: #1C415E;
+                position: absolute;
+                top: 50px;
+                right: 0;
+                width: 100%;
+                text-align: center;
+            }
+            nav ul.active {
+                display: block;
+            }
+            .menu-icon {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                color: white;
+                cursor: pointer;
+            }
         }
-
-        nav ul {
-    display: none; /* Esconde o menu por padrão em telas menores */
-    background-color: #1C415E;
-    position: absolute;
-    top: 50px;
-    right: 0; /* Alterado para abrir no lado direito */
-    width: 100%;
-    text-align: center;
-}
-
-nav ul.active {
-    display: flex; /* Exibe o menu quando estiver ativo */
-    flex-direction: column;
-}
-
-.menu-icon {
-    display: block; /* Exibe o ícone de menu em telas menores */
-    position: absolute;
-    top: 20px;
-    right: 20px; /* Ajustado para alinhar à direita */
-    cursor: pointer;
-}
 
 
 
@@ -272,75 +264,6 @@ nav ul.active {
             margin-top: 16px;
         }
 
- @media screen and (max-width: 768px) {
-            nav ul {
-                display: none;
-                background-color: #1C415E;
-                position: absolute;
-                top: 50px;
-                right: 0;
-                width: 100%;
-                text-align: center;
-            }
-            nav ul.active {
-                display: block;
-            }
-            .menu-icon {
-                display: block;
-                position: absolute;
-                top: 20px;
-                right: 20px;
-                color: white;
-                cursor: pointer;
-            }
-        }/* Outros estilos permanecem iguais */
-    @media screen and (max-width: 768px) {
-        nav ul {
-            display: none;
-            background-color: #1C415E;
-            position: absolute;
-            top: 50px;
-            left: 0; /* Alterado para abrir no lado esquerdo */
-            width: 100%;
-            text-align: center;
-        }
-        /* Novo estilo para o menu quando estiver ativo */
-        nav ul.active {
-            left: auto;
-            right: 0; /* Ajustado para abrir no lado direito */
-        }
-        .menu-icon {
-            display: block;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
-    }
-		    .menu {
-        position: fixed;
-        top: 0;
-        right: -300px; /* Esconde o menu inicialmente */
-        width: 300px;
-        height: 100%;
-        background: #333;
-        transition: right 0.3s ease; /* Adiciona uma transição suave */
-    }
-    .menu.active {
-        right: 0; /* Mostra o menu quando estiver ativo */
-    }
-    .menu ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-    .menu ul li {
-        padding: 10px;
-        border-bottom: 1px solid #444;
-    }
-    .menu ul li a {
-        color: #fff;
-        text-decoration: none;
-    }
 
   </style>
 
