@@ -1,3 +1,49 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  background: url('background.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+nav li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-bottom: 2px solid #fff;
+}
+
 main {
   display: flex;
   justify-content: space-around;
@@ -93,4 +139,13 @@ footer {
   color: #333;
 }
 
-  
+  /* Estilos para o slider */
+.slider {
+    width: 100%;
+    max-width: 600px; /* Defina a largura máxima que deseja para o slider */
+    margin: 0 auto; /* Centraliza o slider na página */
+}
+.slider img {
+    width: 100%; /* Garante que as imagens no slider se ajustem à largura do slider */
+    height: auto; /* Mantém a proporção da imagem */
+}
