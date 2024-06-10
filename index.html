@@ -175,70 +175,7 @@ body, ul {
     background-color: #f8f8f8; /* Background color for header */
 }
 
- header {
-            background-color: #004494;
-            color: white;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
 
-        .logo {
-            max-width: 150px;
-        }
-
-        nav {
-            display: none;
-            flex-direction: column;
-            background-color: #004494;
-            padding: 20px;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 0;
-            text-align: center;
-            border-bottom: 1px solid #0066cc;
-            transition: background-color 0.3s;
-        }
-
-        nav a:hover {
-            background-color: #0066cc;
-        }
-
-        .menu-toggle {
-            display: none;
-        }
-
-        .menu-icon {
-            display: none;
-            cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-            .menu-icon {
-                display: block;
-            }
-
-            .menu-toggle:checked + nav {
-                display: flex;
-            }
-
-            nav {
-                position: static;
-                display: none;
-                width: auto;
-                padding: 0;
-                background-color: transparent;
-            }
-        }
 
 
 
@@ -273,20 +210,21 @@ body, ul {
 
 </head>
 <body>
-    <header>
-    <img src="logo.png" class="logo" alt="Logo">
-    <input type="checkbox" class="menu-toggle" id="menu-toggle">
-    <div class="menu-icon" onclick="document.getElementById('menu-toggle').checked = !document.getElementById('menu-toggle').checked;">
-        <div></div>
-        <div></div>
-        <div></div>
+   <header>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <img src="fotos/IMG_4480.png"  style="height:40px; width: auto;">
+        <nav>
+            <ul style="display: flex; list-style: none; padding: 0; margin: 0;">
+		     <li><a href="index.html">Início</a></li>
+                <li><a href="bolas.html">Bolas</a></li>
+                <li><a href="pastas.html">Pastas</a></li>
+                <li><a href="meias.html">Meias</a></li>
+                <li><a href="promo.html">Promo</a></li>
+		     <li><a href="#"></a></li>
+		     <li><a href="#"></a></li>
+            </ul>
+        </nav>
     </div>
-    <nav>
-        <a href="#">Início</a>
-        <a href="#">Produtos</a>
-        <a href="#">Lojas</a>
-        <a href="#">Contato</a>
-    </nav>
 </header>
 
 	
