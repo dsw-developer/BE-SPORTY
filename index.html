@@ -244,9 +244,71 @@ body, ul {
                 right: 20px;
             }
         }
-<style>
+header {
+            background-color: #1C415E;
+            color: white;
+            padding: 15px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header .logo {
+            max-width: 150px;
+            height: auto;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
         nav ul li {
-            font-family: Arial, sans-serif; /* Altere 'Arial, sans-serif' para a fonte desejada */
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li a:hover {
+            background-color: #005082;
+            transform: scale(1.05);
+        }
+
+        .menu-icon {
+            margin-right: 8px;
+        }
+
+        .whatsapp-link {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 1px 1px 2px #888;
+            z-index: 1000;
+        }
+
+        .fa-whatsapp {
+            margin-top: 16px;
         }
 
 
