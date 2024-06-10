@@ -191,15 +191,11 @@ body, ul {
             height: auto;
         }
         nav ul {
-    display: none;
-    background-color: #1C415E;
-    position: absolute;
-    top: 50px;
-    right: 0; /* Alterado para abrir no lado direito */
-    width: 100%;
-    text-align: center;
-}
-
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
         nav ul li {
             margin-right: 10px;
         }
@@ -219,29 +215,36 @@ body, ul {
         nav ul li a:hover {
             background-color: #005082;
         }
-       @media screen and (max-width: 768px) {
+        /* Ícone de menu para dispositivos móveis */
+        .menu-icon {
+            display: none; /* Esconde o ícone por padrão */
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Estilo para dispositivos móveis */
+        @media screen and (max-width: 768px) {
             nav ul {
-                display: none;
+                display: none; /* Esconde o menu por padrão em telas menores */
                 background-color: #1C415E;
                 position: absolute;
                 top: 50px;
-                right: 0;
+                right: 0; /* Alterado para abrir no lado direito */
                 width: 100%;
                 text-align: center;
             }
             nav ul.active {
-                display: block;
+                display: flex; /* Exibe o menu quando estiver ativo */
+                flex-direction: column;
             }
             .menu-icon {
-                display: block;
+                display: block; /* Exibe o ícone de menu em telas menores */
                 position: absolute;
                 top: 20px;
-                right: 20px;
-                color: white;
-                cursor: pointer;
+                right: 20px; /* Ajustado para alinhar à direita */
             }
         }
-
 
 
         }
@@ -263,6 +266,7 @@ body, ul {
         .fa-whatsapp {
             margin-top: 16px;
         }
+
 
 
   </style>
@@ -727,16 +731,19 @@ body, ul {
         <p>&copy; 2024 Be Sporty. Todos os direitos reservados.</p>
     </footer>
  <script>
-	    function toggleMenu() {
-        var navUl = document.querySelector('nav ul');
-        navUl.classList.toggle('active');
-    }
-	 
-       
+        // Função para alternar a exibição do menu em dispositivos móveis
+        function toggleMenu() {
+            var navUl = document.querySelector('nav ul');
+            navUl.classList.toggle('active');
+        }
     </script>
 	
 </body>
 </html>
+
+
+
+
 
 
 
