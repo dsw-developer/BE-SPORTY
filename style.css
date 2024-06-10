@@ -252,52 +252,7 @@ body, ul {
 }
 
 
-        header {
-            background-color: #1C415E;
-            color: white;
-            padding: 15px 20px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        header .logo {
-            max-width: 150px;
-            height: auto;
-        }
-        nav ul {
-            display: flex;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        nav ul li {
-            margin-right: 10px;
-        }
-        nav ul li:last-child {
-            margin-right: 0;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: bold;
-            text-transform: uppercase;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        nav ul li a:hover {
-            background-color: #005082;
-        }
-        /* Ícone de menu para dispositivos móveis */
-        .menu-icon {
-            display: none; /* Esconde o ícone por padrão */
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-        }
+     
         /* Estilo para dispositivos móveis */
         @media screen and (max-width: 768px) {
             nav ul {
