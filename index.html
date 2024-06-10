@@ -11,6 +11,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
 	<style>
 	 body {
             font-family: 'Arial', sans-serif;
@@ -137,7 +142,14 @@ margin-top: 16px;
         .button:hover {
             background-color: #005082;
         }	
-	
+	$(document).ready(function(){
+        $('.slider').slick({
+            autoplay: true, // Auto-play habilitado
+            autoplaySpeed: 2000, // Velocidade do auto-play em milissegundos
+            arrows: false, // Oculta as setas de navegação
+            dots: true // Mostra os pontos de navegação
+        });
+    });
 	
 
     </style>
@@ -180,11 +192,14 @@ margin-top: 16px;
 	
  <div class="container">
         <div class="header">
-            <h1></h1>
+            
         </div>
-        <div class="image-container">
-            <img src="fotos/k.jpg" alt="Imagem da Empresa">
-        </div>
+       <div class="slider">
+    <div><img src="fotos/k.jpg" alt="Imagem da Empresa"></div>
+    <div><img src="fotos/slide2.jpg" alt="Slide 2"></div>
+    <div><img src="fotos/slide3.jpg" alt="Slide 3"></div>
+</div>
+
         <p class="description">Loja de Materiais Desportivos "Be Sporty" </p>
 	   
     </div>
