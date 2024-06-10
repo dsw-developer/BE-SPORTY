@@ -222,28 +222,37 @@ body, ul {
             font-size: 24px;
             cursor: pointer;
         }
-       /* Estilo para dispositivos móveis */
-@media screen and (max-width: 768px) {
-    nav ul {
-        display: none; /* Esconde o menu por padrão em telas menores */
-        background-color: #1C415E;
-        position: fixed; /* Alteração aqui */
-        top: 50px;
-        right: 0; /* Alteração aqui */
-        width: 100%;
-        text-align: center;
-    }
-    nav ul.active {
-        display: flex; /* Exibe o menu quando estiver ativo */
-        flex-direction: column;
-    }
-    .menu-icon {
-        display: block; /* Exibe o ícone de menu em telas menores */
-        position: absolute;
-        top: 20px;
-        right: 20px;
-    }
-}
+<head>
+    <!-- Outros elementos do cabeçalho -->
+    <style>
+        /* Restante dos estilos */
+        /* Estilo para dispositivos móveis */
+        @media screen and (max-width: 768px) {
+            nav ul {
+                display: none; /* Esconde o menu por padrão em telas menores */
+                background-color: #1C415E;
+                position: absolute;
+                top: 50px;
+                right: 0; /* Alterado para abrir no lado direito */
+                width: 100%;
+                text-align: center;
+            }
+            nav ul.active {
+                display: flex; /* Exibe o menu quando estiver ativo */
+                flex-direction: column;
+            }
+            .menu-icon {
+                display: block; /* Exibe o ícone de menu em telas menores */
+                position: absolute;
+                top: 20px;
+                right: 20px; /* Ajustado para alinhar à direita */
+            }
+        }
+    </style>
+    <!-- Outros elementos do cabeçalho -->
+</head>
+
+
         }
     .whatsapp-link {
             position: fixed;
