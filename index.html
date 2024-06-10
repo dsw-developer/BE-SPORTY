@@ -1,16 +1,152 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Encontre as melhores chuteiras e equipamentos esportivos na Be Sporty.">
-    <meta name="keywords" content="chuteiras, futebol, basquete, running, esportes">
-    <title>BE SPORTY</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-   <style>
-        /* Estilos gerais */
+	
+  <title>BE SPORTY</title>
+<link rel="shortcut icon" href="fotos/937.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="description" content="Encontre aqui as melhores chuteiras para o seu esporte favorito.">
+  <meta name="keywords" content="chuteiras, futebol, basquete, running">
+  <meta name="author" content="Seu nome ou nome da sua empresa">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+	<style>
+	 body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F0F0F0;
+        }
+        /* Estilos do cabeçalho */
+        header {
+            background-color: #1C415E;
+            color: white;
+            padding: 15px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        header .logo {
+            max-width: 150px;
+            height: auto;
+        }
+	.whatsapp-link {
+
+position: fixed;
+width: 60px;
+height: 60px; bottom: 40px; right: 40px;
+background-color: #25d366;
+color: #fff;
+border-radius: 50px;
+text-align: center; 
+font-size: 30px;
+box-shadow: 1px 1px 2px #888;
+ z-index: 1000;
+}
+.fa-whatsapp {
+margin-top: 16px;
+}
+
+            background-color: #F5F5F5;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+            background-color: #fff;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .image-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .image-container img {
+            max-width: 30%;
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+        }
+        .description {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .button-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .button-list li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .button-list li:last-child {
+            margin-right: 0;
+        }
+        .button {
+            display: inline-block;
+            background-color:#1C415E;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+        }
+	 footer {
+            background-color: #1C415E;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        footer ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        footer ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .button:hover {
+            background-color: #005082;
+        }	
+	  .slider-container {
+        overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse os limites do contêiner */
+        width: 100%; /* Defina a largura do contêiner do slider */
+    }
+    .slider {
+        display: flex; /* Torna os itens do slider em linha */
+        width: 300%; /* Defina a largura total do slider como 300% (3 itens de largura) */
+        transition: transform 0.5s ease; /* Adiciona uma transição suave ao movimento do slider */
+    }
+     /* Estilos gerais */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -171,13 +307,10 @@
             width: 100%; /* Garante que as imagens no slider se ajustem à largura do slider */
             height: auto; /* Mantém a proporção da imagem */
         }
-        
-    
-	
-        .fa-whatsapp {
-            margin-top: 16px;
-        }
+
     </style>
+
+	<!-- Chatra {literal} -->
 <script>
     (function(d, w, c) {
         w.ChatraID = 'ypLqvwmBBAGaWGQ6J';
@@ -190,39 +323,53 @@
         if (d.head) d.head.appendChild(s);
     })(document, window, 'Chatra');
 </script>
+<!-- /Chatra {/literal} -->
+	
+
+
+
 </head>
 <body>
-   <header>
+    <header>
     <div style="display: flex; justify-content: space-between; align-items: center;">
-        <img src="fotos/IMG_4465.png" alt="Logo Be Sporty" style="height: 30px; width: auto;">
+        <img src="fotos/IMG_4465.png"  style="height: 30px; width: auto;">
         <nav>
             <ul style="display: flex; list-style: none; padding: 0; margin: 0;">
-                <li><a href="#">BOLAS</a></li>
-                <li><a href="#">PASTAS</a></li>
-                <li><a href="#">MEIAS</a></li>
-                <li><a href="#">ACESSÓRIOS</a></li>
+                <li><a href="bolas.html">BOLAS</a></li>
+                <li><a href="pastas.html">PASTAS</a></li>
+                <li><a href="meias.html">MEIAS</a></li>
+                <li><a href="promo.html">ACESSÓRIOS</a></li>
 		     <li><a href="#"></a></li>
 		     <li><a href="#"></a></li>
             </ul>
         </nav>
     </div>
 </header>
-
+	
+<div class="slider-container">
     <div class="slider">
         <div><img src="fotos/IMG_4248.jpeg" alt="Banner 1"></div>
         <div><img src="fotos/IMG-1302.jpg" alt="Banner 2"></div>
         <div><img src="fotos/IMG_4353.jpeg" alt="Banner 3"></div>
     </div>
+</div>
 
-    <div class="container">
-        <div class="product-section">
-            <h2> Produtos Be Sporty</h2>
-            <div class="product-carousel">
-                
-                  <div class="product">
-      <h3>Chuteira Imviso Ginka</h3>
+    
+        <p class="description">Loja de Materiais Desportivos "Be Sporty" </p>
+	   
+        </ul>
+	   
+    </div>
+
+<a class="whatsapp-link" href="https://api.whatsapp.com/send?phone=244943379573"target="_blank"> <i class="fa fa-whatsapp"></i> </a>
+	
+
+  <main>
+	   <div class="product">
+      <h2>Chuteira Imviso Ginka</h2>
       <img src="fotos/IMG-1302.jpg" alt="Chuteira Nike Mercurial">
-   
+      <p>A chuteira Imviso, Com cabedal em material sintético, solado em borracha e design inovador, essa chuteira é ideal para jogadores de futebol que querem se destacar no campo.</p>
+<label>Tamanho disponível</label>
 <select>
 
 	<option>38</option>
@@ -234,9 +381,10 @@
      
     </div>
 	<div class="product">
-      <h3>Chuteira Joma </h3>
+      <h2>Chuteira Joma </h2>
       <img src="fotos/IMG-4202.jpg" alt="Chuteira Adidas Crazy Explosive">
-       
+      <p>A chuteira Joma preta é a escolha certa para quem busca desempenho e estilo nas quadras de futsal e relva sintética. Com cabedal em malha respirável, entressola responsiva e solado de borracha aderente, essa chuteira é perfeita para jogadores de futsal que querem dar o seu melhor.</p>
+             <label>Tamanho disponível</label>
 <select>
 
 	<option>41</option>
@@ -251,9 +399,10 @@
     </div>
   
 <div class="product">
-      <h3>Chuteira Joma Top flex </h3>
+      <h2>Chuteira Joma Top flex </h2>
       <img src="fotos/burla.jpg" alt="Chuteira Adidas Crazy Explosive">
-       
+      <p>A chuteira Joma Top flex branco é a escolha certa para quem busca desempenho e estilo nas quadras de futsal. Com cabedal em malha respirável, entressola responsiva e solado de borracha aderente, essa chuteira é perfeita para jogadores de futsal que querem dar o seu melhor.</p>
+             <label>Tamanho disponível</label>
 <select>
 
 	<option>45</option>
@@ -265,9 +414,10 @@
     </div>
  
 	    <div class="product">
-      <h3>Chuteira Kipsta</h3>
+      <h2>Chuteira Kipsta</h2>
       <img src="fotos/IMG-4198.jpg" alt="Chuteira Adidas Crazy Explosive">
-          
+      <p>A chuteira Kipsta é a escolha certa para quem busca desempenho e estilo nas quadras de futsal. Com cabedal em malha respirável, entressola responsiva e solado de borracha aderente, essa chuteira é perfeita para jogadores de futsal que querem dar o seu melhor.</p>
+                 <label>Tamanho disponível</label>
 <select>
 
 	
@@ -279,9 +429,10 @@
 
     </div>
 	  <div class="product">
-      <h3>Chuteira Kipsta</h3>
+      <h2>Chuteira Kipsta</h2>
       <img src="fotos/IMG_1307.jpeg" alt="Chuteira Adidas Crazy Explosive">
-          
+      <p>A chuteira Kipsta é a escolha certa para quem busca desempenho e estilo nas quadras de futsal. Com cabedal em malha respirável, entressola responsiva e solado de borracha aderente, essa chuteira é perfeita para jogadores de futsal que querem dar o seu melhor.</p>
+                 <label>Tamanho disponível</label>
 <select>
 
 	
@@ -291,9 +442,10 @@
 
     </div>
 	  	  <div class="product">
-      <h3>Chuteira Kipsta/2</h3>
+      <h2>Chuteira Kipsta/2</h2>
       <img src="fotos/F8E061CE-5CE0-48D1-AF3E-71C0FA1331BB.jpeg" alt="Chuteira Adidas Crazy Explosive">
-              
+      <p>A chuteira Kipsta é a escolha certa para quem busca desempenho e estilo nas quadras de futsal. Com cabedal em malha respirável, entressola responsiva e solado de borracha aderente, essa chuteira é perfeita para jogadores de futsal que querem dar o seu melhor.</p>
+                 <label>Tamanho disponível</label>
 <select>
         <option>40</option>
 	<option>41</option>
@@ -303,9 +455,10 @@
 
     </div>
 	   <div class="product">
-      <h3>Chuteira Imviso Ginka</h3>
+      <h2>Chuteira Imviso Ginka</h2>
       <img src="fotos/IMG_4250.webp" alt="Chuteira Nike Mercurial">
-     
+      <p>A chuteira Imviso, Com cabedal em material sintético, solado em borracha e design inovador, essa chuteira é ideal para jogadores de futebol que querem se destacar no campo.</p>
+<label>Tamanho disponível</label>
 <select>
 
 	<option>45</option>
@@ -317,9 +470,10 @@
     </div>
 	  
    <div class="product">
-      <h3>Chuteira Eskudo </h3>
+      <h2>Chuteira Eskudo </h2>
       <img src="fotos/at.jpg" alt="Chuteira Nike Mercurial">
-    
+      <p>A chuteira Eskudo , Com cabedal em material sintético, solado em borracha e design inovador, essa chuteira é ideal para jogadores de futebol que querem se destacar no campo.</p>
+<label>Tamanho disponível</label>
 <select>
 	<option>46</option>
 	<option>47</option>
@@ -330,9 +484,10 @@
      
     </div>
 	   <div class="product">
-      <h3>Chuteira Eskudo 500</h3>
+      <h2>Chuteira Eskudo 500</h2>
       <img src="fotos/eskudo.webp" alt="Chuteira Nike Mercurial">
-      
+      <p>A chuteira Eskudo 500, Com cabedal em material sintético, solado em borracha e design inovador, essa chuteira é ideal para jogadores de futebol que querem se destacar no campo.</p>
+<label>Tamanho disponível</label>
 <select>
 	<option>40</option>
 	<option>41</option>
@@ -344,9 +499,10 @@
     </div>
 	  
 	   <div class="product">
-      <h3>Chuteira Imviso</h3>
+      <h2>Chuteira Imviso</h2>
       <img src="fotos/2000.avif" alt="Chuteira Nike Mercurial">
-     
+      <p>A chuteira Imviso, Com cabedal em material sintético, solado em borracha e design inovador, essa chuteira é ideal para jogadores de futebol que querem se destacar no campo.</p>
+<label>Tamanho disponível</label>
 <select>
 
 	<option>47</option>
@@ -356,9 +512,10 @@
      
     </div>
 	   <div class="product">
-      <h3>Chuteira Imviso Branca</h3>
+      <h2>Chuteira Imviso Branca</h2>
       <img src="fotos/a3.jpeg" alt="Chuteira Nike Mercurial">
-     
+      <p>A chuteira Imviso, Com cabedal em material sintético, solado em borracha e design inovador, essa chuteira é ideal para jogadores de futebol que querem se destacar no campo.</p>
+<label>Tamanho disponível</label>
 <select>
 
 	<option>45</option>
@@ -368,9 +525,10 @@
      
     </div>
 	     <div class="product">
-      <h3>Chuteira Imviso</h3>
+      <h2>Chuteira Imviso</h2>
       <img src="fotos/0ED2DDEF-0F6F-4F96-80EC-D75CF5C386C2.jpeg" alt="Chuteira Nike Mercurial">
-     
+      <p>A chuteira Imviso, Com cabedal em material sintético, solado em borracha e design inovador, essa chuteira é ideal para jogadores de futebol que querem se destacar no campo.</p>
+<label>Tamanho disponível</label>
 <select>
 <option>37</option>
 	<option>38</option>
@@ -390,9 +548,10 @@
 	 
 	  
 	    <div class="product">
-      <h3>Chuteira Imviso</h3>
+      <h2>Chuteira Imviso</h2>
       <img src="fotos/000001.JPG" alt="Chuteira Nike Mercurial">
-      
+      <p>A chuteira Imviso Ginka 900 é perfeita para quem busca velocidade e precisão. Com cabedal em material sintético, solado em borracha e design inovador, essa chuteira é ideal para jogadores de futebol que querem se destacar no campo.</p>
+<label>Tamanho disponível</label>
 <select>
 <option>44</option>
 <option>45</option>
@@ -403,9 +562,11 @@
     </div>
 	  
 	  <div class="product">
-      <h3>Chuteira Imviso azul especial</h3>
+      <h2>Chuteira Imviso azul especial</h2>
       <img src="fotos/85597CA6-E3AA-48E2-AC84-16E4A7F7E245.jpeg" alt="Chuteira Nike Mercurial">
-     <select>
+      <p>A chuteira Imviso, Com cabedal em material sintético, solado em borracha e design inovador, essa chuteira é ideal para jogadores de futebol que querem se destacar no campo.</p>
+<label>Tamanho disponível</label>
+<select>
 
 	
 	
@@ -417,9 +578,11 @@
 	 
 	  
     <div class="product">
-      <h3>Chuteira Imviso Ginka</h3>
+      <h2>Chuteira Imviso Ginka</h2>
       <img src="fotos/19D77592-B49A-4900-A0BD-B6DF584C119E.jpeg" alt="Chuteira Nike Mercurial">
-      <select>
+      <p>A chuteira Imviso Ginka 900 é perfeita para quem busca velocidade e precisão. Com cabedal em material sintético, solado em borracha e design inovador, essa chuteira é ideal para jogadores de futebol que querem se destacar no campo.</p>
+	<label>Tamanho disponível</label>
+<select>
 
 <option> 41 </option>
 	<option>42</option>
@@ -433,9 +596,10 @@
   
 
 <div class="product">
-      <h3>Chuteira predator</h3>
+      <h2>Chuteira predator</h2>
       <img src="fotos/b11.png" alt="Chuteira Adidas Crazy Explosive">
-         
+      <p>A chuteira predator é a escolha certa para quem busca desempenho e estilo nas quadras de futsal. Com cabedal em malha respirável, entressola responsiva e solado de borracha aderente, essa chuteira é perfeita para jogadores de futsal que querem dar o seu melhor.</p>
+           <label>Tamanho disponível</label>
 <select>
 <option>Esgotado</option>
 </select>
@@ -443,9 +607,10 @@
 
     </div>
 <div class="product">
-      <h3>Chuteira Joma Top flex </h3>
+      <h2>Chuteira Joma Top flex </h2>
       <img src="fotos/IMG_4370.webp" alt="Chuteira Adidas Crazy Explosive">
-           
+      <p>A chuteira Joma Top flex brancoé a escolha certa para quem busca desempenho e estilo nas quadras de futsal. Com cabedal em malha respirável, entressola responsiva e solado de borracha aderente, essa chuteira é perfeita para jogadores de futsal que querem dar o seu melhor.</p>
+             <label>Tamanho disponível</label>
 <select>
 <option>43</option>
 <option>44</option>
@@ -457,9 +622,10 @@
     </div>
 
 <div class="product">
-      <h3>Chuteira  Imviso Ginka 900 MID</h3>
+      <h2>Chuteira  Imviso Ginka 900 MID</h2>
       <img src="fotos/IMG_1306.jpeg" alt="Chuteira Adidas Crazy Explosive">
-    
+      <p>A chuteira Imviso Ginka 900 MID é a escolha certa para quem busca desempenho e estilo nas quadras de futsal. Com cabedal em malha respirável, entressola responsiva e solado de borracha aderente, essa chuteira é perfeita para jogadores de futsal que querem dar o seu melhor.</p>
+       <label>Tamanho disponível</label>
 <select>
 <option>Esgotado</option>
 
@@ -470,9 +636,10 @@
 
     </div>
 	  <div class="product">
-      <h3>Chuteira Joma Top flex </h3>
+      <h2>Chuteira Joma Top flex </h2>
       <img src="fotos/a2.jpeg" alt="Chuteira Adidas Crazy Explosive">
-         
+      <p>A chuteira Joma Top flex brancoé a escolha certa para quem busca desempenho e estilo nas quadras de futsal. Com cabedal em malha respirável, entressola responsiva e solado de borracha aderente, essa chuteira é perfeita para jogadores de futsal que querem dar o seu melhor.</p>
+             <label>Tamanho disponível</label>
 <select>
 <option>43</option>
 	<option>44</option>
@@ -483,9 +650,10 @@
 
     </div>
 <div class="product">
-      <h3>Chuteira Team Quest</h3>
+      <h2>Chuteira Team Quest</h2>
       <img src="fotos/IMG_4383.jpeg" alt="Chuteira Adidas Crazy Explosive">
-                     
+      <p>A chuteira Team Quest é a escolha certa para quem busca desempenho e estilo nas quadras de futsal. Com cabedal em malha respirável, entressola responsiva e solado de borracha aderente, essa chuteira é perfeita para jogadores de futsal que querem dar o seu melhor.</p>
+                       <label>Tamanho disponível</label>
 <select>
 
 
@@ -498,9 +666,10 @@
     </div>
 	  
 <div class="product">
-      <h3>Chuteira Adidass pure</h3>
+      <h2>Chuteira Adidass pure</h2>
       <img src="fotos/IMG_4368.webp" alt="Chuteira Adidas Crazy Explosive">
-                      
+      <p>A chuteira Adidass pure é a escolha certa para quem busca desempenho e estilo nas quadras de futsal. Com cabedal em malha respirável, entressola responsiva e solado de borracha aderente, essa chuteira é perfeita para jogadores de futsal que querem dar o seu melhor.</p>
+                        <label>Tamanho disponível</label>
 <select>
 <option>39</option>
 
@@ -509,10 +678,11 @@
 
     </div>
 <div class="product">
-      <h3>Chuteira Adidas X Speedportal</h3>
+      <h2>Chuteira Adidas X Speedportal</h2>
       <img src="fotos/62D0B329-A10F-46F5-A46A-8CECFECC95D5.jpeg
 " alt="Chuteira Adidas Crazy Explosive">
-                    
+      <p>A chuteira Adidas X Speedportal é a escolha certa para quem busca desempenho e estilo nas quadras de futsal. Com cabedal em malha respirável, entressola responsiva e solado de borracha aderente, essa chuteira é perfeita para jogadores de futsal que querem dar o seu melhor.</p>
+                        <label>Tamanho disponível</label>
 <select>
 
 <option>40</option>
@@ -522,9 +692,10 @@
 
     </div>
 <div class="product">
-      <h3>Chuteira Team Quest</h3>
+      <h2>Chuteira Team Quest</h2>
       <img src="fotos/IMG_4353.jpeg" alt="Chuteira Adidas Crazy Explosive">
-                    
+      <p>A chuteira Team Quest é a escolha certa para quem busca desempenho e estilo nas quadras de futsal. Com cabedal em malha respirável, entressola responsiva e solado de borracha aderente, essa chuteira é perfeita para jogadores de futsal que querem dar o seu melhor.</p>
+                       <label>Tamanho disponível</label>
 <select>
 
 
@@ -536,26 +707,28 @@
 
     </div>
 	  <div class="product">
-      <h3>Chuteira Adidas Sala</h3>
+      <h2>Chuteira Adidas Sala</h2>
       <img src="fotos/IMG_4365.jpeg" alt="Chuteira Adidas Crazy Explosive">
+      <p> Adidas Sala é a escolha certa para quem busca desempenho e estilo nas quadras de futsal. Com cabedal em malha respirável, entressola responsiva e solado de borracha aderente, essa chuteira é perfeita para jogadores de futsal que querem dar o seu melhor.</p>
         <button> Esgotado</button>
 
     </div>
 	 
 	  <div class="product">
-      <h3>Chuteira Adidas Sala</h3>
+      <h2>Chuteira Adidas Sala</h2>
       <img src="fotos/IMG_4364.jpeg" alt="Chuteira Adidas Crazy Explosive">
+      <p> Adidas Sala é a escolha certa para quem busca desempenho e estilo nas quadras de futsal. Com cabedal em malha respirável, entressola responsiva e solado de borracha aderente, essa chuteira é perfeita para jogadores de futsal que querem dar o seu melhor.</p>
         <button> Esgotado</button>
 
 
 	</div>
 	
 	  <div class="product">
-      <h3>Chuteira Nike Mercurial Vapor</h3>
+      <h2>Chuteira Nike Mercurial Vapor</h2>
       <img src="fotos/IMG_4363.jpeg" alt="Chuteira Adidas Crazy Explosive">
-    
+      <p>  Nike Mercurial Vapor é a escolha certa para quem busca desempenho e estilo nas quadras de futsal. Com cabedal em malha respirável, entressola responsiva e solado de borracha aderente, essa chuteira é perfeita para jogadores de futsal que querem dar o seu melhor.</p>
          
-	                   
+	                   <label>Tamanho disponível</label>
 <select>
 
 <option>39</option>
@@ -566,14 +739,29 @@
 
  
 </div>
-	
-               
-                <!-- Adicione mais produtos conforme necessário -->
-            </div>
-        </div>
-    </div>
+	  <div class="product">
+      <h2>Chuteira Ginka Pro</h2>
+      <img src="fotos/D5A9B510-1A7C-40DA-AE32-2FA73A33C2D9.jpeg
+" alt="Chuteira Adidas Crazy Explosive">
+      <p>Desenvolvidas para o praticante de futsal que domina todos os gestos técnicos e que procura dinamismo, leveza, flexibilidade e um excelente toque de bola.</p>
+         
+	                   <label>Tamanho disponível</label>
+<select>
 
-    <footer>
+<option>42</option>
+<option>43</option>
+<option>44</option>
+
+</select>
+	<button>Esgotado</button>
+
+ 
+</div>
+	   	
+	  
+  </main>
+
+ <footer>
         <ul>
             <li><a href="#">Termos de Serviço</a></li>
             <li><a href="#">Política de Privacidade</a></li>
@@ -581,23 +769,10 @@
         </ul>
         <p>&copy; 2024 Be Sporty. Todos os direitos reservados.</p>
     </footer>
-
-    <a class="whatsapp-link" href="https://api.whatsapp.com/send?phone=244943379573" target="_blank"><i class="fa fa-whatsapp"></i></a>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('.slider').slick({
-                autoplay: true,
-                autoplaySpeed: 3000,
-                dots: true,
-                arrows: false
-            });
-        });
-    </script>
 </body>
 </html>
+
+
 
 
 
