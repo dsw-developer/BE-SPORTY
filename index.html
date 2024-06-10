@@ -277,14 +277,6 @@ estilos */
 
 
 	<script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const menuIcon = document.querySelector('.menu-icon');
-            const navMenu = document.querySelector('nav ul');
-
-            menuIcon.addEventListener('click', function() {
-                navMenu.classList.toggle('active');
-            });
-        });
     
 	$(document).ready(function(){
     $('.slider').slick({
@@ -744,6 +736,14 @@ estilos */
         <p>&copy; 2024 Be Sporty. Todos os direitos reservados.</p>
     </footer>
  <script>
+	 document.addEventListener("DOMContentLoaded", function() {
+            const menuIcon = document.querySelector('.menu-icon');
+            const navMenu = document.querySelector('nav ul');
+
+            menuIcon.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+        });
         // Função para alternar a exibição do menu em dispositivos móveis
         function toggleMenu() {
             var navUl = document.querySelector('nav ul');
