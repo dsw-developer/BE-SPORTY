@@ -16,185 +16,260 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
-Entendi, você deseja remover a repetição das definições para o cabeçalho (`header`) que aparecem abaixo da definição inicial. Vou ajustar o código removendo essas duplicações:
-
-```css
-<style>
-    /* Estilo global */
+	  <style>
     body {
-        font-family: 'Arial', sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #F0F0F0;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #F0F0F0;
     }
-
     /* Estilos do cabeçalho */
     header {
-        background-color: #1C415E;
-        color: white;
-        padding: 15px 20px;
-        position: fixed;
-        width: 100%;
-        top: 0;
-        z-index: 1000;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      background-color: #1C415E;
+      color: white;
+      padding: 15px 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-
     header .logo {
-        max-width: 150px;
-        height: auto;
+      max-width: 150px;
+      height: auto;
     }
-
-    /* Botão do WhatsApp */
     .whatsapp-link {
-        position: fixed;
-        width: 60px;
-        height: 60px;
-        bottom: 40px;
-        right: 40px;
-        background-color: #25d366;
-        color: #fff;
-        border-radius: 50px;
-        text-align: center;
-        font-size: 30px;
-        box-shadow: 1px 1px 2px #888;
-        z-index: 1000;
+      position: fixed;
+      width: 60px;
+      height: 60px; 
+      bottom: 40px; 
+      right: 40px;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 50px;
+      text-align: center; 
+      font-size: 30px;
+      box-shadow: 1px 1px 2px #888;
+      z-index: 1000;
     }
-
     .fa-whatsapp {
-        margin-top: 16px;
+      margin-top: 16px;
     }
+    background-color: #F5F5F5;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+    background-color: #fff;
+  }
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .header h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .image-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .image-container img {
+    max-width: 30%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+  }
+  .description {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .button-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  .button-list li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .button-list li:last-child {
+    margin-right: 0;
+  }
+  .button {
+    display: inline-block;
+    background-color:#1C415E;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+  }
+  footer {
+    background-color: #1C415E;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+  }
+  footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  footer ul li {
+    display: inline;
+    margin: 0 10px;
+  }
+  footer ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .button:hover {
+    background-color: #005082;
+  }
+	
+		  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+}
 
-    /* Container principal */
-    .container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-        background-color: #fff;
-    }
+.slider {
+    max-width: 100%; /* Ensure slider occupies full width */
+    width: 100%; /* Ensure slider fills its container */
+    text-align: center; /* Center slider contents */
+}
 
-    /* Estilos do cabeçalho dentro do container */
-    .header {
-        text-align: center;
-        margin-bottom: 20px;
-    }
+.slider img {
+    max-width: 100%; /* Ensure images inside the slider are responsive */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the image horizontally */
+}
+		  /* Reset some default browser styles */
+body, ul {
+    margin: 0;
+    padding: 0;
+}
 
-    .header h1 {
-        font-size: 36px;
-        color: #333;
-        margin-bottom: 10px;
-    }
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f8f8; /* Background color for header */
+}
 
-    /* Container de imagens */
-    .image-container {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .image-container img {
-        max-width: 30%;
-        height: auto;
-        border-radius: 50%;
-        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Descrição */
-    .description {
-        font-size: 18px;
-        color: #666;
-        margin-bottom: 20px;
-        text-align: center;
-    }
-
-    /* Lista de botões */
-    .button-list {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-    }
-
-    .button-list li {
-        display: inline-block;
-        margin-right: 10px;
-    }
-
-    .button-list li:last-child {
-        margin-right: 0;
-    }
-
-    /* Botões */
-    .button {
-        display: inline-block;
-        background-color: #1C415E;
-        color: #fff;
-        font-size: 16px;
-        font-weight: bold;
-        text-transform: uppercase;
-        padding: 10px 20px;
-        border-radius: 5px;
-        text-decoration: none;
-        transition: background-color 0.3s ease;
-        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .button:hover {
-        background-color: #005082;
-    }
-
-    /* Rodapé */
-    footer {
-        background-color: #1C415E;
-        color: white;
-        padding: 20px 0;
-        text-align: center;
-        margin-top: 40px;
-    }
-
-    footer ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    footer ul li {
-        display: inline;
-        margin: 0 10px;
-    }
-
-    footer ul li a {
-        color: white;
-        text-decoration: none;
-        font-size: 14px;
-    }
-
-    /* Estilos responsivos */
-    @media screen and (max-width: 768px) {
-        /* Estilos do menu de navegação */
-        nav ul {
-            display: none;
+		  
+        header {
             background-color: #1C415E;
-            position: absolute;
-            top: 50px;
-            left: 0;
+            color: white;
+            padding: 15px 20px;
+            position: fixed;
             width: 100%;
-            text-align: center;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-
-        nav ul.active {
+        header .logo {
+            max-width: 150px;
+            height: auto;
+        }
+        nav ul {
             display: flex;
-            flex-direction: column;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            margin-right: 10px;
+        }
+        nav ul li:last-child {
+            margin-right: 0;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        nav ul li a:hover {
+            background-color: #005082;
+        }
+        /* Ícone de menu para dispositivos móveis */
+        .menu-icon {
+            display: none; /* Esconde o ícone por padrão */
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
         }
 
-        .menu-icon {
-            display: block;
-            position: absolute;
-            top: 20px;
-            right: 20px;
+        /* Estilo para dispositivos móveis */
+        @media screen and (max-width: 768px) {
+            nav ul {
+                display: none; /* Esconde o menu por padrão em telas menores */
+                background-color: #1C415E;
+                position: absolute;
+                top: 50px;
+                right: 0; /* Alterado para abrir no lado direito */
+                width: 100%;
+                text-align: center;
+            }
+            nav ul.active {
+                display: flex; /* Exibe o menu quando estiver ativo */
+                flex-direction: column;
+            }
+            .menu-icon {
+                display: block; /* Exibe o ícone de menu em telas menores */
+                position: absolute;
+                top: 20px;
+                right: 20px; /* Ajustado para alinhar à direita */
+            }
         }
-    }
-</style>
+
+
+        }
+    .whatsapp-link {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 1px 1px 2px #888;
+            z-index: 1000;
+        }
+
+        .fa-whatsapp {
+            margin-top: 16px;
+        }
+
+
+
+  </style>
 
 	<!-- Chatra {literal} -->
 <script>
@@ -665,7 +740,6 @@ Entendi, você deseja remover a repetição das definições para o cabeçalho (
 	
 </body>
 </html>
-
 
 
 
