@@ -380,52 +380,51 @@ header {
                 right: 20px; /* Alinha o ícone à esquerda */
             }
         }
-		.button-container {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Espaço entre os botões */
-    margin-top: 10px; /* Espaço acima dos botões */
-}
-
-.price-button {
-    background-color: #1C415E;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.whatsapp-button {
-    display: flex;
-    align-items: center;
-    background-color: #25D366;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-}
-
-.whatsapp-button i {
-    margin-right: 8px;
-}
-
-.whatsapp-button:hover {
-    background-color: #1ebe57;
-}
-
+		 body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .product {
+      margin-bottom: 30px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 20px;
+    }
+    .product h2 {
+      color: #1c415e;
+    }
+    .product img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    .product p {
+      color: #666;
+      text-align: justify;
+    }
+    .product select {
+      margin-bottom: 10px;
+    }
+    .product button {
+      background-color: #1c415e;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .product button:hover {
+      background-color: #005082;
+    }
 
   </style>
 
@@ -483,84 +482,98 @@ header {
 </div>
 	   
 
-<a class="whatsapp-link" href="https://api.whatsapp.com/send?phone=244943379573"target="_blank"> <i class="fa fa-whatsapp"></i> </a>
+
 	 
 
   <main>
 
-	   <div class="product">
-      <h2> Pasta desportiva Be Sporty </h2>
-      <img src="fotos/FF8F217E-946E-4322-A780-8259FB4F1ADF.jpeg" alt="Chuteira Nike Mercurial">
-    <P>A marca Be Sporty é conhecida por suas pastas desportivas, voltadas especialmente para atletas e entusiastas de esportes. </P>
-	 <button>kz 37.500.00</button>
-    </div>
-	  
-    <div class="product">
-      <h2>Pasta desportiva Kipsta 35L</h2>
-      <img src="fotos/IMG-7350.jpg" alt="Chuteira Adidas Crazy Explosive">
-	<P>A pasta desportiva Kipsta de 35 litros é projetada para atender às necessidades de atletas que precisam transportar seus equipamentos de maneira prática e organizada. </P>
-      <button> kz 26.500.00</button>
+	  <!-- Produto 1: Pasta desportiva Be Sporty -->
+  <div class="product">
+    <h2>Pasta desportiva Be Sporty</h2>
+    <img src="fotos/FF8F217E-946E-4322-A780-8259FB4F1ADF.jpeg" alt="Pasta desportiva Be Sporty">
+    <p>A marca Be Sporty é conhecida por suas pastas desportivas, voltadas especialmente para atletas e entusiastas de esportes.</p>
+    <button class="comprarBtn" data-product="Pasta desportiva Be Sporty" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/FF8F217E-946E-4322-A780-8259FB4F1ADF.jpeg" data-price="37.500,00 Kz">Comprar</button>
+ <button>kz 37.500.00</button>
+  </div>
 
-    </div>
-<div class="product">
-      <h2>Pasta desportiva Kipsta 35L</h2>
-      <img src="fotos/IMG-7351.jpg" alt="Chuteira Adidas Crazy Explosive">
-	<P>A pasta desportiva Kipsta de 35 litros é projetada para atender às necessidades de atletas que precisam transportar seus equipamentos de maneira prática e organizada. </P>
-        <button> kz 26.500.00</button>
+  <!-- Produto 2: Pasta desportiva Kipsta 35L -->
+  <div class="product">
+    <h2>Pasta desportiva Kipsta 35L</h2>
+    <img src="fotos/IMG-7350.jpg" alt="Pasta desportiva Kipsta 35L">
+    <p>A pasta desportiva Kipsta de 35 litros é projetada para atender às necessidades de atletas que precisam transportar seus equipamentos de maneira prática e organizada.</p>
+    <button class="comprarBtn" data-product="Pasta desportiva Kipsta 35L" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/IMG-7350.jpg" data-price="26.500,00 Kz">Comprar</button>
+ <button>kz 26.500.00</button>
+  </div>
 
-    </div>
-<div class="product">
-      <h2>Pasta desportiva Kipsta 35L</h2>
-      <img src="fotos/IMG-7352.jpg" alt="Chuteira Adidas Crazy Explosive">
-	<P>A pasta desportiva Kipsta de 35 litros é projetada para atender às necessidades de atletas que precisam transportar seus equipamentos de maneira prática e organizada. </P>
-      <button> kz 26.500.00</button>
+  <!-- Produto 3: Pasta desportiva Kipsta 35L (segunda opção) -->
+  <div class="product">
+    <h2>Pasta desportiva Kipsta 35L</h2>
+    <img src="fotos/IMG-7351.jpg" alt="Pasta desportiva Kipsta 35L">
+    <p>A pasta desportiva Kipsta de 35 litros é projetada para atender às necessidades de atletas que precisam transportar seus equipamentos de maneira prática e organizada.</p>
+    <button class="comprarBtn" data-product="Pasta desportiva Kipsta 35L" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/IMG-7351.jpg" data-price="26.500,00 Kz">Comprar</button>
+  <button>Kz 26.500.00</button>
+  </div>
 
-    </div>
+  <!-- Produto 4: Pasta desportiva Kipsta 35L (terceira opção) -->
+  <div class="product">
+    <h2>Pasta desportiva Kipsta 35L</h2>
+    <img src="fotos/IMG-7352.jpg" alt="Pasta desportiva Kipsta 35L">
+    <p>A pasta desportiva Kipsta de 35 litros é projetada para atender às necessidades de atletas que precisam transportar seus equipamentos de maneira prática e organizada.</p>
+    <button class="comprarBtn" data-product="Pasta desportiva Kipsta 35L" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/IMG-7352.jpg" data-price="26.500,00 Kz">Comprar</button>
+ <button>Kz 26.500.00</button>
+  </div>
 
+  <!-- Produto 5: Pasta desportiva Kipsta 45L -->
+  <div class="product">
+    <h2>Pasta desportiva Kipsta 45L</h2>
+    <img src="fotos/IMG-7354.jpg" alt="Pasta desportiva Kipsta 45L">
+    <p>A pasta desportiva Kipsta 45L é um modelo ainda mais espaçoso e funcional, ideal para atletas que precisam transportar uma quantidade maior de equipamentos e itens pessoais.</p>
+    <button class="comprarBtn" data-product="Pasta desportiva Kipsta 45L" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/IMG-7354.jpg" data-price="39.950,00 Kz">Comprar</button>
+  <button>Kz 39.950.00</button>
+  </div>
 
-<div class="product">
-      <h2>Pasta desportiva Kipsta 45L</h2>
-      <img src="fotos/IMG-7354.jpg" alt="Chuteira Adidas Crazy Explosive">
-	<P>A pasta desportiva Kipsta 45L é um modelo ainda mais espaçoso e funcional, ideal para atletas que precisam transportar uma quantidade maior de equipamentos e itens pessoais.</P>
-      <button> kz 39.950.00</button>
+  <!-- Produto 6: Pasta desportiva Adidas -->
+  <div class="product">
+    <h2>Pasta desportiva Adidas</h2>
+    <img src="fotos/IMG-7357.jpg" alt="Pasta desportiva Adidas">
+    <p>As pastas desportivas da Adidas são conhecidas por sua qualidade, durabilidade e design funcional. Estas pastas são projetadas para atender às necessidades de atletas e entusiastas do esporte.</p>
+    <button class="comprarBtn" data-product="Pasta desportiva Adidas" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/IMG-7357.jpg" data-price="60.100,00 Kz">Comprar</button>
+   <button>Kz 60.100.00</button>
+  </div>
 
-    </div>
+  <!-- Produto 7: Pasta desportiva Adidas (segunda opção) -->
+  <div class="product">
+    <h2>Pasta desportiva Adidas</h2>
+    <img src="fotos/IMG-7358.jpg" alt="Pasta desportiva Adidas">
+    <p>As pastas desportivas da Adidas são conhecidas por sua qualidade, durabilidade e design funcional. Estas pastas são projetadas para atender às necessidades de atletas e entusiastas do esporte.</p>
+    <button class="comprarBtn" data-product="Pasta desportiva Adidas" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/IMG-7358.jpg" data-price="60.100,00 Kz">Comprar</button>
+ <button>Kz 60.100.00</button>
+  </div>
 
-
-
-<div class="product">
-      <h2>Pasta desportiva Adidas</h2>
-      <img src="fotos/IMG-7357.jpg" alt="Chuteira Adidas Crazy Explosive">
-	<P>As pastas desportivas da Adidas são conhecidas por sua qualidade, durabilidade e design funcional. Estas pastas são projetadas para atender às necessidades de atletas e entusiastas do esporte</P>
-      <button> kz 60.100.00</button>
-
-    </div>
-<div class="product">
-      <h2>Pasta desportiva Adidas</h2>
-      <img src="fotos/IMG-7358.jpg" alt="Chuteira Adidas Crazy Explosive">
-	<P>As pastas desportivas da Adidas são conhecidas por sua qualidade, durabilidade e design funcional. Estas pastas são projetadas para atender às necessidades de atletas e entusiastas do esporte</P>
-      <button> kz 60.100.00</button>
-
-    </div>
+</div>
 
 
   </main>
 
 	<script>
-    // Evento de clique no botão "Comprar"
-    document.getElementById('comprarBtn').addEventListener('click', function() {
-        // Captura a imagem do produto
-        var produtoImgSrc = document.getElementById('produtoImg').src;
-        
-        // Número do seu WhatsApp (substitua pelo seu número)
-        var numeroWhatsApp = '244943379573';
-        // Mensagem inicial com a imagem do produto
-        var mensagem = 'Olá, estou interessado neste produto :';
-        var linkWhatsApp = 'https://api.whatsapp.com/send?phone=' + numeroWhatsApp + '&text=' + encodeURIComponent(mensagem) + '%0A' + encodeURIComponent(produtoImgSrc);
+  document.addEventListener('DOMContentLoaded', function() {
+    // Adiciona evento de clique para todos os botões de comprar
+    var buyButtons = document.querySelectorAll('.comprarBtn');
+    buyButtons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        var productName = this.getAttribute('data-product');
+        var productImg = this.getAttribute('data-img');
+        var productPrice = this.getAttribute('data-price');
+
+        // Monta a mensagem inicial com a imagem do produto
+        var mensagem = `Olá, estou interessado no(a) ${productName} por ${productPrice}:`;
+        var linkWhatsApp = `https://api.whatsapp.com/send?phone=244943379573&text=${encodeURIComponent(mensagem)}%0A${encodeURIComponent(productImg)}`;
 
         // Abre o WhatsApp com a mensagem pré-preenchida e a imagem do produto
         window.open(linkWhatsApp, '_blank');
+      });
     });
+  });
 </script>
 <footer>
       
