@@ -379,6 +379,51 @@ header {
                 right: 20px; /* Alinha o ícone à esquerda */
             }
         }
+		  body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .product {
+      margin-bottom: 30px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 20px;
+    }
+    .product h2 {
+      color: #1c415e;
+    }
+    .product img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    .product p {
+      color: #666;
+      text-align: justify;
+    }
+    .product select {
+      margin-bottom: 10px;
+    }
+    .product button {
+      background-color: #1c415e;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .product button:hover {
+      background-color: #005082;
+    }
   </style>
 
 	<!-- Chatra {literal} -->
@@ -442,79 +487,95 @@ header {
 
   <main>
 	  
+<div class="container">
+
+  <!-- Produto 1: Tornozeleira -->
   <div class="product">
-      <h2>Máquina de Massagem </h2>
-      <img src="fotos/IMG_4207.webp" alt="Chuteira Adidas Crazy Explosive">
-      <p>Experimente o luxo de uma massagem profissional no conforto da sua casa com nossa cadeira de massagem completa. Projetada para oferecer uma massagem de corpo inteiro, esta cadeira combina técnicas de shiatsu, amassamento e percussão para aliviar tensões e proporcionar relaxamento profundo.</p>
-      <label>Cores disponíveis</label>
-<select>
+    <h2>Tornozeleira</h2>
+    <img id="produtoImg1" src="https://dsw-developer.github.io/BE-SPORTY/fotos/IMG_4627.jpeg" alt="Tornozeleira">
+    <p>Nossas Tornozeleiras para qualquer desporto são projetadas para oferecer a máxima proteção e conforto em campo. Fabricadas com materiais de alta qualidade, elas garantem resistência a impactos e ajuste perfeito, proporcionando segurança durante todo o jogo.</p>
+    <select id="tamanho1">
+      <option value="Tamanho 0">Tamanho 0</option>
+      <option value="Tamanho 1">Tamanho 1</option>
+      <option value="Tamanho 2">Tamanho 2</option>
+      <option value="Tamanho 3">Tamanho 3</option>
+      <option value="Tamanho 4">Tamanho 4</option>
+    </select>
+    <button class="comprarBtn" data-product="Tornozeleira" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/IMG_4627.jpeg" data-price="15.900,00 Kz">Kz 15.900.00</button>
+  </div>
 
-<option>Verde </option>
-<option>Rosa</option>
-
-</select>
-	<br><button><del>kz 23.000.00</del></button>
-	<button>kz 17.500.00</button>
-
+  <!-- Produto 2: Máquina de Massagem -->
+  <div class="product">
+    <h2>Máquina de Massagem</h2>
+    <img id="produtoImg2" src="https://dsw-developer.github.io/BE-SPORTY/fotos/IMG_4207.webp" alt="Máquina de Massagem">
+    <p>Experimente o luxo de uma massagem profissional no conforto da sua casa com nossa cadeira de massagem completa. Projetada para oferecer uma massagem de corpo inteiro, esta cadeira combina técnicas de shiatsu, amassamento e percussão para aliviar tensões e proporcionar relaxamento profundo.</p>
+    <label>Cores disponíveis</label>
+    <select id="cores2">
+      <option>Verde</option>
+      <option>Rosa</option>
+    </select>
+    <div class="price-container">
+      <button class="comprarBtn" data-product="Máquina de Massagem" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/IMG_4207.webp" data-price="17.500,00 Kz">Kz 17.500.00</button>
+      <button><del>kz 23.000.00</del></button>
     </div>
-
-	<div class="product">
-      <h2>Caneleiras profissionais de Futebol </h2>
-      <img src="fotos/IMG_4213.jpeg" alt="Chuteira Adidas Crazy Explosive">
-      <p>Nossas caneleiras profissionais de futebol são projetadas para oferecer a máxima proteção e conforto em campo. Fabricadas com materiais de alta qualidade, elas garantem resistência a impactos e ajuste perfeito, proporcionando segurança durante todo o jogo.</p>
-      <label>Cores disponíveis</label>
-<select>
-
-<option>Branca </option>
-<option>Preta </option>
-<option>Azul </option>
-
-</select>
-	<button><del>kz 18.000.00</del></button>	
-	<button>kz 10.000.00</button>
-
   </div>
 
-	  <div class="product">
-      <h2>Joelheira de futsal </h2>
-      <img src="fotos/IMG_4622.jpeg" alt="Chuteira Adidas Crazy Explosive">
-      <p>Nossas joelheira profissionais de futsal são projetadas para oferecer a máxima proteção e conforto em campo. Fabricadas com materiais de alta qualidade, elas garantem resistência a impactos e ajuste perfeito, proporcionando segurança durante todo o jogo.</p>
-      
-<select>
-
-<option>Tamanho 0 </option>
-<option>Tamanho 1 </option>
-<option>Tamanho 2 </option>
-<option>Tamanho 3 </option>
-<option>Tamanho 4 </option>
-
-</select>
-	<button>kz 33.000.00</button>
-
+  <!-- Produto 3: Caneleiras de Futebol -->
+  <div class="product">
+    <h2>Caneleiras de Futebol</h2>
+    <img id="produtoImg3" src="https://dsw-developer.github.io/BE-SPORTY/fotos/IMG_4213.jpeg" alt="Caneleiras de Futebol">
+    <p>Nossas caneleiras profissionais de futebol são projetadas para oferecer a máxima proteção e conforto em campo. Fabricadas com materiais de alta qualidade, elas garantem resistência a impactos e ajuste perfeito, proporcionando segurança durante todo o jogo.</p>
+    <label>Cores disponíveis</label>
+    <select id="cores3">
+      <option>Branca</option>
+      <option>Preta</option>
+      <option>Azul</option>
+    </select>
+    <div class="price-container">
+      <button class="comprarBtn" data-product="Caneleiras de Futebol" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/IMG_4213.jpeg" data-price="10.000,00 Kz">Kz 10.000.00</button>
+      <button><del>kz 18.000.00</del></button>
+    </div>
   </div>
-	   </div>
 
-	  <div class="product">
-      <h2>Tornozeleira </h2>
-      <img src="fotos/IMG_4627.jpeg" alt="Chuteira Adidas Crazy Explosive">
-      <p>Nossas Tornozeleira para qualquer desporto são projetadas para oferecer a máxima proteção e conforto em campo. Fabricadas com materiais de alta qualidade, elas garantem resistência a impactos e ajuste perfeito, proporcionando segurança durante todo o jogo.</p>
-      
-<select>
-
-<option>Tamanho 0 </option>
-<option>Tamanho 1 </option>
-<option>Tamanho 2 </option>
-<option>Tamanho 3 </option>
-<option>Tamanho 4 </option>
-
-</select>
-	<button>kz 15.900.00</button>
-
+  <!-- Produto 4: Joelheira de Futsal -->
+  <div class="product">
+    <h2>Joelheira de Futsal</h2>
+    <img id="produtoImg4" src="https://dsw-developer.github.io/BE-SPORTY/fotos/IMG_4622.jpeg" alt="Joelheira de Futsal">
+    <p>Nossas joelheiras profissionais de futsal são projetadas para oferecer a máxima proteção e conforto em campo. Fabricadas com materiais de alta qualidade, elas garantem resistência a impactos e ajuste perfeito, proporcionando segurança durante todo o jogo.</p>
+    <select id="tamanho4">
+      <option>Tamanho 0</option>
+      <option>Tamanho 1</option>
+      <option>Tamanho 2</option>
+      <option>Tamanho 3</option>
+      <option>Tamanho 4</option>
+    </select>
+    <button class="comprarBtn" data-product="Joelheira de Futsal" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/IMG_4622.jpeg" data-price="33.000,00 Kz">Kz 33.000.00</button>
   </div>
+
+</div>
 	   	
 	  
   </main>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Adiciona evento de clique para todos os botões de comprar
+    var buyButtons = document.querySelectorAll('.comprarBtn');
+    buyButtons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        var productName = this.getAttribute('data-product');
+        var productImg = this.getAttribute('data-img');
+        var productPrice = this.getAttribute('data-price');
 
+        // Monta a mensagem inicial com a imagem do produto
+        var mensagem = `Olá, estou interessado no(a) ${productName} por ${productPrice}:`;
+        var linkWhatsApp = `https://api.whatsapp.com/send?phone=244943379573&text=${encodeURIComponent(mensagem)}%0A${encodeURIComponent(productImg)}`;
+
+        // Abre o WhatsApp com a mensagem pré-preenchida e a imagem do produto
+        window.open(linkWhatsApp, '_blank');
+      });
+    });
+  });
+</script>
   <script>
         // Função para alternar a exibição do menu em dispositivos móveis
         function toggleMenu() {
