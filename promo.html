@@ -511,10 +511,40 @@ header {
 	<button>kz 15.900.00</button>
 
   </div>
-	   	
+	<div class="product">
+    <h2>Tornozeleira</h2>
+    <img id="produtoImg" src="fotos/IMG_4627.jpeg" alt="Tornozeleira">
+    <p>Nossas Tornozeleiras para qualquer desporto são projetadas para oferecer a máxima proteção e conforto em campo. Fabricadas com materiais de alta qualidade, elas garantem resistência a impactos e ajuste perfeito, proporcionando segurança durante todo o jogo.</p>
+
+    <select id="tamanho">
+        <option value="Tamanho 0">Tamanho 0</option>
+        <option value="Tamanho 1">Tamanho 1</option>
+        <option value="Tamanho 2">Tamanho 2</option>
+        <option value="Tamanho 3">Tamanho 3</option>
+        <option value="Tamanho 4">Tamanho 4</option>
+    </select>
+    
+    <button id="comprarBtn">Kz 15.900.00</button>
+</div>   	
 	  
   </main>
+<script>
+    // Evento de clique no botão "Comprar"
+    document.getElementById('comprarBtn').addEventListener('click', function() {
+        // Captura a imagem do produto
+        var produtoImgSrc = document.getElementById('produtoImg').src;
+        
+        // Número do seu WhatsApp (substitua pelo seu número)
+        var numeroWhatsApp = '244943379573';
+        // Mensagem inicial com a imagem do produto
+        var mensagem = 'Olá, estou interessado nesta Tornozeleira:';
+        var linkWhatsApp = 'https://api.whatsapp.com/send?phone=' + numeroWhatsApp + '&text=' + encodeURIComponent(mensagem) + '%0A' + encodeURIComponent(produtoImgSrc);
 
+        // Abre o WhatsApp com a mensagem pré-preenchida e a imagem do produto
+        window.open(linkWhatsApp, '_blank');
+    });
+
+    </script>
   <script>
         // Função para alternar a exibição do menu em dispositivos móveis
         function toggleMenu() {
