@@ -549,14 +549,35 @@ header {
         <option value="Tamanho 3">Tamanho 3</option>
         <option value="Tamanho 4">Tamanho 4</option>
     </select>
-   <br>  <button>Kz 15.900.00</button>
+   <button>Kz 15.900.00</button>
   <button id="comprarBtn" class="whatsapp-button">
-        <i class="fa fa-whatsapp"></i> Kz 15.900.00
+        <i class="fa fa-whatsapp"></i> comprar
     </button>
 </div>   	
 	  
   </main>
+<script>
+    // Evento de clique no botão "Comprar"
+    document.getElementById('comprarBtn').addEventListener('click', function() {
+        // Captura a URL da imagem do produto
+        var produtoImgSrc = document.getElementById('produtoImg').src;
+        
+        // Número do seu WhatsApp (substitua pelo seu número)
+        var numeroWhatsApp = '244943379573';
+        
+        // Mensagem inicial com a imagem do produto e o tamanho selecionado
+        var mensagem = 'Olá, estou interessado nesta Tornozeleira. Aqui estão os detalhes:%0A';
+        var tamanhoSelecionado = document.getElementById('tamanho').value;
+        mensagem += 'Tamanho: ' + tamanhoSelecionado + '%0A';
+        mensagem += 'Imagem: ' + produtoImgSrc + '%0A';
+        
+        // Link do WhatsApp com a mensagem pré-preenchida
+        var linkWhatsApp = 'https://api.whatsapp.com/send?phone=' + numeroWhatsApp + '&text=' + encodeURIComponent(mensagem);
 
+        // Abre o WhatsApp com a mensagem pré-preenchida e a imagem do produto
+        window.open(linkWhatsApp, '_blank');
+    });
+</script>
   <script>
         // Função para alternar a exibição do menu em dispositivos móveis
         function toggleMenu() {
