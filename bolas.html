@@ -379,6 +379,51 @@ header {
                 right: 20px; /* Alinha o ícone à esquerda */
             }
         }
+		   body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .product {
+      margin-bottom: 30px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 20px;
+    }
+    .product h2 {
+      color: #1c415e;
+    }
+    .product img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    .product p {
+      color: #666;
+      text-align: justify;
+    }
+    .product select {
+      margin-bottom: 10px;
+    }
+    .product button {
+      background-color: #1c415e;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .product button:hover {
+      background-color: #005082;
+    }
   </style>
 
 	<!-- Chatra {literal} -->
@@ -444,8 +489,8 @@ header {
       <h2>Bola Futsal Select</h2>
       <img src="fotos/IMG_4248.jpeg" alt="Chuteira Adidas Crazy Explosive">
       <p>"Bola de futsal Select" é uma marca conhecida por produzir bolas de alta qualidade para o esporte de futsal. Suas bolas são geralmente reconhecidas por sua durabilidade, aderência e precisão nos jogos de futsal.</p>
-     <button><del>kz 38.400.00</del></button>
-	<button>kz 35.400.00</button>
+     < <button class="comprarBtn" data-product="Bola de futsal" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/IMG_4248.jpeg" data-price="26.500,00 Kz">Comprar</button>
+  <button>Kz 35.500.00</button>
 
     </div>
 
@@ -527,7 +572,26 @@ Bola de futsal oficial para todas as Competições Nacionais de Futsal. Homologa
       
         <p>&copy; 2024 Be Sporty. Todos os direitos reservados.</p>
     </footer>
-	
+	<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Adiciona evento de clique para todos os botões de comprar
+    var buyButtons = document.querySelectorAll('.comprarBtn');
+    buyButtons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        var productName = this.getAttribute('data-product');
+        var productImg = this.getAttribute('data-img');
+        var productPrice = this.getAttribute('data-price');
+
+        // Monta a mensagem inicial com a imagem do produto
+        var mensagem = `Olá, estou interessado no(a) ${productName} por ${productPrice}:`;
+        var linkWhatsApp = `https://api.whatsapp.com/send?phone=244943379573&text=${encodeURIComponent(mensagem)}%0A${encodeURIComponent(productImg)}`;
+
+        // Abre o WhatsApp com a mensagem pré-preenchida e a imagem do produto
+        window.open(linkWhatsApp, '_blank');
+      });
+    });
+  });
+</script>
  <script>
         // Função para alternar a exibição do menu em dispositivos móveis
         function toggleMenu() {
