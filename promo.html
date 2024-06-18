@@ -492,7 +492,7 @@ header {
 	  
   <div class="product">
       <h2>Máquina de Massagem </h2>
-      <img id="produtoImg" src="fotos/IMG_4207.webp" alt="Chuteira Adidas Crazy Explosive">
+      <img src="fotos/IMG_4207.webp" alt="Chuteira Adidas Crazy Explosive">
       <p>Experimente o luxo de uma massagem profissional no conforto da sua casa com nossa cadeira de massagem completa. Projetada para oferecer uma massagem de corpo inteiro, esta cadeira combina técnicas de shiatsu, amassamento e percussão para aliviar tensões e proporcionar relaxamento profundo.</p>
       <label>Cores disponíveis</label>
 <select>
@@ -501,13 +501,9 @@ header {
 <option>Rosa</option>
 
 </select>
-		
-	<div class="button-container">
-        <button class="price-button">kz 17.500.00</button>
-        <button id="comprarBtn" class="whatsapp-button">
-            <i class="fa fa-whatsapp"></i> Comprar
-        </button>
- </div>
+	<br><button><del>kz 23.000.00</del></button>
+	<button>kz 17.500.00</button>
+
     </div>
 
 	<div class="product">
@@ -522,13 +518,13 @@ header {
 <option>Azul </option>
 
 </select>
-	
+	<button><del>kz 18.000.00</del></button>	
 	<div class="button-container">
-        <button class="price-button">kz 10.000.00</button>
+        <button class="price-button"> 10.000 kz</button>
         <button id="comprarBtn" class="whatsapp-button">
             <i class="fa fa-whatsapp"></i> Comprar
         </button>
- </div>
+
   </div>
 
 	  <div class="product">
@@ -546,19 +542,19 @@ header {
 
 </select>
 	<div class="button-container">
-        <button class="price-button">kz 33.000.00</button>
+        <button class="price-button"> 33.000 kz</button>
         <button id="comprarBtn" class="whatsapp-button">
             <i class="fa fa-whatsapp"></i> Comprar
         </button>
- </div>
+
   </div>
+	   </div>
+
 	  
-<div class="product">
+	<div class="product">
     <h2>Tornozeleira</h2>
     <img id="produtoImg" src="fotos/IMG_4627.jpeg" alt="Tornozeleira">
-    <p>Nossas Tornozeleiras para qualquer desporto são projetadas para oferecer a máxima proteção e conforto em campo.
-	    Fabricadas com materiais de alta qualidade, elas garantem resistência a impactos e ajuste perfeito, proporcionando
-	    segurança durante todo o jogo.</p>
+    <p>Nossas Tornozeleiras para qualquer desporto são projetadas para oferecer a máxima proteção e conforto em campo. Fabricadas com materiais de alta qualidade, elas garantem resistência a impactos e ajuste perfeito, proporcionando segurança durante todo o jogo.</p>
 
  <select>
 
@@ -570,11 +566,11 @@ header {
 
 </select>
   <div class="button-container">
-        <button class="price-button">kz 15.900.00</button>
+        <button class="price-button"> 15.900 kz</button>
         <button id="comprarBtn" class="whatsapp-button">
             <i class="fa fa-whatsapp"></i> Comprar
         </button>
-   </div> 
+   
 </div>   	
 	  
   </main>
@@ -587,7 +583,7 @@ header {
         // Número do seu WhatsApp (substitua pelo seu número)
         var numeroWhatsApp = '244943379573';
         // Mensagem inicial com a imagem do produto
-        var mensagem = 'Olá, estou interessado neste produto :';
+        var mensagem = 'Olá, estou interessado nesta Tornozeleira:';
         var linkWhatsApp = 'https://api.whatsapp.com/send?phone=' + numeroWhatsApp + '&text=' + encodeURIComponent(mensagem) + '%0A' + encodeURIComponent(produtoImgSrc);
 
         // Abre o WhatsApp com a mensagem pré-preenchida e a imagem do produto
