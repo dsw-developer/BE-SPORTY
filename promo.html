@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
@@ -379,6 +380,31 @@ header {
                 right: 20px; /* Alinha o ícone à esquerda */
             }
         }
+		  .whatsapp-button {
+    display: flex;
+    align-items: center;
+    background-color: #25D366;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.whatsapp-button i {
+    margin-right: 8px;
+}
+
+.whatsapp-button:hover {
+    background-color: #1ebe57;
+}
+
   </style>
 
 	<!-- Chatra {literal} -->
@@ -524,7 +550,9 @@ header {
         <option value="Tamanho 4">Tamanho 4</option>
     </select>
    <br>  <button>Kz 15.900.00</button>
-    <button id="comprarBtn">Eu quero essa</button>
+  <button id="comprarBtn" class="whatsapp-button">
+        <i class="fa fa-whatsapp"></i> comprar
+    </button>
 </div>   	
 	  
   </main>
