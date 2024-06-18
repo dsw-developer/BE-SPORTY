@@ -380,7 +380,28 @@ header {
                 right: 20px; /* Alinha o ícone à esquerda */
             }
         }
-		  .whatsapp-button {
+		.button-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaço entre os botões */
+    margin-top: 10px; /* Espaço acima dos botões */
+}
+
+.price-button {
+    background-color: #1C415E;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.whatsapp-button {
     display: flex;
     align-items: center;
     background-color: #25D366;
@@ -404,6 +425,7 @@ header {
 .whatsapp-button:hover {
     background-color: #1ebe57;
 }
+
 
   </style>
 
@@ -551,10 +573,11 @@ header {
 <option>Tamanho 4 </option>
 
 </select>
-   <br> <button>kz 15.900.00</button>
-  <button id="comprarBtn" class="whatsapp-button">
-        <i class="fa fa-whatsapp"></i>Comprar
-    </button>
+  <div class="button-container">
+        <button class="price-button">Kz 15.900.00</button>
+        <button id="comprarBtn" class="whatsapp-button">
+            <i class="fa fa-whatsapp"></i> Comprar
+        </button>
    
 </div>   	
 	  
