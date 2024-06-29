@@ -1,1 +1,752 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+  <title>BE SPORTY</title>
+<link rel="shortcut icon" href="fotos/937.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="description" content="Encontre aqui as melhores chuteiras para o seu esporte favorito.">
+  <meta name="keywords" content="chuteiras, futebol, basquete, running">
+  <meta name="author" content="Seu nome ou nome da sua empresa">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
+	  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #F0F0F0;
+    }
+    /* Estilos do cabeçalho */
+    header {
+      background-color: #1C415E;
+      color: white;
+      padding: 15px 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    header .logo {
+      max-width: 150px;
+      height: auto;
+    }
+    .whatsapp-link {
+      position: fixed;
+      width: 60px;
+      height: 60px; 
+      bottom: 40px; 
+      right: 40px;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 50px;
+      text-align: center; 
+      font-size: 30px;
+      box-shadow: 1px 1px 2px #888;
+      z-index: 1000;
+    }
+    .fa-whatsapp {
+      margin-top: 16px;
+    }
+    background-color: #F5F5F5;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+    background-color: #fff;
+  }
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .header h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .image-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .image-container img {
+    max-width: 30%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+  }
+  .description {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .button-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  .button-list li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .button-list li:last-child {
+    margin-right: 0;
+  }
+  .button {
+    display: inline-block;
+    background-color:#1C415E;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+  }
+  footer {
+    background-color: #1C415E;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+  }
+  footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  footer ul li {
+    display: inline;
+    margin: 0 10px;
+  }
+  footer ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .button:hover {
+    background-color: #005082;
+  }
+	
+		  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+}
+
+.slider {
+    max-width: 100%; /* Ensure slider occupies full width */
+    width: 100%; /* Ensure slider fills its container */
+    text-align: center; /* Center slider contents */
+}
+
+.slider img {
+    max-width: 100%; /* Ensure images inside the slider are responsive */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the image horizontally */
+}
+		  /* Reset some default browser styles */
+body, ul {
+    margin: 0;
+    padding: 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f8f8; /* Background color for header */
+}
+
+
+        header {
+            background-color: #1C415E;
+            color: white;
+            padding: 15px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        header .logo {
+            max-width: 150px;
+            height: auto;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            margin-right: 10px;
+        }
+        nav ul li:last-child {
+            margin-right: 0;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        nav ul li a:hover {
+            background-color: #005082;
+        }
+        /* Ícone de menu para dispositivos móveis */
+        .menu-icon {
+            display: none; /* Esconde o ícone por padrão */
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        /* Estilo para dispositivos móveis */
+        @media screen and (max-width: 768px) {
+            nav ul {
+                display: none; /* Esconde o menu por padrão em telas menores */
+                background-color: #1C415E;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                width: 100%;
+                text-align: center;
+            }
+            nav ul.active {
+                display: flex; /* Exibe o menu quando estiver ativo */
+                flex-direction: column;
+            }
+            .menu-icon {
+                display: block; /* Exibe o ícone de menu em telas menores */
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+        }
+header {
+            background-color: #1C415E;
+            color: white;
+            padding: 15px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header .logo {
+            max-width: 150px;
+            height: auto;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li a:hover {
+            background-color: #005082;
+            transform: scale(1.05);
+        }
+
+        .menu-icon {
+            margin-right: 8px;
+        }
+
+        .whatsapp-link {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 1px 1px 2px #888;
+            z-index: 1000;
+        }
+
+        .fa-whatsapp {
+            margin-top: 16px;
+        }
+
+header {
+            background-color: #1C415E;
+            color: white;
+            padding: 15px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        header .logo {
+            max-width: 150px;
+            height: auto;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            margin-right: 10px;
+        }
+        nav ul li:last-child {
+            margin-right: 0;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        nav ul li a:hover {
+            background-color: #005082;
+        }
+        /* Ícone de menu para dispositivos móveis */
+        .menu-icon {
+            display: none; /* Esconde o ícone por padrão */
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        /* Estilo para dispositivos móveis */
+        @media screen and (max-width: 768px) {
+            nav ul {
+                display: none; /* Esconde o menu por padrão em telas menores */
+                background-color: #1C415E;
+                position: absolute;
+                top: 50px;
+                right: 0;
+                width: 100%;
+                text-align: right; /* Alinha o menu à esquerda */
+            }
+            nav ul.active {
+                display: flex; /* Exibe o menu quando estiver ativo */
+                flex-direction: column;
+            }
+            .menu-icon {
+                display: block; /* Exibe o ícone de menu em telas menores */
+                position: absolute;
+                top: 20px;
+                right: 20px; /* Alinha o ícone à esquerda */
+            }
+        }
+		 body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .product {
+      margin-bottom: 30px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 20px;
+    }
+    .product h2 {
+      color: #1c415e;
+    }
+    .product img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    .product p {
+      color: #666;
+      text-align: justify;
+    }
+    .product select {
+      margin-bottom: 10px;
+    }
+    .product button {
+      background-color: #1c415e;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .product button:hover {
+      background-color: #005082;
+    }
+
+:root {
+            --primary-color: #28a745;
+            --secondary-color: #218838;
+            --background-color: #f0f2f5;
+            --container-bg-color: #fff;
+            --text-color: #333;
+            --border-radius: 12px;
+            --box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            --transition-time: 0.3s;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: var(--text-color);
+        }
+
+        .container {
+            background-color: var(--container-bg-color);
+            padding: 40px 60px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            transition: transform var(--transition-time) ease, box-shadow var(--transition-time) ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+        }
+
+       
+        h2 {
+            color: #444;
+            margin-bottom: 20px;
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            width: 50px;
+            height: 4px;
+            background-color: var(--primary-color);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            color: #666;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            transition: border-color var(--transition-time) ease, box-shadow var(--transition-time) ease;
+        }
+
+        select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 8px rgba(40, 167, 69, 0.1);
+        }
+
+        button {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: #fff;
+            padding: 12px 25px;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background var(--transition-time) ease, transform var(--transition-time) ease;
+        }
+
+        button:hover {
+            background: linear-gradient(45deg, var(--secondary-color), #1e7e34);
+            transform: translateY(-2px);
+        }
+
+        .resultado {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border: 1px solid #dee2e6;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform var(--transition-time) ease, box-shadow var(--transition-time) ease;
+        }
+
+        .resultado:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .resultado h2 {
+            margin: 0 0 10px;
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        .resultado p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+  </style>
+	<!-- Chatra {literal} -->
+<script>
+	$(document).ready(function(){
+    $('.slider').slick({
+        autoplay: true,
+        autoplaySpeed: 2000,
+        arrows: false,
+        dots: true
+    });
+});
+
+    (function(d, w, c) {
+        w.ChatraID = 'ypLqvwmBBAGaWGQ6J';
+        var s = d.createElement('script');
+        w[c] = w[c] || function() {
+            (w[c].q = w[c].q || []).push(arguments);
+        };
+        s.async = true;
+        s.src = 'https://call.chatra.io/chatra.js';
+        if (d.head) d.head.appendChild(s);
+    })(document, window, 'Chatra');
+</script>
+<!-- /Chatra {/literal} -->
+	
+
+
+
+</head>
+<body>
+  <header>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <img src="fotos/IMG_4480.png" style="height:50px; width: auto;" class="logo">
+            <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
+            <nav>
+                <ul>
+			<li><a href="index.html">Chuteiras </a></li>
+                    <li><a href="bolas.html">Bolas de Futsal</a></li>
+                    <li><a href="pastas.html">Pastas Desportivas</a></li>
+                    <li><a href="meias.html">Meias Desportivas</a></li>
+                    <li><a href="promo.html">Artigos Desportivos</a></li>
+			              <li><a href="entrega.html">Calcular Preço da Entrega</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+	 
+
+  
+	
+<a class="whatsapp-link" href="https://api.whatsapp.com/send?phone=244943379573"target="_blank"> <i class="fa fa-whatsapp"></i> </a>	 
+
+  <main>
+	  
+   <div class="container">
+        <h4>Calculadora de Entrega Be Sporty</h4>
+        
+        <div class="form">
+            <label for="municipio">Selecione o Município:</label>
+            <select id="municipio">
+                <option value="">Selecione...</option>
+            </select><br><br>
+
+            <label for="bairro">Selecione o Bairro:</label>
+            <select id="bairro">
+                <option value="">Selecione...</option>
+                <!-- Opções de bairros populadas dinamicamente -->
+            </select><br><br>
+
+            <button onclick="calcularEntrega()">Calcular</button>
+        </div>
+
+        <div id="resultado" class="resultado">
+            <!-- Aqui vai aparecer o resultado do cálculo -->
+        </div>
+    </div>
+    
+  </main>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Adiciona evento de clique para todos os botões de comprar
+    var buyButtons = document.querySelectorAll('.comprarBtn');
+    buyButtons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        var productName = this.getAttribute('data-product');
+        var productImg = this.getAttribute('data-img');
+        var productPrice = this.getAttribute('data-price');
+
+        // Monta a mensagem inicial com a imagem do produto
+        var mensagem = `Olá, estou interessado no(a) ${productName} por ${productPrice}:`;
+        var linkWhatsApp = `https://api.whatsapp.com/send?phone=244943379573&text=${encodeURIComponent(mensagem)}%0A${encodeURIComponent(productImg)}`;
+
+        // Abre o WhatsApp com a mensagem pré-preenchida e a imagem do produto
+        window.open(linkWhatsApp, '_blank');
+      });
+    });
+  });
+</script>
+	 <script>
+        // Função para alternar a exibição do menu em dispositivos móveis
+        function toggleMenu() {
+            var navUl = document.querySelector('nav ul');
+            navUl.classList.toggle('active');
+        }
+   function popularMunicipios() {
+            // Lista dos 7 municípios de Luanda
+            var municipios = ['Luanda', 'Belas', 'Cacuaco', 'Cazenga', 'Kilamba Kiaxi', 'Viana'];
+
+            var selectMunicipio = document.getElementById('municipio');
+            municipios.forEach(function(municipio) {
+                var option = document.createElement('option');
+                option.text = municipio;
+                option.value = municipio;
+                selectMunicipio.add(option);
+            });
+        }
+
+        function popularBairros(municipioSelecionado) {
+            // Exemplo de mapeamento de bairros por município
+            var bairrosPorMunicipio = {
+                'Luanda': ['Ingombota', 'Maianga', 'Samba'],
+                'Belas': ['Talatona', 'Benfica', 'Morro Bento','Kilamba'],
+                'Cacuaco': ['Sequele', 'Kicolo', 'Cacuaco', 'Morro Bento'],
+                'Cazenga': ['Hoji Ya Henda', 'Tala Hady', 'Cazenga'],
+                'Kilamba Kiaxi': ['Nova Vida', 'Camama', 'Golf 2'],
+                'Viana': ['Estalagem', 'Zango', 'Calumbo']
+            };
+
+            var bairros = bairrosPorMunicipio[municipioSelecionado] || [];
+
+            var selectBairro = document.getElementById('bairro');
+            selectBairro.innerHTML = '<option value="">Selecione...</option>'; // Limpar opções anteriores
+
+            bairros.forEach(function(bairro) {
+                var option = document.createElement('option');
+                option.text = bairro;
+                option.value = bairro;
+                selectBairro.add(option);
+            });
+        }
+
+        function calcularEntrega() {
+            var municipio = document.getElementById('municipio').value;
+            var bairro = document.getElementById('bairro').value;
+
+            if (!municipio || !bairro) {
+                alert('Por favor, selecione um município e um bairro.');
+                return;
+            }
+
+            // Tabela de custos adicionais
+            var custosAdicionais = {
+                'Luanda': {'Ingombota': 2000, 'Maianga': 2050, 'Samba': 2000},
+                'Belas': {'Talatona': 2050, 'Benfica': 2100, 'Morro Bento': 2150, 'Kilamba': 2150},
+                'Cacuaco': {'Sequele': 3900, 'Kicolo': 3250, 'Cacuaco': 3300},
+                'Cazenga': {'Hoji Ya Henda': 2600, 'Tala Hady': 2550, 'Cazenga': 2500},
+                'Kilamba Kiaxi': {'Nova Vida': "Grátis", 'Camama': 1100, 'Golf 2': 1000},
+                'Viana': {'Estalagem': 3100, 'Zango': 3150, 'Calumbo': 3200}
+            };
+
+            var custoAdicional = custosAdicionais[municipio][bairro] || 0;
+            var custoEntrega = 820 + custoAdicional;
+
+            var resultado = {
+                municipio: municipio,
+                bairro: bairro,
+                preco: custoEntrega
+            };
+
+            mostrarResultado(resultado);
+        }
+
+        function mostrarResultado(resultado) {
+            var resultadoElement = document.getElementById('resultado');
+            resultadoElement.innerHTML = '<h2>Cálculo Be Sporty:</h2>' +
+                                         '<p>Município: ' + resultado.municipio + '</p>' +
+                                         '<p>Bairro: ' + resultado.bairro + '</p>' +
+                                         '<p>Preço da entrega: ' + resultado.preco.toLocaleString('pt-PT', { style: 'currency', currency: 'AOA' }) + '</p>';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            popularMunicipios();
+
+            var selectMunicipio = document.getElementById('municipio');
+            selectMunicipio.addEventListener('change', function() {
+                var municipioSelecionado = selectMunicipio.value;
+                if (municipioSelecionado) {
+                    popularBairros(municipioSelecionado);
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>
