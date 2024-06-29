@@ -675,7 +675,7 @@ header {
         function popularBairros(municipioSelecionado) {
             // Exemplo de mapeamento de bairros por município
             var bairrosPorMunicipio = {
-                'Luanda': ['Ingombota', 'Maianga', 'Samba''Aeroporto'],
+                'Luanda': ['Ingombota', 'Maianga', 'Samba','Aeroporto'],
                 'Belas': ['Talatona', 'Benfica', 'Morro Bento','Kilamba'],
                 'Cacuaco': ['Sequele', 'Kicolo', 'Cacuaco', 'Morro Bento'],
                 'Cazenga': ['Hoji Ya Henda', 'Tala Hady', 'Cazenga'],
@@ -716,7 +716,7 @@ header {
             };
 
             var custoAdicional = custosAdicionais[municipio][bairro] || 0;
-            var custoEntrega = 820 + custoAdicional;
+            var custoEntrega = 800 + custoAdicional;
 
             var resultado = {
                 municipio: municipio,
