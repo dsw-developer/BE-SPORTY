@@ -19,17 +19,18 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
 	  <style>
-		/* Modo Claro */
-body.light-mode {
-    background-color: #ffffff;
-    color: #000000;
+		/* Estilos para o tema claro (sol) */
+.light-theme {
+    background-color: #fff; /* Cor de fundo clara */
+    color: #333; /* Cor do texto escura */
 }
 
-/* Modo Escuro */
-body.dark-mode {
-    background-color: #1a1a1a;
-    color: #ffffff;
+/* Estilos para o tema escuro (lua) */
+.dark-theme {
+    background-color: #333; /* Cor de fundo escura */
+    color: #fff; /* Cor do texto clara */
 }
+
 
     body {
       font-family: 'Arial', sans-serif;
@@ -528,7 +529,8 @@ body {
                     <li><a href="meias.html">Meias Desportivas</a></li>
                     <li><a href="promo.html">Artigos Desportivos</a></li>
 		 <li><a href="entrega.html">Calcular o valor da entrega</a></li>
-		<input type="radio" id="toggle" name="toggle" value="is_on"* < label for="toggle" class="toy-toggle"onclick="toggleMode()">
+		<button id="theme-toggle">Alterar tema</button>
+
 		
 		  
 
@@ -1024,11 +1026,16 @@ body {
             var navUl = document.querySelector('nav ul');
             navUl.classList.toggle('active');
         }
-function toggleMode() {
-    let body = document.body;
-    body.classList.toggle('light-mode');
-    body.classList.toggle('dark-mode');
-}
+document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    themeToggle.addEventListener('click', function() {
+        body.classList.toggle('light-theme');
+        body.classList.toggle('dark-theme');
+    });
+});
+
     </script>
 	
 </body>
