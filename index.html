@@ -19,17 +19,17 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
 	  <style>
-		  /* Modo Claro */
-body.light-mode {
-    background-color: #ffffff;
-    color: #000000;
+		#mode-toggle {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
-/* Modo Escuro */
-body.dark-mode {
-    background-color: #1a1a1a;
-    color: #ffffff;
+#mode-icon {
+    width: 24px; /* Ajuste o tamanho conforme necessário */
+    height: 24px;
 }
+
     body {
       font-family: 'Arial', sans-serif;
       margin: 0;
@@ -526,7 +526,9 @@ body {
                     <li><a href="meias.html">Meias Desportivas</a></li>
                     <li><a href="promo.html">Artigos Desportivos</a></li>
 		 <li><a href="entrega.html">Calcular o valor da entrega</a></li>
-		<label for="dark-mode" type="onclick="toggleMode()">
+		<button onclick="toggleMode()" id="mode-toggle">
+    <img src="light-mode-icon.svg" id="mode-icon" alt="Modo Claro">
+</button>
                 </ul>
             </nav>
         </div>
@@ -1019,10 +1021,22 @@ body {
             var navUl = document.querySelector('nav ul');
             navUl.classList.toggle('active');
         }
-	 function toggleMode() {
+function toggleMode() {
     let body = document.body;
-    body.classList.toggle('light-mode');
-    body.classList.toggle('dark-mode');
+    let modeToggle = document.getElementById('mode-toggle');
+    let modeIcon = document.getElementById('mode-icon');
+
+    if (body.classList.contains('light-mode')) {
+        body.classList.remove('light-mode');
+        body.classList.add('dark-mode');
+        modeIcon.src = 'dark-mode-icon.svg'; // Altere para o ícone do modo escuro
+        modeIcon.alt = 'Modo Escuro';
+    } else {
+        body.classList.remove('dark-mode');
+        body.classList.add('light-mode');
+        modeIcon.src = 'light-mode-icon.svg'; // Altere para o ícone do modo claro
+        modeIcon.alt = 'Modo Claro';
+    }
 }
     </script>
 	
