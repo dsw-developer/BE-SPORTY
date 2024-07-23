@@ -19,15 +19,16 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
 	  <style>
-		#mode-toggle {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
+		/* Modo Claro */
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
 }
 
-#mode-icon {
-    width: 24px; /* Ajuste o tamanho conforme necessário */
-    height: 24px;
+/* Modo Escuro */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
 }
 
     body {
@@ -1023,20 +1024,8 @@ body {
         }
 function toggleMode() {
     let body = document.body;
-    let modeToggle = document.getElementById('mode-toggle');
-    let modeIcon = document.getElementById('mode-icon');
-
-    if (body.classList.contains('light-mode')) {
-        body.classList.remove('light-mode');
-        body.classList.add('dark-mode');
-        modeIcon.src = 'dark-mode-icon.svg'; // Altere para o ícone do modo escuro
-        modeIcon.alt = 'Modo Escuro';
-    } else {
-        body.classList.remove('dark-mode');
-        body.classList.add('light-mode');
-        modeIcon.src = 'light-mode-icon.svg'; // Altere para o ícone do modo claro
-        modeIcon.alt = 'Modo Claro';
-    }
+    body.classList.toggle('light-mode');
+    body.classList.toggle('dark-mode');
 }
     </script>
 	
