@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html>
 <head>
 	
@@ -19,18 +19,6 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
 	  <style>
-		/* Modo Claro */
-body.light-mode {
-    background-color: #ffffff;
-    color: #000000;
-}
-
-/* Modo Escuro */
-body.dark-mode {
-    background-color: #1a1a1a;
-    color: #ffffff;
-}
-
     body {
       font-family: 'Arial', sans-serif;
       margin: 0;
@@ -515,21 +503,18 @@ body {
 
 </head>
 <body>
-	
   <header>
         <div style="display: flex; justify-content: space-between; align-items: center;">
             <img src="fotos/IMG_4480.png" style="height:50px; width: auto;" class="logo">
             <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
             <nav>
                 <ul>
-			<li><a href="index.html">Chuteiras </a></li>
+				<li><a href="index.html">Chuteiras </a></li>
                     <li><a href="bolas.html">Bolas de Futsal</a></li>
                     <li><a href="pastas.html">Pastas Desportivas</a></li>
                     <li><a href="meias.html">Meias Desportivas</a></li>
                     <li><a href="promo.html">Artigos Desportivos</a></li>
 		 <li><a href="entrega.html">Calcular o valor da entrega</a></li>
-		   <img src="fotos/IMG_5365.png" style="height:30px; width:30px;"  onclick="toggleMode()">
-
                 </ul>
             </nav>
         </div>
@@ -1022,11 +1007,6 @@ body {
             var navUl = document.querySelector('nav ul');
             navUl.classList.toggle('active');
         }
-function toggleMode() {
-    let body = document.body;
-    body.classList.toggle('light-mode');
-    body.classList.toggle('dark-mode');
-}
     </script>
 	
 </body>
