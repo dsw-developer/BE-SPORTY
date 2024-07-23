@@ -19,6 +19,17 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
 	  <style>
+		  /* Modo Claro */
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Modo Escuro */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
     body {
       font-family: 'Arial', sans-serif;
       margin: 0;
@@ -515,6 +526,7 @@ body {
                     <li><a href="meias.html">Meias Desportivas</a></li>
                     <li><a href="promo.html">Artigos Desportivos</a></li>
 		 <li><a href="entrega.html">Calcular o valor da entrega</a></li>
+		<button onclick="toggleMode()">Alternar Modo</button>
                 </ul>
             </nav>
         </div>
@@ -1007,6 +1019,11 @@ body {
             var navUl = document.querySelector('nav ul');
             navUl.classList.toggle('active');
         }
+	 function toggleMode() {
+    let body = document.body;
+    body.classList.toggle('light-mode');
+    body.classList.toggle('dark-mode');
+}
     </script>
 	
 </body>
