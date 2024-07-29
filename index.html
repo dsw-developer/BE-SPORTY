@@ -554,7 +554,7 @@ body {
     </div>
 	<div class="product">
     <h2>Chuteira Team Quest</h2>
-    <video width="280" height="280" controls autoplay muted>
+    <video width="280" height="280" controls autoplay muted playsinline>
         <source src="fotos/f81bbe77c64f4945ab2e0e7216b1d4f0.mov" type="video/quicktime">
 
     </video>
@@ -1012,6 +1012,15 @@ body {
             navUl.classList.toggle('active');
         }
     </script>
+	<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var video = document.querySelector('video');
+        if (video) {
+            video.play();
+        }
+    });
+</script>
+
 	
 </body>
 </html>
