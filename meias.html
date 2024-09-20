@@ -488,6 +488,33 @@ header {
 
   <main>
 	  <div class="product">
+    <h2>Chuteira Team Quest</h2>
+    <video width="280" height="280" autoplay muted loop playsinline preload="none" poster="fotos/D893BDF7-48D4-41F3-BE5A-A5AA025D0BBD.jpeg">
+        <source src="fotos/7868fdf77dfa4c408ea7948bea56fbbf.mp4" type="video/mp4">
+    </video>
+
+    <p>A chuteira Team Quest é a escolha certa para quem busca desempenho e estilo nas quadras de futsal. Com cabedal em malha respirável, entressola responsiva e solado de borracha aderente, essa chuteira é perfeita para jogadores de futsal que querem dar o seu melhor.</p>
+    
+    <label>Tamanhos disponíveis</label>                 
+    <select>
+        <option>Tamanho 40</option>
+    </select>
+    <br>
+    
+    <label>Proponha seu preço:</label>
+    <input type="text" id="propostaPreco" placeholder="Digite o valor em Kz">
+    <button onclick="enviarProposta()">Enviar Proposta</button>
+    
+    <script>
+        function enviarProposta() {
+            const proposta = document.getElementById('propostaPreco').value;
+            const mensagem = `Olá, gostaria de propor o preço de ${proposta} pela Chuteira Team Quest.`;
+            const whatsappLink = `https://wa.me/943379573?text=${encodeURIComponent(mensagem)}`;
+            window.open(whatsappLink, '_blank');
+        }
+    </script>
+</div>
+	  <div class="product">
       <h2> Meias desportiva Kipsta  </h2>
       <img src="fotos/111.jpeg" alt="Chuteira Nike Mercurial">
 	<p>As meias da marca Kipsta, da Decathlon, são projetadas para oferecer conforto, durabilidade e desempenho para atletas de esportes coletivos, como futebol, basquete, rugby e outros.</p>
