@@ -485,10 +485,9 @@ header {
 <a class="whatsapp-link" href="https://api.whatsapp.com/send?phone=244943379573"target="_blank"> <i class="fa fa-whatsapp"></i> </a>	 
 
   <main>
-	  <div class="product">
+	<div class="product">
     <h2>Chuteira Joma Usada</h2>
-    <img src="fotos/43E482BB-C984-4D5C-B907-2CCB813AEDDB.jpeg
-" alt="Usadas" id="productImage" style="max-width:300px;">
+    <img src="fotos/43E482BB-C984-4D5C-B907-2CCB813AEDDB.jpeg" alt="Usadas" id="productImage" style="max-width:300px;">
 
     <p>A chuteira Joma foi utilizada poucas vezes e ainda se encontra em bom estado, como pode ser observado na fotografia apresentada acima.</p>
 
@@ -499,27 +498,12 @@ header {
     <br>
 
     <label>Proponha seu preço:</label>
-    <input type="text" id="propostaPreco" placeholder="Digite o valor em Kz">
+    <input type="text" id="propostaPrecoJoma" placeholder="Digite o valor em Kz">
     
-    <button data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/43E482BB-C984-4D5C-B907-2CCB813AEDDB.jpeg
-" onclick="enviarProposta()">Enviar Proposta</button>
-		   <script>
-        function enviarProposta() {
-            const proposta = document.getElementById('propostaPreco').value;
-            const imgSrc = document.querySelector('button').getAttribute('data-img');
-            
-            // Mensagem para WhatsApp com preço e link da imagem
-            const mensagem = `Olá, gostaria de propor o preço de ${proposta} Kz pela Chuteira Joma usada.`;
-            const whatsappLink = `https://wa.me/943379573?text=${encodeURIComponent(mensagem)}`;
-	    const imgSrc = document.querySelector('button').getAttribute('https://dsw-developer.github.io/BE-SPORTY/fotos/43E482BB-C984-4D5C-B907-2CCB813AEDDB.jpeg');	
-
-            // Abrir o link do WhatsApp com a mensagem, foto e preço
-            window.open(whatsappLink, '_blank');
-        }
-    </script>
-		  
+    <button data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/43E482BB-C984-4D5C-B907-2CCB813AEDDB.jpeg" onclick="enviarProposta('propostaPrecoJoma', this)">Enviar Proposta</button>
 </div>
-	<div class="product">
+
+<div class="product">
     <h2>Chuteira Kipsta Usada</h2>
     <img src="fotos/B291BCE5-0B49-4BE5-A7A8-3D967A4929C8.jpeg" alt="Usadas" id="productImage" style="max-width:300px;">
 
@@ -532,25 +516,24 @@ header {
     <br>
 
     <label>Proponha seu preço:</label>
-    <input type="text" id="propostaPreco" placeholder="Digite o valor em Kz">
+    <input type="text" id="propostaPrecoKipsta" placeholder="Digite o valor em Kz">
     
-    <button data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/B291BCE5-0B49-4BE5-A7A8-3D967A4929C8.jpeg" onclick="enviarProposta()">Enviar Proposta</button>
-
-    <script>
-        function enviarProposta() {
-            const proposta = document.getElementById('propostaPreco').value;
-            const imgSrc = document.querySelector('button').getAttribute('data-img');
-            
-            // Mensagem para WhatsApp com preço e link da imagem
-            const mensagem = `Olá, gostaria de propor o preço de ${proposta} Kz pela Chuteira Kipsta usada.`;
-            const whatsappLink = `https://wa.me/943379573?text=${encodeURIComponent(mensagem)}`;
-	    const imgSrc = document.querySelector('button').getAttribute('https://dsw-developer.github.io/BE-SPORTY/fotos/B291BCE5-0B49-4BE5-A7A8-3D967A4929C8.jpeg');	
-
-            // Abrir o link do WhatsApp com a mensagem, foto e preço
-            window.open(whatsappLink, '_blank');
-        }
-    </script>
+    <button data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/B291BCE5-0B49-4BE5-A7A8-3D967A4929C8.jpeg" onclick="enviarProposta('propostaPrecoKipsta', this)">Enviar Proposta</button>
 </div>
+
+<script>
+    function enviarProposta(inputId, buttonElement) {
+        const proposta = document.getElementById(inputId).value;
+        const imgSrc = buttonElement.getAttribute('data-img');
+        
+        // Mensagem para WhatsApp com preço e link da imagem
+        const mensagem = `Olá, gostaria de propor o preço de ${proposta} Kz. Confira a imagem do produto aqui: ${imgSrc}`;
+        const whatsappLink = `https://wa.me/943379573?text=${encodeURIComponent(mensagem)}`;
+
+        // Abrir o link do WhatsApp com a mensagem, foto e preço
+        window.open(whatsappLink, '_blank');
+    }
+</script>
 
  
 
