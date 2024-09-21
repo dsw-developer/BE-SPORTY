@@ -526,29 +526,10 @@ header {
             return; // Se vazio, não continua o envio
         }
         
-       // Função para validar e converter o valor
-function validarProposta(proposta) {
-    // Remove " Kz" e espaços
-    proposta = proposta.replace(/ Kz/g, '').trim();
-    
-    // Substitui pontos por nada e vírgulas por pontos
-    proposta = proposta.replace(/\./g, '').replace(/,/g, '.');
-
-    // Tenta converter para número
-    const valorNumerico = parseFloat(proposta);
-
-    if (isNaN(valorNumerico) || valorNumerico <= 0) {
-        alert('Por favor, insira um valor numérico válido.');
-        return; // Se não for numérico, não continua o envio
-    }
-
-    // Continue com o processamento do valor válido
-    console.log('Valor válido:', valorNumerico);
-}
-
-// Exemplo de uso
-validarProposta('00.000,00 Kz');
-
+        // Verifica se o valor é numérico
+        if (isNaN(proposta) || proposta <= 0) {
+            alert('Por favor, insira um valor numérico válido.');
+            return; // Se não for numérico, não continua o envio
         }
 
         // Mensagem para WhatsApp com preço e link da imagem
