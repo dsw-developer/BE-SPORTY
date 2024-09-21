@@ -527,7 +527,7 @@ header {
         const imgSrc = buttonElement.getAttribute('data-img');
         
         // Mensagem para WhatsApp com preço e link da imagem
-        const mensagem = `Olá, gostaria de propor o preço de ${proposta} Kz. Confira a imagem do produto aqui: ${imgSrc}`;
+        const mensagem = `Olá, gostaria de propor o preço de ${proposta} Kz. ${imgSrc}`;
         const whatsappLink = `https://wa.me/943379573?text=${encodeURIComponent(mensagem)}`;
 
         // Abrir o link do WhatsApp com a mensagem, foto e preço
