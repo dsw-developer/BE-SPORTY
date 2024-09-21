@@ -487,10 +487,20 @@ header {
   <main>
 	<div class="product">
     <h2>Chuteira Joma Usada</h2>
-    <img src="fotos/43E482BB-C984-4D5C-B907-2CCB813AEDDB.jpeg" alt="Usadas" id="productImage">
-    <p>A chuteira Joma foi utilizada poucas vezes e ainda se encontra em bom estado, como pode ser observado na fotografia apresentada acima.</p>
 
-    <label>Tamanho disponível:</label>                 
+    <!-- Imagem Principal -->
+    <img id="mainImageJoma" src="fotos/43E482BB-C984-4D5C-B907-2CCB813AEDDB.jpeg" alt="Chuteira Joma Usada" style="width: 300px; height: 300px;">
+    
+    <!-- Galeria de Miniaturas -->
+    <div class="thumbnails">
+        <img src="fotos/43E482BB-C984-4D5C-B907-2CCB813AEDDB.jpeg" alt="Chuteira Joma 1" onclick="trocarImagem('fotos/43E482BB-C984-4D5C-B907-2CCB813AEDDB.jpeg', 'mainImageJoma')" style="width: 100px; cursor: pointer;">
+        <img src="43E482BB-C984-4D5C-B907-2CCB813AEDDB.jpeg" alt="Chuteira Joma 2" onclick="trocarImagem('fotos/Joma2.jpeg', 'mainImageJoma')" style="width: 100px; cursor: pointer;">
+        <img src="fotos/Joma3.jpeg" alt="Chuteira Joma 3" onclick="trocarImagem('fotos/Joma3.jpeg', 'mainImageJoma')" style="width: 100px; cursor: pointer;">
+    </div>
+
+    <p>A chuteira Joma foi utilizada poucas vezes e ainda se encontra em bom estado, como pode ser observado nas fotografias apresentadas acima.</p>
+
+    <label>Tamanho disponível:</label>
     <select>
         <option>Tamanho 40</option>
     </select>
@@ -500,36 +510,26 @@ header {
     <button data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/43E482BB-C984-4D5C-B907-2CCB813AEDDB.jpeg" onclick="enviarProposta('propostaPrecoJoma', this)">Enviar Proposta</button>
 </div>
 
-<div class="product">
-    <h2>Chuteira Kipsta Usada</h2>
-    <img src="fotos/B291BCE5-0B49-4BE5-A7A8-3D967A4929C8.jpeg" alt="Usadas" id="productImage">
-    <p>A chuteira Kipsta foi utilizada poucas vezes e ainda se encontra em bom estado, como pode ser observado na fotografia apresentada acima.</p>
-    
-    <label>Tamanho disponível:</label>                 
-    <select>
-        <option>Tamanho 40</option>
-    </select>
-    <br>
-    <label>Proponha seu preço:</label>
-    <input type="text" id="propostaPrecoKipsta" placeholder="Digite o valor em Kz">
-    <button data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/B291BCE5-0B49-4BE5-A7A8-3D967A4929C8.jpeg" onclick="enviarProposta('propostaPrecoKipsta', this)">Enviar Proposta</button>
-</div>
-
 <script>
+    // Função para trocar a imagem principal ao clicar nas miniaturas
+    function trocarImagem(novaImagem, imgElementId) {
+        document.getElementById(imgElementId).src = novaImagem;
+    }
+
     function enviarProposta(inputId, buttonElement) {
         const proposta = document.getElementById(inputId).value;
         const imgSrc = buttonElement.getAttribute('data-img');
-        
+
         // Verifica se o campo de proposta está vazio
         if (!proposta) {
             alert('Por favor, insira um valor antes de enviar sua proposta.');
-            return; // Se vazio, não continua o envio
+            return;
         }
-        
+
         // Verifica se o valor é numérico
         if (isNaN(proposta) || proposta <= 0) {
             alert('Por favor, insira um valor numérico válido.');
-            return; // Se não for numérico, não continua o envio
+            return;
         }
 
         // Mensagem para WhatsApp com preço e link da imagem
@@ -540,13 +540,6 @@ header {
         window.open(whatsappLink, '_blank');
     }
 </script>
-
-
-
-
-
- 
-
     
   </main>
 <script>
