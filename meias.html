@@ -528,8 +528,9 @@ header {
             const imgSrc = document.querySelector('button').getAttribute('data-img');
             
             // Mensagem para WhatsApp com preço e link da imagem
-            const mensagem = `Olá, gostaria de propor o preço de ${proposta} Kz pela Chuteira Kipsta usada. Confira a imagem do produto:'data-img' `;
+            const mensagem = `Olá, gostaria de propor o preço de ${proposta} Kz pela Chuteira Kipsta usada.`;
             const whatsappLink = `https://wa.me/943379573?text=${encodeURIComponent(mensagem)}`;
+	    const imgSrc = document.querySelector('button').getAttribute('data-img');	
 
             // Abrir o link do WhatsApp com a mensagem, foto e preço
             window.open(whatsappLink, '_blank');
