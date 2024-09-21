@@ -487,7 +487,7 @@ header {
   <main>
 	<div class="product">
     <h2>Chuteira Joma Usada</h2>
-    <img src="fotos/43E482BB-C984-4D5C-B907-2CCB813AEDDB.jpeg" alt="Usadas" id="productImage" style="max-width:300px;">
+    <img src="fotos/43E482BB-C984-4D5C-B907-2CCB813AEDDB.jpeg" alt="Usadas" id="productImage">
 
     <p>A chuteira Joma foi utilizada poucas vezes e ainda se encontra em bom estado, como pode ser observado na fotografia apresentada acima.</p>
 
@@ -500,12 +500,12 @@ header {
     <label>Proponha seu preço:</label>
     <input type="text" id="propostaPrecoJoma" placeholder="Digite o valor em Kz">
     
-    <button  onclick="enviarProposta('propostaPrecoJoma', this)">Enviar Proposta</button>
+    <button data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/43E482BB-C984-4D5C-B907-2CCB813AEDDB.jpeg" onclick="enviarProposta('propostaPrecoJoma', this)">Enviar Proposta</button>
 </div>
 
 <div class="product">
     <h2>Chuteira Kipsta Usada</h2>
-    <img src="fotos/B291BCE5-0B49-4BE5-A7A8-3D967A4929C8.jpeg" alt="Usadas" id="productImage" style="max-width:300px;">
+    <img src="fotos/B291BCE5-0B49-4BE5-A7A8-3D967A4929C8.jpeg" alt="Usadas" id="productImage" >
 
     <p>A chuteira Kipsta foi utilizada poucas vezes e ainda se encontra em bom estado, como pode ser observado na fotografia apresentada acima.</p>
 
@@ -518,7 +518,7 @@ header {
     <label>Proponha seu preço:</label>
     <input type="text" id="propostaPrecoKipsta" placeholder="Digite o valor em Kz">
     
-    <button onclick="enviarProposta('propostaPrecoKipsta', this)">Enviar Proposta</button>
+    <button data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/B291BCE5-0B49-4BE5-A7A8-3D967A4929C8.jpeg" onclick="enviarProposta('propostaPrecoKipsta', this)">Enviar Proposta</button>
 </div>
 
 <script>
@@ -534,6 +534,7 @@ header {
         window.open(whatsappLink, '_blank');
     }
 </script>
+
 
  
 
