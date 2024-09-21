@@ -502,30 +502,21 @@ header {
     
     <button data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/B291BCE5-0B49-4BE5-A7A8-3D967A4929C8.jpeg" onclick="enviarProposta()">Enviar Proposta</button>
 
-    <div id="produtoInfo" class="produtoInfo"></div>
-
     <script>
         function enviarProposta() {
             const proposta = document.getElementById('propostaPreco').value;
             const imgSrc = document.querySelector('button').getAttribute('data-img');
             
-            // Mensagem para WhatsApp
-            const mensagem = `Olá, gostaria de propor o preço de ${proposta} Kz pela Chuteira Kipsta usada. Veja a imagem do produto abaixo:`;
-            const whatsappLink = `https://wa.me/943379573?text=${encodeURIComponent(mensagem)}%0A%0A${encodeURIComponent(imgSrc)}`;
+            // Mensagem para WhatsApp com preço e link da imagem
+            const mensagem = `Olá, gostaria de propor o preço de ${proposta} Kz pela Chuteira Kipsta usada. Confira a imagem do produto: ${imgSrc}`;
+            const whatsappLink = `https://wa.me/943379573?text=${encodeURIComponent(mensagem)}`;
 
-            // Abrir link no WhatsApp
+            // Abrir o link do WhatsApp com a mensagem, foto e preço
             window.open(whatsappLink, '_blank');
-
-            // Exibir imagem e preço na página
-            const produtoInfoDiv = document.getElementById('produtoInfo');
-            produtoInfoDiv.innerHTML = `
-                <h3>Proposta Enviada:</h3>
-                <img src= https://dsw-developer.github.io/BE-SPORTY/fotos/B291BCE5-0B49-4BE5-A7A8-3D967A4929C8.jpeg"" alt="Chuteira Kipsta" style="max-width:300px;">
-                <p>Preço proposto: ${proposta} Kz</p>
-            `;
         }
     </script>
 </div>
+
  
 
     
