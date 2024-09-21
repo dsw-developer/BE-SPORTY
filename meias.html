@@ -503,6 +503,20 @@ header {
     
     <button data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/43E482BB-C984-4D5C-B907-2CCB813AEDDB.jpeg
 " onclick="enviarProposta()">Enviar Proposta</button>
+		   <script>
+        function enviarProposta() {
+            const proposta = document.getElementById('propostaPreco').value;
+            const imgSrc = document.querySelector('button').getAttribute('data-img');
+            
+            // Mensagem para WhatsApp com preço e link da imagem
+            const mensagem = `Olá, gostaria de propor o preço de ${proposta} Kz pela Chuteira Joma usada.`;
+            const whatsappLink = `https://wa.me/943379573?text=${encodeURIComponent(mensagem)}`;
+	    const imgSrc = document.querySelector('button').getAttribute('https://dsw-developer.github.io/BE-SPORTY/fotos/43E482BB-C984-4D5C-B907-2CCB813AEDDB.jpeg');	
+
+            // Abrir o link do WhatsApp com a mensagem, foto e preço
+            window.open(whatsappLink, '_blank');
+        }
+    </script>
 		  
 </div>
 	<div class="product">
