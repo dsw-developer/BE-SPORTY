@@ -500,13 +500,14 @@ header {
     
     <label>Proponha seu preço:</label>
     <input type="text" id="propostaPreco" placeholder="Digite o valor em Kz">
- <button class="comprarBtn" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/B291BCE5-0B49-4BE5-A7A8-3D967A4929C8.jpeg"  onclick="enviarProposta()">Enviar Proposta</button>
+ <button data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/B291BCE5-0B49-4BE5-A7A8-3D967A4929C8.jpeg"  onclick="enviarProposta()">Enviar Proposta</button>
     
     <script>
         function enviarProposta() {
             const proposta = document.getElementById('propostaPreco').value;
             const mensagem = `Olá, gostaria de propor o preço de ${proposta} pela Chuteira kipsta usada.`;
             const whatsappLink = `https://wa.me/943379573?text=${encodeURIComponent(mensagem)}`;
+	    const imgSrc = button.getAttribute('data-img');	
             window.open(whatsappLink, '_blank');
         }
     </script>
