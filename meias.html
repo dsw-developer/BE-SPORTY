@@ -517,29 +517,33 @@ header {
 
 <script>
     function enviarProposta(inputId, buttonElement) {
-        const proposta = document.getElementById(inputId).value;
+        const propostaInput = document.getElementById(inputId);
+        let proposta = propostaInput.value;
         const imgSrc = buttonElement.getAttribute('data-img');
         
-        // Verifica se o campo de proposta está vazio
-        if (!proposta) {
-            alert('Por favor, insira um valor antes de enviar sua proposta.');
-            return; // Se vazio, não continua o envio
-        }
+        // Formata o valor com espaços como separadores de milhar
+        proposta = proposta.replace(/\./g, '').replace(/,/g, '.'); // Normaliza
+        proposta = parseFloat(proposta);
         
-        // Verifica se o valor é numérico
         if (isNaN(proposta) || proposta <= 0) {
             alert('Por favor, insira um valor numérico válido.');
             return; // Se não for numérico, não continua o envio
         }
 
+        const propostaFormatada = proposta.toLocaleString('pt-BR', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+
         // Mensagem para WhatsApp com preço e link da imagem
-        const mensagem = `Olá, gostaria de propor o preço de ${proposta} Kz. ${imgSrc}`;
+        const mensagem = `Olá, gostaria de propor o preço de ${propostaFormatada} Kz. ${imgSrc}`;
         const whatsappLink = `https://wa.me/943379573?text=${encodeURIComponent(mensagem)}`;
 
         // Abrir o link do WhatsApp com a mensagem, foto e preço
         window.open(whatsappLink, '_blank');
     }
 </script>
+
 
 
 
