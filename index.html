@@ -354,34 +354,82 @@ header {
         nav ul li a:hover {
             background-color: #005082;
         }
-        /* Ícone de menu para dispositivos móveis */
-        .menu-icon {
-            display: none; /* Esconde o ícone por padrão */
-            color: white;
-            font-size: 24px;
+           .hamburger-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
             cursor: pointer;
+            z-index: 100;
         }
-        /* Estilo para dispositivos móveis */
-        @media screen and (max-width: 768px) {
-            nav ul {
-                display: none; /* Esconde o menu por padrão em telas menores */
-                background-color: #1C415E;
-                position: absolute;
-                top: 50px;
-                right: 0;
-                width: 100%;
-                text-align: right; /* Alinha o menu à esquerda */
-            }
-            nav ul.active {
-                display: flex; /* Exibe o menu quando estiver ativo */
-                flex-direction: column;
-            }
-            .menu-icon {
-                display: block; /* Exibe o ícone de menu em telas menores */
-                position: absolute;
-                top: 20px;
-                right: 20px; /* Alinha o ícone à esquerda */
-            }
+
+        .hamburger-menu div {
+            width: 30px;
+            height: 5px;
+            background-color: white;
+            margin: 6px 0;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+
+        .hamburger-menu.open div:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger-menu.open div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-menu.open div:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Menu Vertical */
+        .nav-menu {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background: #1C415E;
+            color: white;
+            transition: left 0.3s ease;
+            z-index: 90;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-menu.open {
+            left: 0;
+        }
+
+        .nav-menu a {
+            font-size: 2rem;
+            color: white;
+            text-decoration: none;
+            margin: 20px 0;
+            transition: transform 0.3s ease;
+            transform: rotateX(30deg);
+        }
+
+        .nav-menu a:hover {
+            transform: rotateX(10deg);
+        }
+	  .submenu {
+            display: none;
+            flex-direction: column;
+            padding-left: 20px;
+        }
+
+        .submenu a {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+
+        .nav-menu a:hover + .submenu, .submenu:hover {
+            display: flex;
         }
 		   body {
       font-family: Arial, sans-serif;
@@ -459,21 +507,33 @@ header {
 </head>
 <body>
   <header>
-        <div style="display: flex; justify-content: space-between; align-items: center;">
+<div style="display: flex; justify-content: space-between; align-items: center;">
             <img src="fotos/IMG_7171.png" style="height:50px; width: auto;" class="logo">
-            <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
-            <nav>
-                <ul>
-			<li><a href="index.html">Chuteiras de Futsal </a></li>
-                    <li><a href="bolas.html">Bolas de Futsal</a></li>
-                    <li><a href="pastas.html">Pastas Desportivas</a></li>
-               
-		 <li><a href="entrega.html">Calcular o valor da entrega</a></li>
-                </ul>
-            </nav>
+        
+
+	  <div class="hamburger-menu" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
     </header>
-	
+
+    <!-- Menu de Navegação -->
+    <div class="nav-menu" id="navMenu">
+        <a href="#">Materiais</a>
+        <div class="submenu">
+            <a href="index.html">Chuteiras de Qualidade</a>
+            <a href="bolas.html">Bolas de futsal</a>
+	    <a href="pastas.html">Pastas Desportivas</a>
+	    
+        </div>
+
+        <a href="entrega.html">Entrega</a>
+        <div class="submenu">
+            
+           
+        </div>
+    </div>
 
        <div class="slider">
     <div><img src="fotos/IMG_4481.png" alt="Imagem da Empresa"></div>
@@ -1031,7 +1091,13 @@ header {
         }
     });
 </script>
-
+ <script>
+        // Função para alternar o menu
+        function toggleMenu() {
+            document.querySelector(".hamburger-menu").classList.toggle("open");
+            document.querySelector(".nav-menu").classList.toggle("open");
+        }
+    </script>
 	
 </body>
 </html>
