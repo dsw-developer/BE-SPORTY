@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt">
 <head>
-	
-  <title>BE SPORTY</title>
-<link rel="shortcut icon" href="fotos/IMG_7171.png" type="image/x-icon">
+	<title>BE SPORTY</title>
+    <link rel="stylesheet" href="style.css?v=2">
+<script src="app.js?v=5"></script>
+
+<link rel="shortcut icon" href="fotos/IMG_7171.png" type="image/x-icon">z
 <meta name="google-site-verification" content="GYImX28YnHqwK8hyglkxfti5YSCjOsVuK3pJWwzPxss" />
   <meta charset="UTF-8">
   <meta name="description" content="Encontre aqui as melhores chuteiras para o seu esporte favorito.">
@@ -17,286 +19,247 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-
-	    <style>
-   body {
-
-    font-family: 'Arial', sans-serif;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Be Sporty - Esportes em Geral</title>
+  <style>
+    body {
       margin: 0;
-      padding: 0;
-      background: url('fotos/IMG_6539.jpeg') ;
-     
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
     }
-    /* Estilos do cabeçalho */
+
     header {
-      background-color: #1C415E;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #333;
+      padding: 1rem;
       color: white;
-      padding: 15px 20px;
-      position: fixed;
+    }
+
+    .logo {
+      height: 40px;
+    }
+
+    .hamburger-menu {
+      cursor: pointer;
+      z-index: 100;
+    }
+
+    .hamburger-menu div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 5px 0;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .hamburger-menu.open div:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger-menu.open div:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger-menu.open div:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+   .nav-menu {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: #333;
+  color: white;
+  transition: left 0.3s ease;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-menu.open {
+  left: 0;
+}
+
+.nav-menu a {
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
+  margin: 20px 0;
+  transition: transform 0.3s ease;
+  transform: rotateX(30deg);
+}
+
+.nav-menu a:hover {
+  transform: rotateX(10deg);
+}
+
+/* Submenu */
+.submenu {
+  display: none;
+  flex-direction: column;
+  padding-left: 20px;
+}
+
+.submenu a {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.nav-menu a:hover + .submenu,
+.submenu:hover {
+  display: flex;
+}
+
+    .banner {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #d3d3d3;
+    }
+
+    .banner h1 {
+      font-size: 1.5rem;
+    }
+
+    .banner p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .btn {
+      padding: 0.6rem 1.2rem;
+      background: orange;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+
+    .carrossel {
+      padding: 1rem;
+    }
+
+    .carrossel-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+    }
+
+    .produto-visivel {
+      display: flex;
+      scroll-snap-align: center;
+      gap: 1rem;
+    }
+
+    .produto {
+      min-width: 250px;
+      background: white;
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .produto img {
       width: 100%;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      border-radius: 10px;
     }
-    header .logo {
-      max-width: 150px;
-      height: auto;
+
+    .btn-nav {
+      display: none; /* escondido no mobile */
     }
-    .whatsapp-link {
-      position: fixed;
-      width: 60px;
-      height: 60px; 
-      bottom: 40px; 
-      right: 40px;
-      background-color: #25d366;
-      color: #fff;
-      border-radius: 50px;
-      text-align: center; 
-      font-size: 30px;
-      box-shadow: 1px 1px 2px #888;
-      z-index: 1000;
+
+    .sobre {
+      padding: 2rem 1rem;
+      text-align: center;
+      background: #f9f9f9;
     }
-    .fa-whatsapp {
-      margin-top: 16px;
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
     }
-    background-color: #F5F5F5;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
-    background-color: #fff;
-  }
-  .header {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  .header h1 {
-    font-size: 36px;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  .image-container {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  .image-container img {
-    max-width: 30%;
-    height: auto;
-    border-radius: 50%;
-    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
-  }
-  .description {
-    font-size: 18px;
-    color: #666;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  .button-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-  }
-  .button-list li {
-    display: inline-block;
-    margin-right: 10px;
-  }
-  .button-list li:last-child {
-    margin-right: 0;
-  }
-  .button {
-    display: inline-block;
-    background-color:#1C415E;
-    color: #fff;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
-  }
-  footer {
-    background-color: #1C415E;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-    margin-top: 40px;
-  }
-  footer ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  footer ul li {
-    display: inline;
-    margin: 0 10px;
-  }
-  footer ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-  }
-  .button:hover {
-    background-color: #005082;
-  }
-	
-		  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center horizontally */
-    justify-content: center; /* Center vertically */
+
+  
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  border-radius: 20px;
+  padding: 0.3rem 0.8rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin: 0 auto;
+  max-width: 90%;
 }
 
-.slider {
-    max-width: 100%; /* Ensure slider occupies full width */
-    width: 100%; /* Ensure slider fills its container */
-    text-align: center; /* Center slider contents */
+.search-bar input {
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  border-radius: 20px;
+  flex: 1;
+  font-size: 1rem;
 }
 
-.slider img {
-    max-width: 100%; /* Ensure images inside the slider are responsive */
-    height: auto; /* Maintain aspect ratio */
-    margin: 0 auto; /* Center the image horizontally */
+.search-bar button {
+  background: orange;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
 }
-		  /* Reset some default browser styles */
-body, ul {
-    margin: 0;
-    padding: 0;
+.produto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 45%; /* ou 48% dependendo do layout desejado */
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  background-color: white;
+  transition: transform 0.2s;
+}
+.botao-comprar {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  background: linear-gradient(to right, #ff9900, #ff6600);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
 }
 
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #f8f8f8; /* Background color for header */
+.botao-comprar:hover {
+  background: linear-gradient(to right, #ff6600, #cc3300);
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
 }
 
-
-        header {
-            background-color: #1C415E;
-            color: white;
-            padding: 15px 20px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        header .logo {
-            max-width: 150px;
-            height: auto;
-        }
-        nav ul {
-            display: flex;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        nav ul li {
-            margin-right: 10px;
-        }
-        nav ul li:last-child {
-            margin-right: 0;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: bold;
-            text-transform: uppercase;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        nav ul li a:hover {
-            background-color: #005082;
-        }
-        /* Ícone de menu para dispositivos móveis */
-        .menu-icon {
-            display: none; /* Esconde o ícone por padrão */
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-        }
-        /* Estilo para dispositivos móveis */
-        @media screen and (max-width: 768px) {
-            nav ul {
-                display: none; /* Esconde o menu por padrão em telas menores */
-                background-color: #1C415E;
-                position: absolute;
-                top: 50px;
-                left: 0;
-                width: 100%;
-                text-align: center;
-            }
-            nav ul.active {
-                display: flex; /* Exibe o menu quando estiver ativo */
-                flex-direction: column;
-            }
-            .menu-icon {
-                display: block; /* Exibe o ícone de menu em telas menores */
-                position: absolute;
-                top: 20px;
-                right: 20px;
-            }
-        }
-header {
-            background-color: #1C415E;
-            color: white;
-            padding: 15px 20px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        header .logo {
-            max-width: 150px;
-            height: auto;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        nav ul li {
-            margin-right: 20px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: background-color 0.3s, transform 0.3s;
-            display: flex;
-            align-items: center;
-        }
-
-        nav ul li a:hover {
-            background-color: #005082;
-            transform: scale(1.05);
-        }
-
-        .menu-icon {
-            margin-right: 8px;
-        }
-
-        .whatsapp-link {
+ .whatsapp-link {
             position: fixed;
             width: 60px;
             height: 60px;
@@ -314,181 +277,15 @@ header {
         .fa-whatsapp {
             margin-top: 16px;
         }
-
-header {
-            background-color: #1C415E;
-            color: white;
-            padding: 15px 20px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        header .logo {
-            max-width: 150px;
-            height: auto;
-        }
-        nav ul {
-            display: flex;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        nav ul li {
-            margin-right: 10px;
-        }
-        nav ul li:last-child {
-            margin-right: 0;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: bold;
-            text-transform: uppercase;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        nav ul li a:hover {
-            background-color: #005082;
-        }
-           .hamburger-menu {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            cursor: pointer;
-            z-index: 100;
-        }
-
-        .hamburger-menu div {
-            width: 30px;
-            height: 5px;
-            background-color: white;
-            margin: 6px 0;
-            border-radius: 3px;
-            transition: all 0.3s ease;
-        }
-
-
-        .hamburger-menu.open div:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-
-        .hamburger-menu.open div:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger-menu.open div:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
-        }
-
-        /* Menu Vertical */
-        .nav-menu {
-            position: fixed;
-            top: 0;
-            left: -250px;
-            width: 250px;
-            height: 100%;
-            background: #1C415E;
-            color: white;
-            transition: left 0.3s ease;
-            z-index: 90;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .nav-menu.open {
-            left: 0;
-        }
-
-        .nav-menu a {
-            font-size: 2rem;
-            color: white;
-            text-decoration: none;
-            margin: 20px 0;
-            transition: transform 0.3s ease;
-            transform: rotateX(30deg);
-        }
-
-        .nav-menu a:hover {
-            transform: rotateX(10deg);
-        }
-	  .submenu {
-            display: none;
-            flex-direction: column;
-            padding-left: 20px;
-        }
-
-        .submenu a {
-            font-size: 1.5rem;
-            margin: 10px 0;
-        }
-
-        .nav-menu a:hover + .submenu, .submenu:hover {
-            display: flex;
-        }
-		   body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      max-width: 800px;
-      margin: 20px auto;
-      background-color: #fff;
-      padding: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .product {
-      margin-bottom: 30px;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 20px;
-    }
-    .product h2 {
-      color: #1c415e;
-    }
-    .product img {
-      max-width: 100%;
-      height: auto;
-      margin-bottom: 10px;
-    }
-    .product p {
-      color: #666;
-      text-align: justify;
-    }
-    .product select {
-      margin-bottom: 10px;
-    }
-    .product button {
-      background-color: #1c415e;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-    .product button:hover {
-      background-color: #005082;
-    }
   </style>
-	<!-- Chatra {literal} -->
-<script>
-	$(document).ready(function(){
-    $('.slider').slick({
-        autoplay: true,
-        autoplaySpeed: 2000,
-        arrows: false,
-        dots: true
-    });
-});
+</head>
+<body>
+<header>
+  <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+    <img src="fotos/IMG_7171.png" style="height:50px; width: auto;" class="logo">
 
-    (function(d, w, c) {
+   <script>
+  (function(d, w, c) {
         w.ChatraID = 'ypLqvwmBBAGaWGQ6J';
         var s = d.createElement('script');
         w[c] = w[c] || function() {
@@ -500,604 +297,126 @@ header {
     })(document, window, 'Chatra');
 </script>
 <!-- /Chatra {/literal} -->
-	
 
-
-
-</head>
-<body>
-  <header>
-<div style="display: flex; justify-content: space-between; align-items: center;">
-            <img src="fotos/IMG_7171.png" style="height:50px; width: auto;" class="logo">
-        
-
-	  <div class="hamburger-menu" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </header>
-
-    <!-- Menu de Navegação -->
-    <div class="nav-menu" id="navMenu">
+    <!-- Ícone Menu Hamburguer -->
+    <div class="hamburger-menu" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+<div class="nav-menu" id="navMenu">
+	<a href="index.html">Home</a>
         <a href="#">Materiais</a>
         <div class="submenu">
-            <a href="index.html">Chuteiras de Qualidade</a>
-            <a href="bolas.html">Bolas de futsal</a>
-	    <a href="pastas.html">Pastas Desportivas</a>
-	    
+       <a href="chuteiras.html">Chuteiras de Qualidade</a>
+      <a href="bolas.html">Bolas de Futsal</a>
+      <a href="pastas.html">Pastas Desportivas</a>
+      <a href="promo.html">Acessórios Desportivos</a>
+    
         </div>
-
-        <a href="entrega.html">Entrega</a>
-        <div class="submenu">
-            
-           
-        </div>
-    </div>
-
-       <div class="slider">
-    <div><img src="fotos/IMG_4481.png" alt="Imagem da Empresa"></div>
-    <div><img src="fotos/IMG_4482.png" alt="Slide 2"></div>
-    <div><img src="fotos/IMG_4483.png" alt="Slide 3"></div>
-</div>  
+    <a href="entrega.html">Entrega</a>
+  </div>
+</header>
 <a class="whatsapp-link" href="https://api.whatsapp.com/send?phone=244943379573"target="_blank"> <i class="fa fa-whatsapp"></i> </a>
-	 
-  <main>
- <div class="product">
-      <h2>Chuteira Imviso Ginka</h2>
-       <video width="280" height="280"  autoplay muted loop playsinline preload="none" poster="fotos/IMG-1302.jpg">
-        <source src="fotos/ddd0d10615f343ecbb744bb44e76feaf.mp4" type="video/mp4">
-    </video>
-      <p>A chuteira Imviso, Com cabedal em material sintético, solado em borracha e design inovador, essa chuteira é ideal para jogadores de futebol que querem se destacar no campo.</p>
-      <label>Tamanhos disponíveis</label>
-<select>
 
-	<option>Indisponível</option>
-	
-
-</select>
-<br><button><del>kz 40.000.00</del></button>
-<br><button class="comprarBtn" data-product="Chuteira de futsal" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/IMG_5778.jpeg" data-price="kz 36.000.00">Comprar</button>
-  <button>Kz 36.000.00</button>
-     
-    </div>
-	<div class="product">
-    <h2>Chuteira Team Quest</h2>
-    <video width="280" height="280"  autoplay muted loop playsinline preload="none" poster="fotos/D893BDF7-48D4-41F3-BE5A-A5AA025D0BBD.jpeg">
-        <source src="fotos/7868fdf77dfa4c408ea7948bea56fbbf.mp4" type="video/mp4">
-
-    </video>
- 
-      <p>A chuteira Team Quest é a escolha certa para quem busca desempenho e estilo nas quadras de futsal. Com cabedal em malha respirável, entressola responsiva e solado de borracha aderente, essa chuteira é perfeita para jogadores de futsal que querem dar o seu melhor.</p>
-       <label>Tamanhos disponíveis</label>                 
-<select>
-
-
-
-	<option>Tamanho 40</option>
-
-</select>
-<br><button><del>kz 45.333.00</del></button>
-<br><button class="comprarBtn" data-product="Chuteira de futsal" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/D893BDF7-48D4-41F3-BE5A-A5AA025D0BBD.jpeg
-" data-price="Kz 28.000.00">Comprar</button>
-  <button>Kz 29.500.00</button>
-
-    </div>
-	
-	  <div class="product">
-      <h2>Chuteira Team Quest</h2>
-       <video width="280" height="280"  autoplay muted loop playsinline  preload="none" poster="fotos/18F6BA8E-A8EE-42D8-BA86-FD2464776FE5.jpeg">
-        <source src="fotos/aabac8e02138444e8f3ec7284cf3baec.mp4
-
-" type="video/mp4">
-	  </video>
-      <p>A chuteira Team Quest é a escolha certa para quem busca desempenho e estilo nas quadras de futsal. Com cabedal em malha respirável, entressola responsiva e solado de borracha aderente, essa chuteira é perfeita para jogadores de futsal que querem dar o seu melhor.</p>
-         <label>Tamanhos disponíveis</label>               
-<select>
-
-
-
-	<option>Tamanho 43</option>
-
-</select>
-<button><del>kz 31.875.00</del></button>
-<br><button class="comprarBtn" data-product="Chuteira de futsal" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/18F6BA8E-A8EE-42D8-BA86-FD2464776FE5.jpeg
-" data-price="Kz 26.000.00">Comprar</button>
-  <button>Kz 28.700.00</button>
-
-    </div>
-    <div class="product">
-      <h2>Chuteira Team Quest</h2>
-      <video width="280" height="280"  autoplay muted loop playsinline preload="none" poster="fotos/IMG_4353.jpeg">
-        <source src="fotos/4ebb59ff890c4358abfe20ce7f3f6848.mp4
-" type="video/mp4">
-    </video>
-      <p>A chuteira Team Quest é a escolha certa para quem busca desempenho e estilo nas quadras de futsal. Com cabedal em malha respirável, entressola responsiva e solado de borracha aderente, essa chuteira é perfeita para jogadores de futsal que querem dar o seu melhor.</p>
-         <label>Tamanhos disponíveis</label>               
-<select>
-
-
-
-	<option>Tamanho 46</option>
-
-</select>
-<button class="comprarBtn" data-product="Chuteira de futsal" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/IMG_4353.jpeg" data-price="Kz 24.000.00">Comprar</button>
-  <button>Kz 24.000.00</button>
-
-    </div>
-	  
-	<div class="product">
-      <h2>Chuteira Joma Dribling</h2>
-      <video width="280" height="280"  autoplay muted loop playsinline preload="none" poster="fotos/IMG-4202.jpg">
-        <source src="fotos/654799cd5646424bb4bfa560a74be017 2.mp4
-" type="video/mp4">
-    </video>
-      <p>A chuteira Joma preta é a escolha certa para quem busca desempenho e estilo nas quadras de futsal e relva sintética. Com cabedal em malha respirável, entressola responsiva e solado de borracha aderente, essa chuteira é perfeita para jogadores de futsal que querem dar o seu melhor.</p>
-       <label>Tamanhos disponíveis</label>       
-<select>
-
-	<option>Indisponível</option>
-	
-	
-</select>
-	<button class="comprarBtn" data-product="Chuteira de futsal" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/IMG-4202.jpg" data-price="kz 65.000.00">Comprar</button>
-  <button><del>Kz 49.000.00</del></button>
-
-    </div>
+<section class="banner">
+    <div></div>
+    <div></div>
+  <h1></h1>
   
-<div class="product">
-      <h2>Chuteira Joma Top flex </h2>
-       <video width="280" height="280"  autoplay muted loop playsinline preload="none" poster="fotos/burla.jpg">
-        <source src="fotos/7026a79780a74070871eeecb35462a62.mp4
+  <a href="#produtos" class="btn">Ver Produtos</a>
+</section>
+<section style="padding: 1rem;">
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Buscar produto...">
+    <button onclick="buscarProduto()">🔍</button>
+  </div>
+</section>
+<section class="carrossel" id="produtos">
+  <h2 style="text-align: center;">Produtos em Destaque</h2>
+  <div class="carrossel-container">
+    <div class="produto">
+      <img src="fotos/221.jpg" alt="Chuteiras de Futsal">
+      <h3>Chuteiras de Futsal</h3>
+      <p>Para jogadores de futsal</p>
+<a href="chuteiras.html"  class="botao-comprar">🛒 Ver mais</a>
 
-" type="video/mp4">
-    </video>
-      <p>A chuteira Joma Top flex branco é a escolha certa para quem busca desempenho e estilo nas quadras de futsal. Com cabedal em malha respirável, entressola responsiva e solado de borracha aderente, essa chuteira é perfeita para jogadores de futsal que querem dar o seu melhor.</p>
-        <label>Tamanhos disponíveis</label>      
-<select>
-
-	<option>Tamanho 46.5 </option>
-	
-
-</select>
-	<button class="comprarBtn" data-product="Chuteira de futsal" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/burla.jpg" data-price="kz 68.000.00">Comprar</button>
-  <button>Kz 68.000.00</button>
 
     </div>
- 
-	    <div class="product">
-      <h2>Chuteira Kipsta</h2>
-       <video width="280" height="280"  autoplay muted loop playsinline preload="none" poster="fotos/IMG-4198.jpg">
-        <source src="fotos/400f4c1ad1034475945018c6c0d3e1ee.mp4
-
-" type="video/mp4">
-    </video>
-      <p>A chuteira Kipsta é a escolha certa para quem busca desempenho e estilo nas quadras de futsal. Com cabedal em malha respirável, entressola responsiva e solado de borracha aderente, essa chuteira é perfeita para jogadores de futsal que querem dar o seu melhor.</p>
-        <label>Tamanhos disponíveis</label>          
-<select>
-
-	
-	<option>Indisponível</option>
-	
-</select>
-	<button class="comprarBtn" data-product="Chuteira de futsal" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/IMG-4198.jpg" data-price="Kz 29.600.00">Comprar</button>
-  <button>Kz 29.600.00</button>
-
-    </div>
-	  <div class="product">
-      <h2>Chuteira Kipsta</h2>
-       <video width="280" height="280"  autoplay muted loop playsinline preload="none" poster="fotos/IMG_1307.jpeg">
-        <source src="fotos/8a9b47d8a16c4d41aadeaf2e9703484f.mp4
-
-" type="video/mp4">
-    </video>
-      <p>A chuteira Kipsta é a escolha certa para quem busca desempenho e estilo nas quadras de futsal. Com cabedal em malha respirável, entressola responsiva e solado de borracha aderente, essa chuteira é perfeita para jogadores de futsal que querem dar o seu melhor.</p>
-        <label>Tamanhos disponíveis</label>          
-<select>
-
-	
-	<option>Indisponível</option>
-</select>
-	<button class="comprarBtn" data-product="Chuteira de futsal" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/IMG_1307.jpeg" data-price="Kz 26.000.00">Comprar</button>
-  <button>Kz 26.000.00</button>
-
-    </div>
-	  	  <div class="product">
-      <h2>Chuteira Kipsta/2</h2>
-      <video width="280" height="280"  autoplay muted loop playsinline preload="none" poster="fotos/F8E061CE-5CE0-48D1-AF3E-71C0FA1331BB.jpeg">
-        <source src="fotos/0de9d3bf2d814501a21e719f3ef48a73.mp4
-
-" type="video/mp4">
-    </video>
-      <p>A chuteira Kipsta é a escolha certa para quem busca desempenho e estilo nas quadras de futsal. Com cabedal em malha respirável, entressola responsiva e solado de borracha aderente, essa chuteira é perfeita para jogadores de futsal que querem dar o seu melhor.</p>
-        <label>Tamanhos disponíveis</label>          
-<select>
-        <option>Indisponível</option>
-	
-</select>
-<button class="comprarBtn" data-product="Chuteira de futsal" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/F8E061CE-5CE0-48D1-AF3E-71C0FA1331BB.jpeg" data-price="Kz 26.000.00">Comprar</button>
-  <button>Kz 26.000.00</button>
-
-    </div>
-	   <div class="product">
-      <h2>Chuteira Imviso Ginka</h2>
-      <video width="280" height="280"  autoplay muted loop playsinline  preload="none" poster="fotos/IMG_4250.webp">
-        <source src="fotos/05bf2c3450244f8c803ea6e42b47d44f.mp4
-
-" type="video/mp4">
-    </video>
-      <p>A chuteira Imviso, Com cabedal em material sintético, solado em borracha e design inovador, essa chuteira é ideal para jogadores de futebol que querem se destacar no campo.</p>
-	 <label>Tamanhos disponíveis</label>
-<select>
-
-	<option>Indisponível</option>
-	
-
-</select>
-<button class="comprarBtn" data-product="Chuteira de futsal" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/IMG_4250.webp" data-price="Kz 36.000.00">Comprar</button>
-  <button>Kz 40.000.00</button>
-     
-    </div>
-	  
-     <div class="product">
-      <h2>Chuteira Eskudo </h2>
-        <video width="280" height="280"  autoplay muted loop playsinline preload="none" poster="fotos/at.jpg">
-        <source src="fotos/7f3c96748d2e481e970f23fa51891493.mp4
-
-" type="video/mp4"></video>
-      <p>A chuteira Eskudo , Com cabedal em material sintético, solado em borracha e design inovador, essa chuteira é ideal para jogadores de futebol que querem se destacar no campo.</p>
- <label>Tamanhos disponíveis</label>
-<select>
-	<option>Tamanho 46</option>
-	<option>Tamanho 47</option>
-
-
-</select>
-       <button class="comprarBtn" data-product="Chuteira de futsal" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/at.jpg" data-price="Kz 38.000.00">Comprar</button>
-  <button>Kz 38.000.00</button>
-     
-    </div>
-	   <div class="product">
-      <h2>Chuteira Eskudo 500</h2>
-        <video width="280" height="280"  autoplay muted loop playsinline preload="none" poster="fotos/eskudo.webp">
-        <source src="fotos/41679af350b24c9da5e519ca5e608898.mp4
-
-" type="video/mp4"></video>
-      <p>A chuteira Eskudo 500, Com cabedal em material sintético, solado em borracha e design inovador, essa chuteira é ideal para jogadores de futebol que querem se destacar no campo.</p>
- <label>Tamanhos disponíveis</label>
-<select>
-	<option>Indisponível</option>
-
-
-</select>
-<button class="comprarBtn" data-product="Chuteira de futsal" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/eskudo.webp" data-price="Kz 38.000.00">Comprar</button>
-  <button>Kz 60.000.00</button>
-     
-    </div>
-	  
-	   <div class="product">
-      <h2>Chuteira Imviso</h2>
-       <video width="280" height="280"  autoplay muted loop playsinline preload="none" poster="fotos/2000.avif">
-        <source src="fotos/
-66bb9f3eb18a415b889ade9c3d0dd65e.mp4
-
-" type="video/mp4"></video>
-      <p>A chuteira Imviso, Com cabedal em material sintético, solado em borracha e design inovador, essa chuteira é ideal para jogadores de futebol que querem se destacar no campo.</p>
- <label>Tamanhos disponíveis</label>
-<select>
-
-	<option>Tamanho 47</option>
-
-</select>
-<button class="comprarBtn" data-product="Chuteira de futsal" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/2000.avif" data-price="Kz 38.500.00">Comprar</button>
-  <button>Kz 38.500.00</button>
-     
-    </div>
-	   <div class="product">
-      <h2>Chuteira Imviso Branca</h2>
-       <video width="280" height="280"  autoplay muted loop playsinline preload="none" poster="fotos/a3.jpeg">
-        <source src="fotos/0ac832d3e7694b64a99a3678850e9408.mp4
-
-" type="video/mp4"></video>
-      <p>A chuteira Imviso, Com cabedal em material sintético, solado em borracha e design inovador, essa chuteira é ideal para jogadores de futebol que querem se destacar no campo.</p>
- <label>Tamanhos disponíveis</label>
-<select>
-
-	<option>Tamanho 41</option>
-  	<option>Tamanho 43</option>
-    	<option>Tamanho 44</option>
-
-</select>
-<button class="comprarBtn" data-product="Chuteira de futsal" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/a3.jpeg" data-price="Kz 38.000.00">Comprar</button>
-  <button>Kz 40.000.00</button>
-     
-    </div>
-	     <div class="product">
-      <h2>Chuteira Imviso Clr 900</h2>
-		      <video width="280" height="280"  autoplay muted loop playsinline preload="none" poster="fotos/0ED2DDEF-0F6F-4F96-80EC-D75CF5C386C2.jpeg">
-        <source src="fotos/73961f504e0e43b9a84af0bd4be79274.mp4
-
-" type="video/mp4"></video>
-      <p>A chuteira Imviso, Com cabedal em material sintético, solado em borracha e design inovador, essa chuteira é ideal para jogadores de futebol que querem se destacar no campo.</p>
- <label>Tamanhos disponíveis</label>
-<select>
-<option>Indisponível</option>
-	
-
-</select>
-<button class="comprarBtn" data-product="Chuteira de futsal" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/0ED2DDEF-0F6F-4F96-80EC-D75CF5C386C2.jpeg" data-price="Kz 38.000.00">Comprar</button>
-  <button><del>Kz 35.000.00</del></button>
-     
-    </div>
-
+    <div class="produto">
+      <img src="fotos/bolas.JPG" alt="Bolas de Futsal">
+      <h3>Bolas de Futsal </h3>
+      <p>Perfeita para jogos de futsal</p>
 	 
-	  
-	    <div class="product">
-      <h2>Chuteira Imviso</h2>
-       <video width="280" height="280"  autoplay muted loop playsinline preload="none" poster="fotos/000001.JPG">
-        <source src="fotos/
-14894f0251b0482e8e09c68fae77b51c.mp4
+<a href="bolas.html"  class="botao-comprar">🛒 Ver mais</a>
 
 
-" type="video/mp4"></video>
-      
-      <p>A chuteira Imviso Ginka 900 é perfeita para quem busca velocidade e precisão. Com cabedal em material sintético, solado em borracha e design inovador, essa chuteira é ideal para jogadores de futebol que querem se destacar no campo.</p>
- <label>Tamanhos disponíveis</label>
-<select>
-<option>Indisponível</option>
-
-
-</select>
-<button class="comprarBtn" data-product="Chuteira de futsal" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/000001.JPG" data-price="Kz 36.000.00">Comprar</button>
-  <button>Kz 40.000.00</button>
-     
     </div>
-	  
-	  <div class="product">
-      <h2>Chuteira Imviso azul especial</h2>
-		  <video width="280" height="280"  autoplay muted loop playsinline  preload="none" poster="fotos/85597CA6-E3AA-48E2-AC84-16E4A7F7E245.jpeg">
-        <source src="fotos/31392d0c88014076984eec308855d463 2.mp4
-
-" type="video/mp4"></video>
-      
-      <p>A chuteira Imviso, Com cabedal em material sintético, solado em borracha e design inovador, essa chuteira é ideal para jogadores de futebol que querem se destacar no campo.</p>
- <label>Tamanhos disponíveis</label>
-<select>
-
-	<option>Indisponível</option>
-
+    <div class="produto">
+      <img src="fotos/224.JPG" alt="Pastas Desportiva">
+      <h3>Pastas Desportivas</h3>
+      <p>Carrega os teus Materiais aqui</p>
 	
+     <a href="pastas.html"  class="botao-comprar">🛒 Ver mais</a>
 
-</select>
-<button class="comprarBtn" data-product="Chuteira de futsal" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/85597CA6-E3AA-48E2-AC84-16E4A7F7E245.jpeg" data-price="Kz 40.000.00">Comprar</button>
-  <button>Kz 40.000.00</button>
-     
+
     </div>
-	 
-	  
-    <div class="product">
-      <h2>Chuteira Imviso Ginka</h2>
-        <video width="280" height="280"  autoplay muted loop playsinline  preload="none" poster="fotos/19D77592-B49A-4900-A0BD-B6DF584C119E.jpeg">
-        <source src="fotos/26f1d81bff9a4605a293c46983ff4c66.mp4
-
-" type="video/mp4"></video>
-      <p>A chuteira Imviso Ginka 900 é perfeita para quem busca velocidade e precisão. Com cabedal em material sintético, solado em borracha e design inovador, essa chuteira é ideal para jogadores de futebol que querem se destacar no campo.</p>
-	 <label>Tamanhos disponíveis</label>
-<select>
-
-<option>Indisponível </option>
+ <div class="produto">
+      <img src="fotos/77.jpg" alt="Acessórios">
+      <h3>Acessórios</h3>
+      <p>Acessórios de qualidade</p>
 	
-
-</select>
-<button class="comprarBtn" data-product="Chuteira de futsal" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/19D77592-B49A-4900-A0BD-B6DF584C119E.jpeg" data-price="Kz 36.000.00">Comprar</button>
-  <button>Kz 40.000.00</button>
-     
-    </div>
-  
-
-<div class="product">
-      <h2>Chuteira Adidas predator</h2>
-      <video width="280" height="280"  autoplay muted loop playsinline preload="none" poster="fotos/IMG_5604.jpeg">
-        <source src="fotos/027443e84c5c4d8b9011067780a43df8 2.mp4
-
-" type="video/mp4"></video>
-      <p>A chuteira predator é a escolha certa para quem busca desempenho e estilo nas quadras de futsal. Com cabedal em malha respirável, entressola responsiva e solado de borracha aderente, essa chuteira é perfeita para jogadores de futsal que querem dar o seu melhor.</p>
-          <label>Tamanhos disponíveis</label>  
-<select>
-<option>Indisponível</option>
-</select>
-<button class="comprarBtn" data-product="Chuteira de futsal" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/IMG_5604.jpeg" data-price="Kz 47.000.00">Comprar</button>
-  <button><del>Kz 47.000.00</del></button>
+     <a href="promo.html"  class="botao-comprar">🛒 Ver mais</a>
 
     </div>
+  </div>
+</section>
 
-<div class="product">
-      <h2>Chuteira  Imviso Ginka 900 MID</h2>
-      <video width="280" height="280"  autoplay muted loop playsinline preload="none" poster="fotos/IMG_1306.jpeg">
-        <source src="fotos/6db3dbfacc7244748ebe287b253c1ecc.mp4
+<section class="sobre">
+  <h2>Sobre a Be Sporty</h2>
+  <p>Loja dedicada a todos os amantes de esporte com os melhores produtos.</p>
+</section>
 
-" type="video/mp4">
-      </video>
-      <p>A chuteira Imviso Ginka 900 MID é a escolha certa para quem busca desempenho e estilo nas quadras de futsal. Com cabedal em malha respirável, entressola responsiva e solado de borracha aderente, essa chuteira é perfeita para jogadores de futsal que querem dar o seu melhor.</p>
- <label>Tamanhos disponíveis</label>
-<select>
-<option>Indisponível</option>
+<footer>
+  <p>&copy; 2025 Be Sporty | Todos os direitos reservados</p>
+</footer>
 
-	
-
-</select>
-<button class="comprarBtn" data-product="Chuteira de futsal" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/IMG_1306.jpeg" data-price="Kz 46.500.00">Comprar</button>
-  <button>Kz 46.500.00</button>
-
-    </div>
-	  <div class="product">
-      <h2>Chuteira Joma Top flex </h2>
-       <video width="280" height="280"  autoplay muted loop playsinline preload="none" poster="fotos/a2.jpeg">
-        <source src="fotos/869aa93f93c34c1a8caebf3e92517ba3.mp4
-
-
-" type="video/mp4"></video>
-      <p>A chuteira Joma Top flex brancoé a escolha certa para quem busca desempenho e estilo nas quadras de futsal. Com cabedal em malha respirável, entressola responsiva e solado de borracha aderente, essa chuteira é perfeita para jogadores de futsal que querem dar o seu melhor.</p>
-        <label>Tamanhos disponíveis</label>      
-<select>
-<option>Tamanho 43</option>
-	<option>Tamanho 44</option>
-	
-
-</select>
-<button class="comprarBtn" data-product="Chuteira de futsal" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/a2.jpeg" data-price="Kz 70.500.00">Comprar</button>
-  <button>Kz 70.500.00</button>
-
-    </div>
-	  
-
-<div class="product">
-      <h2>Chuteira Adidas X Speedportal</h2>
-     <video width="280" height="280"  autoplay muted loop playsinline preload="none" poster="fotos/IMG_5669.jpeg">
-        <source src="fotos/daab0616b587463c8d99d9374cc1c8fc 2.mp4
-
-
-" type="video/mp4">
-      </video>
-      <p>A chuteira Adidas X Speedportal é a escolha certa para quem busca desempenho e estilo nas quadras de futsal. Com cabedal em malha respirável, entressola responsiva e solado de borracha aderente, essa chuteira é perfeita para jogadores de futsal que querem dar o seu melhor.</p>
-        <label>Tamanhos disponíveis</label>                 
-<select>
-
-<option>Indisponível</option>
-
-</select>
-<button class="comprarBtn" data-product="Chuteira de futsal" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/IMG_5669.jpeg" data-price="Kz 58.600.00">Comprar</button>
-  <button><del>Kz 58.600.00</del></button>
-
-    </div>
-
-	  <div class="product">
-      <h2>Chuteira Adidas Sala</h2>
-      <video width="280" height="280"  autoplay muted loop playsinline preload="none" poster="fotos/IMG_4365.jpeg">
-        <source src="fotos/33e0134e8a944cbea9ed622ee558130b.mp4
-
-" type="video/mp4">
-      </video>
-      <p> Adidas Sala é a escolha certa para quem busca desempenho e estilo nas quadras de futsal. Com cabedal em malha respirável, entressola responsiva e solado de borracha aderente, essa chuteira é perfeita para jogadores de futsal que querem dar o seu melhor.</p>
-       <label>Tamanhos disponíveis</label>
-		  <select>
-		<option>Indisponível</option>
-		
-	</select>
-		 <button class="comprarBtn" data-product="Chuteira de futsal" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/IMG_4365.jpeg" data-price="Kz 60.000.00">Comprar</button>
-  <button>Kz 60.000.00</button>
-
-    </div>
-	 
-	  <div class="product">
-      <h2>Chuteira Adidas Sala</h2>
-      <video width="280" height="280"  autoplay muted loop playsinline preload="none" poster="fotos/IMG_4364.jpeg">
-        <source src="fotos/7db370beb0d942e296b2e9c4b49db483.mp4
-
-" type="video/mp4">
-      </video>
-      <p> Adidas Sala é a escolha certa para quem busca desempenho e estilo nas quadras de futsal. Com cabedal em malha respirável, entressola responsiva e solado de borracha aderente, essa chuteira é perfeita para jogadores de futsal que querem dar o seu melhor.</p>
-        <label>Tamanhos disponíveis</label>
-		  <select>
-		<option>Indisponível</option>
-	
-	</select>
-		   <button class="comprarBtn" data-product="Chuteira de futsal" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/IMG_4364.jpeg" data-price="Kz 70.200.00">Comprar</button>
-  <button>Kz 70.200.00</button>
-
-
-	</div>
-	
-	  <div class="product">
-      <h2>Chuteira Nike Mercurial Vapor</h2>
-      <video width="280" height="280"  autoplay muted loop playsinline preload="none" poster="fotos/IMG_4363.jpeg">
-        <source src="fotos/
-" type="video/mp4">
-      </video>
-      <p>  Nike Mercurial Vapor é a escolha certa para quem busca desempenho e estilo nas quadras de futsal. Com cabedal em malha respirável, entressola responsiva e solado de borracha aderente, essa chuteira é perfeita para jogadores de futsal que querem dar o seu melhor.</p>
-          <label>Tamanhos disponíveis</label>
-	                  
-<select>
-
-<option>Indisponível</option>
-
-</select>
-	   <button class="comprarBtn" data-product="Chuteira de futsal" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/IMG_4363.jpeg" data-price="Kz 59.500.00">Comprar</button>
-  <button>Kz 59.500.00</button>
-
- 
-</div>
-	
-	  <div class="product">
-      <h2>Chuteira Ginka Pro</h2>
-       <video width="280" height="280"  autoplay muted loop playsinline preload="none" poster="fotos/e0bc9fcb-36cc-4466-b621-e1c8f2be0061.jpeg">
-        <source src="fotos/1f127055c80941b1b8312e5e1eccbc5b.mp4
-" type="video/mp4">
-      </video>
-      <p>Desenvolvidas para o praticante de futsal que domina todos os gestos técnicos e que procura dinamismo, leveza, flexibilidade e um excelente toque de bola.</p>
-         <label>Tamanhos disponíveis</label> 
-	                   
-<select>
-
-<option>Indisponível</option>
-
-</select>
-	  <button class="comprarBtn" data-product="Chuteira de futsal" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/e0bc9fcb-36cc-4466-b621-e1c8f2be0061.jpeg" data-price="Actualização">Comprar</button>
-  <button><del>Kz 80.500.00</del></button>
-
-
-
- 
-</div>
-	   	
-	  
-  </main>
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Adiciona evento de clique para todos os botões de comprar
-    var buyButtons = document.querySelectorAll('.comprarBtn');
-    buyButtons.forEach(function(button) {
-      button.addEventListener('click', function() {
-        var productName = this.getAttribute('data-product');
-        var productImg = this.getAttribute('data-img');
-        var productPrice = this.getAttribute('data-price');
-
-        // Monta a mensagem inicial com a imagem do produto
-        var mensagem = `Olá, estou interessado no(a) ${productName} por ${productPrice}:`;
-        var linkWhatsApp = `https://api.whatsapp.com/send?phone=244943379573&text=${encodeURIComponent(mensagem)}%0A${encodeURIComponent(productImg)}`;
-
-        // Abre o WhatsApp com a mensagem pré-preenchida e a imagem do produto
-        window.open(linkWhatsApp, '_blank');
-      });
-    });
-  });
+  function toggleMenu() {
+    document.querySelector(".hamburger-menu").classList.toggle("open");
+    document.querySelector(".nav-menu").classList.toggle("open");
+  }
 </script>
- <footer>
-      
-        <p>&copy; 2024 Be Sporty. Todos os direitos reservados.</p>
-    </footer>
- <script>
-        // Função para alternar a exibição do menu em dispositivos móveis
-        function toggleMenu() {
-            var navUl = document.querySelector('nav ul');
-            navUl.classList.toggle('active');
-        }
-    </script>
-	<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var video = document.querySelector('video');
-        if (video) {
-            video.play();
-        }
+<script>
+  function buscarProduto() {
+    const termo = document.getElementById("searchInput").value.toLowerCase();
+    const produtos = document.querySelectorAll(".produto");
+
+    produtos.forEach(produto => {
+      const nome = produto.querySelector("h3").textContent.toLowerCase();
+      if (nome.includes(termo)) {
+        produto.style.display = "flex"; // mantém o layout original
+      } else {
+        produto.style.display = "none";
+      }
     });
+  }
 </script>
- <script>
-        // Função para alternar o menu
-        function toggleMenu() {
-            document.querySelector(".hamburger-menu").classList.toggle("open");
-            document.querySelector(".nav-menu").classList.toggle("open");
-        }
-    </script>
-	
+
+<script>
+  function enviarWhatsApp(elemento) {
+    const produto = elemento.closest(".produto");
+    const nome = produto.querySelector("h3").textContent;
+    const imagem = produto.querySelector("img").src;
+
+    const mensagem = `Olá! Gostaria de comprar o produto: *${nome}*%0AImagem: ${imagem}`;
+
+    const link = `https://wa.me/244943379573?text=${mensagem}`; // substitua com seu número
+
+    window.open(link, '_blank');
+  }
+</script>
+
 </body>
 </html>

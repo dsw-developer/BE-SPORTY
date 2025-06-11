@@ -1,0 +1,978 @@
+ <!DOCTYPE html>
+<html lang="pt">
+<head>
+	<title>BE SPORTY</title>
+    <link rel="stylesheet" href="style.css?v=2">
+<script src="app.js?v=5"></script>
+
+<link rel="shortcut icon" href="fotos/IMG_7171.png" type="image/x-icon">
+<meta name="google-site-verification" content="GYImX28YnHqwK8hyglkxfti5YSCjOsVuK3pJWwzPxss" />
+  <meta charset="UTF-8">
+  <meta name="description" content="Encontre aqui as melhores chuteiras para o seu esporte favorito.">
+  <meta name="keywords" content="chuteiras, futebol, basquete, running">
+  <meta name="author" content="Seu nome ou nome da sua empresa">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  </head>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #333;
+      padding: 1rem;
+      color: white;
+    }
+
+    .logo {
+      height: 40px;
+    }
+
+    .hamburger-menu {
+      cursor: pointer;
+      z-index: 100;
+    }
+
+    .hamburger-menu div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 5px 0;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .hamburger-menu.open div:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger-menu.open div:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger-menu.open div:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+   .nav-menu {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: #333;
+  color: white;
+  transition: left 0.3s ease;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-menu.open {
+  left: 0;
+}
+
+.nav-menu a {
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
+  margin: 20px 0;
+  transition: transform 0.3s ease;
+  transform: rotateX(30deg);
+}
+
+.nav-menu a:hover {
+  transform: rotateX(10deg);
+}
+
+/* Submenu */
+.submenu {
+  display: none;
+  flex-direction: column;
+  padding-left: 20px;
+}
+
+.submenu a {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.nav-menu a:hover + .submenu,
+.submenu:hover {
+  display: flex;
+}
+
+.banner {
+  text-align: center;
+  padding: 0; /* Tira o espaço interno */
+  background: #d3d3d3;
+  height: 350px; /* Ajuste esse valor como preferir */
+  overflow: hidden; /* Evita que o conteúdo ultrapasse */
+}
+
+
+
+    .banner h1 {
+      font-size: 1.5rem;
+    }
+
+    .banner p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .btn {
+      padding: 0.6rem 1.2rem;
+      background: orange;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+
+    .carrossel {
+      padding: 1rem;
+    }
+
+    .carrossel-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+    }
+
+    .produto-visivel {
+      display: flex;
+      scroll-snap-align: center;
+      gap: 1rem;
+    }
+
+    .produto {
+      min-width: 250px;
+      background: white;
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .produto img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .btn-nav {
+      display: none; /* escondido no mobile */
+    }
+
+    .sobre {
+      padding: 2rem 1rem;
+      text-align: center;
+      background: #f9f9f9;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+   
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  border-radius: 20px;
+  padding: 0.3rem 0.8rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  border-radius: 20px;
+  flex: 1;
+  font-size: 1rem;
+}
+
+.search-bar button {
+  background: orange;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.produto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 45%; /* ou 48% dependendo do layout desejado */
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  background-color: white;
+  transition: transform 0.2s;
+}
+.botao-comprar {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  background: linear-gradient(to right, #ff9900, #ff6600);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.botao-comprar:hover {
+  background: linear-gradient(to right, #ff6600, #cc3300);
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+ .whatsapp-link {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 1px 1px 2px #888;
+            z-index: 1000;
+        }
+
+        .fa-whatsapp {
+            margin-top: 16px;
+        }
+.slider {
+    max-width: 100%; /* Ensure slider occupies full width */
+    width: 100%; /* Ensure slider fills its container */
+    text-align: center; /* Center slider contents */
+}
+
+.slider img {
+    max-width: 100%; /* Ensure images inside the slider are responsive */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+  </style>
+
+<body>
+<header>
+  <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+    <img src="fotos/IMG_7171.png" style="height:50px; width: auto;" class="logo">
+
+   
+  <script>
+  (function(d, w, c) {
+        w.ChatraID = 'ypLqvwmBBAGaWGQ6J';
+        var s = d.createElement('script');
+        w[c] = w[c] || function() {
+            (w[c].q = w[c].q || []).push(arguments);
+        };
+        s.async = true;
+        s.src = 'https://call.chatra.io/chatra.js';
+        if (d.head) d.head.appendChild(s);
+    })(document, window, 'Chatra');
+</script>
+<!-- /Chatra {/literal} -->
+
+    <!-- Ícone Menu Hamburguer -->
+    <div class="hamburger-menu" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+<div class="nav-menu" id="navMenu">
+	<a href="index.html">Home</a>
+        <a href="#">Materiais</a>
+        <div class="submenu">
+       <a href="chuteiras.html">Chuteiras de Qualidade</a>
+      <a href="bolas.html">Bolas de Futsal</a>
+      <a href="pastas.html">Pastas Desportivas</a>
+      <a href="promo.html">Acessórios Desportivos</a>
+    
+        </div>
+    <a href="entrega.html">Entrega</a>
+  </div>
+</header>
+<a class="whatsapp-link" href="https://api.whatsapp.com/send?phone=244943379573"target="_blank"> <i class="fa fa-whatsapp"></i> </a>
+
+
+<section class="banner">
+  <div class="slider">
+    <div><img src="fotos/IMG_4481.png" alt="Imagem da Empresa"></div>
+    <div><img src="fotos/IMG_4482.png" alt="Slide 2"></div>
+    <div><img src="fotos/IMG_4483.png" alt="Slide 3"></div>
+</div>  
+</section>
+
+<section style="padding: 1rem;">
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Buscar produto...">
+    <button onclick="buscarProduto()">🔍</button>
+  </div>
+</section>
+<section class="carrossel" id="produtos">
+  <h2 style="text-align: center;">Chuteiras de Qualidade</h2>
+  <div class="carrossel-container">
+    <div class="produto">
+      <img src="fotos/6.jpg" alt="Chuteira Imviso Ginka">
+      <h3>Chuteira Imviso Ginka</h3>
+      
+	 <p>43.500,00 kz</p>
+    
+<select>
+<option>Esgotado</option>
+
+
+</select>
+<br></br>
+     <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar</a>
+
+
+    </div>
+     <div class="produto">
+         
+      <img src="fotos/F9D4559D-2B4E-4505-A170-B18F8E976A82.jpeg" alt="Adidas F50">
+      <h3>Adidas F50</h3>
+      
+	<p>69.500,00 kz</p>
+    
+<select>
+<option>Tamanhos disponíveis</option>
+<option>Tamanho 42.5</option>
+
+	
+
+</select>
+<br></br>
+     <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar</a>
+
+
+    </div>
+    <div class="produto">
+      <img src="fotos/gato1.jpeg" alt="Nike Lunar Gato 2">
+      <h3>Nike Lunar Gato 2</h3>
+      
+	<p>98.500,00 kz</p>
+    
+<select>
+<option>Tamanhos disponíveis</option>
+<option>Tamanho 40</option>
+<option>Tamanho 41</option>
+<option>Tamanho 42</option>
+<option>Tamanho 43</option>
+<option>Tamanho 44</option>
+<option>Tamanho 45</option>
+	
+
+</select>
+<br></br>
+     <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar</a>
+
+
+    </div>
+    <div class="produto">
+      <img src="fotos/gato2.jpeg" alt="Nike Lunar Gato 2">
+      <h3>Nike Lunar Gato 2</h3>
+	<p>98.500,00 kz</p>
+    
+<select>
+<option>Tamanhos disponíveis</option>
+<option>Tamanho 40</option>
+<option>Tamanho 41</option>
+<option>Tamanho 42</option>
+<option>Tamanho 43</option>
+<option>Tamanho 44</option>
+<option>Tamanho 45</option>
+	
+
+</select>
+<br></br>
+     <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar</a>
+
+
+    </div>
+    <div class="produto">
+      <img src="fotos/gato3.jpeg" alt="Nike Lunar Gato 2">
+      <h3>Nike Lunar Gato 2</h3>
+      
+	<p>98.500,00 kz</p>
+    
+<select>
+<option>Tamanhos disponíveis</option>
+<option>Tamanho 40</option>
+<option>Tamanho 41</option>
+<option>Tamanho 42</option>
+<option>Tamanho 43</option>
+<option>Tamanho 44</option>
+<option>Tamanho 45</option>
+	
+
+</select>
+<br></br>
+     <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar</a>
+
+
+    </div>
+ <div class="produto">
+      <img src="fotos/13.jpg" alt="Chuteira Joma Dribling">
+      <h3>Chuteira Joma Dribling</h3>
+      
+	<p>50.500,00 kz</p>
+    
+<select>
+<option>Tamanhos disponíveis</option>
+<option>Tamanho 45</option>
+<option>Tamanho 46</option>
+	
+
+</select>
+<br></br>
+     <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar</a>
+
+
+    </div>
+ <div class="produto">
+      <img src="fotos/9.jpg" alt="Chuteira Joma Topflex">
+      <h3>Chuteira Joma Topflex</h3>
+     
+	 <p>90.000,00 kz</p>
+    
+<select>
+<option>Tamanhos disponíveis</option>
+<option>Tamanho 45</option>
+<option>Tamanho 46.5</option>
+	
+
+</select>
+<br></br>
+     <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar</a>
+
+
+    </div>
+ <div class="produto">
+      <img src="fotos/1.jpg" alt="Chuteiras Kipsta">
+      <h3>Chuteiras Kipsta</h3>
+      
+	 <p>35.000,00 kz</p>
+    
+<select>
+<option>Tamanhos disponíveis</option>
+<option>Tamanho 39</option>
+<option>Tamanho 40</option>
+<option>Tamanho 42</option>
+<option>Tamanho 43</option>
+<option>Tamanho 44</option>
+
+	
+
+</select>
+<br></br>
+     <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar</a>
+
+
+    </div>
+ <div class="produto">
+      <img src="fotos/8.jpg" alt="Chuteiras Kipsta">
+      <h3>Chuteiras Kipsta </h3>
+    
+	 <p>26.000,00 kz</p>
+    
+<select>
+<option>Tamanhos disponíveis</option>
+<option>Tamanho 36</option>
+
+	
+
+</select>
+<br></br>
+     <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar</a>
+
+
+    </div>
+
+<div class="produto">
+      <img src="fotos/4.jpg" alt="Chuteiras Imviso Ginka ">
+      <h3>Chuteiras Imviso Ginka </h3>
+     
+	 <p>43.000,00 kz</p>
+    
+<select>
+<option>Tamanhos disponíveis</option>
+<option>Tamanho 37</option>
+<option>Tamanho 45</option>
+<option>Tamanho 46</option>
+
+	
+
+</select>
+<br></br>
+     <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar</a>
+
+
+    </div>
+
+<div class="produto">
+      <img src="fotos/7.jpg" alt="Chuteiras Eskudo ">
+      <h3>Chuteiras Eskudo </h3>
+      
+	 <p>68.000,00 kz</p>
+    
+<select>
+<option>Tamanhos disponíveis</option>
+<option>Tamanho 37</option>
+<option>Tamanho 45</option>
+<option>Tamanho 46</option>
+
+	
+
+</select>
+<br></br>
+     <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar</a>
+
+
+    </div>
+
+<div class="produto">
+      <img src="fotos/12.jpg" alt="Chuteiras Eskudo 500 ">
+      <h3>Chuteiras Eskudo 500 </h3>
+      
+	 <p>68.000,00 kz</p>
+    
+<select>
+<option>Tamanhos disponíveis</option>
+<option>Tamanho 37</option>
+<option>Tamanho 45</option>
+<option>Tamanho 46</option>
+
+	
+
+</select>
+<br></br>
+     <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar</a>
+
+
+    </div>
+  
+<div class="produto">
+      <img src="fotos/5.jpg" alt="Chuteiras Imviso ">
+      <h3>Chuteiras Imviso </h3>
+      
+	 <p>43.000,00 kz</p>
+    
+<select>
+<option>Tamanhos disponíveis</option>
+<option>Tamanho 37</option>
+<option>Tamanho 45</option>
+<option>Tamanho 46</option>
+<option>Tamanho 47</option>
+
+	
+
+</select>
+<br></br>
+     <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar</a>
+
+
+    </div>
+
+<div class="produto">
+      <img src="fotos/11.jpg" alt="Chuteiras Imviso Branca ">
+      <h3>Chuteiras Imviso Branca</h3>
+     
+	 <p>43.000,00 kz</p>
+    
+<select>
+<option>Tamanhos disponíveis</option>
+<option>Tamanho 37</option>
+<option>Tamanho 45</option>
+<option>Tamanho 46</option>
+<option>Tamanho 47</option>
+
+	
+
+</select>
+<br></br>
+     <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar</a>
+
+
+    </div>
+
+<div class="produto">
+      <img src="fotos/2.jpg" alt="Chuteiras Imviso Clr 900 ">
+      <h3>Chuteiras Imviso Clr 900 </h3>
+      
+	 <p>50.000,00 kz</p>
+    
+<select>
+<option>Tamanhos disponíveis</option>
+<option>Tamanho 37</option>
+<option>Tamanho 45</option>
+<option>Tamanho 46</option>
+<option>Tamanho 47</option>
+
+	
+
+</select>
+<br></br>
+     <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar</a>
+
+
+    </div>
+
+<div class="produto">
+      <img src="fotos/g.jpg" alt="Chuteiras Imviso ">
+      <h3>Chuteiras Imviso </h3>
+     
+	 <p>43.000,00 kz</p>
+    
+<select>
+<option>Tamanhos disponíveis</option>
+<option>Tamanho 37</option>
+<option>Tamanho 45</option>
+<option>Tamanho 46</option>
+<option>Tamanho 47</option>
+
+	
+
+</select>
+<br></br>
+     <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar</a>
+
+
+    </div>
+
+<div class="produto">
+      <img src="fotos/3.jpg" alt="Chuteiras Imviso Especial ">
+      <h3>Chuteiras Imviso  Especial  </h3>
+      
+	 <p>58.000,00 kz</p>
+    
+<select>
+<option>Tamanhos disponíveis</option>
+<option>Tamanho 37</option>
+<option>Tamanho 45</option>
+<option>Tamanho 46</option>
+<option>Tamanho 47</option>
+
+	
+
+</select>
+<br></br>
+     <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar</a>
+
+
+    </div>
+
+<div class="produto">
+      <img src="fotos/c.jpg" alt="Chuteiras Imviso ">
+      <h3>Chuteiras Imviso   </h3>
+      
+	 <p>59.000,00 kz</p>
+    
+<select>
+<option>Tamanhos disponíveis</option>
+<option>Tamanho 37</option>
+<option>Tamanho 45</option>
+<option>Tamanho 46</option>
+<option>Tamanho 47</option>
+
+	
+
+</select>
+<br></br>
+     <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar</a>
+
+
+    </div>
+
+<div class="produto">
+      <img src="fotos/d.jpg" alt="Chuteiras Imviso Ginka 900 MID ">
+      <h3>Chuteiras Imviso  Ginka 900 MID  </h3>
+      
+	 <p>58.000,00 kz</p>
+    
+<select>
+<option>Tamanhos disponíveis</option>
+<option>Tamanho 37</option>
+<option>Tamanho 45</option>
+<option>Tamanho 46</option>
+<option>Tamanho 47</option>
+
+	
+
+</select>
+<br></br>
+     <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar</a>
+
+
+    </div>
+
+<div class="produto">
+      <img src="fotos/221.jpg" alt="Chuteiras Joma Top Flex ">
+      <h3>Chuteiras Joma Top Flex  </h3>
+      
+	 <p>95.500,00 kz</p>
+    
+<select>
+<option>Tamanhos disponíveis</option>
+<option>Tamanho 37</option>
+<option>Tamanho 43</option>
+<option>Tamanho 45</option>
+<option>Tamanho 46</option>
+<option>Tamanho 47</option>
+
+	
+
+</select>
+<br></br>
+     <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar</a>
+
+
+    </div>
+
+<div class="produto">
+      <img src="fotos/a.jpg" alt="Chuteira Adidas X ">
+      <h3>Chuteira Adidas X </h3>
+     
+	 <p>69.500,00 kz</p>
+    
+<select>
+<option>Tamanhos disponíveis</option>
+<option>Tamanho 37</option>
+<option>Tamanho 43</option>
+<option>Tamanho 45</option>
+<option>Tamanho 46</option>
+<option>Tamanho 47</option>
+
+	
+
+</select>
+<br></br>
+     <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar</a>
+
+
+    </div>
+
+<div class="produto">
+      <img src="fotos/b.jpg" alt="Chuteira Adidas Sala ">
+      <h3>Chuteira Adidas Sala </h3>
+      
+	 <p>70.500,00 kz</p>
+    
+<select>
+<option>Tamanhos disponíveis</option>
+<option>Tamanho 37</option>
+<option>Tamanho 43</option>
+<option>Tamanho 45</option>
+<option>Tamanho 46</option>
+<option>Tamanho 47</option>
+
+	
+
+</select>
+<br></br>
+     <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar</a>
+
+
+    </div>
+
+<div class="produto">
+      <img src="fotos/f.jpg" alt="Chuteira Nike Mercurial ">
+      <h3>Chuteira Nike Mercurial </h3>
+      
+	 <p>69.500,00 kz</p>
+    
+<select>
+<option>Tamanhos disponíveis</option>
+<option>Tamanho 37</option>
+<option>Tamanho 43</option>
+<option>Tamanho 45</option>
+<option>Tamanho 46</option>
+<option>Tamanho 47</option>
+
+	
+
+</select>
+<br></br>
+     <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar</a>
+
+
+    </div>
+
+<div class="produto">
+      <img src="fotos/10.jpg" alt="Chuteira Imviso Pro">
+      <h3>Chuteira Imviso Pro </h3>
+      
+	 <p>85.500,00 kz</p>
+    
+<select>
+<option>Tamanhos disponíveis</option>
+<option>Tamanho 37</option>
+<option>Tamanho 43</option>
+<option>Tamanho 45</option>
+<option>Tamanho 46</option>
+<option>Tamanho 47</option>
+
+	
+
+</select>
+<br></br>
+     <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar</a>
+
+
+    </div>
+    <div class="produto">
+      <img src="fotos/IMG_0123.jpeg" alt="Nike Tiempo Club">
+      <h3>Nike Tiempo Club</h3>
+      
+	 <p>68.500,00 kz</p>
+    
+<select>
+<option>Tamanhos disponíveis</option>
+<option>Tamanho 40</option>
+<option>Tamanho 41</option>
+<option>Tamanho 42</option>
+<option>Tamanho 43</option>
+	
+
+</select>
+<br></br>
+     <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar</a>
+
+
+    </div>
+    <div class="produto">
+      <img src="fotos/IMG_0124.jpeg" alt="Nike Tiempo Club">
+      <h3>Nike Tiempo Club</h3>
+     
+	 <p>68.500,00 kz</p>
+    
+<select>
+<option>Esgotado</option>
+
+	
+
+</select>
+<br></br>
+     <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar</a>
+
+
+    </div>
+    <div class="produto">
+      <img src="fotos/IMG_0125.jpeg" alt=" Nike Tiempo Club">
+      <h3>Nike Tiempo Club</h3>
+     
+	 <p>68.500,00 kz</p>
+    
+<select>
+<option>Esgotado</option>
+
+	
+
+</select>
+<br></br>
+     <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar</a>
+
+
+    </div>
+    </div>
+</section>
+<section class="sobre">
+  <h2>Sobre a Be Sporty</h2>
+  <p>Loja dedicada a todos os amantes de esporte com os melhores produtos.</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Be Sporty | Todos os direitos reservados</p>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.querySelector(".hamburger-menu").classList.toggle("open");
+    document.querySelector(".nav-menu").classList.toggle("open");
+  }
+</script>
+<script>
+  function buscarProduto() {
+    const termo = document.getElementById("searchInput").value.toLowerCase();
+    const produtos = document.querySelectorAll(".produto");
+
+    produtos.forEach(produto => {
+      const nome = produto.querySelector("h3").textContent.toLowerCase();
+      if (nome.includes(termo)) {
+        produto.style.display = "flex"; // mantém o layout original
+      } else {
+        produto.style.display = "none";
+      }
+    });
+  }
+</script>
+
+<script>
+  function enviarWhatsApp(elemento) {
+    const produto = elemento.closest(".produto");
+    const nome = produto.querySelector("h3").textContent;
+    const imagem = produto.querySelector("img").src;
+
+    const mensagem = `Olá! Gostaria de comprar o produto: *${nome}*%0AImagem: ${imagem}`;
+
+    const link = `https://wa.me/244943379573?text=${mensagem}`; // substitua com seu número
+
+    window.open(link, '_blank');
+  }
+</script>
+<script>
+	$(document).ready(function(){
+    $('.slider').slick({
+        autoplay: true,
+        autoplaySpeed: 1000,
+        arrows: false,
+        dots: true
+    });
+});
+</script>
+</body>
+</html>

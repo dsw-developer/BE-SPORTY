@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt">
 <head>
-	
-  <title>BE SPORTY</title>
+	<title>BE SPORTY</title>
+    <link rel="stylesheet" href="style.css?v=2">
+<script src="app.js?v=5"></script>
+
 <link rel="shortcut icon" href="fotos/IMG_7171.png" type="image/x-icon">
+<meta name="google-site-verification" content="GYImX28YnHqwK8hyglkxfti5YSCjOsVuK3pJWwzPxss" />
   <meta charset="UTF-8">
   <meta name="description" content="Encontre aqui as melhores chuteiras para o seu esporte favorito.">
   <meta name="keywords" content="chuteiras, futebol, basquete, running">
@@ -13,288 +16,254 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	  <style>
-   body {
-
-    font-family: 'Arial', sans-serif;
+  <style>
+    body {
       margin: 0;
-      padding: 0;
-      background: url('fotos/IMG_6539.jpeg') ;
-     
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
     }
-    /* Estilos do cabeçalho */
+
     header {
-      background-color: #1C415E;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #333;
+      padding: 1rem;
       color: white;
-      padding: 15px 20px;
-      position: fixed;
+    }
+
+    .logo {
+      height: 40px;
+    }
+
+    .hamburger-menu {
+      cursor: pointer;
+      z-index: 100;
+    }
+
+    .hamburger-menu div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 5px 0;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .hamburger-menu.open div:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger-menu.open div:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger-menu.open div:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+   .nav-menu {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: #333;
+  color: white;
+  transition: left 0.3s ease;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-menu.open {
+  left: 0;
+}
+
+.nav-menu a {
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
+  margin: 20px 0;
+  transition: transform 0.3s ease;
+  transform: rotateX(30deg);
+}
+
+.nav-menu a:hover {
+  transform: rotateX(10deg);
+}
+
+/* Submenu */
+.submenu {
+  display: none;
+  flex-direction: column;
+  padding-left: 20px;
+}
+
+.submenu a {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.nav-menu a:hover + .submenu,
+.submenu:hover {
+  display: flex;
+}
+
+.banner {
+  text-align: center;
+  padding: 0; /* Tira o espaço interno */
+  background: #d3d3d3;
+  height: 350px; /* Ajuste esse valor como preferir */
+  overflow: hidden; /* Evita que o conteúdo ultrapasse */
+}
+
+
+
+    .banner h1 {
+      font-size: 1.5rem;
+    }
+
+    .banner p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .btn {
+      padding: 0.6rem 1.2rem;
+      background: orange;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+
+    .carrossel {
+      padding: 1rem;
+    }
+
+    .carrossel-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+    }
+
+    .produto-visivel {
+      display: flex;
+      scroll-snap-align: center;
+      gap: 1rem;
+    }
+
+    .produto {
+      min-width: 250px;
+      background: white;
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .produto img {
       width: 100%;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      border-radius: 10px;
     }
-    header .logo {
-      max-width: 150px;
-      height: auto;
+
+    .btn-nav {
+      display: none; /* escondido no mobile */
     }
-    .whatsapp-link {
-      position: fixed;
-      width: 60px;
-      height: 60px; 
-      bottom: 40px; 
-      right: 40px;
-      background-color: #25d366;
-      color: #fff;
-      border-radius: 50px;
-      text-align: center; 
-      font-size: 30px;
-      box-shadow: 1px 1px 2px #888;
-      z-index: 1000;
+
+    .sobre {
+      padding: 2rem 1rem;
+      text-align: center;
+      background: #f9f9f9;
     }
-    .fa-whatsapp {
-      margin-top: 16px;
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
     }
-    background-color: #F5F5F5;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
-    background-color: #fff;
-  }
-  .header {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  .header h1 {
-    font-size: 36px;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  .image-container {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  .image-container img {
-    max-width: 30%;
-    height: auto;
-    border-radius: 50%;
-    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
-  }
-  .description {
-    font-size: 18px;
-    color: #666;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  .button-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-  }
-  .button-list li {
-    display: inline-block;
-    margin-right: 10px;
-  }
-  .button-list li:last-child {
-    margin-right: 0;
-  }
-  .button {
-    display: inline-block;
-    background-color:#1C415E;
-    color: #fff;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
-  }
-  footer {
-    background-color: #1C415E;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-    margin-top: 40px;
-  }
-  footer ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  footer ul li {
-    display: inline;
-    margin: 0 10px;
-  }
-  footer ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-  }
-  .button:hover {
-    background-color: #005082;
-  }
-	
-		  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center horizontally */
-    justify-content: center; /* Center vertically */
+
+    
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  border-radius: 20px;
+  padding: 0.3rem 0.8rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin: 0 auto;
+  max-width: 90%;
 }
 
-.slider {
-    max-width: 100%; /* Ensure slider occupies full width */
-    width: 100%; /* Ensure slider fills its container */
-    text-align: center; /* Center slider contents */
+.search-bar input {
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  border-radius: 20px;
+  flex: 1;
+  font-size: 1rem;
 }
 
-.slider img {
-    max-width: 100%; /* Ensure images inside the slider are responsive */
-    height: auto; /* Maintain aspect ratio */
-    margin: 0 auto; /* Center the image horizontally */
+.search-bar button {
+  background: orange;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
 }
-		  /* Reset some default browser styles */
-body, ul {
-    margin: 0;
-    padding: 0;
+.produto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 45%; /* ou 48% dependendo do layout desejado */
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  background-color: white;
+  transition: transform 0.2s;
+}
+.botao-comprar {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  background: linear-gradient(to right, #ff9900, #ff6600);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
 }
 
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #f8f8f8; /* Background color for header */
+.botao-comprar:hover {
+  background: linear-gradient(to right, #ff6600, #cc3300);
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
 }
 
-
-        header {
-            background-color: #1C415E;
-            color: white;
-            padding: 15px 20px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        header .logo {
-            max-width: 150px;
-            height: auto;
-        }
-        nav ul {
-            display: flex;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        nav ul li {
-            margin-right: 10px;
-        }
-        nav ul li:last-child {
-            margin-right: 0;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: bold;
-            text-transform: uppercase;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        nav ul li a:hover {
-            background-color: #005082;
-        }
-        /* Ícone de menu para dispositivos móveis */
-        .menu-icon {
-            display: none; /* Esconde o ícone por padrão */
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-        }
-        /* Estilo para dispositivos móveis */
-        @media screen and (max-width: 768px) {
-            nav ul {
-                display: none; /* Esconde o menu por padrão em telas menores */
-                background-color: #1C415E;
-                position: absolute;
-                top: 50px;
-                left: 0;
-                width: 100%;
-                text-align: center;
-            }
-            nav ul.active {
-                display: flex; /* Exibe o menu quando estiver ativo */
-                flex-direction: column;
-            }
-            .menu-icon {
-                display: block; /* Exibe o ícone de menu em telas menores */
-                position: absolute;
-                top: 20px;
-                right: 20px;
-            }
-        }
-header {
-            background-color: #1C415E;
-            color: white;
-            padding: 15px 20px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        header .logo {
-            max-width: 150px;
-            height: auto;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        nav ul li {
-            margin-right: 20px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: background-color 0.3s, transform 0.3s;
-            display: flex;
-            align-items: center;
-        }
-
-        nav ul li a:hover {
-            background-color: #005082;
-            transform: scale(1.05);
-        }
-
-        .menu-icon {
-            margin-right: 8px;
-        }
-
-        .whatsapp-link {
+ .whatsapp-link {
             position: fixed;
             width: 60px;
             height: 60px;
@@ -312,134 +281,26 @@ header {
         .fa-whatsapp {
             margin-top: 16px;
         }
+.slider {
+    max-width: 100%; /* Ensure slider occupies full width */
+    width: 100%; /* Ensure slider fills its container */
+    text-align: center; /* Center slider contents */
+}
 
-header {
-            background-color: #1C415E;
-            color: white;
-            padding: 15px 20px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        header .logo {
-            max-width: 150px;
-            height: auto;
-        }
-        nav ul {
-            display: flex;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        nav ul li {
-            margin-right: 10px;
-        }
-        nav ul li:last-child {
-            margin-right: 0;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: bold;
-            text-transform: uppercase;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        nav ul li a:hover {
-            background-color: #005082;
-        }
-        /* Ícone de menu para dispositivos móveis */
-        .menu-icon {
-            display: none; /* Esconde o ícone por padrão */
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-        }
-        /* Estilo para dispositivos móveis */
-        @media screen and (max-width: 768px) {
-            nav ul {
-                display: none; /* Esconde o menu por padrão em telas menores */
-                background-color: #1C415E;
-                position: absolute;
-                top: 50px;
-                right: 0;
-                width: 100%;
-                text-align: right; /* Alinha o menu à esquerda */
-            }
-            nav ul.active {
-                display: flex; /* Exibe o menu quando estiver ativo */
-                flex-direction: column;
-            }
-            .menu-icon {
-                display: block; /* Exibe o ícone de menu em telas menores */
-                position: absolute;
-                top: 20px;
-                right: 20px; /* Alinha o ícone à esquerda */
-            }
-        }
-		  body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      max-width: 800px;
-      margin: 20px auto;
-      background-color: #fff;
-      padding: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .product {
-      margin-bottom: 30px;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 20px;
-    }
-    .product h2 {
-      color: #1c415e;
-    }
-    .product img {
-      max-width: 100%;
-      height: auto;
-      margin-bottom: 10px;
-    }
-    .product p {
-      color: #666;
-      text-align: justify;
-    }
-    .product select {
-      margin-bottom: 10px;
-    }
-    .product button {
-      background-color: #1c415e;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-    .product button:hover {
-      background-color: #005082;
-    }
+.slider img {
+    max-width: 100%; /* Ensure images inside the slider are responsive */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the image horizontally */
+}
   </style>
+</head>
+<body>
+<header>
+  <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+    <img src="fotos/IMG_7171.png" style="height:50px; width: auto;" class="logo">
 
-	<!-- Chatra {literal} -->
-<script>
-	$(document).ready(function(){
-    $('.slider').slick({
-        autoplay: true,
-        autoplaySpeed: 2000,
-        arrows: false,
-        dots: true
-    });
-});
-
-    (function(d, w, c) {
+     <script>
+  (function(d, w, c) {
         w.ChatraID = 'ypLqvwmBBAGaWGQ6J';
         var s = d.createElement('script');
         w[c] = w[c] || function() {
@@ -451,205 +312,316 @@ header {
     })(document, window, 'Chatra');
 </script>
 <!-- /Chatra {/literal} -->
-	
 
 
-
-</head>
-<body>
-  <header>
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-            <img src="fotos/IMG_7171.png" style="height:50px; width: auto;" class="logo">
-            <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
-            <nav>
-                <ul>
-			<li><a href="index.html">Chuteiras </a></li>
-                    <li><a href="bolas.html">Bolas de Futsal</a></li>
-                    <li><a href="pastas.html">Pastas Desportivas</a></li>
-                    <li><a href="meias.html">Fardo Be Sporty</a></li>
-                    <li><a href="promo.html">Artigos Desportivos</a></li>
-		<li><a href="entrega.html">Calcular o valor da entrega</a></li>
-                </ul>
-            </nav>
+    <!-- Ícone Menu Hamburguer -->
+    <div class="hamburger-menu" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+<div class="nav-menu" id="navMenu">
+	<a href="index.html">Home</a>
+        <a href="#">Materiais</a>
+        <div class="submenu">
+       <a href="chuteiras.html">Chuteiras de Qualidade</a>
+      <a href="bolas.html">Bolas de Futsal</a>
+      <a href="pastas.html">Pastas Desportivas</a>
+      <a href="promo.html">Acessórios Desportivos</a>
+    
         </div>
-    </header>
-	 
-
-	<div class="slider">
-    <div><img src="fotos/IMG_4648.png" alt="slide 1"></div>
-    <div><img src="fotos/IMG_4646.png" alt="Slide 2"></div>
-    <div><img src="fotos/IMG_4645.png" alt="Slide 3"></div>
-    <div><img src="fotos/IMG_4647.png" alt="Slide 4"></div>
-   
-</div>
-	   
-
-
+    <a href="entrega.html">Entrega</a>
+  </div>
+</header>
 <a class="whatsapp-link" href="https://api.whatsapp.com/send?phone=244943379573"target="_blank"> <i class="fa fa-whatsapp"></i> </a>
-	
-	
-
-  <main>
-	  
 
 
-  <!-- Produto 1: Tornozeleira -->
-  <div class="product">
-    <h2>Tornozeleira</h2>
-    <img id="produtoImg1" src="https://dsw-developer.github.io/BE-SPORTY/fotos/IMG_4627.jpeg" alt="Tornozeleira">
-    <p>Nossas Tornozeleiras para qualquer desporto são projetadas para oferecer a máxima proteção e conforto em campo. Fabricadas com materiais de alta qualidade, elas garantem resistência a impactos e ajuste perfeito, proporcionando segurança durante todo o jogo.</p>
-   <label>Tamanhos disponíveis</label>
-	  <select id="tamanho1">
-      <option value="Tamanho 0">Tamanho 0</option>
-      <option value="Tamanho 1">Tamanho 1</option>
-      <option value="Tamanho 2">Tamanho 2</option>
-      <option value="Tamanho 3">Tamanho 3</option>
-      <option value="Tamanho 4">Tamanho 4</option>
-    </select>
-    <button class="comprarBtn" data-product="Tornozeleira" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/IMG_4627.jpeg" data-price="15.900,00 Kz">Comprar</button>
-<button><del>kz 15.900.00</del></button>
+<section class="banner">
+  <div class="publicidade-banner">
+    <h2>🎉 Promoção de Acessórios da Semana!</h2>
+    <p>Aproveite até <strong>50% de desconto</strong> em meias, caneleiras e máquina de massagem!</p>
+    <a href="#produtos" class="btn-publicidade">Ver Ofertas</a>
   </div>
- </div>
-  <!-- Produto 2: Máquina de Massagem -->
-  <div class="product">
-    <h2>Máquina de Massagem</h2>
-    <img id="produtoImg2" src="https://dsw-developer.github.io/BE-SPORTY/fotos/B6452B6F-FE4C-46CF-8241-3A7471FA1D9A.jpeg
-" alt="Máquina de Massagem">
-    <p>Experimente o luxo de uma massagem profissional no conforto da sua casa com nossa cadeira de massagem completa. Projetada para oferecer uma massagem de corpo inteiro, esta cadeira combina técnicas de shiatsu, amassamento e percussão para aliviar tensões e proporcionar relaxamento profundo.</p>
-    <label>Cores disponíveis</label>
-    <select id="cores2">
-      <option>Verde</option>
-      <option>Rosa</option>
-    </select>
-    <div class="price-container">
-      <button><del>kz 30.000.00</del></button>
-      <br><button class="comprarBtn" data-product="Máquina de Massagem" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/B6452B6F-FE4C-46CF-8241-3A7471FA1D9A.jpeg
-" data-price="24.000,00 Kz">Comprar</button>
-      <button>kz 24.000.00</button>
-    </div>
-  </div>
+</section>
+<style>
+.publicidade-banner {
+  background: linear-gradient(135deg, #ff9800, #ff5722);
+  color: white;
+  padding: 58px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
 
-  <!-- Produto 3: Caneleiras de Futebol -->
-  <div class="product">
-    <h2>Caneleiras de Futebol</h2>
-    <img id="produtoImg3" src="https://dsw-developer.github.io/BE-SPORTY/fotos/IMG_4213.jpeg" alt="Caneleiras de Futebol">
-    <p>Nossas caneleiras profissionais de futebol são projetadas para oferecer a máxima proteção e conforto em campo. Fabricadas com materiais de alta qualidade, elas garantem resistência a impactos e ajuste perfeito, proporcionando segurança durante todo o jogo.</p>
-    <label>Cores disponíveis</label>
-    <select id="cores3">
-      <option>Branca</option>
-      <option>Preta</option>
-      <option>Azul</option>
-    </select>
-    <div class="price-container">
-      <button class="comprarBtn" data-product="Caneleiras de Futebol" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/IMG_4213.jpeg" data-price="10.000,00 Kz">Comprar</button>
-      <button><del>kz 10.000.00</del></button>
-    </div>
-  </div>
+.publicidade-banner h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
 
-  <!-- Produto 4: Joelheira de Futsal -->
-  <div class="product">
-    <h2>Joelheira de Futsal</h2>
-    <img id="produtoImg4" src="https://dsw-developer.github.io/BE-SPORTY/fotos/IMG_4622.jpeg" alt="Joelheira de Futsal">
-    <p>Nossas joelheiras profissionais de futsal são projetadas para oferecer a máxima proteção e conforto em campo. Fabricadas com materiais de alta qualidade, elas garantem resistência a impactos e ajuste perfeito, proporcionando segurança durante todo o jogo.</p>
-    <label> Tamanhos disponíveis</label>
-	  <select id="tamanho4">
-      <option>Tamanho 0</option>
-      <option>Tamanho 1</option>
-      <option>Tamanho 2</option>
-      <option>Tamanho 3</option>
-      <option>Tamanho 4</option>
-    </select>
-    <button class="comprarBtn" data-product="Joelheira de Futsal" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/IMG_4622.jpeg" data-price="33.000,00 Kz">Comprar</button>
-<button><del>kz 33.000.00</del></button>
-  </div>
+.publicidade-banner p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
 
+.btn-publicidade {
+  background-color: white;
+  color: #ff5722;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-publicidade:hover {
+  background-color: #ffe0b2;
+}
+</style>
+
+<section style="padding: 1rem;">
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Buscar produto...">
+    <button onclick="buscarProduto()">🔍</button>
+  </div>
+</section>
+<section class="carrossel" id="produtos">
+  <h2 style="text-align: center;">Acessórios de Qualidade</h2>
+  <div class="carrossel-container">
+   
+<div class="produto">
+  <div class="selo-promocao">🔥 Promoção -10%</div>
+  <img src="fotos/M1.jpg" alt="Recovery Plus">
+  <h3>Recovery Plus</h3>
+  <p class="descricao">Recovery Plus</p>
+  <p class="preco-antigo"><del>700.500,00 kz</del></p>
+  <p class="preco-promocao">470.500,00 kz</p>
+  <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar Agora</a>
 </div>
-	   	  <div class="product">
-    <h2>Faixa Elástica de Exercício</h2>
-    <img id="produtoImg4" src="https://dsw-developer.github.io/BE-SPORTY/fotos/3360B867-8104-40F1-968C-C1ACDF1BBCC1.jpeg
-" alt="Faixa Elástica de Exercício">
-    <p>Kit 5 Faixas Elásticas Mini Band + Faixa Elástica Theraband Para Exercícios Em Casa Extensor Academia Crossfit Fisioterapia Yoga Pilates</p>
-    <label> Vendemos apenas em Quantidade </label>
-	  <select id="tamanho4">
-       <option> 5 caixas</option> 
-      <option> 10 caixas</option>
-      <option> 20 caixas</option>
-      <option> 30 caixas</option>
-      <option> 40 caixas </option>
-    </select>
-    <button class="comprarBtn" data-product="Faixa Elástica de Exercício" data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/3360B867-8104-40F1-968C-C1ACDF1BBCC1.jpeg
-" data-price="5.000.00 Kz">Comprar</button>
-<button>Cada caixa kz 5.000.00</button>
-  </div>
 
+<div class="produto">
+  <div class="selo-promocao">🔥 Promoção -2%</div>
+  <img src="fotos/50.jpg" alt="Bomba para bolas">
+  <h3>Bomba para bolas</h3>
+  <p class="descricao">Bomba para encher bolas</p>
+  <p class="preco-antigo"><del>20.500,00 kz</del></p>
+  <p class="preco-promocao">15.500,00 kz</p>
+  <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar Agora</a>
 </div>
-	  
-<div class="product">
-      <h2>Meias desportiva Kipsta </h2>
-      <img src="fotos/666.jpeg" alt="Chuteira Adidas Crazy Explosive">
-	<p>As meias da marca Kipsta, da Decathlon, são projetadas para oferecer conforto, durabilidade e desempenho para atletas de esportes coletivos, como futebol, basquete, rugby e outros.</p>
-      <button> Esgotado</button>
+<div class="produto">
+  <div class="selo-promocao">🔥 Promoção -50%</div>
+  <img src="fotos/MR1.jpg" alt="Conjunto de rolo Abdominal">
+  <h3>Conjunto de rolo Abdominal</h3>
+  <p class="descricao">Conjunto de rolo Abdominal</p>
+  <p class="preco-antigo"><del>40.500,00 kz</del></p>
+  <p class="preco-promocao">22.500,00 kz</p>
+  <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar Agora</a>
+</div>
+<div class="produto">
+  <div class="selo-promocao">🔥 Promoção -50%</div>
+  <img src="fotos/MR2.jpg" alt="Conjunto de rolo Abdominal">
+  <h3>Conjunto de rolo Abdominal</h3>
+  <p class="descricao">Conjunto de rolo Abdominal</p>
+  <p class="preco-antigo"><del>50.500,00 kz</del></p>
+  <p class="preco-promocao">25.500,00 kz</p>
+  <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar Agora</a>
+</div>
+<div class="produto">
+  <div class="selo-promocao">🔥 Promoção -5%</div>
+  <img src="fotos/58.jpg" alt="Bomba para bolas">
+  <h3>Bomba para bolas</h3>
+  <p class="descricao">Bomba para encher bolas</p>
+  <p class="preco-antigo"><del>40.500,00 kz</del></p>
+  <p class="preco-promocao">35.500,00 kz</p>
+  <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar Agora</a>
+</div>
+<div class="produto">
+  <div class="selo-promocao">🔥 Promoção -30%</div>
+  <img src="fotos/51.jpg" alt="Meias">
+  <h3>Caneleiras</h3>
+  <p class="descricao">Caneleiras Desportivas</p>
+  <p class="preco-antigo"><del>40.500,00 kz</del></p>
+  <p class="preco-promocao">29.500,00 kz</p>
+  <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar Agora</a>
+</div>
+<div class="produto">
+  <div class="selo-promocao">🔥 Promoção -50%</div>
+  <img src="fotos/52.jpg" alt="Meias">
+  <h3>Meias Kipsta</h3>
+  <p class="descricao">Meias Desportivas</p>
+  <p class="preco-antigo"><del>20.500,00 kz</del></p>
+  <p class="preco-promocao">10.500,00 kz</p>
+  <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar Agora</a>
+</div>
+<div class="produto">
+  <div class="selo-promocao">🔥 Promoção -2%</div>
+  <img src="fotos/53.jpg" alt="Coletes De Emagrecimento">
+  <h3>Coletes De Emagrecimento</h3>
+  <p class="descricao">Atletas, venham Emagrecer</p>
+  <p class="preco-antigo"><del>20.500,00 kz</del></p>
+  <p class="preco-promocao">18.500,00 kz</p>
+  <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar Agora</a>
+</div>
+<div class="produto">
+ <div class="selo-promocao">🔥 Promoção -50%</div>
+  <img src="fotos/54.jpg" alt="Elástico de resistência">
+  <h3>Elástico de resistência</h3>
+  <p class="descricao">Elástico de resistência </p>
+  <p class="preco-antigo"><del>10.500,00 kz</del></p>
+  <p class="preco-promocao">5.500,00 kz</p>
+  <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar Agora</a>
+</div>
+<div class="produto">
+<div class="selo-promocao">🔥 Promoção -11%</div>
+  <img src="fotos/55.jpg" alt="Luvas">
+  <h3>Luvas</h3>
+  <p class="descricao">Luvas de Qualidade </p>
+  <p class="preco-antigo"><del>20.500,00 kz</del></p>
+  <p class="preco-promocao">25.500,00 kz</p>
+  <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar Agora</a>
+</div>
+<div class="produto">
+<div class="selo-promocao">🔥 Promoção -20%</div>
+  <img src="fotos/57.jpg" alt="Máquina de massagem">
+  <h3>Máquina de massagem</h3>
+  <p class="descricao">Máquina de massagem </p>
+  <p class="preco-antigo"><del>40.500,00 kz</del></p>
+  <p class="preco-promocao">29.500,00 kz</p>
+  <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar Agora</a>
+</div>
+</div>
+</section>
 
-    </div>
+<style>
+ .produto {
+  position: relative;
+  padding: 20px;
+  border-radius: 20px;
+  background: linear-gradient(to bottom right, #fff, #f0f0f0);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-<div class="product">
-      <h2>Meias desportiva Kipsta</h2>
-      <img src="fotos/777.jpeg" alt="Chuteira Adidas Crazy Explosive">
-	<p>As meias da marca Kipsta, da Decathlon, são projetadas para oferecer conforto, durabilidade e desempenho para atletas de esportes coletivos, como futebol, basquete, rugby e outros.</p>
-      <button> Esgotado</button>
+.produto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
 
-    </div>
+.selo-promocao {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: linear-gradient(45deg, #ff004c, #ff6a00);
+  color: white;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transform: rotate(5deg);
+  z-index: 1;
+}
 
-<div class="product">
-      <h2>Meias desportiva Kipsta </h2>
-      <img src="fotos/888.jpeg" alt="Chuteira Adidas Crazy Explosive">
-	<p>As meias da marca Kipsta, da Decathlon, são projetadas para oferecer conforto, durabilidade e desempenho para atletas de esportes coletivos, como futebol, basquete, rugby e outros.</p>
-      <button> Esgotado</button>
+.produto img {
+  width: 100%;
+  max-width: 220px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
 
-    </div>
-<div class="product">
-      <h2>Pasta desportiva Kipsta</h2>
-      <img src="fotos/999.jpeg" alt="Chuteira Adidas Crazy Explosive">
-	<p>As meias da marca Kipsta, da Decathlon, são projetadas para oferecer conforto, durabilidade e desempenho para atletas de esportes coletivos, como futebol, basquete, rugby e outros.</p>
-      <button>Esgotado</button>
+.descricao {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 8px;
+}
 
-    </div>
-<div class="product">
-      <h2>Meias desportiva Kipsta</h2>
-      <img src="fotos/1010.jpeg" alt="Chuteira Adidas Crazy Explosive">
-	<p>As meias da marca Kipsta, da Decathlon, são projetadas para oferecer conforto, durabilidade e desempenho para atletas de esportes coletivos, como futebol, basquete, rugby e outros.</p>
-      <button>Esgotado</button>
+.preco-antigo {
+  font-size: 14px;
+  color: #999;
+  text-decoration: line-through;
+}
 
-    </div>
+.preco-promocao {
+  font-size: 22px;
+  font-weight: bold;
+  color: #e60000;
+  margin-bottom: 10px;
+}
 
-	  
-  </main>
+.botao-comprar {
+  background: linear-gradient(45deg, #ff8c00, #ff4500);
+  color: white;
+  padding: 10px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.botao-comprar:hover {
+  background: linear-gradient(45deg, #ff6a00, #ff004c);
+  transform: scale(1.05);
+}
+
+</style>
+
+<section class="sobre">
+  <h2>Sobre a Be Sporty</h2>
+  <p>Loja dedicada a todos os amantes de esporte com os melhores produtos.</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Be Sporty | Todos os direitos reservados</p>
+</footer>
+
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Adiciona evento de clique para todos os botões de comprar
-    var buyButtons = document.querySelectorAll('.comprarBtn');
-    buyButtons.forEach(function(button) {
-      button.addEventListener('click', function() {
-        var productName = this.getAttribute('data-product');
-        var productImg = this.getAttribute('data-img');
-        var productPrice = this.getAttribute('data-price');
-
-        // Monta a mensagem inicial com a imagem do produto
-        var mensagem = `Olá, estou interessado no(a) ${productName} por ${productPrice}:`;
-        var linkWhatsApp = `https://api.whatsapp.com/send?phone=244943379573&text=${encodeURIComponent(mensagem)}%0A${encodeURIComponent(productImg)}`;
-
-        // Abre o WhatsApp com a mensagem pré-preenchida e a imagem do produto
-        window.open(linkWhatsApp, '_blank');
-      });
-    });
-  });
+  function toggleMenu() {
+    document.querySelector(".hamburger-menu").classList.toggle("open");
+    document.querySelector(".nav-menu").classList.toggle("open");
+  }
 </script>
-  <script>
-        // Função para alternar a exibição do menu em dispositivos móveis
-        function toggleMenu() {
-            var navUl = document.querySelector('nav ul');
-            navUl.classList.toggle('active');
-        }
-    </script>
+<script>
+  function buscarProduto() {
+    const termo = document.getElementById("searchInput").value.toLowerCase();
+    const produtos = document.querySelectorAll(".produto");
+
+    produtos.forEach(produto => {
+      const nome = produto.querySelector("h3").textContent.toLowerCase();
+      if (nome.includes(termo)) {
+        produto.style.display = "flex"; // mantém o layout original
+      } else {
+        produto.style.display = "none";
+      }
+    });
+  }
+</script>
+
+<script>
+  function enviarWhatsApp(elemento) {
+    const produto = elemento.closest(".produto");
+    const nome = produto.querySelector("h3").textContent;
+    const imagem = produto.querySelector("img").src;
+
+    const mensagem = `Olá! Gostaria de comprar o produto: *${nome}*%0AImagem: ${imagem}`;
+
+    const link = `https://wa.me/244943379573?text=${mensagem}`; // substitua com seu número
+
+    window.open(link, '_blank');
+  }
+</script>
+<script>
+	$(document).ready(function(){
+    $('.slider').slick({
+        autoplay: true,
+        autoplaySpeed: 1000,
+        arrows: false,
+        dots: true
+    });
+});
+</script>
 </body>
 </html>
