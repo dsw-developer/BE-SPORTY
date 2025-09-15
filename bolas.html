@@ -68,37 +68,35 @@
       transform: rotate(-45deg) translate(5px, -5px);
     }
 
-   .nav-menu {
+ 
+
+
+
+/* Menu por padrão escondido no mobile */
+.nav-menu {
+  display: none;
+  flex-direction: column;
+  background: #333;
   position: fixed;
   top: 0;
-  left: -250px;
-  width: 250px;
-  height: 100%;
-  background: #333;
-  color: white;
-  transition: left 0.3s ease;
-  z-index: 90;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  padding-top: 70px;
+  z-index: 999;
 }
 
 .nav-menu.open {
-  left: 0;
+  display: flex;
 }
 
 .nav-menu a {
-  font-size: 2rem;
   color: white;
   text-decoration: none;
-  margin: 20px 0;
-  transition: transform 0.3s ease;
-  transform: rotateX(30deg);
-}
-
-.nav-menu a:hover {
-  transform: rotateX(10deg);
+  padding: 15px;
+  font-size: 1.2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  text-align: center;
 }
 
 /* Submenu fechado por padrão */
@@ -106,19 +104,34 @@
   display: none;
   flex-direction: column;
   background: #444;
-  width: 100%;
 }
 
 .submenu.open {
-  display: flex; /* abre quando tiver a classe */
+  display: flex;
 }
 
 .submenu a {
-  font-size: 1.1rem;
-  padding: 0.8rem;
+  font-size: 1rem;
+  padding: 12px;
   color: white;
-  text-align: center;
   border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Ícone hambúrguer */
+.hamburger-menu {
+  display: block;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 1000;
+}
+
+.hamburger-menu div {
+  width: 30px;
+  height: 4px;
+  background: #333;
+  margin: 5px 0;
 }
 
 
@@ -399,7 +412,7 @@
 </script>
 <!-- /Chatra {/literal} -->
 
-   <!-- Ícone Menu Hamburguer -->
+ <!-- Ícone Menu Hamburguer -->
 <div class="hamburger-menu" onclick="toggleMenu()">
   <div></div>
   <div></div>
@@ -421,6 +434,8 @@
   <a href="entrega.html">Entrega</a>
 </div>
 </header>
+
+
 
 <a class="whatsapp-link" href="https://api.whatsapp.com/send?phone=244943379573"target="_blank"> <i class="fa fa-whatsapp"></i> </a>
 
@@ -516,6 +531,22 @@
     document.querySelector(".nav-menu").classList.toggle("open");
   }
 </script>
+	<script>
+  // Abre/fecha o menu hamburguer
+  function toggleMenu() {
+    document.getElementById("navMenu").classList.toggle("open");
+  }
+
+  // Abre o submenu ao clicar em "Materiais"
+  document.querySelectorAll(".has-submenu").forEach(item => {
+    item.addEventListener("click", function(e) {
+      e.preventDefault(); // evita recarregar
+      let submenu = this.nextElementSibling;
+      submenu.classList.toggle("open");
+    });
+  });
+</script>
+
 <script>
   function buscarProduto() {
     const termo = document.getElementById("searchInput").value.toLowerCase();
