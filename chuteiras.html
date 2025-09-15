@@ -70,49 +70,49 @@
       transform: rotate(-45deg) translate(5px, -5px);
     }
 
-   .nav-menu {
-  position: fixed;
-  top: 0;
-  left: -250px;
-  width: 250px;
-  height: 100%;
-  background: #333;
-  color: white;
-  transition: left 0.3s ease;
-  z-index: 90;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+ 
+/* 📱 Correção do menu hambúrguer em telas pequenas */
+@media (max-width: 480px) {
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;  /* começa escondido fora da tela */
+    width: 100%;  /* ocupa a tela toda */
+    height: 100vh;
+    background: #333;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 80px;
+    transition: left 0.3s ease-in-out;
+    z-index: 999;
+  }
 
-.nav-menu.open {
-  left: 0;
-}
+  .nav-menu.open {
+    left: 0; /* aparece ocupando 100% */
+  }
 
-.nav-menu a {
-  font-size: 2rem;
-  color: white;
-  text-decoration: none;
-  margin: 20px 0;
-  transition: transform 0.3s ease;
-  transform: rotateX(30deg);
-}
+  .nav-menu a {
+    display: block;
+    font-size: 1.3rem;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
 
-.nav-menu a:hover {
-  transform: rotateX(10deg);
-}
+  .submenu {
+    width: 100%;
+    flex-direction: column;
+    background: #444;
+    padding: 0.5rem 0;
+  }
 
-/* Submenu */
-.submenu {
-  display: none;
-  flex-direction: column;
-  padding-left: 20px;
-}
-
-.submenu a {
-  font-size: 1.5rem;
-  margin: 10px 0;
+  .submenu a {
+    font-size: 1.1rem;
+    padding: 0.8rem;
+  }
 }
 
 .nav-menu a:hover + .submenu,
