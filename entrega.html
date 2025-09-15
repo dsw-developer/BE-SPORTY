@@ -22,7 +22,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <style>
+   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -44,9 +44,14 @@
     }
 
     .hamburger-menu {
-      cursor: pointer;
-      z-index: 100;
-    }
+  display: block;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 1000; /* fica acima do menu */
+}
+
 
     .hamburger-menu div {
       width: 25px;
@@ -69,50 +74,63 @@
       transform: rotate(-45deg) translate(5px, -5px);
     }
 
-   .nav-menu {
-  position: fixed;
-  top: 0;
-  left: -250px;
-  width: 250px;
-  height: 100%;
-  background: #333;
-  color: white;
-  transition: left 0.3s ease;
-  z-index: 90;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+ 
+/* 📱 Correção do menu hambúrguer em telas pequenas */
+@media (max-width: 480px) {
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;  /* começa escondido fora da tela */
+    width: 100%;  /* ocupa a tela toda */
+    height: 100vh;
+    background: #333;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 80px;
+    transition: left 0.3s ease-in-out;
+    z-index: 999;
+  }
 
-.nav-menu.open {
-  left: 0;
-}
+  .nav-menu.open {
+    left: 0; /* aparece ocupando 100% */
+  }
 
+  .nav-menu a {
+    display: block;
+    font-size: 1.3rem;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .submenu {
+    width: 100%;
+    flex-direction: column;
+    background: #444;
+    padding: 0.5rem 0;
+  }
+
+  .submenu a {
+    font-size: 1.1rem;
+    padding: 0.8rem;
+  }
+}
+	 /* 🎨 Estilo dos links do menu para não ficarem azuis */
 .nav-menu a {
-  font-size: 2rem;
-  color: white;
-  text-decoration: none;
-  margin: 20px 0;
-  transition: transform 0.3s ease;
-  transform: rotateX(30deg);
+  color: white !important;       /* força branco */
+  text-decoration: none !important; /* remove sublinhado */
+  font-size: 1.3rem;
+  font-weight: bold;
 }
 
 .nav-menu a:hover {
-  transform: rotateX(10deg);
+  background: #ff6600;  /* cor de destaque ao passar o dedo/mouse */
+  color: #fff;
 }
 
-/* Submenu */
-.submenu {
-  display: none;
-  flex-direction: column;
-  padding-left: 20px;
-}
-
-.submenu a {
-  font-size: 1.5rem;
-  margin: 10px 0;
-}
 
 .nav-menu a:hover + .submenu,
 .submenu:hover {
@@ -292,129 +310,93 @@
     height: auto; /* Maintain aspect ratio */
     margin: 0 auto; /* Center the image horizontally */
 }
-  .container {
-            background-color: var(--container-bg-color);
-            padding: 40px 0px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            max-width: 290  px;
-            width: 100%;
-            text-align: center;
-            transition: transform var(--transition-time) ease, box-shadow var(--transition-time) ease;
-        }
 
-        .container:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
-        }
+	/* 📱 Ajustes para telas pequenas (até 480px, ex: iPhone 7) */
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-       
-        h2 {
-            color: #444;
-            margin-bottom: 20px;
-            font-weight: 600;
-            position: relative;
-            display: inline-block;
-        }
+  .logo {
+    height: 35px;
+  }
 
-        h2::after {
-            content: '';
-            width: 50px;
-            height: 4px;
-            background-color: var(--primary-color);
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
+  .hamburger-menu {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+  }
 
-        .form {
-            margin-bottom: 20px;
-        }
+  .banner {
+    height: auto;
+  }
 
-        label {
-            display: block;
-            color: #666;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
+  .carrossel-container {
+    flex-direction: column;
+    align-items: center;
+  }
 
-        select {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-            border-radius: var(--border-radius);
-            font-size: 16px;
-            transition: border-color var(--transition-time) ease, box-shadow var(--transition-time) ease;
-        }
+  .produto {
+    width: 100% !important; /* ocupa toda a largura */
+    margin: 0.5rem 0;
+    padding: 0.8rem;
+  }
 
-        select:focus {
-            border-color: var(--primary-color);
-            box-shadow: 0 0 8px rgba(40, 167, 69, 0.1);
-        }
+  .produto img {
+    max-width: 90%;
+    height: auto;
+  }
 
-        button {
-            background: linear-gradient(to right, #ff9900, #ff6600);
-            color: #fff;
-            padding: 12px 25px;
-            border: none;
-            border-radius: var(--border-radius);
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-            transition: background var(--transition-time) ease, transform var(--transition-time) ease;
-        }
+  .search-bar {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
 
-        button:hover {
-            background: linear-gradient(to right, #ff9900, #ff6600);
-            transform: translateY(-2px);
-        }
+  .search-bar input {
+    width: 100%;
+    font-size: 0.9rem;
+  }
 
-        .resultado {
-             background: linear-gradient(to right, #ff9900, #ff6600);
-            padding: 5px;
-            border-radius: var(--border-radius);
-            border: 1px solid #dee2e6;
-            margin-top: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform var(--transition-time) ease, box-shadow var(--transition-time) ease;
-        }
+  .search-bar button {
+    width: 100%;
+    padding: 0.6rem;
+  }
 
-        .resultado:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        }
+  .botao-comprar {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+}
 
-        .resultado h2 {
-            margin: 0 0 10px;
-            color: var(--text-color);
-            font-weight: 600;
-        }
+/* 📲 Telas médias (481px até 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .produto {
+    width: 48% !important; /* dois produtos lado a lado */
+  }
 
-        .resultado p {
-            margin: 5px 0;
-            color: #555;
-        }
-:root {
-            --primary-color: #28a745;
-            --secondary-color: #218838;
-            --background-color: #f0f2f5;
-            --container-bg-color: #fff;
-            --text-color: #333;
-            --border-radius: 12px;
-            --box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-            --transition-time: 0.3s;
-        }
+  .produto img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .banner {
+    height: auto;
+  }
+}
 
   </style>
-</head>
+
 <body>
+
 <header>
   <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
     <img src="fotos/IMG_7171.png" style="height:50px; width: auto;" class="logo">
 
-     <script>
+   
+  <script>
   (function(d, w, c) {
         w.ChatraID = 'ypLqvwmBBAGaWGQ6J';
         var s = d.createElement('script');
@@ -428,7 +410,6 @@
 </script>
 <!-- /Chatra {/literal} -->
 
-
     <!-- Ícone Menu Hamburguer -->
     <div class="hamburger-menu" onclick="toggleMenu()">
       <div></div>
@@ -437,18 +418,16 @@
     </div>
   </div>
 <div class="nav-menu" id="navMenu">
-	<a href="index.html">Home</a>
-        <a href="#">Materiais</a>
-        <div class="submenu">
-       <a href="chuteiras.html">Chuteiras de Qualidade</a>
-      <a href="bolas.html">Bolas de Futsal</a>
-      <a href="pastas.html">Pastas Desportivas</a>
-      <a href="promo.html">Acessórios Desportivos</a>
-    
-        </div>
+
+	<a href="index.html">Página Inicial</a>
+    <a href="chuteiras.html">Chuteiras de Qualidade</a>
+    <a href="bolas.html">Bolas de Futsal</a>
+    <a href="pastas.html">Pastas Desportivas</a>
+    <a href="promo.html">Acessórios Desportivos</a>
     <a href="entrega.html">Entrega</a>
   </div>
 </header>
+
 <a class="whatsapp-link" href="https://api.whatsapp.com/send?phone=244943379573"target="_blank"> <i class="fa fa-whatsapp"></i> </a>
 
 
