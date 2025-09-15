@@ -293,21 +293,45 @@
     height: auto; /* Maintain aspect ratio */
     margin: 0 auto; /* Center the image horizontally */
 }
-	  
-/* Estilo geral já está ok, agora ajustes por telas */
 
-/* 🔹 Celulares pequenos */
+	  /* Compatibilidade para qualquer tela de telefone */
+
+/* Telas pequenas até 480px */
 @media (max-width: 480px) {
-  header {
-    flex-direction: column;
-    text-align: center;
+  .produto {
+    width: 100%; /* ocupa toda a largura */
+    margin: 0.5rem 0;
   }
 
-
-  .carrossel-container {
-    flex-direction: column;
-    align-items: center;
+  .banner {
+    height: auto; /* ajusta altura automaticamente */
   }
+
+  .search-bar {
+    width: 100%;
+  }
+
+  .search-bar input {
+    font-size: 0.9rem;
+  }
+
+  .botao-comprar {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+/* Telas médias (481px até 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .produto {
+    width: 48%; /* dois produtos lado a lado */
+  }
+
+  .banner {
+    height: auto;
+  }
+}
+
 
   </style>
 
