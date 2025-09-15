@@ -293,6 +293,85 @@
     height: auto; /* Maintain aspect ratio */
     margin: 0 auto; /* Center the image horizontally */
 }
+/* Estilo geral já está ok, agora ajustes por telas */
+
+/* 🔹 Celulares pequenos */
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo {
+    height: 35px;
+    margin-bottom: 0.5rem;
+  }
+
+  .carrossel-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .produto {
+    width: 90%; /* ocupa quase toda a tela */
+  }
+
+  .banner {
+    height: 200px; /* reduz altura do banner */
+  }
+
+  .search-bar {
+    max-width: 100%;
+    padding: 0.4rem;
+  }
+
+  .search-bar input {
+    font-size: 0.9rem;
+  }
+
+  .botao-comprar {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+/* 🔹 Tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+  .produto {
+    width: 45%; /* dois produtos por linha */
+  }
+
+  .carrossel-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .banner {
+    height: 280px;
+  }
+}
+
+/* 🔹 Computadores médios */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .produto {
+    width: 30%; /* três produtos por linha */
+  }
+
+  .banner {
+    height: 320px;
+  }
+}
+
+/* 🔹 Computadores grandes */
+@media (min-width: 1025px) {
+  .produto {
+    width: 20%; /* cinco produtos por linha */
+  }
+
+  .banner {
+    height: 400px;
+  }
+}
 
   </style>
 
