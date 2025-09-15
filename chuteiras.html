@@ -29,6 +29,9 @@
       font-family: Arial, sans-serif;
       background-color: #f0f0f0;
       color: #333;
+		body.menu-aberto {
+overflow: hidden;
+}
     }
 
     header {
@@ -69,7 +72,12 @@
     .hamburger-menu.open div:nth-child(3) {
       transform: rotate(-45deg) translate(5px, -5px);
     }
-
+@media (max-width: 768px) {
+.menu-lateral a {
+font-size: 1.5rem; /* letras maiores para mobile */
+margin: 1rem 0;
+}
+}
    .nav-menu {
   position: fixed;
   top: 0;
@@ -374,6 +382,7 @@
   </style>
 
 <body>
+
 <header>
   <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
     <img src="fotos/IMG_7171.png" style="height:50px; width: auto;" class="logo">
@@ -1049,6 +1058,14 @@
         arrows: false,
         dots: true
     });
+});
+
+	const btnMenu = document.querySelector('#btn-menu');
+const menu = document.querySelector('.menu-lateral');
+
+btnMenu.addEventListener('click', () => {
+menu.classList.toggle('ativo');
+document.body.classList.toggle('menu-aberto');
 });
 </script>
 </body>
