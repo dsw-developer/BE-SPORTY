@@ -111,7 +111,26 @@
 .submenu a {
   font-size: 1.5rem;
   margin: 10px 0;
+}/* Submenu fechado por padrão */
+.submenu {
+  display: none;
+  flex-direction: column;
+  background: #444;
+  width: 100%;
 }
+
+.submenu.open {
+  display: flex; /* só aparece quando tiver a classe .open */
+}
+
+.submenu a {
+  font-size: 1.1rem;
+  padding: 0.8rem;
+  color: white;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
 
 .nav-menu a:hover + .submenu,
 .submenu:hover {
@@ -367,6 +386,7 @@
     height: auto;
   }
 }
+
 
   </style>
 </head>
