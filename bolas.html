@@ -101,17 +101,7 @@
   transform: rotateX(10deg);
 }
 
-/* Submenu */
-.submenu {
-  display: none;
-  flex-direction: column;
-  padding-left: 20px;
-}
-
-.submenu a {
-  font-size: 1.5rem;
-  margin: 10px 0;
-}/* Submenu fechado por padrão */
+/* Submenu fechado por padrão */
 .submenu {
   display: none;
   flex-direction: column;
@@ -120,7 +110,7 @@
 }
 
 .submenu.open {
-  display: flex; /* só aparece quando tiver a classe .open */
+  display: flex; /* abre quando tiver a classe */
 }
 
 .submenu a {
@@ -409,26 +399,29 @@
 </script>
 <!-- /Chatra {/literal} -->
 
-    <!-- Ícone Menu Hamburguer -->
-    <div class="hamburger-menu" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
+   <!-- Ícone Menu Hamburguer -->
+<div class="hamburger-menu" onclick="toggleMenu()">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
 <div class="nav-menu" id="navMenu">
-	<a href="index.html">Home</a>
-        <a href="#">Materiais</a>
-        <div class="submenu">
-       <a href="chuteiras.html">Chuteiras de Qualidade</a>
-      <a href="bolas.html">Bolas de Futsal</a>
-      <a href="pastas.html">Pastas Desportivas</a>
-      <a href="promo.html">Acessórios Desportivos</a>
-    
-        </div>
-    <a href="entrega.html">Entrega</a>
+  <a href="index.html">Home</a>
+  
+  <!-- Link com submenu -->
+  <a href="#" class="has-submenu">Materiais ▾</a>
+  <div class="submenu">
+    <a href="chuteiras.html">Chuteiras de Qualidade</a>
+    <a href="bolas.html">Bolas de Futsal</a>
+    <a href="pastas.html">Pastas Desportivas</a>
+    <a href="promo.html">Acessórios Desportivos</a>
   </div>
+
+  <a href="entrega.html">Entrega</a>
+</div>
 </header>
+
 <a class="whatsapp-link" href="https://api.whatsapp.com/send?phone=244943379573"target="_blank"> <i class="fa fa-whatsapp"></i> </a>
 
 
