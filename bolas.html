@@ -21,7 +21,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <style>
+   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -43,9 +43,14 @@
     }
 
     .hamburger-menu {
-      cursor: pointer;
-      z-index: 100;
-    }
+  display: block;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 1000; /* fica acima do menu */
+}
+
 
     .hamburger-menu div {
       width: 25px;
@@ -69,69 +74,60 @@
     }
 
  
+/* 📱 Correção do menu hambúrguer em telas pequenas */
+@media (max-width: 480px) {
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;  /* começa escondido fora da tela */
+    width: 100%;  /* ocupa a tela toda */
+    height: 100vh;
+    background: #333;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 80px;
+    transition: left 0.3s ease-in-out;
+    z-index: 999;
+  }
 
+  .nav-menu.open {
+    left: 0; /* aparece ocupando 100% */
+  }
 
+  .nav-menu a {
+    display: block;
+    font-size: 1.3rem;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
 
-/* Menu por padrão escondido no mobile */
-.nav-menu {
-  display: none;
-  flex-direction: column;
-  background: #333;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  padding-top: 70px;
-  z-index: 999;
+  .submenu {
+    width: 100%;
+    flex-direction: column;
+    background: #444;
+    padding: 0.5rem 0;
+  }
+
+  .submenu a {
+    font-size: 1.1rem;
+    padding: 0.8rem;
+  }
 }
-
-.nav-menu.open {
-  display: flex;
-}
-
+	 /* 🎨 Estilo dos links do menu para não ficarem azuis */
 .nav-menu a {
-  color: white;
-  text-decoration: none;
-  padding: 15px;
-  font-size: 1.2rem;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-  text-align: center;
+  color: white !important;       /* força branco */
+  text-decoration: none !important; /* remove sublinhado */
+  font-size: 1.3rem;
+  font-weight: bold;
 }
 
-/* Submenu fechado por padrão */
-.submenu {
-  display: none;
-  flex-direction: column;
-  background: #444;
-}
-
-.submenu.open {
-  display: flex;
-}
-
-.submenu a {
-  font-size: 1rem;
-  padding: 12px;
-  color: white;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-}
-
-/* Ícone hambúrguer */
-.hamburger-menu {
-  display: block;
-  cursor: pointer;
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  z-index: 1000;
-}
-
-.hamburger-menu div {
-  width: 30px;
-  height: 4px;
-  background: #333;
-  margin: 5px 0;
+.nav-menu a:hover {
+  background: #ff6600;  /* cor de destaque ao passar o dedo/mouse */
+  color: #fff;
 }
 
 
@@ -389,7 +385,6 @@
     height: auto;
   }
 }
-
 
   </style>
 </head>
