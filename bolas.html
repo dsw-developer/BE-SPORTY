@@ -43,14 +43,9 @@
     }
 
     .hamburger-menu {
-  display: block;
-  cursor: pointer;
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  z-index: 1000; /* fica acima do menu */
-}
-
+      cursor: pointer;
+      z-index: 100;
+    }
 
     .hamburger-menu div {
       width: 25px;
@@ -73,63 +68,50 @@
       transform: rotate(-45deg) translate(5px, -5px);
     }
 
- 
-/* 📱 Correção do menu hambúrguer em telas pequenas */
-@media (max-width: 480px) {
-  .nav-menu {
-    position: fixed;
-    top: 0;
-    left: -100%;  /* começa escondido fora da tela */
-    width: 100%;  /* ocupa a tela toda */
-    height: 100vh;
-    background: #333;
-    color: white;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 80px;
-    transition: left 0.3s ease-in-out;
-    z-index: 999;
-  }
-
-  .nav-menu.open {
-    left: 0; /* aparece ocupando 100% */
-  }
-
-  .nav-menu a {
-    display: block;
-    font-size: 1.3rem;
-    padding: 1rem;
-    text-align: center;
-    width: 100%;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-  }
-
-  .submenu {
-    width: 100%;
-    flex-direction: column;
-    background: #444;
-    padding: 0.5rem 0;
-  }
-
-  .submenu a {
-    font-size: 1.1rem;
-    padding: 0.8rem;
-  }
+   .nav-menu {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: #333;
+  color: white;
+  transition: left 0.3s ease;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-	 /* 🎨 Estilo dos links do menu para não ficarem azuis */
+
+.nav-menu.open {
+  left: 0;
+}
+
 .nav-menu a {
-  color: white !important;       /* força branco */
-  text-decoration: none !important; /* remove sublinhado */
-  font-size: 1.3rem;
-  font-weight: bold;
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
+  margin: 20px 0;
+  transition: transform 0.3s ease;
+  transform: rotateX(30deg);
 }
 
 .nav-menu a:hover {
-  background: #ff6600;  /* cor de destaque ao passar o dedo/mouse */
-  color: #fff;
+  transform: rotateX(10deg);
 }
 
+/* Submenu */
+.submenu {
+  display: none;
+  flex-direction: column;
+  padding-left: 20px;
+}
+
+.submenu a {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
 
 .nav-menu a:hover + .submenu,
 .submenu:hover {
@@ -309,94 +291,14 @@
     height: auto; /* Maintain aspect ratio */
     margin: 0 auto; /* Center the image horizontally */
 }
-
-	/* 📱 Ajustes para telas pequenas (até 480px, ex: iPhone 7) */
-@media (max-width: 480px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .logo {
-    height: 35px;
-  }
-
-  .hamburger-menu {
-    position: absolute;
-    right: 15px;
-    top: 15px;
-  }
-
-  .banner {
-    height: auto;
-  }
-
-  .carrossel-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .produto {
-    width: 100% !important; /* ocupa toda a largura */
-    margin: 0.5rem 0;
-    padding: 0.8rem;
-  }
-
-  .produto img {
-    max-width: 90%;
-    height: auto;
-  }
-
-  .search-bar {
-    flex-direction: column;
-    gap: 0.5rem;
-    width: 100%;
-  }
-
-  .search-bar input {
-    width: 100%;
-    font-size: 0.9rem;
-  }
-
-  .search-bar button {
-    width: 100%;
-    padding: 0.6rem;
-  }
-
-  .botao-comprar {
-    width: 100%;
-    font-size: 0.9rem;
-    padding: 0.6rem;
-  }
-}
-
-/* 📲 Telas médias (481px até 768px) */
-@media (min-width: 481px) and (max-width: 768px) {
-  .produto {
-    width: 48% !important; /* dois produtos lado a lado */
-  }
-
-  .produto img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .banner {
-    height: auto;
-  }
-}
-
   </style>
-
-
+</head>
 <body>
-
 <header>
   <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
     <img src="fotos/IMG_7171.png" style="height:50px; width: auto;" class="logo">
 
-   
-  <script>
+     <script>
   (function(d, w, c) {
         w.ChatraID = 'ypLqvwmBBAGaWGQ6J';
         var s = d.createElement('script');
@@ -418,18 +320,18 @@
     </div>
   </div>
 <div class="nav-menu" id="navMenu">
-
-	<a href="index.html">Página Inicial</a>
-    <a href="chuteiras.html">Chuteiras de Qualidade</a>
-    <a href="bolas.html">Bolas de Futsal</a>
-    <a href="pastas.html">Pastas Desportivas</a>
-    <a href="promo.html">Acessórios Desportivos</a>
+	<a href="index.html">Home</a>
+        <a href="#">Materiais</a>
+        <div class="submenu">
+       <a href="chuteiras.html">Chuteiras de Qualidade</a>
+      <a href="bolas.html">Bolas de Futsal</a>
+      <a href="pastas.html">Pastas Desportivas</a>
+      <a href="promo.html">Acessórios Desportivos</a>
+    
+        </div>
     <a href="entrega.html">Entrega</a>
   </div>
 </header>
-
-
-
 <a class="whatsapp-link" href="https://api.whatsapp.com/send?phone=244943379573"target="_blank"> <i class="fa fa-whatsapp"></i> </a>
 
 
@@ -524,22 +426,6 @@
     document.querySelector(".nav-menu").classList.toggle("open");
   }
 </script>
-	<script>
-  // Abre/fecha o menu hamburguer
-  function toggleMenu() {
-    document.getElementById("navMenu").classList.toggle("open");
-  }
-
-  // Abre o submenu ao clicar em "Materiais"
-  document.querySelectorAll(".has-submenu").forEach(item => {
-    item.addEventListener("click", function(e) {
-      e.preventDefault(); // evita recarregar
-      let submenu = this.nextElementSibling;
-      submenu.classList.toggle("open");
-    });
-  });
-</script>
-
 <script>
   function buscarProduto() {
     const termo = document.getElementById("searchInput").value.toLowerCase();
@@ -579,8 +465,5 @@
     });
 });
 </script>
-	
-
-
 </body>
 </html>
