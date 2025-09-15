@@ -307,11 +307,50 @@
     height: 35px;
   }
 
-  .hamburger-menu {
+  /* 📱 Ajustes do menu hambúrguer para telas pequenas */
+@media (max-width: 480px) {
+  .menu {
     position: absolute;
-    right: 15px;
-    top: 15px;
+    top: 60px; /* aparece logo abaixo do header */
+    left: 0;
+    width: 100%; /* ocupa toda a largura */
+    flex-direction: column;
+    background-color: #ff6600; /* mesma cor do header */
+    padding: 1rem 0;
+    display: none; /* escondido até clicar */
+    z-index: 1000;
   }
+
+  .menu.active {
+    display: flex; /* aparece quando clicado */
+  }
+
+  .menu a {
+    color: white;
+    text-align: center;
+    padding: 0.8rem;
+    font-size: 1rem;
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .menu a:last-child {
+    border-bottom: none;
+  }
+
+  .hamburger-menu {
+    display: block;
+    cursor: pointer;
+  }
+
+  .hamburger-menu div {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 5px 0;
+  }
+}
+
 
   .banner {
     height: auto;
@@ -373,49 +412,7 @@
 }
 
 
-	  /* 📱 Ajustes do menu hambúrguer para telas pequenas */
-@media (max-width: 480px) {
-  .menu {
-    position: absolute;
-    top: 60px; /* aparece logo abaixo do header */
-    left: 0;
-    width: 100%; /* ocupa toda a largura */
-    flex-direction: column;
-    background-color: #ff6600; /* mesma cor do header */
-    padding: 1rem 0;
-    display: none; /* escondido até clicar */
-    z-index: 1000;
-  }
-
-  .menu.active {
-    display: flex; /* aparece quando clicado */
-  }
-
-  .menu a {
-    color: white;
-    text-align: center;
-    padding: 0.8rem;
-    font-size: 1rem;
-    width: 100%;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-  }
-
-  .menu a:last-child {
-    border-bottom: none;
-  }
-
-  .hamburger-menu {
-    display: block;
-    cursor: pointer;
-  }
-
-  .hamburger-menu div {
-    width: 25px;
-    height: 3px;
-    background: white;
-    margin: 5px 0;
-  }
-}
+	  
 
   </style>
 
