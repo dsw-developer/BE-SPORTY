@@ -408,26 +408,21 @@
 <!-- /Chatra {/literal} -->
 
  <!-- Ícone Menu Hamburguer -->
-<div class="hamburger-menu" onclick="toggleMenu()">
-  <div></div>
-  <div></div>
-  <div></div>
-</div>
-
+    <div class="hamburger-menu" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
 <div class="nav-menu" id="navMenu">
-  <a href="index.html">Home</a>
-  
-  <!-- Link com submenu -->
-  <a href="#" class="has-submenu">Materiais ▾</a>
-  <div class="submenu">
+
+	<a href="index.html">Página Inicial</a>
     <a href="chuteiras.html">Chuteiras de Qualidade</a>
     <a href="bolas.html">Bolas de Futsal</a>
     <a href="pastas.html">Pastas Desportivas</a>
     <a href="promo.html">Acessórios Desportivos</a>
+    <a href="entrega.html">Entrega</a>
   </div>
-
-  <a href="entrega.html">Entrega</a>
-</div>
 </header>
 
 
@@ -581,5 +576,21 @@
     });
 });
 </script>
+	<script>
+  // Abre/fecha o menu hamburguer
+  function toggleMenu() {
+    document.getElementById("navMenu").classList.toggle("open");
+  }
+
+  // Abre o submenu ao clicar em "Materiais"
+  document.querySelectorAll(".has-submenu").forEach(item => {
+    item.addEventListener("click", function(e) {
+      e.preventDefault(); // evita recarregar
+      let submenu = this.nextElementSibling;
+      submenu.classList.toggle("open");
+    });
+  });
+</script>
+
 </body>
 </html>
