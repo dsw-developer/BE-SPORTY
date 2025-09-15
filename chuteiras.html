@@ -23,15 +23,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   </head>
-  <style>
+ <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #f0f0f0;
       color: #333;
-		body.menu-aberto {
-overflow: hidden;
-}
     }
 
     header {
@@ -73,13 +70,11 @@ overflow: hidden;
       transform: rotate(-45deg) translate(5px, -5px);
     }
 
-}
-   @media (max-width:600px){
-		   .nav-menu {
+   .nav-menu {
   position: fixed;
   top: 0;
-  left: -100px;
-  width: 100px;
+  left: -250px;
+  width: 250px;
   height: 100%;
   background: #333;
   color: white;
@@ -299,9 +294,7 @@ overflow: hidden;
     margin: 0 auto; /* Center the image horizontally */
 }
 
-	  
-
-/* 📱 Ajustes para telas pequenas (até 480px, ex: iPhone 7) */
+	/* 📱 Ajustes para telas pequenas (até 480px, ex: iPhone 7) */
 @media (max-width: 480px) {
   header {
     flex-direction: column;
@@ -312,7 +305,11 @@ overflow: hidden;
     height: 35px;
   }
 
-
+  .hamburger-menu {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+  }
 
   .banner {
     height: auto;
@@ -372,9 +369,6 @@ overflow: hidden;
     height: auto;
   }
 }
-
-
-	  
 
   </style>
 
