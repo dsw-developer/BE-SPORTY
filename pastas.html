@@ -292,6 +292,83 @@
     height: auto; /* Maintain aspect ratio */
     margin: 0 auto; /* Center the image horizontally */
 }
+
+	  /* 📱 Ajustes para telas pequenas (até 480px, ex: iPhone 7) */
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo {
+    height: 35px;
+  }
+
+  .hamburger-menu {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+  }
+
+  .banner {
+    height: auto;
+  }
+
+  .carrossel-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .produto {
+    width: 100% !important; /* ocupa toda a largura */
+    margin: 0.5rem 0;
+    padding: 0.8rem;
+  }
+
+  .produto img {
+    max-width: 90%;
+    height: auto;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .search-bar input {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .search-bar button {
+    width: 100%;
+    padding: 0.6rem;
+  }
+
+  .botao-comprar {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+}
+
+/* 📲 Telas médias (481px até 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .produto {
+    width: 48% !important; /* dois produtos lado a lado */
+  }
+
+  .produto img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .banner {
+    height: auto;
+  }
+}
+
   </style>
 </head>
 <body>
