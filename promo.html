@@ -23,6 +23,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+  <style>
+  .neve {
+    position: fixed;
+    top: -10px;
+    color: white;
+    user-select: none;
+    pointer-events: none;
+    z-index: 9999;
+    animation-name: cair;
+    animation-timing-function: linear;
+  }
+
+  @keyframes cair {
+    to {
+      transform: translateY(110vh);
+    }
+  }
+</style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
