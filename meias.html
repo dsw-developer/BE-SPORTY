@@ -1,590 +1,318 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt">
 <head>
-	
-  <title>BE SPORTY</title>
-<link rel="shortcut icon" href="fotos/IMG_7171.png" type="image/x-icon">
+  <title>BE SPORTY 🎄</title>
+  <link rel="shortcut icon" href="fotos/IMG_7171.png" type="image/x-icon">
   <meta charset="UTF-8">
   <meta name="description" content="Encontre aqui as melhores chuteiras para o seu esporte favorito.">
   <meta name="keywords" content="chuteiras, futebol, basquete, running">
-  <meta name="author" content="Seu nome ou nome da sua empresa">
+  <meta name="author" content="Be Sporty">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
-	  <style>
-    body {
+  <!-- SLICK -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
 
-    font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: url('fotos/IMG_6539.jpeg') ;
-     
-    }
-    /* Estilos do cabeçalho */
-    header {
-      background-color: #1C415E;
-      color: white;
-      padding: 15px 20px;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    header .logo {
-      max-width: 150px;
-      height: auto;
-    }
-    .whatsapp-link {
-      position: fixed;
-      width: 60px;
-      height: 60px; 
-      bottom: 40px; 
-      right: 40px;
-      background-color: #25d366;
-      color: #fff;
-      border-radius: 50px;
-      text-align: center; 
-      font-size: 30px;
-      box-shadow: 1px 1px 2px #888;
-      z-index: 1000;
-    }
-    .fa-whatsapp {
-      margin-top: 16px;
-    }
-    background-color: #F5F5F5;
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  <style>
+  /* ===== CLIMA DE NATAL ===== */
+  body {
+    margin: 0;
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
-    background-color: #fff;
-  }
-  .header {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  .header h1 {
-    font-size: 36px;
+    background: linear-gradient(to bottom, #fff, #f9f9f9);
     color: #333;
-    margin-bottom: 10px;
   }
-  .image-container {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  .image-container img {
-    max-width: 30%;
-    height: auto;
-    border-radius: 50%;
-    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
-  }
-  .description {
-    font-size: 18px;
-    color: #666;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  .button-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-  }
-  .button-list li {
-    display: inline-block;
-    margin-right: 10px;
-  }
-  .button-list li:last-child {
-    margin-right: 0;
-  }
-  .button {
-    display: inline-block;
-    background-color:#1C415E;
-    color: #fff;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
-  }
-  footer {
-    background-color: #1C415E;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-    margin-top: 40px;
-  }
-  footer ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  footer ul li {
-    display: inline;
-    margin: 0 10px;
-  }
-  footer ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-  }
-  .button:hover {
-    background-color: #005082;
-  }
-	
-		  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center horizontally */
-    justify-content: center; /* Center vertically */
-}
 
-.slider {
-    max-width: 100%; /* Ensure slider occupies full width */
-    width: 100%; /* Ensure slider fills its container */
-    text-align: center; /* Center slider contents */
-}
-
-.slider img {
-    max-width: 100%; /* Ensure images inside the slider are responsive */
-    height: auto; /* Maintain aspect ratio */
-    margin: 0 auto; /* Center the image horizontally */
-}
-		  /* Reset some default browser styles */
-body, ul {
-    margin: 0;
-    padding: 0;
-}
-
-.header-container {
+  header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: #f8f8f8; /* Background color for header */
-}
+    background: linear-gradient(90deg, #b30000, #006400);
+    padding: 1rem;
+    color: white;
+  }
 
+  .logo {
+    height: 50px;
+  }
 
-        header {
-            background-color: #1C415E;
-            color: white;
-            padding: 15px 20px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        header .logo {
-            max-width: 150px;
-            height: auto;
-        }
-        nav ul {
-            display: flex;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        nav ul li {
-            margin-right: 10px;
-        }
-        nav ul li:last-child {
-            margin-right: 0;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: bold;
-            text-transform: uppercase;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        nav ul li a:hover {
-            background-color: #005082;
-        }
-        /* Ícone de menu para dispositivos móveis */
-        .menu-icon {
-            display: none; /* Esconde o ícone por padrão */
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-        }
-        /* Estilo para dispositivos móveis */
-        @media screen and (max-width: 768px) {
-            nav ul {
-                display: none; /* Esconde o menu por padrão em telas menores */
-                background-color: #1C415E;
-                position: absolute;
-                top: 50px;
-                left: 0;
-                width: 100%;
-                text-align: center;
-            }
-            nav ul.active {
-                display: flex; /* Exibe o menu quando estiver ativo */
-                flex-direction: column;
-            }
-            .menu-icon {
-                display: block; /* Exibe o ícone de menu em telas menores */
-                position: absolute;
-                top: 20px;
-                right: 20px;
-            }
-        }
-header {
-            background-color: #1C415E;
-            color: white;
-            padding: 15px 20px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+  .hamburger-menu {
+    cursor: pointer;
+    z-index: 100;
+  }
+  .hamburger-menu div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    border-radius: 2px;
+  }
 
-        header .logo {
-            max-width: 150px;
-            height: auto;
-        }
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #333;
+    color: white;
+    transition: left 0.3s ease;
+    z-index: 90;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav-menu.open { left: 0; }
+  .nav-menu a {
+    font-size: 1.8rem;
+    color: white;
+    text-decoration: none;
+    margin: 15px 0;
+  }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+  .banner {
+    position: relative;
+    text-align: center;
+    background: linear-gradient(to right, #b30000, #006400);
+    height: 350px;
+    overflow: hidden;
+  }
+  .banner-text {
+    position: absolute;
+    width: 100%;
+    top: 25px;
+    color: white;
+    z-index: 10;
+  }
+  .banner-text h1 { font-size: 2.2rem; margin: 0; }
+  .banner-text p { font-size: 1.2rem; }
 
-        nav ul li {
-            margin-right: 20px;
-        }
+  .slider img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
 
-        nav ul li a {
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: background-color 0.3s, transform 0.3s;
-            display: flex;
-            align-items: center;
-        }
+  .search-bar {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 20px;
+    padding: 0.5rem;
+    margin: 1rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
+  .search-bar input {
+    border: none;
+    outline: none;
+    padding: 0.6rem;
+    flex: 1;
+    font-size: 1rem;
+  }
+  .search-bar button {
+    background: #c00000;
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 20px;
+    font-size: 1rem;
+  }
 
-        nav ul li a:hover {
-            background-color: #005082;
-            transform: scale(1.05);
-        }
+  .carrossel-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
 
-        .menu-icon {
-            margin-right: 8px;
-        }
+  .produto {
+    position: relative;
+    width: 280px;
+    background: white;
+    border: 2px solid #ffcc00;
+    border-radius: 10px;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+  }
+  .produto img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  .produto:hover {
+    transform: scale(1.03);
+  }
+  .botao-comprar {
+    background: linear-gradient(to right, #c00000, #ffcc00);
+    color: white;
+    padding: 0.8rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    margin: 0.6rem auto;
+  }
 
-        .whatsapp-link {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
-            background-color: #25d366;
-            color: #fff;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 1px 1px 2px #888;
-            z-index: 1000;
-        }
+  .botao-comprar:hover {
+    background: linear-gradient(to right, #ff0000, #cc9900);
+  }
 
-        .fa-whatsapp {
-            margin-top: 16px;
-        }
+  .sobre {
+    background: #f9f9f9;
+    padding: 2rem;
+    text-align: center;
+  }
+  footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+  }
 
-header {
-            background-color: #1C415E;
-            color: white;
-            padding: 15px 20px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        header .logo {
-            max-width: 150px;
-            height: auto;
-        }
-        nav ul {
-            display: flex;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        nav ul li {
-            margin-right: 10px;
-        }
-        nav ul li:last-child {
-            margin-right: 0;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: bold;
-            text-transform: uppercase;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        nav ul li a:hover {
-            background-color: #005082;
-        }
-        /* Ícone de menu para dispositivos móveis */
-        .menu-icon {
-            display: none; /* Esconde o ícone por padrão */
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-        }
-        /* Estilo para dispositivos móveis */
-        @media screen and (max-width: 768px) {
-            nav ul {
-                display: none; /* Esconde o menu por padrão em telas menores */
-                background-color: #1C415E;
-                position: absolute;
-                top: 50px;
-                right: 0;
-                width: 100%;
-                text-align: right; /* Alinha o menu à esquerda */
-            }
-            nav ul.active {
-                display: flex; /* Exibe o menu quando estiver ativo */
-                flex-direction: column;
-            }
-            .menu-icon {
-                display: block; /* Exibe o ícone de menu em telas menores */
-                position: absolute;
-                top: 20px;
-                right: 20px; /* Alinha o ícone à esquerda */
-            }
-        }
-		 body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      max-width: 800px;
-      margin: 20px auto;
-      background-color: #fff;
-      padding: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .product {
-      margin-bottom: 30px;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 20px;
-    }
-    .product h2 {
-      color: #1c415e;
-    }
-    .product img {
-      max-width: 100%;
-      height: auto;
-      margin-bottom: 10px;
-    }
-    .product p {
-      color: #666;
-      text-align: justify;
-    }
-    .product select {
-      margin-bottom: 10px;
-    }
-    .product button {
-      background-color: #1c415e;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-    .product button:hover {
-      background-color: #005082;
-    }
-
+  .whatsapp-link {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 60px;
+    z-index: 1000;
+  }
 
   </style>
-	<!-- Chatra {literal} -->
-<script>
-	$(document).ready(function(){
-    $('.slider').slick({
-        autoplay: true,
-        autoplaySpeed: 2000,
-        arrows: false,
-        dots: true
-    });
-});
-
-    (function(d, w, c) {
-        w.ChatraID = 'ypLqvwmBBAGaWGQ6J';
-        var s = d.createElement('script');
-        w[c] = w[c] || function() {
-            (w[c].q = w[c].q || []).push(arguments);
-        };
-        s.async = true;
-        s.src = 'https://call.chatra.io/chatra.js';
-        if (d.head) d.head.appendChild(s);
-    })(document, window, 'Chatra');
-</script>
-<!-- /Chatra {/literal} -->
-	
-
-
-
 </head>
+
 <body>
-  <header>
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-            <img src="fotos/IMG_7171.png" style="height:50px; width: auto;" class="logo">
-            <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
-            <nav>
-                <ul>
-			<li><a href="index.html">Chuteiras </a></li>
-                    <li><a href="bolas.html">Bolas de Futsal</a></li>
-                    <li><a href="pastas.html">Pastas Desportivas</a></li>
-                    <li><a href="meias.html">Fardo Be Sporty</a></li>
-                    <li><a href="promo.html">Artigos Desportivos</a></li>
-		   <li><a href="entrega.html">Calcular o valor da entrega</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-	 
+<header>
+  <img src="fotos/IMG_7171.png" class="logo">
+  <div class="hamburger-menu" onclick="toggleMenu()">
+    <div></div><div></div><div></div>
+  </div>
+  <div class="nav-menu" id="navMenu">
+    <a href="index.html">Home</a>
+    <a href="#">Materiais</a>
+    <a href="chuteiras.html">Chuteiras</a>
+    <a href="bolas.html">Bolas</a>
+    <a href="entrega.html">Entrega</a>
+  </div>
+</header>
 
-    <div class="slider">
-  <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-  <img src="fotos/IMG_7171.png" style="max-width: 100%; max-height: 100%; object-fit: contain;" /></div>
- <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-  <img src="fotos/IMG_7171.png" style="max-width: 100%; max-height: 100%; object-fit: contain;" /> </div>
- </div>    
-	
-<a class="whatsapp-link" href="https://api.whatsapp.com/send?phone=244943379573"target="_blank"> <i class="fa fa-whatsapp"></i> </a>	 
+<a class="whatsapp-link" href="https://api.whatsapp.com/send?phone=244943379573" target="_blank">
+  <i class="fa fa-whatsapp"></i>
+</a>
 
-  <main>
-	<div class="product">
-    <h2>Chuteira Joma Usada</h2>
-    <img src="fotos/43E482BB-C984-4D5C-B907-2CCB813AEDDB.jpeg" alt="Usadas" id="productImage">
-    <p>A chuteira Joma foi utilizada poucas vezes e ainda se encontra em bom estado, como pode ser observado na fotografia apresentada acima.</p>
+<section class="banner">
+  <div class="banner-text">
+    <h1>🎄 Promoções de Natal 🎅</h1>
+    <p>Ofertas especiais de Natal na Be Sporty!</p>
+  </div>
+  <div class="slider">
+    <div><img src="fotos/IMG_4481.png" alt=""></div>
+    <div><img src="fotos/IMG_4482.png" alt=""></div>
+    <div><img src="fotos/IMG_4483.png" alt=""></div>
+  </div>
+</section>
 
-    <label>Tamanho disponível:</label>                 
-    <select>
-        <option>Tamanho 40</option>
-    </select>
-    <br>
-    <label>Proponha seu preço:</label>
-    <input type="text" id="propostaPrecoJoma" placeholder="Digite o valor em Kz">
-    <button data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/43E482BB-C984-4D5C-B907-2CCB813AEDDB.jpeg" onclick="enviarProposta('propostaPrecoJoma', this)">Enviar Proposta</button>
-</div>
+<section>
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Buscar produto...">
+    <button onclick="buscarProduto()">🔍</button>
+  </div>
+</section>
 
-<div class="product">
-    <h2>Chuteira Kipsta Usada</h2>
-    <img src="fotos/B291BCE5-0B49-4BE5-A7A8-3D967A4929C8.jpeg" alt="Usadas" id="productImage">
-    <p>A chuteira Kipsta foi utilizada poucas vezes e ainda se encontra em bom estado, como pode ser observado na fotografia apresentada acima.</p>
-    
-    <label>Tamanho disponível:</label>                 
-    <select>
-        <option>Tamanho 40</option>
-    </select>
-    <br>
-    <label>Proponha seu preço:</label>
-    <input type="text" id="propostaPrecoKipsta" placeholder="Digite o valor em Kz">
-    <button data-img="https://dsw-developer.github.io/BE-SPORTY/fotos/B291BCE5-0B49-4BE5-A7A8-3D967A4929C8.jpeg" onclick="enviarProposta('propostaPrecoKipsta', this)">Enviar Proposta</button>
-</div>
+<section class="carrossel-container" id="produtos">
+  <!-- Exemplo de um produto -->
+  <div class="produto">
+    <img src="fotos/6.jpg">
+    <h3>Chuteira Imviso Ginka</h3>
+    <p>43.500,00 kz</p>
+    <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar</a>
+  </div>
+
+  <!-- Repete para todos produtos -->
+  <!-- ... todos os teus produtos vão aqui em .produto ... -->
+
+</section>
+
+<section class="sobre">
+  <h2>Sobre a Be Sporty</h2>
+  <p>Loja dedicada a todos os amantes de esporte com os melhores produtos.</p>
+</section>
+
+<footer>
+  &copy; 2025 Be Sporty | Todos os direitos reservados 🎄
+</footer>
+
+<!-- ========== JavaScript =========== -->
+
+<!-- jQuery + Slick -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
 <script>
-    function enviarProposta(inputId, buttonElement) {
-        const propostaInput = document.getElementById(inputId);
-        let proposta = propostaInput.value;
-        const imgSrc = buttonElement.getAttribute('data-img');
-        
-        // Formata o valor com espaços como separadores de milhar
-        proposta = proposta.replace(/\./g, '').replace(/,/g, '.'); // Normaliza
-        proposta = parseFloat(proposta);
-        
-        if (isNaN(proposta) || proposta <= 0) {
-            alert('Por favor, insira um valor numérico válido.');
-            return; // Se não for numérico, não continua o envio
-        }
+function toggleMenu() {
+  document.querySelector(".nav-menu").classList.toggle("open");
+}
 
-        const propostaFormatada = proposta.toLocaleString('pt-BR', {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2
-        });
-
-        // Mensagem para WhatsApp com preço e link da imagem
-        const mensagem = `Olá, gostaria de propor o preço de ${propostaFormatada} Kz. ${imgSrc}`;
-        const whatsappLink = `https://wa.me/943379573?text=${encodeURIComponent(mensagem)}`;
-
-        // Abrir o link do WhatsApp com a mensagem, foto e preço
-        window.open(whatsappLink, '_blank');
-    }
-</script>
-
-
-
-
-
- 
-
-    
-  </main>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Adiciona evento de clique para todos os botões de comprar
-    var buyButtons = document.querySelectorAll('.comprarBtn');
-    buyButtons.forEach(function(button) {
-      button.addEventListener('click', function() {
-        var productName = this.getAttribute('data-product');
-        var productImg = this.getAttribute('data-img');
-        var productPrice = this.getAttribute('data-price');
-
-        // Monta a mensagem inicial com a imagem do produto
-        var mensagem = `Olá, estou interessado no(a) ${productName} por ${productPrice}:`;
-        var linkWhatsApp = `https://api.whatsapp.com/send?phone=244943379573&text=${encodeURIComponent(mensagem)}%0A${encodeURIComponent(productImg)}`;
-
-        // Abre o WhatsApp com a mensagem pré-preenchida e a imagem do produto
-        window.open(linkWhatsApp, '_blank');
-      });
-    });
+function buscarProduto() {
+  const termo = document.getElementById("searchInput").value.toLowerCase();
+  const produtos = document.querySelectorAll(".produto");
+  produtos.forEach(prod => {
+    const nome = prod.querySelector("h3").textContent.toLowerCase();
+    prod.style.display = nome.includes(termo) ? "block" : "none";
   });
+}
+
+function enviarWhatsApp(elemento) {
+  const produto = elemento.closest(".produto");
+  const nome = produto.querySelector("h3").textContent;
+  const mensagem = `🎄 *Promoção de Natal Be Sporty* 🎅%0AQuero comprar: *${nome}*`;
+  const link = `https://wa.me/244943379573?text=${mensagem}`;
+  window.open(link, "_blank");
+}
+
+$(document).ready(function(){
+  $('.slider').slick({
+    autoplay: true,
+    autoplaySpeed: 1500,
+    arrows: false,
+    dots: true
+  });
+});
 </script>
- <footer>
-      
-        <p>&copy; 2024 Be Sporty. Todos os direitos reservados.</p>
-    </footer>
-	 <script>
-        // Função para alternar a exibição do menu em dispositivos móveis
-        function toggleMenu() {
-            var navUl = document.querySelector('nav ul');
-            navUl.classList.toggle('active');
-        }
-    </script>
+
+<!-- ===== Neve caindo ===== -->
+<script>
+function criarNeve() {
+  const floco = document.createElement("div");
+  floco.innerHTML = "❄";
+  floco.style.position = "fixed";
+  floco.style.left = Math.random() * window.innerWidth + "px";
+  floco.style.top = "-20px";
+  floco.style.fontSize = Math.random() * 25 + "px";
+  floco.style.opacity = Math.random();
+  floco.style.pointerEvents = "none";
+  document.body.appendChild(floco);
+  let queda = setInterval(() => {
+    floco.style.top = floco.offsetTop + 2 + "px";
+    if (floco.offsetTop > window.innerHeight) {
+      clearInterval(queda);
+      floco.remove();
+    }
+  }, 20);
+}
+setInterval(criarNeve, 300);
+</script>
+
 </body>
 </html>
-
