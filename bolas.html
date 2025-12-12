@@ -22,6 +22,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <style>
+ .neve {
+    position: fixed;
+    top: -10px;
+    color: white;
+    user-select: none;
+    pointer-events: none;
+    z-index: 9999;
+    animation-name: cair;
+    animation-timing-function: linear;
+  }
+
+  @keyframes cair {
+    to {
+      transform: translateY(110vh);
+    }
+  }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -465,5 +481,27 @@
     });
 });
 </script>
+
+<script>
+  function criarNeve() {
+    const floco = document.createElement("div");
+    floco.classList.add("neve");
+    floco.innerHTML = "❄";
+
+    floco.style.left = Math.random() * window.innerWidth + "px";
+    floco.style.fontSize = Math.random() * 20 + 10 + "px";
+    floco.style.opacity = Math.random();
+    floco.style.animationDuration = Math.random() * 5 + 5 + "s";
+
+    document.body.appendChild(floco);
+
+    setTimeout(() => {
+      floco.remove();
+    }, 10000);
+  }
+
+  setInterval(criarNeve, 300);
+</script>
+
 </body>
 </html>
