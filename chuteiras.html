@@ -342,7 +342,99 @@
 }
 
   </style>
+	<style>
+.produto{
+    position:relative;
+    width:280px;
+    margin:15px;
+    overflow:hidden;
+    border-radius:25px;
+    background:#fff;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+    transition:.4s;
+}
 
+.produto:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 40px rgba(0,0,0,.2);
+}
+
+.produto img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    display:block;
+}
+
+.produto-info{
+    padding:20px;
+}
+
+.produto h3{
+    font-size:22px;
+    margin-bottom:10px;
+    color:#222;
+}
+
+.preco{
+    display:flex;
+    flex-direction:column;
+    margin-bottom:15px;
+}
+
+.preco-antigo{
+    text-decoration:line-through;
+    color:#999;
+    font-size:15px;
+}
+
+.preco-atual{
+    font-size:28px;
+    font-weight:bold;
+    color:#ff6600;
+}
+
+.status{
+    display:inline-block;
+    background:#ffeaea;
+    color:#d40000;
+    padding:8px 15px;
+    border-radius:30px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.selo-promocao{
+    position:absolute;
+    top:15px;
+    right:15px;
+    background:linear-gradient(45deg,#ff0000,#ff6600);
+    color:white;
+    padding:8px 15px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:bold;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+.botao-comprar{
+    width:100%;
+    display:block;
+    text-align:center;
+    padding:14px;
+    background:linear-gradient(45deg,#ff6600,#ff9900);
+    color:white;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.botao-comprar:hover{
+    transform:scale(1.03);
+    background:linear-gradient(45deg,#ff5500,#ff8800);
+}
+		</style>
 <body>
 <header>
   <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
@@ -403,6 +495,32 @@
 <section class="carrossel" id="produtos">
   <h2 style="text-align: center;">Chuteiras de Qualidade</h2>
   <div class="carrossel-container">
+	  <div class="produto">
+
+    <div class="selo-promocao">
+        🔥 -20%
+    </div>
+
+    <img src="fotos/782D75E9-2F6B-4F53-9713-73CFD3F0FB3D.jpeg" alt="Chuteiras Eskudo">
+
+    <div class="produto-info">
+        <h3>Chuteiras Eskudo</h3>
+
+        <div class="preco">
+            <span class="preco-antigo">50.000 kz</span>
+            <span class="preco-atual">40.500 kz</span>
+        </div>
+
+        <div class="status">
+            ❌ Esgotado
+        </div>
+
+        <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">
+            🛒 Comprar Agora
+        </a>
+    </div>
+
+</div>
     <div class="produto">
       <img src="fotos/6.jpg" alt="Chuteira Imviso Ginka">
       <h3>Chuteira Imviso Ginka</h3>
