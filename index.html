@@ -1,457 +1,222 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-AO">
 <head>
-	<title>BE SPORTY</title>
-    <link rel="stylesheet" href="style.css?v=2">
-<script src="app.js?v=5"></script>
-
-<link rel="shortcut icon" href="fotos/IMG_7171.png" type="image/x-icon">
-<meta name="google-site-verification" content="GYImX28YnHqwK8hyglkxfti5YSCjOsVuK3pJWwzPxss" />
-  <meta charset="UTF-8">
-  <meta name="description" content="Encontre aqui as melhores chuteiras para o seu esporte favorito.">
-  <meta name="keywords" content="chuteiras, futebol, basquete, running">
-  <meta name="author" content="Seu nome ou nome da sua empresa">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Be Sporty - Esportes em Geral</title>
-  <style>
-    .neve {
-    position: fixed;
-    top: -10px;
-    color: white;
-    user-select: none;
-    pointer-events: none;
-    z-index: 9999;
-    animation-name: cair;
-    animation-timing-function: linear;
-  }
+  <meta name="description" content="Be Sporty — materiais e acessórios desportivos em Angola.">
+  <meta name="theme-color" content="#111111">
+  <title>Be Sporty | Materiais Desportivos</title>
 
-  @keyframes cair {
-    to {
-      transform: translateY(110vh);
-    }
-  }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-      color: #333;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #333;
-      padding: 1rem;
-      color: white;
-    }
-
-    .logo {
-      height: 40px;
-    }
-
-    .hamburger-menu {
-      cursor: pointer;
-      z-index: 100;
-    }
-
-    .hamburger-menu div {
-      width: 25px;
-      height: 3px;
-      background-color: white;
-      margin: 5px 0;
-      border-radius: 2px;
-      transition: all 0.3s ease;
-    }
-
-    .hamburger-menu.open div:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .hamburger-menu.open div:nth-child(2) {
-      opacity: 0;
-    }
-
-    .hamburger-menu.open div:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
-    }
-
-   .nav-menu {
-  position: fixed;
-  top: 0;
-  left: -250px;
-  width: 250px;
-  height: 100%;
-  background: #333;
-  color: white;
-  transition: left 0.3s ease;
-  z-index: 90;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.nav-menu.open {
-  left: 0;
-}
-
-.nav-menu a {
-  font-size: 2rem;
-  color: white;
-  text-decoration: none;
-  margin: 20px 0;
-  transition: transform 0.3s ease;
-  transform: rotateX(30deg);
-}
-
-.nav-menu a:hover {
-  transform: rotateX(10deg);
-}
-
-/* Submenu */
-.submenu {
-  display: none;
-  flex-direction: column;
-  padding-left: 20px;
-}
-
-.submenu a {
-  font-size: 1.5rem;
-  margin: 10px 0;
-}
-
-.nav-menu a:hover + .submenu,
-.submenu:hover {
-  display: flex;
-}
-
-    .banner {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: #d3d3d3;
-    }
-
-    .banner h1 {
-      font-size: 1.5rem;
-    }
-
-    .banner p {
-      font-size: 1rem;
-      color: #555;
-    }
-
-    .btn {
-      padding: 0.6rem 1.2rem;
-      background: orange;
-      color: white;
-      border: none;
-      border-radius: 20px;
-      font-weight: bold;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 1rem;
-    }
-
-    .carrossel {
-      padding: 1rem;
-    }
-
-    .carrossel-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-    }
-
-    .produto-visivel {
-      display: flex;
-      scroll-snap-align: center;
-      gap: 1rem;
-    }
-
-    .produto {
-      min-width: 250px;
-      background: white;
-      border-radius: 10px;
-      padding: 1rem;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .produto img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    .btn-nav {
-      display: none; /* escondido no mobile */
-    }
-
-    .sobre {
-      padding: 2rem 1rem;
-      text-align: center;
-      background: #f9f9f9;
-    }
-
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-    }
-
-  
-.search-bar {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: white;
-  border-radius: 20px;
-  padding: 0.3rem 0.8rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  margin: 0 auto;
-  max-width: 90%;
-}
-
-.search-bar input {
-  border: none;
-  outline: none;
-  padding: 0.5rem;
-  border-radius: 20px;
-  flex: 1;
-  font-size: 1rem;
-}
-
-.search-bar button {
-  background: orange;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 1rem;
-}
-.produto {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 45%; /* ou 48% dependendo do layout desejado */
-  margin: 1rem;
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  background-color: white;
-  transition: transform 0.2s;
-}
-.botao-comprar {
-  display: inline-block;
-  padding: 0.8rem 1.6rem;
-  background: linear-gradient(to right, #ff9900, #ff6600);
-  color: white;
-  font-weight: bold;
-  border: none;
-  border-radius: 30px;
-  text-decoration: none;
-  font-size: 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-}
-
-.botao-comprar:hover {
-  background: linear-gradient(to right, #ff6600, #cc3300);
-  transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-}
-
- .whatsapp-link {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
-            background-color: #25d366;
-            color: #fff;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 1px 1px 2px #888;
-            z-index: 1000;
-        }
-
-        .fa-whatsapp {
-            margin-top: 16px;
-        }
-  </style>
+  <link rel="icon" href="fotos/IMG_7171.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+
 <body>
-<header>
-  <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-    <img src="fotos/IMG_7171.png" style="height:50px; width: auto;" class="logo">
-
-   <script>
-  (function(d, w, c) {
-        w.ChatraID = 'ypLqvwmBBAGaWGQ6J';
-        var s = d.createElement('script');
-        w[c] = w[c] || function() {
-            (w[c].q = w[c].q || []).push(arguments);
-        };
-        s.async = true;
-        s.src = 'https://call.chatra.io/chatra.js';
-        if (d.head) d.head.appendChild(s);
-    })(document, window, 'Chatra');
-</script>
-<!-- /Chatra {/literal} -->
-
-    <!-- Ícone Menu Hamburguer -->
-    <div class="hamburger-menu" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span><i class="fa-solid fa-truck-fast"></i> Entregas em toda Angola</span>
+      <span><i class="fa-solid fa-location-dot"></i> Levantamento: Projecto Nova Vida</span>
     </div>
   </div>
-<div class="nav-menu" id="navMenu">
-	<a href="index.html">Home</a>
-        <a href="#">Materiais</a>
-        <div class="submenu">
-       <a href="chuteiras.html">Chuteiras de Qualidade</a>
-      <a href="bolas.html">Bolas de Futsal</a>
-      <a href="pastas.html">Pastas Desportivas</a>
-      <a href="promo.html">Acessórios Desportivos</a>
-    
+
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="Be Sporty - início">
+        <img src="fotos/IMG_7171.png" alt="Be Sporty">
+      </a>
+
+      <nav class="desktop-nav" aria-label="Navegação principal">
+        <a class="active" href="index.html">Início</a>
+        <a href="#categorias">Categorias</a>
+        <a href="#sobre">Sobre nós</a>
+        <a href="entrega.html">Entregas</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="header-whatsapp" href="https://wa.me/244943379573" target="_blank" rel="noopener">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>WhatsApp</span>
+        </a>
+        <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" id="mobileNav" aria-label="Menu mobile">
+      <a href="index.html">Início</a>
+      <a href="#categorias">Categorias</a>
+      <a href="#sobre">Sobre nós</a>
+      <a href="entrega.html">Entregas</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <span class="eyebrow">BE SPORTY • DESPORTO EM ANGOLA</span>
+          <h1>Equipamento certo.<br><strong>Performance melhor.</strong></h1>
+          <p>Encontra chuteiras, bolas, pastas e acessórios desportivos para elevar o teu jogo.</p>
+
+          <div class="hero-buttons">
+            <a href="#categorias" class="btn btn-primary">Explorar produtos <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="https://wa.me/244943379573" target="_blank" rel="noopener" class="btn btn-outline">
+              <i class="fa-brands fa-whatsapp"></i> Falar connosco
+            </a>
+          </div>
+
+          <div class="trust-row">
+            <div><i class="fa-solid fa-circle-check"></i><span>Produtos selecionados</span></div>
+            <div><i class="fa-solid fa-truck"></i><span>Entrega em Angola</span></div>
+          </div>
         </div>
-    <a href="entrega.html">Entrega</a>
-  </div>
-</header>
-<a class="whatsapp-link" href="https://api.whatsapp.com/send?phone=244943379573"target="_blank"> <i class="fa fa-whatsapp"></i> </a>
+      </div>
+    </section>
 
-<section class="banner">
-	
-  <a href="#produtos" class="btn"></a>
-</section>  
+    <section class="search-section">
+      <div class="container">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input id="searchInput" type="search" placeholder="Pesquisar produtos ou categorias..." autocomplete="off">
+          <button id="clearSearch" type="button" aria-label="Limpar pesquisa">Limpar</button>
+        </div>
+      </div>
+    </section>
 
-  
-<section style="padding: 1rem;">
-  <div class="search-bar">
-    <input type="text" id="searchInput" placeholder="Buscar produto...">
-    <button onclick="buscarProduto()">🔍</button>
-  </div>
-</section>
-<section class="carrossel" id="produtos">
-  <h2 style="text-align: center;">Produtos em Destaque</h2>
-  <div class="carrossel-container">
-    <div class="produto">
-      <img src="fotos/4.jpg" alt="Chuteiras de Futsal">
-      <h3>Chuteiras de Futsal</h3>
-      <p>Para jogadores de futsal</p>
-<a href="chuteiras.html"  class="botao-comprar">🛒 Ver mais</a>
+    <section class="section" id="categorias">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="section-label">EXPLORE</span>
+            <h2>Encontra o que precisas</h2>
+          </div>
+          <p>Escolhe uma categoria e descobre os produtos disponíveis.</p>
+        </div>
 
+        <div class="product-grid" id="productGrid">
+          <article class="product-card" data-name="Chuteiras de Futsal chuteiras futebol">
+            <div class="product-image">
+              <img src="fotos/4.jpg" alt="Chuteiras de Futsal" loading="lazy">
+              <span class="product-tag">Destaque</span>
+            </div>
+            <div class="product-body">
+              <span class="category">FUTSAL</span>
+              <h3>Chuteiras de Futsal</h3>
+              <p>Modelos selecionados para jogadores que procuram conforto e desempenho.</p>
+              <a href="chuteiras.html" class="product-link">Ver produtos <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
 
+          <article class="product-card" data-name="Bolas de Futsal bolas futebol">
+            <div class="product-image">
+              <img src="fotos/bolas.JPG" alt="Bolas de Futsal" loading="lazy">
+            </div>
+            <div class="product-body">
+              <span class="category">BOLAS</span>
+              <h3>Bolas de Futsal</h3>
+              <p>Bolas para treinos, jogos e competição, com opções para diferentes necessidades.</p>
+              <a href="bolas.html" class="product-link">Ver produtos <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
+
+          <article class="product-card" data-name="Pastas Desportivas bolsas sacos">
+            <div class="product-image">
+              <img src="fotos/224.JPG" alt="Pastas Desportivas" loading="lazy">
+            </div>
+            <div class="product-body">
+              <span class="category">ACESSÓRIOS</span>
+              <h3>Pastas Desportivas</h3>
+              <p>Praticidade para transportar os teus materiais desportivos no dia a dia.</p>
+              <a href="pastas.html" class="product-link">Ver produtos <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
+
+          <article class="product-card" data-name="Acessórios Desportivos acessórios">
+            <div class="product-image">
+              <img src="fotos/77.jpg" alt="Acessórios Desportivos" loading="lazy">
+            </div>
+            <div class="product-body">
+              <span class="category">DESPORTO</span>
+              <h3>Acessórios Desportivos</h3>
+              <p>Complementos essenciais para treinos, jogos e preparação desportiva.</p>
+              <a href="promo.html" class="product-link">Ver produtos <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
+        </div>
+
+        <p class="no-results" id="noResults">Nenhum produto encontrado para a tua pesquisa.</p>
+      </div>
+    </section>
+
+    <section class="about-section" id="sobre">
+      <div class="container about-grid">
+        <div class="about-mark">
+          <img src="fotos/IMG_7171.png" alt="Be Sporty">
+        </div>
+        <div>
+          <span class="section-label">BE SPORTY</span>
+          <h2>Desporto faz parte de nós.</h2>
+          <p>A Be Sporty é dedicada aos amantes do desporto, com materiais selecionados para futebol, futsal e outras modalidades.</p>
+          <div class="about-points">
+            <div><i class="fa-solid fa-check"></i><span>Atendimento pelo WhatsApp</span></div>
+            <div><i class="fa-solid fa-check"></i><span>Produtos para diferentes modalidades</span></div>
+            <div><i class="fa-solid fa-check"></i><span>Entrega em toda Angola</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container cta">
+        <div>
+          <span class="section-label">PRECISAS DE AJUDA?</span>
+          <h2>Fala directamente com a Be Sporty.</h2>
+          <p>Envia-nos o produto que procuras e a nossa equipa ajuda-te com disponibilidade e entrega.</p>
+        </div>
+        <a class="btn btn-primary" href="https://wa.me/244943379573?text=Olá%20Be%20Sporty!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos." target="_blank" rel="noopener">
+          <i class="fa-brands fa-whatsapp"></i> Contactar agora
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <img class="footer-logo" src="fotos/IMG_7171.png" alt="Be Sporty">
+        <p>Materiais e acessórios desportivos em Angola.</p>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <a href="index.html">Início</a>
+        <a href="#categorias">Categorias</a>
+        <a href="entrega.html">Entregas</a>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <a href="https://wa.me/244943379573" target="_blank" rel="noopener">+244 943 379 573</a>
+        <a href="mailto:besporty2023@gmail.com">besporty2023@gmail.com</a>
+        <span>Projecto Nova Vida</span>
+      </div>
     </div>
-    <div class="produto">
-      <img src="fotos/bolas.JPG" alt="Bolas de Futsal">
-      <h3>Bolas de Futsal </h3>
-      <p>Perfeita para jogos de futsal</p>
-	 
-<a href="bolas.html"  class="botao-comprar">🛒 Ver mais</a>
-
-
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> Be Sporty. Todos os direitos reservados.</span>
+      <a href="https://be-sporty.netlify.app" target="_blank" rel="noopener">be-sporty.netlify.app</a>
     </div>
-    <div class="produto">
-      <img src="fotos/224.JPG" alt="Pastas Desportiva">
-      <h3>Pastas Desportivas</h3>
-      <p>Carrega os teus Materiais aqui</p>
-	
-     <a href="pastas.html"  class="botao-comprar">🛒 Ver mais</a>
+  </footer>
 
+  <a class="floating-whatsapp" href="https://wa.me/244943379573" target="_blank" rel="noopener" aria-label="Contactar Be Sporty pelo WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
 
-    </div>
- <div class="produto">
-      <img src="fotos/77.jpg" alt="Acessórios">
-      <h3>Acessórios</h3>
-      <p>Acessórios de qualidade</p>
-	
-     <a href="promo.html"  class="botao-comprar">🛒 Ver mais</a>
-
-    </div>
-  </div>
-</section>
-
-<section class="sobre">
-  <h2>Sobre a Be Sporty</h2>
-  <p>Loja dedicada a todos os amantes de esporte com os melhores produtos.</p>
-</section>
-
-<footer>
-  <p>&copy; 2025 Be Sporty | Todos os direitos reservados</p>
-  
-</footer>
-
-<script>
-  function toggleMenu() {
-    document.querySelector(".hamburger-menu").classList.toggle("open");
-    document.querySelector(".nav-menu").classList.toggle("open");
-  }
-</script>
-<script>
-  function buscarProduto() {
-    const termo = document.getElementById("searchInput").value.toLowerCase();
-    const produtos = document.querySelectorAll(".produto");
-
-    produtos.forEach(produto => {
-      const nome = produto.querySelector("h3").textContent.toLowerCase();
-      if (nome.includes(termo)) {
-        produto.style.display = "flex"; // mantém o layout original
-      } else {
-        produto.style.display = "none";
-      }
-    });
-  }
-</script>
-
-<script>
-  function enviarWhatsApp(elemento) {
-    const produto = elemento.closest(".produto");
-    const nome = produto.querySelector("h3").textContent;
-    const imagem = produto.querySelector("img").src;
-
-    const mensagem = `Olá! Gostaria de comprar o produto: *${nome}*%0AImagem: ${imagem}`;
-
-    const link = `https://wa.me/244943379573?text=${mensagem}`; // substitua com seu número
-
-    window.open(link, '_blank');
-  }
-</script>
-<script>
-  function criarNeve() {
-    const floco = document.createElement("div");
-    floco.classList.add("neve");
-    floco.innerHTML = "❄";
-
-    floco.style.left = Math.random() * window.innerWidth + "px";
-    floco.style.fontSize = Math.random() * 20 + 10 + "px";
-    floco.style.opacity = Math.random();
-    floco.style.animationDuration = Math.random() * 5 + 5 + "s";
-
-    document.body.appendChild(floco);
-
-    setTimeout(() => {
-      floco.remove();
-    }, 10000);
-  }
-
-  setInterval(criarNeve, 300);
-</script>
+  <script src="app.js"></script>
 </body>
+
+	
 </html>
