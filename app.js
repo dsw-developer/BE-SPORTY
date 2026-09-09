@@ -7,12 +7,14 @@ const noResults = document.getElementById("noResults");
 
 menuBtn?.addEventListener("click", () => {
   const open = mobileNav.classList.toggle("open");
+  menuBtn.classList.toggle("open", open);
   menuBtn.setAttribute("aria-expanded", open);
 });
 
 mobileNav?.querySelectorAll("a").forEach(link => {
   link.addEventListener("click", () => {
     mobileNav.classList.remove("open");
+    menuBtn?.classList.remove("open");
     menuBtn?.setAttribute("aria-expanded", "false");
   });
 });
