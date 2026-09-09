@@ -1,6 +1,4 @@
-
-
-  *{box-sizing:border-box}
+*{box-sizing:border-box}
 :root{--black:#111;--dark:#181818;--orange:#f47b20;--orange2:#ff9d45;--light:#f6f6f4;--text:#202020;--muted:#707070;--white:#fff;--border:#e8e8e5}
 html{scroll-behavior:smooth}
 body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--text);background:#fff;line-height:1.6}
@@ -22,9 +20,39 @@ img{display:block;max-width:100%}
 .header-actions{display:flex;align-items:center;gap:15px}
 .header-whatsapp{display:flex;align-items:center;gap:8px;background:#111;color:#fff;padding:10px 16px;border-radius:999px;font-size:13px;font-weight:700;transition:.2s}
 .header-whatsapp:hover{background:var(--orange);transform:translateY(-1px)}
-.menu-btn{display:none;border:0;background:transparent;padding:8px;cursor:pointer}
+.menu-btn{display:none;border:0;background:transparent;padding:8px;cursor:pointer;position:relative;z-index:120}
+.menu-btn span{transition:.25s}
+.menu-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-btn.open span:nth-child(2){opacity:0}
+.menu-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
 .menu-btn span{display:block;width:24px;height:2px;background:#111;margin:5px;border-radius:3px}
-.mobile-nav{display:none}
+.mobile-nav{
+  position:fixed;
+  top:112px;
+  left:0;
+  width:min(290px,82vw);
+  height:calc(100vh - 112px);
+  background:#fff;
+  box-shadow:10px 0 30px rgba(0,0,0,.14);
+  display:flex;
+  flex-direction:column;
+  padding:22px 24px;
+  gap:4px;
+  transform:translateX(-105%);
+  transition:transform .3s ease;
+  z-index:110;
+}
+.mobile-nav.open{transform:translateX(0)}
+.mobile-nav a{
+  padding:14px 10px;
+  border-radius:8px;
+  font-size:15px;
+  font-weight:700;
+  color:#222;
+}
+.mobile-nav a:hover{background:#f5f5f3;color:var(--orange)}
+
 
 .hero{min-height:570px;position:relative;display:flex;align-items:center;background:linear-gradient(110deg,#111 0%,#1e1e1e 58%,#292929 100%);overflow:hidden}
 .hero:after{content:"";position:absolute;width:520px;height:520px;border-radius:50%;right:-170px;top:-170px;background:radial-gradient(circle,rgba(244,123,32,.30),transparent 67%)}
@@ -109,13 +137,13 @@ img{display:block;max-width:100%}
   .about-mark{min-height:220px}
 }
 @media(max-width:620px){
-  .container{width:min(100% - 28px,1180px)}
+  .container{width:min(100% - 24px,1180px)}
   .topbar-inner{height:auto;padding:8px 0;gap:8px;flex-direction:column;align-items:flex-start}
   .header-inner{height:68px}
   .brand img{width:105px}
-  .hero{min-height:600px}
-  .hero-copy{padding:70px 0}
-  .hero h1{font-size:43px;letter-spacing:-2px}
+  .hero{min-height:540px}
+  .hero-copy{padding:58px 0}
+  .hero h1{font-size:39px;letter-spacing:-1.8px}
   .hero p{font-size:15px}
   .trust-row{gap:12px;flex-direction:column}
   .search-box{height:56px}
@@ -124,7 +152,7 @@ img{display:block;max-width:100%}
   .section-heading h2,.about-section h2{font-size:30px}
   .section-heading p{margin-top:14px}
   .product-grid{grid-template-columns:1fr}
-  .product-image{height:270px}
+  .product-image{height:245px}
   .about-points{grid-template-columns:1fr}
   .cta{padding:35px 25px;display:block}
   .cta h2{font-size:27px}
@@ -135,3 +163,4 @@ img{display:block;max-width:100%}
   .footer-bottom a{display:block;margin-top:5px}
   .floating-whatsapp{right:16px;bottom:16px}
 }
+
