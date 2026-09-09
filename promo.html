@@ -1,652 +1,363 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-AO">
 <head>
-	<title>BE SPORTY</title>
-    <link rel="stylesheet" href="style.css?v=2">
-<script src="app.js?v=5"></script>
-
-<link rel="shortcut icon" href="fotos/IMG_7171.png" type="image/x-icon">
-<meta name="google-site-verification" content="GYImX28YnHqwK8hyglkxfti5YSCjOsVuK3pJWwzPxss" />
-  <meta charset="UTF-8">
-  <meta name="description" content="Encontre aqui as melhores chuteiras para o seu esporte favorito.">
-  <meta name="keywords" content="chuteiras, futebol, basquete, running">
-  <meta name="author" content="Seu nome ou nome da sua empresa">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <style>
-  
-  .neve {
-    position: fixed;
-    top: -10px;
-    color: white;
-    user-select: none;
-    pointer-events: none;
-    z-index: 9999;
-    animation-name: cair;
-    animation-timing-function: linear;
-  }
-
-  @keyframes cair {
-    to {
-      transform: translateY(110vh);
-    }
-  }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-      color: #333;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #333;
-      padding: 1rem;
-      color: white;
-    }
-
-    .logo {
-      height: 40px;
-    }
-
-    .hamburger-menu {
-      cursor: pointer;
-      z-index: 100;
-    }
-
-    .hamburger-menu div {
-      width: 25px;
-      height: 3px;
-      background-color: white;
-      margin: 5px 0;
-      border-radius: 2px;
-      transition: all 0.3s ease;
-    }
-
-    .hamburger-menu.open div:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .hamburger-menu.open div:nth-child(2) {
-      opacity: 0;
-    }
-
-    .hamburger-menu.open div:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
-    }
-
-   .nav-menu {
-  position: fixed;
-  top: 0;
-  left: -250px;
-  width: 250px;
-  height: 100%;
-  background: #333;
-  color: white;
-  transition: left 0.3s ease;
-  z-index: 90;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.nav-menu.open {
-  left: 0;
-}
-
-.nav-menu a {
-  font-size: 2rem;
-  color: white;
-  text-decoration: none;
-  margin: 20px 0;
-  transition: transform 0.3s ease;
-  transform: rotateX(30deg);
-}
-
-.nav-menu a:hover {
-  transform: rotateX(10deg);
-}
-
-/* Submenu */
-.submenu {
-  display: none;
-  flex-direction: column;
-  padding-left: 20px;
-}
-
-.submenu a {
-  font-size: 1.5rem;
-  margin: 10px 0;
-}
-
-.nav-menu a:hover + .submenu,
-.submenu:hover {
-  display: flex;
-}
-
-.banner {
-  text-align: center;
-  padding: 0; /* Tira o espaço interno */
-  background: #d3d3d3;
-  height: 350px; /* Ajuste esse valor como preferir */
-  overflow: hidden; /* Evita que o conteúdo ultrapasse */
-}
-
-
-
-    .banner h1 {
-      font-size: 1.5rem;
-    }
-
-    .banner p {
-      font-size: 1rem;
-      color: #555;
-    }
-
-    .btn {
-      padding: 0.6rem 1.2rem;
-      background: orange;
-      color: white;
-      border: none;
-      border-radius: 20px;
-      font-weight: bold;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 1rem;
-    }
-
-    .carrossel {
-      padding: 1rem;
-    }
-
-    .carrossel-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-    }
-
-    .produto-visivel {
-      display: flex;
-      scroll-snap-align: center;
-      gap: 1rem;
-    }
-
-    .produto {
-      min-width: 250px;
-      background: white;
-      border-radius: 10px;
-      padding: 1rem;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .produto img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    .btn-nav {
-      display: none; /* escondido no mobile */
-    }
-
-    .sobre {
-      padding: 2rem 1rem;
-      text-align: center;
-      background: #f9f9f9;
-    }
-
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-    }
-
-    
-.search-bar {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: white;
-  border-radius: 20px;
-  padding: 0.3rem 0.8rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  margin: 0 auto;
-  max-width: 90%;
-}
-
-.search-bar input {
-  border: none;
-  outline: none;
-  padding: 0.5rem;
-  border-radius: 20px;
-  flex: 1;
-  font-size: 1rem;
-}
-
-.search-bar button {
-  background: orange;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 1rem;
-}
-.produto {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 45%; /* ou 48% dependendo do layout desejado */
-  margin: 1rem;
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  background-color: white;
-  transition: transform 0.2s;
-}
-.botao-comprar {
-  display: inline-block;
-  padding: 0.8rem 1.6rem;
-  background: linear-gradient(to right, #ff9900, #ff6600);
-  color: white;
-  font-weight: bold;
-  border: none;
-  border-radius: 30px;
-  text-decoration: none;
-  font-size: 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-}
-
-.botao-comprar:hover {
-  background: linear-gradient(to right, #ff6600, #cc3300);
-  transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-}
-
- .whatsapp-link {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
-            background-color: #25d366;
-            color: #fff;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 1px 1px 2px #888;
-            z-index: 1000;
-        }
-
-        .fa-whatsapp {
-            margin-top: 16px;
-        }
-.slider {
-    max-width: 100%; /* Ensure slider occupies full width */
-    width: 100%; /* Ensure slider fills its container */
-    text-align: center; /* Center slider contents */
-}
-
-.slider img {
-    max-width: 100%; /* Ensure images inside the slider are responsive */
-    height: auto; /* Maintain aspect ratio */
-    margin: 0 auto; /* Center the image horizontally */
-}
-  </style>
+  <meta name="description" content="Be Sporty — acessórios desportivos em Angola.">
+  <meta name="keywords" content="Be Sporty, acessórios desportivos, Angola, caneleiras, kinesio, massagem, Whoop">
+  <meta name="author" content="Be Sporty">
+  <meta name="theme-color" content="#111111">
+  <title>Be Sporty | Acessórios Desportivos</title>
+  <link rel="icon" href="fotos/IMG_7171.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+
 <body>
-<header>
-  <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-    <img src="fotos/IMG_7171.png" style="height:50px; width: auto;" class="logo">
-
-     <script>
-  (function(d, w, c) {
-        w.ChatraID = 'ypLqvwmBBAGaWGQ6J';
-        var s = d.createElement('script');
-        w[c] = w[c] || function() {
-            (w[c].q = w[c].q || []).push(arguments);
-        };
-        s.async = true;
-        s.src = 'https://call.chatra.io/chatra.js';
-        if (d.head) d.head.appendChild(s);
-    })(document, window, 'Chatra');
-</script>
-<!-- /Chatra {/literal} -->
-
-
-    <!-- Ícone Menu Hamburguer -->
-    <div class="hamburger-menu" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span><i class="fa-solid fa-truck-fast"></i> Entregas em toda Angola</span>
+      <span><i class="fa-solid fa-location-dot"></i> Levantamento: Projecto Nova Vida</span>
     </div>
   </div>
-<div class="nav-menu" id="navMenu">
-	<a href="index.html">Home</a>
-        <a href="#">Materiais</a>
-        <div class="submenu">
-       <a href="chuteiras.html">Chuteiras de Qualidade</a>
+
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand"><img src="fotos/IMG_7171.png" alt="Be Sporty"></a>
+
+      <nav class="desktop-nav">
+        <a href="index.html">Início</a>
+        <a class="active" href="#produtos">Produtos</a>
+        <a href="#sobre">Sobre nós</a>
+        <a href="entrega.html">Entregas</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="header-whatsapp" href="https://wa.me/244943379573" target="_blank" rel="noopener">
+          <i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span>
+        </a>
+        <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="index.html">Início</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#sobre">Sobre nós</a>
+      <a href="entrega.html">Entregas</a>
+      <a href="chuteiras.html">Chuteiras</a>
       <a href="bolas.html">Bolas de Futsal</a>
       <a href="pastas.html">Pastas Desportivas</a>
-      <a href="promo.html">Acessórios Desportivos</a>
-    
+      <a href="promo.html">Acessórios</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero category-hero">
+      <div class="hero-glow"></div>
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <span class="eyebrow">BE SPORTY • ACESSÓRIOS DESPORTIVOS</span>
+          <h1>Pequenos detalhes.<br><strong>Grande performance.</strong></h1>
+          <p>Descobre acessórios selecionados para treino, recuperação e desempenho desportivo.</p>
+          <div class="hero-buttons">
+            <a href="#produtos" class="btn btn-primary">Ver acessórios <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="https://wa.me/244943379573" target="_blank" rel="noopener" class="btn btn-outline">
+              <i class="fa-brands fa-whatsapp"></i> Falar connosco
+            </a>
+          </div>
+          <div class="trust-row">
+            <span><i class="fa-solid fa-circle-check"></i> Produtos selecionados</span>
+            <span><i class="fa-solid fa-truck"></i> Entrega em Angola</span>
+            <span><i class="fa-solid fa-location-dot"></i> Nova Vida</span>
+          </div>
         </div>
-    <a href="entrega.html">Entrega</a>
-  </div>
-</header>
-<a class="whatsapp-link" href="https://api.whatsapp.com/send?phone=244943379573"target="_blank"> <i class="fa fa-whatsapp"></i> </a>
+      </div>
+    </section>
 
+    <section class="search-section">
+      <div class="container">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input id="searchInput" type="search" placeholder="Pesquisar acessório, marca ou produto..." autocomplete="off">
+          <button id="clearSearch" type="button">Limpar</button>
+        </div>
+      </div>
+    </section>
 
-<section class="banner">
-  <div class="publicidade-banner">
-    <h2>🎉 Promoção de Acessórios da Semana!</h2>
-    <p>Aproveite até <strong>50% de desconto</strong> em meias, caneleiras e máquina de massagem!</p>
-    <a href="#produtos" class="btn-publicidade">Ver Ofertas</a>
-  </div>
-</section>
-<style>
-.publicidade-banner {
-  background: linear-gradient(135deg, #ff9800, #ff5722);
-  color: white;
-  padding: 58px;
-  border-radius: 20px;
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-}
+    <section class="section" id="produtos">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="section-label">CATÁLOGO</span>
+            <h2>Acessórios desportivos</h2>
+          </div>
+          <p>Escolhe o produto que procuras e contacta a Be Sporty pelo WhatsApp para confirmar a disponibilidade.</p>
+        </div>
 
-.publicidade-banner h2 {
-  font-size: 32px;
-  margin-bottom: 10px;
-}
+        <div class="product-grid" id="productGrid">
 
-.publicidade-banner p {
-  font-size: 18px;
-  margin-bottom: 20px;
-}
+          <article class="product-card" data-name="Caneleiras acessório futebol futsal">
+            <div class="product-image">
+              <img src="fotos/IMG_5535.jpeg" alt="Caneleiras" loading="lazy">
+              <span class="promo">PROMOÇÃO</span>
+            </div>
+            <div class="product-body">
+              <span class="category">ACESSÓRIO</span>
+              <h3>Caneleiras</h3>
+              <div class="old-price">10.500,00 Kz</div>
+              <div class="price">3.000,00 Kz</div>
+              <div class="availability">Disponível</div>
+              <button class="buy-btn" onclick="comprar(this)">Comprar <i class="fa-brands fa-whatsapp"></i></button>
+            </div>
+          </article>
 
-.btn-publicidade {
-  background-color: white;
-  color: #ff5722;
-  padding: 10px 20px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
+          <article class="product-card" data-name="Kinesio kinesio tape fita desportiva">
+            <div class="product-image">
+              <img src="fotos/IMG_5455.jpeg" alt="Kinesio" loading="lazy">
+              <span class="promo">PROMOÇÃO</span>
+            </div>
+            <div class="product-body">
+              <span class="category">RECUPERAÇÃO</span>
+              <h3>Kinesio</h3>
+              <div class="old-price">10.500,00 Kz</div>
+              <div class="price">5.000,00 Kz</div>
+              <div class="availability">Disponível</div>
+              <button class="buy-btn" onclick="comprar(this)">Comprar <i class="fa-brands fa-whatsapp"></i></button>
+            </div>
+          </article>
 
-.btn-publicidade:hover {
-  background-color: #ffe0b2;
-}
-</style>
+          <article class="product-card" data-name="Whoop 5.0">
+            <div class="product-image">
+              <img src="fotos/IMG_0882.jpeg" alt="Whoop 5.0" loading="lazy">
+              <span class="promo">PROMOÇÃO</span>
+            </div>
+            <div class="product-body">
+              <span class="category">WHOOP</span>
+              <h3>Whoop 5.0</h3>
+              <div class="old-price">400.500,00 Kz</div>
+              <div class="price">265.000,00 Kz</div>
+              <div class="availability">Disponível</div>
+              <button class="buy-btn" onclick="comprar(this)">Comprar <i class="fa-brands fa-whatsapp"></i></button>
+            </div>
+          </article>
 
-<section style="padding: 1rem;">
-  <div class="search-bar">
-    <input type="text" id="searchInput" placeholder="Buscar produto...">
-    <button onclick="buscarProduto()">🔍</button>
-  </div>
-</section>
-<section class="carrossel" id="produtos">
-  <h2 style="text-align: center;">Acessórios de Qualidade</h2>
-  <div class="carrossel-container">
-    
-    <div class="produto">
-  <div class="selo-promocao">🔥 Promoção -10%</div>
-  <img src="fotos/IMG_5535.jpeg" alt="Caneleiras">
-  <h3>Caneleiras</h3>
-  <p class="descricao">Caneleiras</p>
-  <p class="preco-antigo"><del>10.500,00 kz</del></p>
-  <p class="preco-promocao">3.000,00 kz</p>
-  <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar Agora</a>
-</div>
-	     <div class="produto">
-  <div class="selo-promocao">🔥 Promoção -10%</div>
-  <img src="fotos/IMG_5455.jpeg" alt="Kinesio ">
-  <h3>Kinesio</h3>
-  <p class="descricao">Kinesio</p>
-  <p class="preco-antigo"><del>10.500,00 kz</del></p>
-  <p class="preco-promocao">5.000,00 kz</p>
-  <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar Agora</a>
-</div>
+          <article class="product-card" data-name="Whoop 5.0">
+            <div class="product-image">
+              <img src="fotos/IMG_0882.jpeg" alt="Whoop 5.0" loading="lazy">
+              <span class="promo">PROMOÇÃO</span>
+            </div>
+            <div class="product-body">
+              <span class="category">WHOOP</span>
+              <h3>Whoop 5.0</h3>
+              <div class="old-price">400.500,00 Kz</div>
+              <div class="price">265.000,00 Kz</div>
+              <div class="availability">Disponível</div>
+              <button class="buy-btn" onclick="comprar(this)">Comprar <i class="fa-brands fa-whatsapp"></i></button>
+            </div>
+          </article>
 
-	     <div class="produto">
-  <div class="selo-promocao">🔥 Promoção -10%</div>
-  <img src="fotos/IMG_0882.jpeg" alt="Whoop 5.0 ">
-  <h3>whoop 5.0</h3>
-  <p class="descricao">Whoop</p>
-  <p class="preco-antigo"><del>400.500,00 kz</del></p>
-  <p class="preco-promocao">265.000,00 kz</p>
-  <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar Agora</a>
-</div>
-    
-      <div class="produto">
-  <div class="selo-promocao">🔥 Promoção -10%</div>
-  <img src="fotos/IMG_0882.jpeg" alt="Whoop 5.0 ">
-  <h3>whoop 5.0</h3>
-  <p class="descricao">Whoop</p>
-  <p class="preco-antigo"><del>400.500,00 kz</del></p>
-  <p class="preco-promocao">265.000,00 kz</p>
-  <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar Agora</a>
-</div>
-    
-     <div class="produto">
-  <div class="selo-promocao">🔥 Promoção -10%</div>
-  <img src="fotos/IMG_0883.jpeg" alt="Whoop 5.0 ">
-  <h3>whoop 5.0</h3>
-  <p class="descricao">Whoop</p>
-  <p class="preco-antigo"><del>200.500,00 kz</del></p>
-  <p class="preco-promocao">165.000,00 kz</p>
-  <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar Agora</a>
-</div>
-    
-    <div class="produto">
-  <div class="selo-promocao">🔥 Promoção -10%</div>
-  <img src="fotos/IMG_0884.jpeg" alt="Whoop 5.0 ">
-  <h3>whoop 5.0</h3>
-  <p class="descricao">Whoop</p>
-  <p class="preco-antigo"><del>200.500,00 kz</del></p>
-  <p class="preco-promocao">140.000,00 kz</p>
-  <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar Agora</a>
-</div>
-   
-  <div class="produto">
-  <div class="selo-promocao">🔥 Promoção -10%</div>
-  <img src="fotos/IMG_0885.jpeg" alt="Whoop 5.0 ">
-  <h3>whoop 5.0</h3>
-  <p class="descricao">Whoop</p>
-  <p class="preco-antigo"><del>200.500,00 kz</del></p>
-  <p class="preco-promocao">170.000,00 kz</p>
-  <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar Agora</a>
-</div>
+          <article class="product-card" data-name="Whoop 5.0">
+            <div class="product-image">
+              <img src="fotos/IMG_0883.jpeg" alt="Whoop 5.0" loading="lazy">
+              <span class="promo">PROMOÇÃO</span>
+            </div>
+            <div class="product-body">
+              <span class="category">WHOOP</span>
+              <h3>Whoop 5.0</h3>
+              <div class="old-price">200.500,00 Kz</div>
+              <div class="price">165.000,00 Kz</div>
+              <div class="availability">Disponível</div>
+              <button class="buy-btn" onclick="comprar(this)">Comprar <i class="fa-brands fa-whatsapp"></i></button>
+            </div>
+          </article>
 
-<div class="produto">
-  <div class="selo-promocao">🔥 Promoção -2%</div>
-  <img src="fotos/53.jpg" alt="Coletes De Emagrecimento">
-  <h3>Coletes De Emagrecimento</h3>
-  <p class="descricao">Atletas, venham Emagrecer</p>
-  <p class="preco-antigo"><del>20.500,00 kz</del></p>
-  <p class="preco-promocao">18.500,00 kz</p>
-  <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar Agora</a>
-</div>
+          <article class="product-card" data-name="Whoop 5.0">
+            <div class="product-image">
+              <img src="fotos/IMG_0884.jpeg" alt="Whoop 5.0" loading="lazy">
+              <span class="promo">PROMOÇÃO</span>
+            </div>
+            <div class="product-body">
+              <span class="category">WHOOP</span>
+              <h3>Whoop 5.0</h3>
+              <div class="old-price">200.500,00 Kz</div>
+              <div class="price">140.000,00 Kz</div>
+              <div class="availability">Disponível</div>
+              <button class="buy-btn" onclick="comprar(this)">Comprar <i class="fa-brands fa-whatsapp"></i></button>
+            </div>
+          </article>
 
-<div class="produto">
-<div class="selo-promocao">🔥 Promoção -20%</div>
-  <img src="fotos/57.jpg" alt="Máquina de massagem">
-  <h3>Máquina de massagem</h3>
-  <p class="descricao">Máquina de massagem </p>
-  <p class="preco-antigo"><del>40.500,00 kz</del></p>
-  <p class="preco-promocao">29.500,00 kz</p>
-  <a href="#" onclick="enviarWhatsApp(this)" class="botao-comprar">🛒 Comprar Agora</a>
-</div>
-</div>
-</section>
+          <article class="product-card" data-name="Whoop 5.0">
+            <div class="product-image">
+              <img src="fotos/IMG_0885.jpeg" alt="Whoop 5.0" loading="lazy">
+              <span class="promo">PROMOÇÃO</span>
+            </div>
+            <div class="product-body">
+              <span class="category">WHOOP</span>
+              <h3>Whoop 5.0</h3>
+              <div class="old-price">200.500,00 Kz</div>
+              <div class="price">170.000,00 Kz</div>
+              <div class="availability">Disponível</div>
+              <button class="buy-btn" onclick="comprar(this)">Comprar <i class="fa-brands fa-whatsapp"></i></button>
+            </div>
+          </article>
 
-<style>
- .produto {
-  position: relative;
-  padding: 20px;
-  border-radius: 20px;
-  background: linear-gradient(to bottom right, #fff, #f0f0f0);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+          <article class="product-card" data-name="Coletes de Emagrecimento">
+            <div class="product-image">
+              <img src="fotos/53.jpg" alt="Coletes de Emagrecimento" loading="lazy">
+              <span class="promo">PROMOÇÃO</span>
+            </div>
+            <div class="product-body">
+              <span class="category">TREINO</span>
+              <h3>Coletes de Emagrecimento</h3>
+              <div class="old-price">20.500,00 Kz</div>
+              <div class="price">18.500,00 Kz</div>
+              <div class="availability">Disponível</div>
+              <button class="buy-btn" onclick="comprar(this)">Comprar <i class="fa-brands fa-whatsapp"></i></button>
+            </div>
+          </article>
 
-.produto:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
+          <article class="product-card" data-name="Máquina de massagem">
+            <div class="product-image">
+              <img src="fotos/57.jpg" alt="Máquina de massagem" loading="lazy">
+              <span class="promo">PROMOÇÃO</span>
+            </div>
+            <div class="product-body">
+              <span class="category">RECUPERAÇÃO</span>
+              <h3>Máquina de massagem</h3>
+              <div class="old-price">40.500,00 Kz</div>
+              <div class="price">29.500,00 Kz</div>
+              <div class="availability">Disponível</div>
+              <button class="buy-btn" onclick="comprar(this)">Comprar <i class="fa-brands fa-whatsapp"></i></button>
+            </div>
+          </article>
 
-.selo-promocao {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  background: linear-gradient(45deg, #ff004c, #ff6a00);
-  color: white;
-  padding: 8px 14px;
-  font-size: 14px;
-  font-weight: bold;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  transform: rotate(5deg);
-  z-index: 1;
-}
+        </div>
 
-.produto img {
-  width: 100%;
-  max-width: 220px;
-  border-radius: 15px;
-  margin-bottom: 10px;
-}
+        <p class="no-results" id="noResults">Nenhum acessório encontrado para a tua pesquisa.</p>
+      </div>
+    </section>
 
-.descricao {
-  font-style: italic;
-  color: #555;
-  margin-bottom: 8px;
-}
+    <section class="category-strip">
+      <div class="container">
+        <a href="chuteiras.html"><i class="fa-solid fa-shoe-prints"></i><span>Chuteiras</span></a>
+        <a href="bolas.html"><i class="fa-solid fa-futbol"></i><span>Bolas</span></a>
+        <a href="pastas.html"><i class="fa-solid fa-bag-shopping"></i><span>Pastas</span></a>
+        <a class="active" href="promo.html"><i class="fa-solid fa-medal"></i><span>Acessórios</span></a>
+        <a href="entrega.html"><i class="fa-solid fa-truck-fast"></i><span>Entregas</span></a>
+      </div>
+    </section>
 
-.preco-antigo {
-  font-size: 14px;
-  color: #999;
-  text-decoration: line-through;
-}
+    <section class="about-section" id="sobre">
+      <div class="container about-grid">
+        <div class="about-mark"><img src="fotos/IMG_7171.png" alt="Be Sporty"></div>
+        <div>
+          <span class="section-label">BE SPORTY</span>
+          <h2>Desporto faz parte de nós.</h2>
+          <p>A Be Sporty é dedicada aos amantes do desporto, com materiais e acessórios selecionados para treino, desempenho e recuperação.</p>
+          <div class="about-points">
+            <div><i class="fa-solid fa-check"></i><span>Atendimento pelo WhatsApp</span></div>
+            <div><i class="fa-solid fa-check"></i><span>Produtos selecionados</span></div>
+            <div><i class="fa-solid fa-check"></i><span>Entrega em toda Angola</span></div>
+            <div><i class="fa-solid fa-check"></i><span>Levantamento na Nova Vida</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-.preco-promocao {
-  font-size: 22px;
-  font-weight: bold;
-  color: #e60000;
-  margin-bottom: 10px;
-}
+    <section class="cta-section">
+      <div class="container cta">
+        <div>
+          <span class="section-label">PRECISAS DE AJUDA?</span>
+          <h2>Fala directamente com a Be Sporty.</h2>
+          <p>Envia-nos o produto que procuras e confirmamos a disponibilidade.</p>
+        </div>
+        <a class="btn btn-primary" href="https://wa.me/244943379573?text=Olá%20Be%20Sporty!%20Gostaria%20de%20saber%20mais%20sobre%20um%20acessório." target="_blank" rel="noopener">
+          <i class="fa-brands fa-whatsapp"></i> Contactar agora
+        </a>
+      </div>
+    </section>
+  </main>
 
-.botao-comprar {
-  background: linear-gradient(45deg, #ff8c00, #ff4500);
-  color: white;
-  padding: 10px 25px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  transition: background 0.3s ease, transform 0.2s ease;
-}
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <img class="footer-logo" src="fotos/IMG_7171.png" alt="Be Sporty">
+        <p>Materiais e acessórios desportivos em Angola.</p>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <a href="index.html">Início</a>
+        <a href="#produtos">Produtos</a>
+        <a href="entrega.html">Entregas</a>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <a href="https://wa.me/244943379573" target="_blank">+244 943 379 573</a>
+        <a href="mailto:besporty2023@gmail.com">besporty2023@gmail.com</a>
+        <span>Projecto Nova Vida</span>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> Be Sporty. Todos os direitos reservados.</span>
+      <a href="https://be-sporty.netlify.app" target="_blank">be-sporty.netlify.app</a>
+    </div>
+  </footer>
 
-.botao-comprar:hover {
-  background: linear-gradient(45deg, #ff6a00, #ff004c);
-  transform: scale(1.05);
-}
+  <a class="floating-whatsapp" href="https://wa.me/244943379573" target="_blank" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
 
-</style>
+  <script src="app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = [...document.querySelectorAll('.product-card')];
+      const input = document.getElementById('searchInput');
+      const clear = document.getElementById('clearSearch');
+      const noResults = document.getElementById('noResults');
 
-<section class="sobre">
-  <h2>Sobre a Be Sporty</h2>
-  <p>Loja dedicada a todos os amantes de esporte com os melhores produtos.</p>
-</section>
+      function filtrar() {
+        const termo = input.value.trim().toLowerCase();
+        let encontrados = 0;
 
-<footer>
-  <p>&copy; 2025 Be Sporty | Todos os direitos reservados</p>
-</footer>
+        cards.forEach(card => {
+          const nome = (card.dataset.name || '').toLowerCase();
+          const visivel = nome.includes(termo);
+          card.style.display = visivel ? '' : 'none';
+          if (visivel) encontrados++;
+        });
 
-<script>
-  function toggleMenu() {
-    document.querySelector(".hamburger-menu").classList.toggle("open");
-    document.querySelector(".nav-menu").classList.toggle("open");
-  }
-</script>
-<script>
-  function buscarProduto() {
-    const termo = document.getElementById("searchInput").value.toLowerCase();
-    const produtos = document.querySelectorAll(".produto");
-
-    produtos.forEach(produto => {
-      const nome = produto.querySelector("h3").textContent.toLowerCase();
-      if (nome.includes(termo)) {
-        produto.style.display = "flex"; // mantém o layout original
-      } else {
-        produto.style.display = "none";
+        noResults.style.display = encontrados ? 'none' : 'block';
       }
+
+      input.addEventListener('input', filtrar);
+      clear.addEventListener('click', () => {
+        input.value = '';
+        filtrar();
+        input.focus();
+      });
+
+      document.getElementById('year').textContent = new Date().getFullYear();
     });
-  }
-</script>
 
-<script>
-  function enviarWhatsApp(elemento) {
-    const produto = elemento.closest(".produto");
-    const nome = produto.querySelector("h3").textContent;
-    const imagem = produto.querySelector("img").src;
+    function comprar(botao) {
+      const card = botao.closest('.product-card');
+      const nome = card.querySelector('h3').textContent.trim();
+      const preco = card.querySelector('.price').textContent.trim();
+      const imagem = card.querySelector('img').src;
 
-    const mensagem = `Olá! Gostaria de comprar o produto: *${nome}*%0AImagem: ${imagem}`;
+      const mensagem =
+        `Olá! Gostaria de comprar o produto: *${nome}*%0A` +
+        `Preço: *${preco}*%0A` +
+        `Imagem: ${encodeURIComponent(imagem)}`;
 
-    const link = `https://wa.me/244943379573?text=${mensagem}`; // substitua com seu número
-
-    window.open(link, '_blank');
-  }
-</script>
-<script>
-	$(document).ready(function(){
-    $('.slider').slick({
-        autoplay: true,
-        autoplaySpeed: 1000,
-        arrows: false,
-        dots: true
-    });
-});
-</script>
-<script>
-  function criarNeve() {
-    const floco = document.createElement("div");
-    floco.classList.add("neve");
-    floco.innerHTML = "❄";
-
-    floco.style.left = Math.random() * window.innerWidth + "px";
-    floco.style.fontSize = Math.random() * 20 + 10 + "px";
-    floco.style.opacity = Math.random();
-    floco.style.animationDuration = Math.random() * 5 + 5 + "s";
-
-    document.body.appendChild(floco);
-
-    setTimeout(() => {
-      floco.remove();
-    }, 10000);
-  }
-
-  setInterval(criarNeve, 300);
-</script>
+      window.open(`https://wa.me/244943379573?text=${mensagem}`, '_blank');
+    }
+  </script>
 </body>
 </html>
