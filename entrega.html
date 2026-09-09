@@ -1,478 +1,104 @@
 <!DOCTYPE html>
-
-<html lang="pt">
+<html lang="pt-AO">
 <head>
-	<title>BE SPORTY</title>
-    <link rel="stylesheet" href="style.css?v=2">
-<script src="app.js?v=5"></script>
-
-<link rel="shortcut icon" href="fotos/IMG_7171.png" type="image/x-icon">
-<meta name="google-site-verification" content="GYImX28YnHqwK8hyglkxfti5YSCjOsVuK3pJWwzPxss" />
-  <meta charset="UTF-8">
-  <meta name="description" content="Encontre aqui as melhores chuteiras para o seu esporte favorito.">
-  <meta name="keywords" content="chuteiras, futebol, basquete, running">
-  <meta name="author" content="Seu nome ou nome da sua empresa">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Be Sporty — materiais e acessórios desportivos em Angola.">
+  <meta name="theme-color" content="#111111">
+  <title>Be Sporty | Materiais Desportivos</title>
 
-  <style>
-  
-  .neve {
-    position: fixed;
-    top: -10px;
-    color: white;
-    user-select: none;
-    pointer-events: none;
-    z-index: 9999;
-    animation-name: cair;
-    animation-timing-function: linear;
-  }
-
-  @keyframes cair {
-    to {
-      transform: translateY(110vh);
-    }
-  }
-
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-      color: #333;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #333;
-      padding: 1rem;
-      color: white;
-    }
-
-    .logo {
-      height: 40px;
-    }
-
-    .hamburger-menu {
-      cursor: pointer;
-      z-index: 100;
-    }
-
-    .hamburger-menu div {
-      width: 25px;
-      height: 3px;
-      background-color: white;
-      margin: 5px 0;
-      border-radius: 2px;
-      transition: all 0.3s ease;
-    }
-
-    .hamburger-menu.open div:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .hamburger-menu.open div:nth-child(2) {
-      opacity: 0;
-    }
-
-    .hamburger-menu.open div:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
-    }
-
-   .nav-menu {
-  position: fixed;
-  top: 0;
-  left: -250px;
-  width: 250px;
-  height: 100%;
-  background: #333;
-  color: white;
-  transition: left 0.3s ease;
-  z-index: 90;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.nav-menu.open {
-  left: 0;
-}
-
-.nav-menu a {
-  font-size: 2rem;
-  color: white;
-  text-decoration: none;
-  margin: 20px 0;
-  transition: transform 0.3s ease;
-  transform: rotateX(30deg);
-}
-
-.nav-menu a:hover {
-  transform: rotateX(10deg);
-}
-
-/* Submenu */
-.submenu {
-  display: none;
-  flex-direction: column;
-  padding-left: 20px;
-}
-
-.submenu a {
-  font-size: 1.5rem;
-  margin: 10px 0;
-}
-
-.nav-menu a:hover + .submenu,
-.submenu:hover {
-  display: flex;
-}
-
-.banner {
-  text-align: center;
-  padding: 0; /* Tira o espaço interno */
-  background: #d3d3d3;
-  height: 350px; /* Ajuste esse valor como preferir */
-  overflow: hidden; /* Evita que o conteúdo ultrapasse */
-}
-
-
-
-    .banner h1 {
-      font-size: 1.5rem;
-    }
-
-    .banner p {
-      font-size: 1rem;
-      color: #555;
-    }
-
-    .btn {
-      padding: 0.6rem 1.2rem;
-      background: orange;
-      color: white;
-      border: none;
-      border-radius: 20px;
-      font-weight: bold;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 1rem;
-    }
-
-    .carrossel {
-      padding: 1rem;
-    }
-
-    .carrossel-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-    }
-
-    .produto-visivel {
-      display: flex;
-      scroll-snap-align: center;
-      gap: 1rem;
-    }
-
-    .produto {
-      min-width: 250px;
-      background: white;
-      border-radius: 10px;
-      padding: 1rem;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .produto img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    .btn-nav {
-      display: none; /* escondido no mobile */
-    }
-
-    .sobre {
-      padding: 2rem 1rem;
-      text-align: center;
-      background: #f9f9f9;
-    }
-
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-    }
-
-   
-.search-bar {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: white;
-  border-radius: 20px;
-  padding: 0.3rem 0.8rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  margin: 0 auto;
-  max-width: 90%;
-}
-
-.search-bar input {
-  border: none;
-  outline: none;
-  padding: 0.5rem;
-  border-radius: 20px;
-  flex: 1;
-  font-size: 1rem;
-}
-
-.search-bar button {
-  background: orange;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 1rem;
-}
-.produto {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 45%; /* ou 48% dependendo do layout desejado */
-  margin: 1rem;
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  background-color: white;
-  transition: transform 0.2s;
-}
-.botao-comprar {
-  display: inline-block;
-  padding: 0.8rem 1.6rem;
-  background: linear-gradient(to right, #ff9900, #ff6600);
-  color: white;
-  font-weight: bold;
-  border: none;
-  border-radius: 30px;
-  text-decoration: none;
-  font-size: 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-}
-
-.botao-comprar:hover {
-  background: linear-gradient(to right, #ff6600, #cc3300);
-  transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-}
-
- .whatsapp-link {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
-            background-color: #25d366;
-            color: #fff;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 1px 1px 2px #888;
-            z-index: 1000;
-        }
-
-        .fa-whatsapp {
-            margin-top: 16px;
-        }
-.slider {
-    max-width: 100%; /* Ensure slider occupies full width */
-    width: 100%; /* Ensure slider fills its container */
-    text-align: center; /* Center slider contents */
-}
-
-.slider img {
-    max-width: 100%; /* Ensure images inside the slider are responsive */
-    height: auto; /* Maintain aspect ratio */
-    margin: 0 auto; /* Center the image horizontally */
-}
-  .container {
-            background-color: var(--container-bg-color);
-            padding: 40px 0px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            max-width: 290  px;
-            width: 100%;
-            text-align: center;
-            transition: transform var(--transition-time) ease, box-shadow var(--transition-time) ease;
-        }
-
-        .container:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
-        }
-
-       
-        h2 {
-            color: #444;
-            margin-bottom: 20px;
-            font-weight: 600;
-            position: relative;
-            display: inline-block;
-        }
-
-        h2::after {
-            content: '';
-            width: 50px;
-            height: 4px;
-            background-color: var(--primary-color);
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .form {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            color: #666;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        select {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-            border-radius: var(--border-radius);
-            font-size: 16px;
-            transition: border-color var(--transition-time) ease, box-shadow var(--transition-time) ease;
-        }
-
-        select:focus {
-            border-color: var(--primary-color);
-            box-shadow: 0 0 8px rgba(40, 167, 69, 0.1);
-        }
-
-        button {
-            background: linear-gradient(to right, #ff9900, #ff6600);
-            color: #fff;
-            padding: 12px 25px;
-            border: none;
-            border-radius: var(--border-radius);
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-            transition: background var(--transition-time) ease, transform var(--transition-time) ease;
-        }
-
-        button:hover {
-            background: linear-gradient(to right, #ff9900, #ff6600);
-            transform: translateY(-2px);
-        }
-
-        .resultado {
-             background: linear-gradient(to right, #ff9900, #ff6600);
-            padding: 5px;
-            border-radius: var(--border-radius);
-            border: 1px solid #dee2e6;
-            margin-top: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform var(--transition-time) ease, box-shadow var(--transition-time) ease;
-        }
-
-        .resultado:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        }
-
-        .resultado h2 {
-            margin: 0 0 10px;
-            color: var(--text-color);
-            font-weight: 600;
-        }
-
-        .resultado p {
-            margin: 5px 0;
-            color: #555;
-        }
-:root {
-            --primary-color: #28a745;
-            --secondary-color: #218838;
-            --background-color: #f0f2f5;
-            --container-bg-color: #fff;
-            --text-color: #333;
-            --border-radius: 12px;
-            --box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-            --transition-time: 0.3s;
-        }
-
-  </style>
-
+  <link rel="icon" href="fotos/IMG_7171.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+
 <body>
-<header>
-  <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-    <img src="fotos/IMG_7171.png" style="height:50px; width: auto;" class="logo">
-
- <script>
-
-(function(d, w, c) {
-w.ChatraID = 'ypLqvwmBBAGaWGQ6J';
-var s = d.createElement('script');
-w[c] = w[c] || function() {
-(w[c].q = w[c].q || []).push(arguments);
-};
-s.async = true;
-s.src = 'https://call.chatra.io/chatra.js';
-if (d.head) d.head.appendChild(s);
-})(document, window, 'Chatra');
-</script>
-
-<!-- /Chatra {/literal} -->
-
-<!-- Ícone Menu Hamburguer -->
-<div class="hamburger-menu" onclick="toggleMenu()">
-  <div></div>
-  <div></div>
-  <div></div>
-</div>
-
-  </div>
-<div class="nav-menu" id="navMenu">
-	<a href="index.html">Home</a>
-        <a href="#">Materiais</a>
-        <div class="submenu">
-       <a href="chuteiras.html">Chuteiras de Qualidade</a>
-      <a href="bolas.html">Bolas de Futsal</a>
-      <a href="pastas.html">Pastas Desportivas</a>
-      <a href="promo.html">Acessórios Desportivos</a>
-
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span><i class="fa-solid fa-truck-fast"></i> Entregas em toda Angola</span>
+      <span><i class="fa-solid fa-location-dot"></i> Levantamento: Projecto Nova Vida</span>
     </div>
-<a href="entrega.html">Entrega</a>
-
   </div>
-</header>
-<a class="whatsapp-link" href="https://api.whatsapp.com/send?phone=244943379573"target="_blank"> <i class="fa fa-whatsapp"></i> </a>
+
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="Be Sporty - início">
+        <img src="fotos/IMG_7171.png" alt="Be Sporty">
+      </a>
+
+      <nav class="desktop-nav" aria-label="Navegação principal">
+        <a class="active" href="index.html">Início</a>
+        <a href="#categorias">Categorias</a>
+        <a href="#sobre">Sobre nós</a>
+        <a href="entrega.html">Entregas</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="header-whatsapp" href="https://wa.me/244943379573" target="_blank" rel="noopener">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>WhatsApp</span>
+        </a>
+        <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" id="mobileNav" aria-label="Menu mobile">
+      <a href="index.html">Início</a>
+      <a href="#categorias">Categorias</a>
+      <a href="#sobre">Sobre nós</a>
+      <a href="entrega.html">Entregas</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <span class="eyebrow">BE SPORTY • DESPORTO EM ANGOLA</span>
+          <h1>Equipamento certo.<br><strong>Performance melhor.</strong></h1>
+          <p>Encontra chuteiras, bolas, pastas e acessórios desportivos para elevar o teu jogo.</p>
+
+          <div class="hero-buttons">
+            <a href="#categorias" class="btn btn-primary">Explorar produtos <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="https://wa.me/244943379573" target="_blank" rel="noopener" class="btn btn-outline">
+              <i class="fa-brands fa-whatsapp"></i> Falar connosco
+            </a>
+          </div>
+
+          <div class="trust-row">
+            <div><i class="fa-solid fa-circle-check"></i><span>Produtos selecionados</span></div>
+            <div><i class="fa-solid fa-truck"></i><span>Entrega em Angola</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="search-section">
+      <div class="container">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input id="searchInput" type="search" placeholder="Pesquisar produtos ou categorias..." autocomplete="off">
+          <button id="clearSearch" type="button" aria-label="Limpar pesquisa">Limpar</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="categorias">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="section-label">EXPLORE</span>
+            <h2>Encontra o que precisas</h2>
+          </div>
+          <p>Escolhe uma categoria e descobre os produtos disponíveis.</p>
+        </div>
+
 
 
 
