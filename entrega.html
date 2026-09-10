@@ -254,9 +254,9 @@ var municipios = ['Luanda', 'Belas', 'Cacuaco', 'Cazenga', 'Kilamba Kiaxi', 'Via
     function mostrarResultado(resultado) {
         var resultadoElement = document.getElementById('resultado');
         resultadoElement.innerHTML = '<h1>Be Sporty:</h1>' +
-                                     '<p>Município: ' + resultado.municipio + '</p>' +
-                                     '<p>Bairro: ' + resultado.bairro + '</p>' +
-                                     '<p>Preço da entrega: ' + resultado.preco.toLocaleString('pt-PT', { style: 'currency', currency: 'AOA' }) + '</p>';
+                                     '<p>' + resultado.municipio + '</p>' +
+                                     '<p>' + resultado.bairro + '</p>' +
+                                     '<p>Preço: ' + resultado.preco.toLocaleString('pt-PT', { style: 'currency', currency: 'AOA' }) + '</p>';
     }
 
     document.addEventListener('DOMContentLoaded', function() {
@@ -346,44 +346,7 @@ var municipios = ['Luanda', 'Belas', 'Cacuaco', 'Cazenga', 'Kilamba Kiaxi', 'Via
   <a class="floating-whatsapp" href="https://wa.me/244943379573" target="_blank" rel="noopener" aria-label="Contactar Be Sporty pelo WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
-        
-<script>
-document.getElementById("resultado").innerHTML = `
-  <div class="delivery-result">
-
-    <div class="delivery-result-info">
-
-      <div class="delivery-result-icon">
-        <i class="fa-solid fa-motorcycle"></i>
-      </div>
-
-      <div class="delivery-result-text">
-        <span class="delivery-result-label">
-          Entrega Be Sporty
-        </span>
-
-        <span class="delivery-result-location">
-          ${municipio} — ${bairro}
-        </span>
-      </div>
-
-    </div>
-
-    <div class="delivery-price">
-
-      <span class="delivery-price-label">
-        Valor da entrega
-      </span>
-
-      <span class="delivery-price-value">
-        ${valor.toLocaleString('pt-AO')} 
-        <span>Kz</span>
-      </span>
-
-    </div>
-
-  </div>
-`;
+      
 
   <script src="app.js"></script>
 </body>
