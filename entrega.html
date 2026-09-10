@@ -90,15 +90,12 @@
         </div>
 
 
-
-
- ```html
 <section class="delivery-section">
   <div class="container">
 
     <div class="delivery-header">
       <span class="section-label">ENTREGA BE SPORTY</span>
-      <h2>Calcule o valor da sua entrega</h2>
+    
       <p>
         Selecione o município e o bairro para consultar rapidamente
         o valor estimado da entrega.
@@ -256,7 +253,7 @@ var municipios = ['Luanda', 'Belas', 'Cacuaco', 'Cazenga', 'Kilamba Kiaxi', 'Via
 
     function mostrarResultado(resultado) {
         var resultadoElement = document.getElementById('resultado');
-        resultadoElement.innerHTML = '<h2>Cálculo Be Sporty:</h2>' +
+        resultadoElement.innerHTML = '<h1>Be Sporty:</h1>' +
                                      '<p>Município: ' + resultado.municipio + '</p>' +
                                      '<p>Bairro: ' + resultado.bairro + '</p>' +
                                      '<p>Preço da entrega: ' + resultado.preco.toLocaleString('pt-PT', { style: 'currency', currency: 'AOA' }) + '</p>';
