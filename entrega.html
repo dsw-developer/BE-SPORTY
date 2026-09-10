@@ -257,48 +257,7 @@ var municipios = ['Luanda', 'Belas', 'Cacuaco', 'Cazenga', 'Kilamba Kiaxi', 'Via
   }
 </script>
 
-<script>
-	$(document).ready(function(){
-    $('.slider').slick({
-        autoplay: true,
-        autoplaySpeed: 1000,
-        arrows: false,
-        dots: true
-    });
-});
 
-  function toggleMenu() {
-    document.querySelector(".hamburger-menu").classList.toggle("open");
-    document.querySelector(".nav-menu").classList.toggle("open");
-  }
-
-</script>
-
-<section class="sobre">
-  <h2>Sobre a Be Sporty</h2>
-  <p>Loja dedicada a todos os amantes de esporte com os melhores produtos.</p>
-</section>
-
-<script>
-  function criarNeve() {
-    const floco = document.createElement("div");
-    floco.classList.add("neve");
-    floco.innerHTML = "❄";
-
-    floco.style.left = Math.random() * window.innerWidth + "px";
-    floco.style.fontSize = Math.random() * 20 + 10 + "px";
-    floco.style.opacity = Math.random();
-    floco.style.animationDuration = Math.random() * 5 + 5 + "s";
-
-    document.body.appendChild(floco);
-
-    setTimeout(() => {
-      floco.remove();
-    }, 10000);
-  }
-
-  setInterval(criarNeve, 300);
-</script>
 
 <footer>
   <p>&copy; 2025 Be Sporty | Todos os direitos reservados</p>
