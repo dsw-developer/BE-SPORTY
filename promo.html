@@ -1,358 +1,2919 @@
 <!DOCTYPE html>
 <html lang="pt-AO">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Be Sporty — acessórios desportivos em Angola.">
-  <meta name="keywords" content="Be Sporty, acessórios desportivos, Angola, caneleiras, kinesio, massagem, Whoop">
+
+  <meta
+    name="description"
+    content="Be Sporty — acessórios desportivos em Angola. Caneleiras, Kinesio, Whoop, coletes de emagrecimento e máquinas de massagem."
+  >
+
+  <meta
+    name="keywords"
+    content="Be Sporty, acessórios desportivos, Angola, caneleiras, kinesio, Whoop, colete emagrecimento, máquina massagem"
+  >
+
   <meta name="author" content="Be Sporty">
   <meta name="theme-color" content="#111111">
+
   <title>Be Sporty | Acessórios Desportivos</title>
-  <link rel="icon" href="fotos/IMG_7171.png" type="image/png">
+
+  <link rel="icon" href="fotos/IMG_7171.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-</head>
 
-<body>
- 
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
 
-  <header class="header" id="header">
-    <div class="container header-inner">
-      <a href="index.html" class="brand"><img src="fotos/IMG_7171.png" alt="Be Sporty"></a>
+  <style>
 
-      <nav class="desktop-nav">
-        <a href="index.html">Início</a>
-        <a href="chuteiras.html">Chuteiras</a>
-      <a href="bolas.html">Bolas</a>
-        <a href="pastas.html">Pastas</a>
-          <a href="Promo.html">Acessórios</a>
-        <a href="entrega.html">Entregas</a>
-      </nav>
+    /* =========================================================
+       PRODUTOS — REFINAMENTO
+    ========================================================= */
 
-      <div class="header-actions">
-        <a class="header-whatsapp" href="https://wa.me/244943379573" target="_blank" rel="noopener">
-          <i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span>
-        </a>
-        <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
+    .product-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:20px;
+    }
 
-    <nav class="mobile-nav" id="mobileNav">
-      <a href="index.html">Início</a>
-        <a href="chuteiras.html">Chuteiras</a>
-      <a href="bolas.html">Bolas</a>
-        <a href="pastas.html">Pastas</a>
-          <a href="Promo.html">Acessórios</a>
-        <a href="entrega.html">Entregas</a>
-    </nav>
-  </header>
+    .product-card{
+      position:relative;
+      border:1px solid #e7e7e3;
+      border-radius:18px;
+      overflow:hidden;
+      background:#fff;
+      display:flex;
+      flex-direction:column;
+      min-width:0;
+      transition:
+        transform .35s var(--ease),
+        box-shadow .35s var(--ease),
+        border-color .3s ease;
+    }
 
-  <main>
-    <section class="hero category-hero">
-      <div class="hero-glow"></div>
-      <div class="container hero-content">
-        <div class="hero-copy">
-          <span class="eyebrow">BE SPORTY • ACESSÓRIOS DESPORTIVOS</span>
-          <h1>Pequenos detalhes.<br><strong>Grande performance.</strong></h1>
-          <p>Descobre acessórios selecionados para treino, recuperação e desempenho desportivo.</p>
-          <div class="hero-buttons">
-            <a href="#produtos" class="btn btn-primary">Ver acessórios <i class="fa-solid fa-arrow-right"></i></a>
-            <a href="https://wa.me/244943379573" target="_blank" rel="noopener" class="btn btn-outline">
-              <i class="fa-brands fa-whatsapp"></i> Falar connosco
-            </a>
-          </div>
-          <div class="trust-row">
-            <span><i class="fa-solid fa-circle-check"></i> Produtos selecionados</span>
-            <span><i class="fa-solid fa-truck"></i> Entrega em Angola</span>
-            <span><i class="fa-solid fa-location-dot"></i> Nova Vida</span>
-          </div>
-        </div>
-      </div>
-    </section>
+    .product-card:hover{
+      transform:translateY(-7px);
+      border-color:rgba(244,123,32,.35);
+      box-shadow:
+        0 24px 50px rgba(0,0,0,.10),
+        0 8px 20px rgba(244,123,32,.05);
+    }
 
-    <section class="search-section">
-      <div class="container">
-        <div class="search-box">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <input id="searchInput" type="search" placeholder="Pesquisar acessório, marca ou produto..." autocomplete="off">
-          <button id="clearSearch" type="button">Limpar</button>
-        </div>
-      </div>
-    </section>
+    .product-image{
+      height:275px;
+      position:relative;
+      overflow:hidden;
+      display:block;
+      background:
+        radial-gradient(
+          circle at 50% 35%,
+          #fff 0%,
+          #f4f4f1 55%,
+          #e9e9e5 100%
+        );
+    }
 
-    <section class="section" id="produtos">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <span class="section-label">CATÁLOGO</span>
-            <h2>Acessórios desportivos</h2>
-          </div>
-          <p>Escolhe o produto que procuras e contacta a Be Sporty pelo WhatsApp para confirmar a disponibilidade.</p>
-        </div>
+    .product-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:
+        transform .7s var(--ease),
+        filter .4s ease;
+      filter:saturate(.96) contrast(1.02);
+    }
 
-        <div class="product-grid" id="productGrid">
+    .product-card:hover .product-image img{
+      transform:scale(1.06);
+      filter:saturate(1.03) contrast(1.04);
+    }
 
-          <article class="product-card" data-name="Caneleiras acessório futebol futsal">
-            <div class="product-image">
-              <img src="fotos/IMG_5535.jpeg" alt="Caneleiras" loading="lazy">
-              <span class="promo">PROMOÇÃO</span>
-            </div>
-            <div class="product-body">
-              <span class="category">ACESSÓRIO</span>
-              <h3>Caneleiras</h3>
-              <div class="old-price">10.500,00 Kz</div>
-              <div class="price">3.000,00 Kz</div>
-              <div class="availability">Disponível</div>
-              <button class="buy-btn" onclick="comprar(this)">Comprar <i class="fa-brands fa-whatsapp"></i></button>
-            </div>
-          </article>
+    .product-image:after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(0,0,0,.02),
+          transparent 55%,
+          rgba(0,0,0,.10)
+        );
+      pointer-events:none;
+    }
 
-          <article class="product-card" data-name="Kinesio kinesio tape fita desportiva">
-            <div class="product-image">
-              <img src="fotos/IMG_5455.jpeg" alt="Kinesio" loading="lazy">
-              <span class="promo">PROMOÇÃO</span>
-            </div>
-            <div class="product-body">
-              <span class="category">RECUPERAÇÃO</span>
-              <h3>Kinesio</h3>
-              <div class="old-price">10.500,00 Kz</div>
-              <div class="price">5.000,00 Kz</div>
-              <div class="availability">Disponível</div>
-              <button class="buy-btn" onclick="comprar(this)">Comprar <i class="fa-brands fa-whatsapp"></i></button>
-            </div>
-          </article>
+    .product-tag{
+      position:absolute;
+      z-index:4;
+      top:13px;
+      left:13px;
+      display:inline-flex;
+      align-items:center;
+      padding:7px 10px;
+      border-radius:7px;
+      background:#111;
+      color:#fff;
+      font-size:8px;
+      font-weight:900;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      box-shadow:0 7px 20px rgba(0,0,0,.16);
+    }
 
-          <article class="product-card" data-name="Whoop 5.0">
-            <div class="product-image">
-              <img src="fotos/IMG_0882.jpeg" alt="Whoop 5.0" loading="lazy">
-              <span class="promo">PROMOÇÃO</span>
-            </div>
-            <div class="product-body">
-              <span class="category">WHOOP</span>
-              <h3>Whoop 5.0</h3>
-              <div class="old-price">400.500,00 Kz</div>
-              <div class="price">265.000,00 Kz</div>
-              <div class="availability">Disponível</div>
-              <button class="buy-btn" onclick="comprar(this)">Comprar <i class="fa-brands fa-whatsapp"></i></button>
-            </div>
-          </article>
+    .product-tag:before{
+      content:"";
+      width:5px;
+      height:5px;
+      border-radius:50%;
+      background:var(--orange);
+      margin-right:6px;
+      box-shadow:0 0 0 3px rgba(244,123,32,.12);
+    }
 
-          <article class="product-card" data-name="Whoop 5.0">
-            <div class="product-image">
-              <img src="fotos/IMG_0882.jpeg" alt="Whoop 5.0" loading="lazy">
-              <span class="promo">PROMOÇÃO</span>
-            </div>
-            <div class="product-body">
-              <span class="category">WHOOP</span>
-              <h3>Whoop 5.0</h3>
-              <div class="old-price">400.500,00 Kz</div>
-              <div class="price">265.000,00 Kz</div>
-              <div class="availability">Disponível</div>
-              <button class="buy-btn" onclick="comprar(this)">Comprar <i class="fa-brands fa-whatsapp"></i></button>
-            </div>
-          </article>
+    .image-arrow{
+      position:absolute;
+      z-index:5;
+      right:13px;
+      bottom:13px;
+      width:37px;
+      height:37px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:rgba(255,255,255,.95);
+      color:#111;
+      font-size:10px;
+      opacity:0;
+      transform:translateY(7px);
+      transition:.3s var(--ease);
+      box-shadow:0 8px 25px rgba(0,0,0,.12);
+    }
 
-          <article class="product-card" data-name="Whoop 5.0">
-            <div class="product-image">
-              <img src="fotos/IMG_0883.jpeg" alt="Whoop 5.0" loading="lazy">
-              <span class="promo">PROMOÇÃO</span>
-            </div>
-            <div class="product-body">
-              <span class="category">WHOOP</span>
-              <h3>Whoop 5.0</h3>
-              <div class="old-price">200.500,00 Kz</div>
-              <div class="price">165.000,00 Kz</div>
-              <div class="availability">Disponível</div>
-              <button class="buy-btn" onclick="comprar(this)">Comprar <i class="fa-brands fa-whatsapp"></i></button>
-            </div>
-          </article>
+    .product-card:hover .image-arrow{
+      opacity:1;
+      transform:none;
+    }
 
-          <article class="product-card" data-name="Whoop 5.0">
-            <div class="product-image">
-              <img src="fotos/IMG_0884.jpeg" alt="Whoop 5.0" loading="lazy">
-              <span class="promo">PROMOÇÃO</span>
-            </div>
-            <div class="product-body">
-              <span class="category">WHOOP</span>
-              <h3>Whoop 5.0</h3>
-              <div class="old-price">200.500,00 Kz</div>
-              <div class="price">140.000,00 Kz</div>
-              <div class="availability">Disponível</div>
-              <button class="buy-btn" onclick="comprar(this)">Comprar <i class="fa-brands fa-whatsapp"></i></button>
-            </div>
-          </article>
+    .image-arrow:hover{
+      background:var(--orange);
+      color:#fff;
+    }
 
-          <article class="product-card" data-name="Whoop 5.0">
-            <div class="product-image">
-              <img src="fotos/IMG_0885.jpeg" alt="Whoop 5.0" loading="lazy">
-              <span class="promo">PROMOÇÃO</span>
-            </div>
-            <div class="product-body">
-              <span class="category">WHOOP</span>
-              <h3>Whoop 5.0</h3>
-              <div class="old-price">200.500,00 Kz</div>
-              <div class="price">170.000,00 Kz</div>
-              <div class="availability">Disponível</div>
-              <button class="buy-btn" onclick="comprar(this)">Comprar <i class="fa-brands fa-whatsapp"></i></button>
-            </div>
-          </article>
+    /* CORPO DO PRODUTO */
 
-          <article class="product-card" data-name="Coletes de Emagrecimento">
-            <div class="product-image">
-              <img src="fotos/53.jpg" alt="Coletes de Emagrecimento" loading="lazy">
-              <span class="promo">PROMOÇÃO</span>
-            </div>
-            <div class="product-body">
-              <span class="category">TREINO</span>
-              <h3>Coletes de Emagrecimento</h3>
-              <div class="old-price">20.500,00 Kz</div>
-              <div class="price">18.500,00 Kz</div>
-              <div class="availability">Disponível</div>
-              <button class="buy-btn" onclick="comprar(this)">Comprar <i class="fa-brands fa-whatsapp"></i></button>
-            </div>
-          </article>
+    .product-body{
+      padding:20px;
+      display:flex;
+      flex-direction:column;
+      flex:1;
+      min-height:300px;
+    }
 
-          <article class="product-card" data-name="Máquina de massagem">
-            <div class="product-image">
-              <img src="fotos/57.jpg" alt="Máquina de massagem" loading="lazy">
-              <span class="promo">PROMOÇÃO</span>
-            </div>
-            <div class="product-body">
-              <span class="category">RECUPERAÇÃO</span>
-              <h3>Máquina de massagem</h3>
-              <div class="old-price">40.500,00 Kz</div>
-              <div class="price">29.500,00 Kz</div>
-              <div class="availability">Disponível</div>
-              <button class="buy-btn" onclick="comprar(this)">Comprar <i class="fa-brands fa-whatsapp"></i></button>
-            </div>
-          </article>
+    .category{
+      display:flex;
+      align-items:center;
+      gap:7px;
+      font-size:8px;
+      font-weight:900;
+      letter-spacing:1.6px;
+      text-transform:uppercase;
+      color:var(--orange);
+    }
 
-        </div>
+    .category:before{
+      content:"";
+      width:14px;
+      height:1px;
+      background:var(--orange);
+    }
 
-        <p class="no-results" id="noResults">Nenhum acessório encontrado para a tua pesquisa.</p>
-      </div>
-    </section>
+    .product-body h3{
+      font-size:18px;
+      line-height:1.25;
+      font-weight:900;
+      letter-spacing:-.45px;
+      color:#111;
+      margin:9px 0 10px;
+    }
 
-    <section class="category-strip">
-      <div class="container">
-        <a href="chuteiras.html"><i class="fa-solid fa-shoe-prints"></i><span>Chuteiras</span></a>
-        <a href="bolas.html"><i class="fa-solid fa-futbol"></i><span>Bolas</span></a>
-        <a href="pastas.html"><i class="fa-solid fa-bag-shopping"></i><span>Pastas</span></a>
-        <a class="active" href="promo.html"><i class="fa-solid fa-medal"></i><span>Acessórios</span></a>
-        <a href="entrega.html"><i class="fa-solid fa-truck-fast"></i><span>Entregas</span></a>
-      </div>
-    </section>
+    .product-body p{
+      font-size:11.5px;
+      line-height:1.65;
+      color:#747474;
+      margin:0 0 17px;
 
-    <section class="about-section" id="sobre">
-      <div class="container about-grid">
-        <div class="about-mark"><img src="fotos/IMG_7171.png" alt="Be Sporty"></div>
-        <div>
-          <span class="section-label">BE SPORTY</span>
-          <h2>Desporto faz parte de nós.</h2>
-          <p>A Be Sporty é dedicada aos amantes do desporto, com materiais e acessórios selecionados para treino, desempenho e recuperação.</p>
-          <div class="about-points">
-            <div><i class="fa-solid fa-check"></i><span>Atendimento pelo WhatsApp</span></div>
-            <div><i class="fa-solid fa-check"></i><span>Produtos selecionados</span></div>
-            <div><i class="fa-solid fa-check"></i><span>Entrega em toda Angola</span></div>
-            <div><i class="fa-solid fa-check"></i><span>Levantamento na Nova Vida</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
+      display:-webkit-box;
+      -webkit-line-clamp:4;
+      -webkit-box-orient:vertical;
+      overflow:hidden;
+    }
 
-    <section class="cta-section">
-      <div class="container cta">
-        <div>
-          <span class="section-label">PRECISAS DE AJUDA?</span>
-          <h2>Fala directamente com a Be Sporty.</h2>
-          <p>Envia-nos o produto que procuras e confirmamos a disponibilidade.</p>
-        </div>
-        <a class="btn btn-primary" href="https://wa.me/244943379573?text=Olá%20Be%20Sporty!%20Gostaria%20de%20saber%20mais%20sobre%20um%20acessório." target="_blank" rel="noopener">
-          <i class="fa-brands fa-whatsapp"></i> Contactar agora
-        </a>
-      </div>
-    </section>
-  </main>
+    /* PREÇO */
 
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div>
-        <img class="footer-logo" src="fotos/IMG_7171.png" alt="Be Sporty">
-        <p>Materiais e acessórios desportivos em Angola.</p>
-      </div>
-      <div>
-        <h4>Navegação</h4>
-        <a href="index.html">Início</a>
-        <a href="#produtos">Produtos</a>
-        <a href="entrega.html">Entregas</a>
-      </div>
-      <div>
-        <h4>Contacto</h4>
-        <a href="https://wa.me/244943379573" target="_blank">+244 943 379 573</a>
-        <a href="mailto:besporty2023@gmail.com">besporty2023@gmail.com</a>
-        <span>Projecto Nova Vida</span>
-      </div>
-    </div>
-    <div class="container footer-bottom">
-      <span>© <span id="year"></span> Be Sporty. Todos os direitos reservados.</span>
-      <a href="https://be-sporty.netlify.app" target="_blank">be-sporty.netlify.app</a>
-    </div>
-  </footer>
+    .price-box{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:10px;
+      margin-top:auto;
+      margin-bottom:12px;
+    }
 
-  <a class="floating-whatsapp" href="https://wa.me/244943379573" target="_blank" aria-label="WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
+    .price-info{
+      display:flex;
+      flex-direction:column;
+      gap:3px;
+    }
 
-  <script src="app.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const cards = [...document.querySelectorAll('.product-card')];
-      const input = document.getElementById('searchInput');
-      const clear = document.getElementById('clearSearch');
-      const noResults = document.getElementById('noResults');
+    .price-old{
+      display:block;
+      font-size:9px;
+      color:#a2a2a2;
+      text-decoration:line-through;
+    }
 
-      function filtrar() {
-        const termo = input.value.trim().toLowerCase();
-        let encontrados = 0;
+    .price{
+      display:flex;
+      align-items:baseline;
+      gap:4px;
+      font-size:22px;
+      line-height:1;
+      font-weight:900;
+      letter-spacing:-.8px;
+      color:#111;
+    }
 
-        cards.forEach(card => {
-          const nome = (card.dataset.name || '').toLowerCase();
-          const visivel = nome.includes(termo);
-          card.style.display = visivel ? '' : 'none';
-          if (visivel) encontrados++;
-        });
+    .price small{
+      font-size:8px;
+      color:#999;
+      font-weight:800;
+      letter-spacing:.3px;
+    }
 
-        noResults.style.display = encontrados ? 'none' : 'block';
+    .discount{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:6px 8px;
+      border-radius:7px;
+      background:#fff1e7;
+      color:var(--orange);
+      font-size:8px;
+      font-weight:900;
+      white-space:nowrap;
+    }
+
+    /* DISPONIBILIDADE */
+
+    .availability{
+      display:flex;
+      align-items:center;
+      gap:7px;
+      font-size:8px;
+      font-weight:800;
+      color:#555;
+      margin-bottom:13px;
+    }
+
+    .availability:before{
+      content:"";
+      width:6px;
+      height:6px;
+      border-radius:50%;
+      background:#22b573;
+      box-shadow:0 0 0 4px rgba(34,181,115,.09);
+    }
+
+    /* BOTÃO */
+
+    .buy-btn{
+      width:100%;
+      min-height:48px;
+      border:1px solid #111;
+      border-radius:10px;
+      background:#111;
+      color:#fff;
+
+      display:flex;
+      align-items:center;
+      gap:9px;
+
+      padding:6px 9px;
+      text-align:left;
+      cursor:pointer;
+      overflow:hidden;
+
+      transition:.3s var(--ease);
+    }
+
+    .buy-icon{
+      width:32px;
+      height:32px;
+      flex:none;
+      border-radius:8px;
+
+      display:grid;
+      place-items:center;
+
+      background:#25d366;
+      color:#fff;
+      font-size:13px;
+    }
+
+    .buy-copy{
+      display:flex;
+      flex-direction:column;
+      line-height:1.15;
+      flex:1;
+    }
+
+    .buy-copy strong{
+      font-size:11px;
+      font-weight:900;
+    }
+
+    .buy-copy small{
+      font-size:8px;
+      color:#999;
+      font-weight:700;
+      margin-top:3px;
+    }
+
+    .buy-arrow{
+      font-size:9px;
+      color:#777;
+      transition:.3s var(--ease);
+    }
+
+    .buy-btn:hover{
+      background:var(--orange);
+      border-color:var(--orange);
+      transform:translateY(-2px);
+      box-shadow:0 10px 22px rgba(244,123,32,.22);
+    }
+
+    .buy-btn:hover .buy-icon{
+      background:#fff;
+      color:#25d366;
+    }
+
+    .buy-btn:hover .buy-copy small{
+      color:rgba(255,255,255,.8);
+    }
+
+    .buy-btn:hover .buy-arrow{
+      color:#fff;
+      transform:translateX(3px);
+    }
+
+    /* =========================================================
+       RESPONSIVO DOS PRODUTOS
+    ========================================================= */
+
+    @media(max-width:1050px){
+
+      .product-grid{
+        grid-template-columns:repeat(2,1fr);
       }
 
-      input.addEventListener('input', filtrar);
-      clear.addEventListener('click', () => {
-        input.value = '';
-        filtrar();
-        input.focus();
+    }
+
+    @media(max-width:700px){
+
+      .product-grid{
+        grid-template-columns:1fr 1fr;
+        gap:12px;
+      }
+
+      .product-card{
+        border-radius:15px;
+      }
+
+      .product-image{
+        height:205px;
+      }
+
+      .product-body{
+        padding:15px 14px;
+        min-height:285px;
+      }
+
+      .category{
+        font-size:7px;
+        letter-spacing:1.2px;
+      }
+
+      .product-body h3{
+        font-size:14px;
+      }
+
+      .product-body p{
+        font-size:9.5px;
+        line-height:1.55;
+      }
+
+      .price{
+        font-size:18px;
+      }
+
+      .discount{
+        font-size:7px;
+        padding:5px 6px;
+      }
+
+      .availability{
+        font-size:7px;
+      }
+
+      .buy-btn{
+        min-height:46px;
+      }
+
+      .buy-icon{
+        width:31px;
+        height:31px;
+      }
+
+      .buy-copy strong{
+        font-size:9px;
+      }
+
+      .buy-copy small{
+        font-size:7px;
+      }
+
+      .image-arrow{
+        display:none;
+      }
+
+    }
+
+    @media(max-width:430px){
+
+      .product-grid{
+        gap:10px;
+      }
+
+      .product-image{
+        height:180px;
+      }
+
+      .product-body{
+        padding:13px 11px;
+        min-height:275px;
+      }
+
+      .product-body h3{
+        font-size:13px;
+      }
+
+      .product-body p{
+        font-size:8.5px;
+      }
+
+      .price{
+        font-size:16px;
+      }
+
+      .discount{
+        font-size:6.5px;
+      }
+
+      .buy-btn{
+        min-height:44px;
+        gap:7px;
+      }
+
+      .buy-icon{
+        width:30px;
+        height:30px;
+      }
+
+      .buy-copy strong{
+        font-size:8px;
+      }
+
+      .buy-copy small{
+        font-size:6px;
+      }
+
+      .buy-arrow{
+        display:none;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     LOADER
+========================================================= -->
+
+<div class="page-loader" id="pageLoader">
+
+  <div class="loader-logo">
+    BE<span>SPORTY</span>
+  </div>
+
+  <div class="loader-line">
+    <span></span>
+  </div>
+
+</div>
+
+
+<div class="cursor-glow" id="cursorGlow"></div>
+
+
+<!-- =========================================================
+     ANNOUNCEMENT
+========================================================= -->
+
+<div class="announcement">
+
+  <div class="announcement-glow"></div>
+
+  <div class="container announcement-inner">
+
+    <div>
+
+      <i class="fa-solid fa-bolt"></i>
+
+      Acessórios selecionados para elevar a tua performance
+
+    </div>
+
+    <div class="announcement-hide">
+
+      Entregas em Angola •
+
+      <a
+        href="https://wa.me/244943379573"
+        target="_blank"
+      >
+        Falar no WhatsApp
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="header" id="header">
+
+  <div class="container header-inner">
+
+    <a
+      href="index.html"
+      class="brand"
+      aria-label="Be Sporty - Início"
+    >
+
+      <img
+        src="fotos/IMG_7171.png"
+        alt="Be Sporty"
+      >
+
+    </a>
+
+
+    <nav class="desktop-nav">
+
+      <a href="index.html">
+        Início
+      </a>
+
+      <a href="chuteiras.html">
+        Chuteiras
+      </a>
+
+      <a href="bolas.html">
+        Bolas
+      </a>
+
+      <a href="pastas.html">
+        Pastas
+      </a>
+
+      <a
+        href="promo.html"
+        class="active"
+      >
+        Acessórios
+      </a>
+
+      <a href="sobre.html">
+        Sobre nós
+      </a>
+
+    </nav>
+
+
+    <div class="header-actions">
+
+      <a
+        href="https://wa.me/244943379573"
+        target="_blank"
+        class="header-whatsapp"
+      >
+
+        <i class="fa-brands fa-whatsapp"></i>
+
+        WhatsApp
+
+      </a>
+
+
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+      >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =========================================================
+     MOBILE NAV
+========================================================= -->
+
+<nav
+  class="mobile-nav"
+  id="mobileNav"
+>
+
+  <div class="mobile-nav-head">
+
+    <span>MENU</span>
+
+    <button
+      id="mobileClose"
+      aria-label="Fechar menu"
+    >
+
+      <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+  </div>
+
+
+   <a href="index.html"><i class="fa-solid fa-house"></i> Página Inicial</a>
+      <a href="chuteiras.html"><i class="fa-solid fa-futbol"></i> Chuteiras Futsal</a>
+      <a href="bolas.html"><i class="fa-solid fa-volleyball"></i> Bola de Futsal</a>
+      <a href="pastas.html"><i class="fa-solid fa-bag-shopping"></i> Pastas Desportivas</a>
+      <a href="promo.html"><i class="fa-solid fa-tags"></i> Acessórios Desportivas</a>
+      <a href="entrega.html"><i class="fa-solid fa-truck-fast"></i> Cálculo de Entrega</a>
+
+
+  <div class="mobile-nav-contact">
+
+    <span>Fala connosco</span>
+
+    <a
+      href="https://wa.me/244943379573"
+      target="_blank"
+    >
+
+      <i class="fa-brands fa-whatsapp"></i>
+
+      WhatsApp
+
+    </a>
+
+  </div>
+
+</nav>
+
+
+<div
+  class="menu-backdrop"
+  id="menuBackdrop"
+></div>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+  <div class="hero-grid"></div>
+
+  <div class="hero-noise"></div>
+
+  <div class="hero-scan"></div>
+
+  <div class="hero-orb hero-orb-one"></div>
+
+  <div class="hero-orb hero-orb-two"></div>
+
+
+  <div class="hero-floating-label label-one">
+    PERFORMANCE / 01
+  </div>
+
+  <div class="hero-floating-label label-two">
+    ACCESS / SPORT
+  </div>
+
+
+  <div class="hero-wordmark">
+    ACCESS
+  </div>
+
+
+  <div class="container hero-content">
+
+    <div class="hero-copy">
+
+      <div class="eyebrow">
+
+        <span></span>
+
+        BE SPORTY • ACESSÓRIOS
+
+      </div>
+
+
+      <div class="hero-kicker">
+
+        <i class="fa-solid fa-bolt"></i>
+
+        EQUIPA-TE MELHOR
+
+      </div>
+
+
+      <h1>
+
+        Pequenos detalhes.
+
+        <br>
+
+        <strong>
+          Grande performance.
+        </strong>
+
+      </h1>
+
+
+      <p>
+
+        Descobre acessórios pensados para proteger,
+        recuperar e acompanhar o teu desempenho —
+        dentro e fora do campo.
+
+      </p>
+
+
+      <div class="hero-buttons">
+
+        <a
+          href="#produtos"
+          class="btn btn-primary"
+        >
+
+          Ver acessórios
+
+          <i class="fa-solid fa-arrow-down"></i>
+
+        </a>
+
+
+        <a
+          href="https://wa.me/244943379573"
+          target="_blank"
+          class="btn btn-outline"
+        >
+
+          <i class="fa-brands fa-whatsapp"></i>
+
+          Falar no WhatsApp
+
+        </a>
+
+      </div>
+
+
+      <div class="trust-row">
+
+        <span>
+
+          <i class="fa-solid fa-circle-check"></i>
+
+          Produtos selecionados
+
+        </span>
+
+
+        <span>
+
+          <i class="fa-solid fa-shield-halved"></i>
+
+          Proteção e performance
+
+        </span>
+
+
+        <span>
+
+          <i class="fa-solid fa-truck-fast"></i>
+
+          Entrega em Angola
+
+        </span>
+
+      </div>
+
+
+      <div class="hero-stats">
+
+        <div>
+
+          <strong>+8</strong>
+
+          <span>
+            Produtos
+          </span>
+
+        </div>
+
+
+        <div>
+
+          <strong>100%</strong>
+
+          <span>
+            Selecionados
+          </span>
+
+        </div>
+
+
+        <div>
+
+          <strong>AO</strong>
+
+          <span>
+            Angola
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="hero-side">
+
+      <div class="hero-badge">
+
+        <span>
+          BE SPORTY
+        </span>
+
+        <strong>
+
+          ACCESS
+          <br>
+          PERFORMANCE
+
+        </strong>
+
+        <i class="fa-solid fa-arrow-up-right"></i>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="scroll-hint">
+
+    SCROLL
+
+    <i class="fa-solid fa-arrow-right"></i>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     MARQUEE
+========================================================= -->
+
+<div class="marquee-strip">
+
+  <div class="marquee-track">
+
+    <span>BE SPORTY</span>
+    <b>•</b>
+
+    <span>PERFORMANCE</span>
+    <b>•</b>
+
+    <span>PROTEÇÃO</span>
+    <b>•</b>
+
+    <span>RECUPERAÇÃO</span>
+    <b>•</b>
+
+    <span>ACESSÓRIOS DESPORTIVOS</span>
+    <b>•</b>
+
+    <span>ENTREGA EM ANGOLA</span>
+    <b>•</b>
+
+
+    <span>BE SPORTY</span>
+    <b>•</b>
+
+    <span>PERFORMANCE</span>
+    <b>•</b>
+
+    <span>PROTEÇÃO</span>
+    <b>•</b>
+
+    <span>RECUPERAÇÃO</span>
+    <b>•</b>
+
+    <span>ACESSÓRIOS DESPORTIVOS</span>
+    <b>•</b>
+
+    <span>ENTREGA EM ANGOLA</span>
+    <b>•</b>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================================
+     SEARCH
+========================================================= -->
+
+<section class="search-section">
+
+  <div class="container">
+
+    <div class="search-box">
+
+      <i class="fa-solid fa-magnifying-glass"></i>
+
+      <input
+        type="search"
+        id="productSearch"
+        placeholder="Pesquisar acessório, marca ou produto..."
+        autocomplete="off"
+      >
+
+      <button
+        type="button"
+        id="clearSearch"
+      >
+        LIMPAR
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     CATEGORIAS
+========================================================= -->
+
+<section class="quick-categories">
+
+  <div class="container quick-category-inner">
+
+    <a href="#produtos">
+
+      <i class="fa-solid fa-shield-halved"></i>
+
+      <strong>Proteção</strong>
+
+      <span>01</span>
+
+      <i class="fa-solid fa-arrow-up-right"></i>
+
+    </a>
+
+
+    <a href="#produtos">
+
+      <i class="fa-solid fa-person-running"></i>
+
+      <strong>Performance</strong>
+
+      <span>02</span>
+
+      <i class="fa-solid fa-arrow-up-right"></i>
+
+    </a>
+
+
+    <a href="#produtos">
+
+      <i class="fa-solid fa-heart-pulse"></i>
+
+      <strong>Recuperação</strong>
+
+      <span>03</span>
+
+      <i class="fa-solid fa-arrow-up-right"></i>
+
+    </a>
+
+
+    <a href="#produtos">
+
+      <i class="fa-solid fa-fire"></i>
+
+      <strong>Promoções</strong>
+
+      <span>04</span>
+
+      <i class="fa-solid fa-arrow-up-right"></i>
+
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     PRODUTOS
+========================================================= -->
+
+<section
+  class="section"
+  id="produtos"
+>
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <div>
+
+        <span class="section-label">
+          ACESSÓRIOS
+        </span>
+
+        <h2>
+          Produtos em destaque
+        </h2>
+
+      </div>
+
+
+      <p>
+
+        Equipamentos selecionados para quem leva
+        o treino, a competição e a recuperação a sério.
+
+      </p>
+
+
+      <span class="heading-line"></span>
+
+    </div>
+
+
+    <div
+      class="product-grid"
+      id="productGrid"
+    >
+
+
+      <!-- 01 CANELEIRAS -->
+
+      <article
+        class="product-card reveal"
+        data-search="caneleiras proteção futebol treino jogo pernas"
+      >
+
+        <a
+          class="product-image"
+          href="#"
+          onclick="return false;"
+        >
+
+          <span class="product-tag">
+            Promoção
+          </span>
+
+          <img
+            src="fotos/IMG_5535.jpeg"
+            alt="Caneleiras Be Sporty"
+            loading="lazy"
+          >
+
+          <span class="image-arrow">
+
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+          </span>
+
+        </a>
+
+
+        <div class="product-body">
+
+          <span class="category">
+            Proteção
+          </span>
+
+          <h3>
+            Caneleiras
+          </h3>
+
+          <p>
+
+            Proteção leve e prática para os teus treinos
+            e jogos. Ajuda a proteger a zona inferior
+            das pernas sem comprometer o conforto
+            e a liberdade de movimento.
+
+          </p>
+
+
+          <div class="price-box">
+
+            <div class="price-info">
+
+              <span class="price-old">
+                10.500 Kz
+              </span>
+
+              <strong class="price">
+
+                3.000
+
+                <small>Kz</small>
+
+              </strong>
+
+            </div>
+
+            <span class="discount">
+              -71%
+            </span>
+
+          </div>
+
+
+          <span class="availability">
+            Disponível
+          </span>
+
+
+          <button
+            class="buy-btn"
+            type="button"
+            onclick="comprar(this)"
+            data-nome="Caneleiras"
+            data-preco="3.000 Kz"
+            data-imagem="fotos/IMG_5535.jpeg"
+          >
+
+            <span class="buy-icon">
+
+              <i class="fa-brands fa-whatsapp"></i>
+
+            </span>
+
+            <span class="buy-copy">
+
+              <strong>
+                Comprar agora
+              </strong>
+
+              <small>
+                Pedido via WhatsApp
+              </small>
+
+            </span>
+
+            <i class="fa-solid fa-arrow-right buy-arrow"></i>
+
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <!-- 02 KINESIO -->
+
+      <article
+        class="product-card reveal"
+        data-search="kinesio kinesiotape fita suporte muscular recuperação treino"
+      >
+
+        <a
+          class="product-image"
+          href="#"
+          onclick="return false;"
+        >
+
+          <span class="product-tag">
+            Promoção
+          </span>
+
+          <img
+            src="fotos/IMG_5455.jpeg"
+            alt="Kinesio Tape Be Sporty"
+            loading="lazy"
+          >
+
+          <span class="image-arrow">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </span>
+
+        </a>
+
+
+        <div class="product-body">
+
+          <span class="category">
+            Recuperação
+          </span>
+
+          <h3>
+            Kinesio Tape
+          </h3>
+
+          <p>
+
+            Fita elástica indicada para suporte muscular
+            e articular durante a atividade física.
+            Ideal para treinos, competição e recuperação,
+            proporcionando suporte sem limitar os movimentos.
+
+          </p>
+
+
+          <div class="price-box">
+
+            <div class="price-info">
+
+              <span class="price-old">
+                10.500 Kz
+              </span>
+
+              <strong class="price">
+
+                5.000
+
+                <small>Kz</small>
+
+              </strong>
+
+            </div>
+
+            <span class="discount">
+              -52%
+            </span>
+
+          </div>
+
+
+          <span class="availability">
+            Disponível
+          </span>
+
+
+          <button
+            class="buy-btn"
+            type="button"
+            onclick="comprar(this)"
+            data-nome="Kinesio Tape"
+            data-preco="5.000 Kz"
+            data-imagem="fotos/IMG_5455.jpeg"
+          >
+
+            <span class="buy-icon">
+
+              <i class="fa-brands fa-whatsapp"></i>
+
+            </span>
+
+            <span class="buy-copy">
+
+              <strong>
+                Comprar agora
+              </strong>
+
+              <small>
+                Pedido via WhatsApp
+              </small>
+
+            </span>
+
+            <i class="fa-solid fa-arrow-right buy-arrow"></i>
+
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <!-- 03 WHOOP -->
+
+      <article
+        class="product-card reveal"
+        data-search="whoop 5.0 monitor performance recuperação fitness atleta"
+      >
+
+        <a
+          class="product-image"
+          href="#"
+          onclick="return false;"
+        >
+
+          <span class="product-tag">
+            Promoção
+          </span>
+
+          <img
+            src="fotos/IMG_0882.jpeg"
+            alt="Whoop 5.0"
+            loading="lazy"
+          >
+
+          <span class="image-arrow">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </span>
+
+        </a>
+
+
+        <div class="product-body">
+
+          <span class="category">
+            Performance
+          </span>
+
+          <h3>
+            Whoop 5.0
+          </h3>
+
+          <p>
+
+            Tecnologia pensada para acompanhar a rotina
+            de quem treina. Ideal para monitorizar
+            performance, recuperação e preparação,
+            ajudando a compreender melhor a tua rotina.
+
+          </p>
+
+
+          <div class="price-box">
+
+            <div class="price-info">
+
+              <span class="price-old">
+                400.500 Kz
+              </span>
+
+              <strong class="price">
+
+                265.000
+
+                <small>Kz</small>
+
+              </strong>
+
+            </div>
+
+            <span class="discount">
+              -34%
+            </span>
+
+          </div>
+
+
+          <span class="availability">
+            Disponível
+          </span>
+
+
+          <button
+            class="buy-btn"
+            type="button"
+            onclick="comprar(this)"
+            data-nome="Whoop 5.0"
+            data-preco="265.000 Kz"
+            data-imagem="fotos/IMG_0882.jpeg"
+          >
+
+            <span class="buy-icon">
+
+              <i class="fa-brands fa-whatsapp"></i>
+
+            </span>
+
+            <span class="buy-copy">
+
+              <strong>
+                Comprar agora
+              </strong>
+
+              <small>
+                Pedido via WhatsApp
+              </small>
+
+            </span>
+
+            <i class="fa-solid fa-arrow-right buy-arrow"></i>
+
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <!-- 04 WHOOP -->
+
+      <article
+        class="product-card reveal"
+        data-search="whoop 5.0 monitor performance recuperação fitness atleta"
+      >
+
+        <a
+          class="product-image"
+          href="#"
+          onclick="return false;"
+        >
+
+          <span class="product-tag">
+            Promoção
+          </span>
+
+          <img
+            src="fotos/IMG_0883.jpeg"
+            alt="Whoop 5.0"
+            loading="lazy"
+          >
+
+          <span class="image-arrow">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </span>
+
+        </a>
+
+
+        <div class="product-body">
+
+          <span class="category">
+            Performance
+          </span>
+
+          <h3>
+            Whoop 5.0
+          </h3>
+
+          <p>
+
+            Uma solução inteligente para acompanhar
+            treino, descanso e recuperação. Pensado
+            para atletas e utilizadores que procuram
+            compreender melhor a sua preparação física.
+
+          </p>
+
+
+          <div class="price-box">
+
+            <div class="price-info">
+
+              <span class="price-old">
+                200.500 Kz
+              </span>
+
+              <strong class="price">
+
+                165.000
+
+                <small>Kz</small>
+
+              </strong>
+
+            </div>
+
+            <span class="discount">
+              -18%
+            </span>
+
+          </div>
+
+
+          <span class="availability">
+            Disponível
+          </span>
+
+
+          <button
+            class="buy-btn"
+            type="button"
+            onclick="comprar(this)"
+            data-nome="Whoop 5.0"
+            data-preco="165.000 Kz"
+            data-imagem="fotos/IMG_0883.jpeg"
+          >
+
+            <span class="buy-icon">
+
+              <i class="fa-brands fa-whatsapp"></i>
+
+            </span>
+
+            <span class="buy-copy">
+
+              <strong>
+                Comprar agora
+              </strong>
+
+              <small>
+                Pedido via WhatsApp
+              </small>
+
+            </span>
+
+            <i class="fa-solid fa-arrow-right buy-arrow"></i>
+
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <!-- 05 WHOOP -->
+
+      <article
+        class="product-card reveal"
+        data-search="whoop 5.0 monitor performance recuperação fitness treino"
+      >
+
+        <a
+          class="product-image"
+          href="#"
+          onclick="return false;"
+        >
+
+          <span class="product-tag">
+            Promoção
+          </span>
+
+          <img
+            src="fotos/IMG_0884.jpeg"
+            alt="Whoop 5.0"
+            loading="lazy"
+          >
+
+          <span class="image-arrow">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </span>
+
+        </a>
+
+
+        <div class="product-body">
+
+          <span class="category">
+            Performance
+          </span>
+
+          <h3>
+            Whoop 5.0
+          </h3>
+
+          <p>
+
+            Equipamento compacto para acompanhar
+            a tua jornada de performance. Ideal para
+            quem procura melhorar a consistência
+            dos treinos e da recuperação.
+
+          </p>
+
+
+          <div class="price-box">
+
+            <div class="price-info">
+
+              <span class="price-old">
+                200.500 Kz
+              </span>
+
+              <strong class="price">
+
+                140.000
+
+                <small>Kz</small>
+
+              </strong>
+
+            </div>
+
+            <span class="discount">
+              -30%
+            </span>
+
+          </div>
+
+
+          <span class="availability">
+            Disponível
+          </span>
+
+
+          <button
+            class="buy-btn"
+            type="button"
+            onclick="comprar(this)"
+            data-nome="Whoop 5.0"
+            data-preco="140.000 Kz"
+            data-imagem="fotos/IMG_0884.jpeg"
+          >
+
+            <span class="buy-icon">
+
+              <i class="fa-brands fa-whatsapp"></i>
+
+            </span>
+
+            <span class="buy-copy">
+
+              <strong>
+                Comprar agora
+              </strong>
+
+              <small>
+                Pedido via WhatsApp
+              </small>
+
+            </span>
+
+            <i class="fa-solid fa-arrow-right buy-arrow"></i>
+
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <!-- 06 WHOOP -->
+
+      <article
+        class="product-card reveal"
+        data-search="whoop 5.0 monitor performance recuperação fitness treino"
+      >
+
+        <a
+          class="product-image"
+          href="#"
+          onclick="return false;"
+        >
+
+          <span class="product-tag">
+            Promoção
+          </span>
+
+          <img
+            src="fotos/IMG_0885.jpeg"
+            alt="Whoop 5.0"
+            loading="lazy"
+          >
+
+          <span class="image-arrow">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </span>
+
+        </a>
+
+
+        <div class="product-body">
+
+          <span class="category">
+            Performance
+          </span>
+
+          <h3>
+            Whoop 5.0
+          </h3>
+
+          <p>
+
+            Wearable pensado para acompanhar a atividade,
+            preparação e recuperação. Uma opção prática
+            para quem quer manter uma rotina desportiva
+            mais organizada e consistente.
+
+          </p>
+
+
+          <div class="price-box">
+
+            <div class="price-info">
+
+              <span class="price-old">
+                200.500 Kz
+              </span>
+
+              <strong class="price">
+
+                170.000
+
+                <small>Kz</small>
+
+              </strong>
+
+            </div>
+
+            <span class="discount">
+              -15%
+            </span>
+
+          </div>
+
+
+          <span class="availability">
+            Disponível
+          </span>
+
+
+          <button
+            class="buy-btn"
+            type="button"
+            onclick="comprar(this)"
+            data-nome="Whoop 5.0"
+            data-preco="170.000 Kz"
+            data-imagem="fotos/IMG_0885.jpeg"
+          >
+
+            <span class="buy-icon">
+
+              <i class="fa-brands fa-whatsapp"></i>
+
+            </span>
+
+            <span class="buy-copy">
+
+              <strong>
+                Comprar agora
+              </strong>
+
+              <small>
+                Pedido via WhatsApp
+              </small>
+
+            </span>
+
+            <i class="fa-solid fa-arrow-right buy-arrow"></i>
+
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <!-- 07 COLETE -->
+
+      <article
+        class="product-card reveal"
+        data-search="colete emagrecimento fitness treino desporto cintura"
+      >
+
+        <a
+          class="product-image"
+          href="#"
+          onclick="return false;"
+        >
+
+          <span class="product-tag">
+            Promoção
+          </span>
+
+          <img
+            src="fotos/53.jpg"
+            alt="Colete de Emagrecimento"
+            loading="lazy"
+          >
+
+          <span class="image-arrow">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </span>
+
+        </a>
+
+
+        <div class="product-body">
+
+          <span class="category">
+            Fitness
+          </span>
+
+          <h3>
+            Colete de Emagrecimento
+          </h3>
+
+          <p>
+
+            Acessório pensado para acompanhar
+            atividades físicas e treinos. Leve e prático,
+            pode complementar uma rotina de exercícios
+            focada em movimento e bem-estar.
+
+          </p>
+
+
+          <div class="price-box">
+
+            <div class="price-info">
+
+              <span class="price-old">
+                20.500 Kz
+              </span>
+
+              <strong class="price">
+
+                18.500
+
+                <small>Kz</small>
+
+              </strong>
+
+            </div>
+
+            <span class="discount">
+              -10%
+            </span>
+
+          </div>
+
+
+          <span class="availability">
+            Disponível
+          </span>
+
+
+          <button
+            class="buy-btn"
+            type="button"
+            onclick="comprar(this)"
+            data-nome="Colete de Emagrecimento"
+            data-preco="18.500 Kz"
+            data-imagem="fotos/53.jpg"
+          >
+
+            <span class="buy-icon">
+
+              <i class="fa-brands fa-whatsapp"></i>
+
+            </span>
+
+            <span class="buy-copy">
+
+              <strong>
+                Comprar agora
+              </strong>
+
+              <small>
+                Pedido via WhatsApp
+              </small>
+
+            </span>
+
+            <i class="fa-solid fa-arrow-right buy-arrow"></i>
+
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <!-- 08 MASSAGEM -->
+
+      <article
+        class="product-card reveal"
+        data-search="máquina massagem recuperação muscular relaxamento treino"
+      >
+
+        <a
+          class="product-image"
+          href="#"
+          onclick="return false;"
+        >
+
+          <span class="product-tag">
+            Promoção
+          </span>
+
+          <img
+            src="fotos/57.jpg"
+            alt="Máquina de Massagem"
+            loading="lazy"
+          >
+
+          <span class="image-arrow">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </span>
+
+        </a>
+
+
+        <div class="product-body">
+
+          <span class="category">
+            Recuperação
+          </span>
+
+          <h3>
+            Máquina de Massagem
+          </h3>
+
+          <p>
+
+            Ideal para relaxamento e recuperação muscular
+            depois dos treinos. Uma solução prática para
+            ajudar a aliviar a tensão e tornar o processo
+            de recuperação mais confortável.
+
+          </p>
+
+
+          <div class="price-box">
+
+            <div class="price-info">
+
+              <span class="price-old">
+                40.500 Kz
+              </span>
+
+              <strong class="price">
+
+                29.500
+
+                <small>Kz</small>
+
+              </strong>
+
+            </div>
+
+            <span class="discount">
+              -27%
+            </span>
+
+          </div>
+
+
+          <span class="availability">
+            Disponível
+          </span>
+
+
+          <button
+            class="buy-btn"
+            type="button"
+            onclick="comprar(this)"
+            data-nome="Máquina de Massagem"
+            data-preco="29.500 Kz"
+            data-imagem="fotos/57.jpg"
+          >
+
+            <span class="buy-icon">
+
+              <i class="fa-brands fa-whatsapp"></i>
+
+            </span>
+
+            <span class="buy-copy">
+
+              <strong>
+                Comprar agora
+              </strong>
+
+              <small>
+                Pedido via WhatsApp
+              </small>
+
+            </span>
+
+            <i class="fa-solid fa-arrow-right buy-arrow"></i>
+
+          </button>
+
+        </div>
+
+      </article>
+
+    </div>
+
+
+    <div
+      class="no-results"
+      id="noResults"
+    >
+
+      <i class="fa-solid fa-magnifying-glass"></i>
+
+      <p>
+        Nenhum produto encontrado.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     BENEFÍCIOS
+========================================================= -->
+
+<section class="benefits-section">
+
+  <div class="container">
+
+    <div class="benefits-grid">
+
+
+      <div class="benefit-card reveal">
+
+        <span>01</span>
+
+        <i class="fa-solid fa-shield-halved"></i>
+
+        <h3>
+          Proteção
+        </h3>
+
+        <p>
+          Acessórios escolhidos para proporcionar
+          mais segurança durante a prática desportiva.
+        </p>
+
+      </div>
+
+
+      <div class="benefit-card reveal">
+
+        <span>02</span>
+
+        <i class="fa-solid fa-bolt"></i>
+
+        <h3>
+          Performance
+        </h3>
+
+        <p>
+          Equipamentos pensados para acompanhar
+          atletas e pessoas que procuram evoluir.
+        </p>
+
+      </div>
+
+
+      <div class="benefit-card reveal">
+
+        <span>03</span>
+
+        <i class="fa-solid fa-heart-pulse"></i>
+
+        <h3>
+          Recuperação
+        </h3>
+
+        <p>
+          Soluções para tornar a recuperação
+          depois do treino mais confortável.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     SOBRE
+========================================================= -->
+
+<section class="about-section">
+
+  <div class="container about-grid">
+
+
+    <div class="about-visual reveal">
+
+      <div class="about-mark">
+
+        <img
+          src="fotos/IMG_7171.png"
+          alt="Be Sporty"
+        >
+
+      </div>
+
+
+      <div class="about-number">
+
+        BE SPORTY
+
+        <br>
+
+        <strong>
+          AO
+        </strong>
+
+      </div>
+
+    </div>
+
+
+   
+
+
+      <a
+        href="https://wa.me/244943379573"
+        target="_blank"
+        class="text-btn"
+      >
+
+        Falar com a Be Sporty
+
+        <i class="fa-solid fa-arrow-right"></i>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     STATEMENT
+========================================================= -->
+
+<section class="statement-section">
+
+  <div class="statement-word">
+    SPORT
+  </div>
+
+
+  <div class="container statement-content">
+
+    <span class="section-label">
+      BE SPORTY
+    </span>
+
+
+    <h2>
+
+      Treina.
+
+      <br>
+
+      <strong>
+        Evolui.
+      </strong>
+
+      <br>
+
+      Repete.
+
+    </h2>
+
+
+    <p>
+      O equipamento certo faz parte da jornada.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section class="cta-section">
+
+  <div class="container">
+
+    <div class="cta">
+
+      <div>
+
+        <span class="section-label">
+          PRECISAS DE AJUDA?
+        </span>
+
+
+        <h2>
+
+          Fala directamente
+          <br>
+          com a Be Sporty.
+
+        </h2>
+
+
+        <p>
+
+          Envia-nos uma mensagem no WhatsApp
+          para confirmar disponibilidade,
+          preços e formas de entrega.
+
+        </p>
+
+      </div>
+
+
+      <a
+        href="https://wa.me/244943379573"
+        target="_blank"
+        class="btn btn-primary"
+      >
+
+        <i class="fa-brands fa-whatsapp"></i>
+
+        Falar no WhatsApp
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer">
+
+  <div class="container">
+
+    <div class="footer-grid">
+
+
+      <div>
+
+        <img
+          src="fotos/IMG_7171.png"
+          alt="Be Sporty"
+          class="footer-logo"
+        >
+
+
+        <p>
+
+          Acessórios e equipamentos desportivos
+          para quem procura performance,
+          proteção e qualidade em Angola.
+
+        </p>
+
+
+        <a
+          href="https://www.instagram.com/"
+          target="_blank"
+          class="footer-social"
+        >
+
+          <i class="fa-brands fa-instagram"></i>
+
+          Instagram
+
+        </a>
+
+      </div>
+
+
+
+
+     
+
+
+      <div>
+
+        <h4>
+          CONTACTOS
+        </h4>
+
+        <span>
+          Projecto Nova Vida
+        </span>
+
+        <a href="tel:+244943379573">
+          +244 943 379 573
+        </a>
+
+        <a href="mailto:besporty2023@gmail.com">
+          besporty2023@gmail.com
+        </a>
+
+     
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <span>
+
+        © <span id="year"></span> Be Sporty.
+        Todos os direitos reservados.
+
+      </span>
+
+
+     
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- =========================================================
+     WHATSAPP FLUTUANTE
+========================================================= -->
+
+<a
+  href="https://wa.me/244943379573"
+  target="_blank"
+  class="floating-whatsapp"
+  aria-label="Falar com a Be Sporty no WhatsApp"
+>
+
+  <i class="fa-brands fa-whatsapp"></i>
+
+  <span>
+    Falar connosco
+  </span>
+
+</a>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+
+/* =========================================================
+   LOADER
+========================================================= */
+
+window.addEventListener("load", () => {
+
+  const loader =
+    document.getElementById("pageLoader");
+
+  if(loader){
+
+    setTimeout(() => {
+
+      loader.classList.add("loaded");
+
+    }, 450);
+
+  }
+
+});
+
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+const revealElements =
+  document.querySelectorAll(".reveal");
+
+
+const revealObserver =
+  new IntersectionObserver(
+
+    (entries, observer) => {
+
+      entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+
+          entry.target.classList.add("visible");
+
+          observer.unobserve(entry.target);
+
+        }
+
       });
 
-      document.getElementById('year').textContent = new Date().getFullYear();
-    });
+    },
 
-    function comprar(botao) {
-      const card = botao.closest('.product-card');
-      const nome = card.querySelector('h3').textContent.trim();
-      const preco = card.querySelector('.price').textContent.trim();
-      const imagem = card.querySelector('img').src;
-
-      const mensagem =
-        `Olá! Gostaria de comprar o produto: *${nome}*%0A` +
-        `Preço: *${preco}*%0A` +
-        `Imagem: ${encodeURIComponent(imagem)}`;
-
-      window.open(`https://wa.me/244943379573?text=${mensagem}`, '_blank');
+    {
+      threshold:.12
     }
-  </script>
+
+  );
+
+
+revealElements.forEach(element => {
+
+  revealObserver.observe(element);
+
+});
+
+
+/* =========================================================
+   PESQUISA
+========================================================= */
+
+const searchInput =
+  document.getElementById("productSearch");
+
+const clearSearch =
+  document.getElementById("clearSearch");
+
+const productCards =
+  document.querySelectorAll(".product-card");
+
+const noResults =
+  document.getElementById("noResults");
+
+
+function pesquisarProdutos(){
+
+  const termo =
+    searchInput.value
+      .toLowerCase()
+      .trim();
+
+  let encontrados = 0;
+
+
+  productCards.forEach(card => {
+
+    const texto =
+      (
+        card.innerText +
+        " " +
+        (card.dataset.search || "")
+      ).toLowerCase();
+
+
+    if(texto.includes(termo)){
+
+      card.style.display = "flex";
+
+      encontrados++;
+
+    }else{
+
+      card.style.display = "none";
+
+    }
+
+  });
+
+
+  if(noResults){
+
+    noResults.style.display =
+      encontrados === 0
+        ? "block"
+        : "none";
+
+  }
+
+}
+
+
+if(searchInput){
+
+  searchInput.addEventListener(
+    "input",
+    pesquisarProdutos
+  );
+
+}
+
+
+if(clearSearch){
+
+  clearSearch.addEventListener(
+    "click",
+    () => {
+
+      searchInput.value = "";
+
+      pesquisarProdutos();
+
+      searchInput.focus();
+
+    }
+  );
+
+}
+
+
+/* =========================================================
+   WHATSAPP
+========================================================= */
+
+function comprar(botao){
+
+  const nome =
+    botao.dataset.nome || "Produto";
+
+  const preco =
+    botao.dataset.preco || "Consultar";
+
+  const imagem =
+    botao.dataset.imagem || "";
+
+
+  const mensagem =
+
+`Olá, Be Sporty! 👋
+
+Tenho interesse neste produto:
+
+*${nome}*
+
+💰 Preço: *${preco}*
+
+Gostaria de confirmar a disponibilidade e as formas de entrega.
+
+Imagem do produto:
+${window.location.origin}/${imagem}`;
+
+
+  const url =
+    "https://wa.me/244943379573?text=" +
+    encodeURIComponent(mensagem);
+
+
+  window.open(
+    url,
+    "_blank"
+  );
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+const header =
+  document.getElementById("header");
+
+
+function verificarScroll(){
+
+  if(window.scrollY > 20){
+
+    header.classList.add("scrolled");
+
+  }else{
+
+    header.classList.remove("scrolled");
+
+  }
+
+}
+
+
+window.addEventListener(
+  "scroll",
+  verificarScroll,
+  {
+    passive:true
+  }
+);
+
+
+verificarScroll();
+
+
+/* =========================================================
+   MENU MOBILE
+========================================================= */
+
+const menuBtn =
+  document.getElementById("menuBtn");
+
+const mobileNav =
+  document.getElementById("mobileNav");
+
+const menuBackdrop =
+  document.getElementById("menuBackdrop");
+
+const mobileClose =
+  document.getElementById("mobileClose");
+
+
+function abrirMenu(){
+
+  menuBtn.classList.add("open");
+
+  mobileNav.classList.add("open");
+
+  menuBackdrop.classList.add("open");
+
+  document.body.classList.add("menu-open");
+
+  menuBtn.setAttribute(
+    "aria-expanded",
+    "true"
+  );
+
+}
+
+
+function fecharMenu(){
+
+  menuBtn.classList.remove("open");
+
+  mobileNav.classList.remove("open");
+
+  menuBackdrop.classList.remove("open");
+
+  document.body.classList.remove("menu-open");
+
+  menuBtn.setAttribute(
+    "aria-expanded",
+    "false"
+  );
+
+}
+
+
+if(menuBtn){
+
+  menuBtn.addEventListener(
+    "click",
+    () => {
+
+      if(
+        mobileNav.classList.contains("open")
+      ){
+
+        fecharMenu();
+
+      }else{
+
+        abrirMenu();
+
+      }
+
+    }
+  );
+
+}
+
+
+if(mobileClose){
+
+  mobileClose.addEventListener(
+    "click",
+    fecharMenu
+  );
+
+}
+
+
+if(menuBackdrop){
+
+  menuBackdrop.addEventListener(
+    "click",
+    fecharMenu
+  );
+
+}
+
+
+document
+  .querySelectorAll(".mobile-nav a")
+  .forEach(link => {
+
+    link.addEventListener(
+      "click",
+      fecharMenu
+    );
+
+  });
+
+
+/* =========================================================
+   ESC
+========================================================= */
+
+document.addEventListener(
+  "keydown",
+  event => {
+
+    if(event.key === "Escape"){
+
+      fecharMenu();
+
+    }
+
+  }
+);
+
+
+/* =========================================================
+   CURSOR GLOW
+========================================================= */
+
+const cursorGlow =
+  document.getElementById("cursorGlow");
+
+
+if(
+  cursorGlow &&
+  window.matchMedia("(pointer:fine)").matches
+){
+
+  document.addEventListener(
+    "mousemove",
+    event => {
+
+      cursorGlow.style.left =
+        event.clientX + "px";
+
+      cursorGlow.style.top =
+        event.clientY + "px";
+
+      cursorGlow.style.opacity = "1";
+
+    }
+  );
+
+
+  document.addEventListener(
+    "mouseleave",
+    () => {
+
+      cursorGlow.style.opacity = "0";
+
+    }
+  );
+
+}
+
+
+/* =========================================================
+   PRODUCT 3D
+========================================================= */
+
+if(
+  window.matchMedia("(pointer:fine)").matches
+){
+
+  productCards.forEach(card => {
+
+    card.addEventListener(
+      "mousemove",
+      event => {
+
+        const rect =
+          card.getBoundingClientRect();
+
+
+        const x =
+          event.clientX - rect.left;
+
+        const y =
+          event.clientY - rect.top;
+
+
+        const centerX =
+          rect.width / 2;
+
+        const centerY =
+          rect.height / 2;
+
+
+        const rotateX =
+          ((y - centerY) / centerY) * -1.5;
+
+        const rotateY =
+          ((x - centerX) / centerX) * 1.5;
+
+
+        card.style.transform =
+          `translateY(-7px)
+           perspective(900px)
+           rotateX(${rotateX}deg)
+           rotateY(${rotateY}deg)`;
+
+      }
+    );
+
+
+    card.addEventListener(
+      "mouseleave",
+      () => {
+
+        card.style.transform = "";
+
+      }
+    );
+
+  });
+
+}
+
+
+/* =========================================================
+   ANO
+========================================================= */
+
+const year =
+  document.getElementById("year");
+
+
+if(year){
+
+  year.textContent =
+    new Date().getFullYear();
+
+}
+
+</script>
+
+
 </body>
 </html>

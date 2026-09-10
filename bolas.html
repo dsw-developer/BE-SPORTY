@@ -14,33 +14,120 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+/* ===== BOLAS — acabamento premium ===== */
+:root{--orange:#f47b20;--orange2:#ff9a3d;--ink:#101010;--soft:#f6f6f6;}
+body{background:#fff;}
+.header{backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);}
+.hero{min-height:590px;position:relative;overflow:hidden;background:radial-gradient(circle at 78% 35%,rgba(244,123,32,.18),transparent 34%),linear-gradient(120deg,#090909 0%,#151515 58%,#0c0c0c 100%);}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.3),transparent 65%);pointer-events:none;}
+.hero-glow{opacity:.8;}
+.hero-watermark{position:absolute;width:min(610px,54vw);right:-105px;top:50%;transform:translateY(-50%) rotate(-8deg);opacity:.075;filter:grayscale(1) brightness(3);pointer-events:none;user-select:none;}
+.hero-content{position:relative;z-index:2;}
+.hero-copy{max-width:720px;padding:55px 0;}
+.hero-copy .eyebrow{letter-spacing:.16em;font-weight:800;color:#ff9a3d;}
+.hero-copy h1{font-size:clamp(42px,6vw,76px);line-height:.98;letter-spacing:-.055em;margin:18px 0 22px;}
+.hero-copy h1 strong{color:#fff;}
+.hero-copy p{max-width:600px;font-size:17px;line-height:1.75;color:#cfcfcf;}
+.hero-buttons{margin-top:30px;}
+.btn-primary{box-shadow:0 14px 34px rgba(244,123,32,.22);}
+.trust-row{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px;}
+.trust-row span{padding:9px 13px;border:1px solid rgba(255,255,255,.11);background:rgba(255,255,255,.045);border-radius:999px;color:#ddd;font-size:12px;}
+.trust-row i{color:#ff9a3d;margin-right:5px;}
+.search-section{background:#fff;padding:28px 0 10px;}
+.search-box{border:1px solid #e9e9e9;box-shadow:0 12px 35px rgba(0,0,0,.07);border-radius:16px;background:#fff;transition:.25s ease;}
+.search-box:focus-within{border-color:rgba(244,123,32,.55);box-shadow:0 14px 40px rgba(244,123,32,.11);transform:translateY(-1px);}
+.products-section{padding:48px 0 92px;background:linear-gradient(#fff 0%,#fafafa 100%);}
+.products-section .section-heading{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:30px;}
+.section-label{color:var(--orange);font-weight:900;letter-spacing:.13em;font-size:11px;}
+.products-section .section-heading h2{font-size:clamp(28px,4vw,42px);letter-spacing:-.04em;margin-top:7px;}
+.products-section .section-heading p{max-width:390px;color:#777;line-height:1.6;text-align:right;font-size:13px;}
+.product-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;}
+.product-card{position:relative;overflow:hidden;background:#fff;border:1px solid #ededed;border-radius:20px;box-shadow:0 7px 24px rgba(0,0,0,.055);transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;}
+.product-card:hover{transform:translateY(-8px);box-shadow:0 20px 45px rgba(0,0,0,.12);border-color:#ddd;}
+.product-image{height:275px;background:radial-gradient(circle at center,#fff 0%,#f5f5f5 75%);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.product-image:after{content:"";position:absolute;inset:auto 15% 12px;height:22px;border-radius:50%;background:rgba(0,0,0,.10);filter:blur(10px);opacity:.6;}
+.product-image img{width:88%;height:88%;object-fit:contain;position:relative;z-index:1;transition:transform .35s ease;}
+.product-card:hover .product-image img{transform:scale(1.07) rotate(-1deg);}
+.status{position:absolute;top:13px;left:13px;z-index:2;padding:7px 10px;border-radius:999px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;box-shadow:0 5px 15px rgba(0,0,0,.08);}
+.status.available{background:#fff3e9;color:#c85d08;border:1px solid #ffd8bd;}
+.status.sold{background:#ededed;color:#777;}
+.product-body{padding:19px 19px 20px;}
+.product-body .category{font-size:10px;font-weight:800;letter-spacing:.1em;color:#999;}
+.product-body h3{font-size:17px;margin:7px 0 10px;letter-spacing:-.02em;}
+.price-old{font-size:12px;color:#aaa;text-decoration:line-through;margin-bottom:2px;}
+.price{font-size:22px;font-weight:900;letter-spacing:-.035em;color:#111;}
+.availability{font-size:11px;color:#39a65a;font-weight:700;margin:8px 0 14px;}
+.sold-text{color:#999;}
+.buy-btn{width:100%;border:0;border-radius:11px;padding:12px 14px;background:#111;color:#fff;font-weight:800;cursor:pointer;transition:.25s ease;}
+.buy-btn:hover{background:var(--orange);transform:translateY(-1px);}
+.buy-btn:disabled{background:#e9e9e9;color:#999;cursor:not-allowed;transform:none;}
+.about-section{background:#111;color:#fff;position:relative;overflow:hidden;}
+.about-section:before{content:"";position:absolute;width:400px;height:400px;border-radius:50%;background:rgba(244,123,32,.08);right:-180px;top:-180px;}
+.about-mark{background:linear-gradient(145deg,#1b1b1b,#0c0c0c);border:1px solid rgba(255,255,255,.09);border-radius:28px;min-height:300px;display:flex;align-items:center;justify-content:center;box-shadow:0 25px 60px rgba(0,0,0,.25);}
+.about-mark img{width:62%;max-width:260px;opacity:.9;filter:drop-shadow(0 15px 30px rgba(0,0,0,.4));}
+.about-points div{border-bottom:1px solid rgba(255,255,255,.08);padding:12px 0;}
+.about-points i{color:var(--orange);}
+.cta-section{padding:25px 0 80px;background:#111;}
+.cta{border:1px solid rgba(255,255,255,.09);border-radius:24px;padding:34px 38px;background:linear-gradient(135deg,#191919,#101010);box-shadow:0 25px 60px rgba(0,0,0,.2);}
+.floating-whatsapp{box-shadow:0 12px 30px rgba(0,0,0,.25);}
+@media(max-width:1000px){.product-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.hero-watermark{width:520px;right:-160px;opacity:.06;}.products-section .section-heading{align-items:start;flex-direction:column;}.products-section .section-heading p{text-align:left;}}
+@media(max-width:600px){.hero{min-height:620px;}.hero-copy{padding:45px 0 35px;}.hero-copy h1{font-size:43px;}.hero-watermark{width:390px;right:-150px;top:58%;opacity:.055;}.trust-row{gap:7px;}.trust-row span{font-size:10px;padding:8px 10px;}.products-section{padding:38px 0 65px;}.product-grid{grid-template-columns:1fr 1fr;gap:12px;}.product-image{height:190px;}.product-body{padding:14px;}.product-body h3{font-size:14px;}.price{font-size:18px;}.buy-btn{font-size:12px;padding:11px 8px;}.status{font-size:8px;padding:6px 8px;}.about-mark{min-height:230px;margin-bottom:28px;}.cta{padding:27px 20px;border-radius:19px;}}
+</style>
+
 </head>
 <body>
-  <header class="header" id="header">
+<header class="header" id="header">
     <div class="container header-inner">
-      <a href="index.html" class="brand"><img src="fotos/IMG_7171.png" alt="Be Sporty"></a>
-      <nav class="desktop-nav"><a class="active" href="index.html">Início</a><a href="#produtos">Produtos</a><a href="#sobre">Sobre nós</a><a href="entrega.html">Entregas</a></nav>
-      <div class="header-actions"><a class="header-whatsapp" href="https://wa.me/244943379573" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span></a><button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button></div>
-    </div>
-    <nav class="mobile-nav" id="mobileNav">
-      <a href="index.html">Início</a>
-        <a href="chuteiras.html">Chuteiras</a>
-      <a href="bolas.html">Bolas</a>
-        <a href="pastas.html">Pastas</a>
-          <a href="Promo.html">Acessórios</a>
+      <a href="index.html" class="brand" aria-label="Be Sporty — início">
+        <img src="fotos/IMG_7171.png" alt="Be Sporty" width="126" height="56">
+      </a>
+
+      <nav class="desktop-nav" aria-label="Navegação principal">
+        <a class="active" href="index.html">Início</a>
+        <a href="#categorias">Categorias</a>
+        <a href="#sobre">Sobre nós</a>
         <a href="entrega.html">Entregas</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="header-whatsapp" href="https://wa.me/244943379573" target="_blank" rel="noopener">
+          <i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span>
+        </a>
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" id="mobileNav" aria-label="Menu mobile">
+      <div class="mobile-nav-head">
+        <span>MENU</span>
+        <button id="closeMenu" type="button" aria-label="Fechar menu"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <a href="index.html"><i class="fa-solid fa-house"></i> Página Inicial</a>
+      <a href="chuteiras.html"><i class="fa-solid fa-futbol"></i> Chuteiras Futsal</a>
+      <a href="bolas.html"><i class="fa-solid fa-volleyball"></i> Bola de Futsal</a>
+      <a href="pastas.html"><i class="fa-solid fa-bag-shopping"></i> Pastas Desportivas</a>
+      <a href="promo.html"><i class="fa-solid fa-tags"></i> Acessórios Desportivas</a>
+      <a href="entrega.html"><i class="fa-solid fa-truck-fast"></i> Cálculo de Entrega</a>
+      <div class="mobile-nav-contact">
+       
+      </div>
     </nav>
+    <div class="menu-backdrop" id="menuBackdrop"></div>
   </header>
 
   <main>
     <section class="hero">
-      <div class="hero-glow"></div><div class="container hero-content">
-        <div class="hero-copy"><span class="eyebrow">BE SPORTY • DESPORTO EM ANGOLA</span><h1>Equipamento certo.<br><strong>Performance melhor.</strong></h1><p>Chuteiras, bolas, pastas e acessórios desportivos selecionados para quem leva o desporto a sério.</p><div class="hero-buttons"><a href="#produtos" class="btn btn-primary">Ver produtos <i class="fa-solid fa-arrow-right"></i></a><a href="https://wa.me/244943379573" target="_blank" rel="noopener" class="btn btn-outline"><i class="fa-brands fa-whatsapp"></i> Falar connosco</a></div><div class="trust-row"><span><i class="fa-solid fa-circle-check"></i> Produtos selecionados</span><span><i class="fa-solid fa-truck"></i> Entrega em Angola</span><span><i class="fa-solid fa-location-dot"></i> Nova Vida</span></div></div>
+      <div class="hero-glow"></div><img class="hero-watermark" src="fotos/IMG_7171.png" alt="" aria-hidden="true"><div class="container hero-content">
+        <div class="hero-copy"><span class="eyebrow">BE SPORTY • BOLAS DESPORTIVAS</span><h1>Bolas certas.<br><strong>Jogo melhor.</strong></h1><p>Bolas selecionadas para futebol e futsal, com qualidade, estilo e preços pensados para quem leva o jogo a sério.</p><div class="hero-buttons"><a href="#produtos" class="btn btn-primary">Ver produtos <i class="fa-solid fa-arrow-right"></i></a><a href="https://wa.me/244943379573" target="_blank" rel="noopener" class="btn btn-outline"><i class="fa-brands fa-whatsapp"></i> Falar connosco</a></div><div class="trust-row"><span><i class="fa-solid fa-circle-check"></i> Produtos selecionados</span><span><i class="fa-solid fa-truck"></i> Entrega em Angola</span><span><i class="fa-solid fa-location-dot"></i> Nova Vida</span></div></div>
       </div>
     </section>
 
     <section class="search-section"><div class="container"><div class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input id="searchInput" type="search" placeholder="Pesquisar produto, marca ou categoria..." autocomplete="off"><button id="clearSearch" type="button">Limpar</button></div></div></section>
-<div class="section-heading"><div><span class="section-label">BOLAS</span><h2>Modelos disponíveis</h2></div><p>Preços apresentados em Kz. Para comprar, clique em <strong>Comprar</strong>.</p></div>
+<section class="products-section" id="produtos"><div class="container"><div class="section-heading"><div><span class="section-label">BOLAS</span><h2>Modelos disponíveis</h2></div><p>Preços apresentados em Kz. Para comprar, clique em <strong>Comprar</strong>.</p></div>
 <div class="product-grid" id="productGrid">
 <article class="product-card" data-name="Bola Kipsta Vermelha KIPSTA • FUTSAL"><div class="product-image"><img src="fotos/bolas.JPG" alt="Bola Kipsta Vermelha" loading="lazy"><span class="status available">Disponível</span></div><div class="product-body"><span class="category">KIPSTA • FUTSAL</span><h3>Bola Kipsta Vermelha</h3><div class="price-old">50.500,00 Kz</div><div class="price">33.500,00 Kz</div><div class="availability">Disponível</div><button class="buy-btn" onclick="comprar(this)">Comprar <i class="fa-brands fa-whatsapp"></i></button></div></article>
 <article class="product-card" data-name="Bola Kipsta Verde KIPSTA • FUTSAL"><div class="product-image"><img src="fotos/bolas1.jpg" alt="Bola Kipsta Verde" loading="lazy"><span class="status available">Disponível</span></div><div class="product-body"><span class="category">KIPSTA • FUTSAL</span><h3>Bola Kipsta Verde</h3><div class="price-old">50.500,00 Kz</div><div class="price">38.500,00 Kz</div><div class="availability">Disponível</div><button class="buy-btn" onclick="comprar(this)">Comprar <i class="fa-brands fa-whatsapp"></i></button></div></article>
@@ -48,7 +135,7 @@
 <article class="product-card" data-name="Bola Mikasa MIKASA • DESPORTO"><div class="product-image"><img src="fotos/bolas2.jpg" alt="Bola Mikasa" loading="lazy"><span class="status available">Disponível</span></div><div class="product-body"><span class="category">MIKASA • DESPORTO</span><h3>Bola Mikasa</h3><div class="price-old">50.500,00 Kz</div><div class="price">70.500,00 Kz</div><div class="availability">Disponível</div><button class="buy-btn" onclick="comprar(this)">Comprar <i class="fa-brands fa-whatsapp"></i></button></div></article>
 <article class="product-card" data-name="Bola Kipsta KIPSTA • FUTSAL"><div class="product-image"><img src="fotos/bolas3.jpg" alt="Bola Kipsta" loading="lazy"><span class="status sold">Esgotado</span></div><div class="product-body"><span class="category">KIPSTA • FUTSAL</span><h3>Bola Kipsta</h3><div class="price">36.500,00 Kz</div><div class="availability sold-text">Sem stock</div><button class="buy-btn" disabled>Indisponível</button></div></article>
 </div><div id="noResults" style="display:none;text-align:center;padding:40px 0;color:#777">Nenhuma bola encontrada.</div>
-</div></section>
+</div></div></section>
  <section class="about-section" id="sobre">
       <div class="container about-grid">
         <div class="about-mark">
@@ -90,7 +177,7 @@
       <div>
         <h4>Navegação</h4>
         <a href="index.html">Início</a>
-        <a href="#categorias">Categorias</a>
+        <a href="#produtos">Bolas</a>
         <a href="entrega.html">Entregas</a>
       </div>
       <div>

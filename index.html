@@ -3,25 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Be Sporty — materiais e acessórios desportivos em Angola.">
-  <meta name="theme-color" content="#111111">
-  <title>Be Sporty | Materiais Desportivos</title>
+  <meta name="description" content="Be Sporty — materiais e acessórios desportivos em Angola. Chuteiras, bolas, pastas e acessórios.">
+  <meta name="theme-color" content="#101010">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Be Sporty | Materiais Desportivos">
+  <meta property="og:description" content="Materiais e acessórios desportivos em Angola.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://be-sporty.netlify.app/">
+  <title>Be Sporty | Materiais Desportivos em Angola</title>
 
   <link rel="icon" href="fotos/IMG_7171.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
-  
+  <div class="page-loader" id="pageLoader" aria-hidden="true">
+    <div class="loader-logo">BE<span>SPORTY</span></div>
+    <div class="loader-line"><span></span></div>
+  </div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <div class="announcement"><div class="announcement-glow"></div>
+    <div class="container announcement-inner">
+      <span><i class="fa-solid fa-location-dot"></i> Projecto Nova Vida, Angola</span>
+      <span class="announcement-hide"><i class="fa-solid fa-truck-fast"></i> Entregas em toda Angola</span>
+      <a href="https://wa.me/244943379573" target="_blank" rel="noopener">
+        <i class="fa-brands fa-whatsapp"></i> Atendimento via WhatsApp
+      </a>
+    </div>
+  </div>
 
   <header class="header" id="header">
     <div class="container header-inner">
-      <a href="index.html" class="brand" aria-label="Be Sporty - início">
-        <img src="fotos/IMG_7171.png" alt="Be Sporty">
+      <a href="index.html" class="brand" aria-label="Be Sporty — início">
+        <img src="fotos/IMG_7171.png" alt="Be Sporty" width="126" height="56">
       </a>
 
       <nav class="desktop-nav" aria-label="Navegação principal">
@@ -33,129 +51,185 @@
 
       <div class="header-actions">
         <a class="header-whatsapp" href="https://wa.me/244943379573" target="_blank" rel="noopener">
-          <i class="fa-brands fa-whatsapp"></i>
-          <span>WhatsApp</span>
+          <i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span>
         </a>
-        <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileNav">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
 
     <nav class="mobile-nav" id="mobileNav" aria-label="Menu mobile">
-       <a href="index.html">Início</a>
-        <a href="chuteiras.html">Chuteiras</a>
-        <a href="bolas.html">Bola de Futsal</a>
-        <a href="pastas.html">Pastas</a>
-          <a href="Promo.html">Acessórios</a>
-        <a href="entrega.html">Entregas</a>
+      <div class="mobile-nav-head">
+        <span>MENU</span>
+        <button id="closeMenu" type="button" aria-label="Fechar menu"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+    <a href="index.html"><i class="fa-solid fa-house"></i> Página Inicial</a>
+      <a href="chuteiras.html"><i class="fa-solid fa-futbol"></i> Chuteiras Futsal</a>
+      <a href="bolas.html"><i class="fa-solid fa-volleyball"></i> Bola de Futsal</a>
+      <a href="pastas.html"><i class="fa-solid fa-bag-shopping"></i> Pastas Desportivas</a>
+      <a href="promo.html"><i class="fa-solid fa-tags"></i> Acessórios Desportivas</a>
+      <a href="entrega.html"><i class="fa-solid fa-truck-fast"></i> Cálculo de Entrega</a>
+      <div class="mobile-nav-contact">
+       
+      </div>
     </nav>
+    <div class="menu-backdrop" id="menuBackdrop"></div>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="hero-overlay"></div>
+    <section class="hero" id="top">
+      <div class="hero-noise"></div>
+      <div class="hero-grid"></div>
+      <div class="hero-scan"></div>
+      <div class="hero-orb hero-orb-one"></div>
+      <div class="hero-orb hero-orb-two"></div>
+      <div class="hero-wordmark">BE SPORTY</div>
+      <div class="hero-floating-label label-one">FUTSAL / 01</div>
+      <div class="hero-floating-label label-two">PLAY / 02</div>
+
       <div class="container hero-content">
-        <div class="hero-copy">
-          <span class="eyebrow">BE SPORTY • DESPORTO EM ANGOLA</span>
-          <h1>Equipamento certo.<br><strong>Performance melhor.</strong></h1>
-          <p>Encontra chuteiras, bolas, pastas e acessórios desportivos para elevar o teu jogo.</p>
+        <div class="hero-copy reveal">
+          <span class="eyebrow"><span></span> BE SPORTY • DESPORTO EM ANGOLA</span>
+          <div class="hero-kicker">PERFORMANCE • ESTILO • CONFIANÇA</div><h1>O teu jogo.<br><strong>O teu equipamento.</strong></h1>
+          <p>Materiais e acessórios desportivos selecionados para quem leva o jogo a sério — com atendimento directo e entrega em toda Angola.</p>
 
           <div class="hero-buttons">
             <a href="#categorias" class="btn btn-primary">Explorar produtos <i class="fa-solid fa-arrow-right"></i></a>
-            <a href="https://wa.me/244943379573" target="_blank" rel="noopener" class="btn btn-outline">
+            <a href="https://wa.me/244943379573?text=Olá%20Be%20Sporty!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos." target="_blank" rel="noopener" class="btn btn-outline">
               <i class="fa-brands fa-whatsapp"></i> Falar connosco
             </a>
           </div>
 
+          <div class="hero-stats"><div><strong>4+</strong><span>Categorias</span></div><div><strong>100%</strong><span>Atendimento directo</span></div><div><strong>ANGOLA</strong><span>Entregas nacionais</span></div></div>
+
           <div class="trust-row">
             <div><i class="fa-solid fa-circle-check"></i><span>Produtos selecionados</span></div>
-            <div><i class="fa-solid fa-truck"></i><span>Entrega em Angola</span></div>
+            <div><i class="fa-solid fa-truck-fast"></i><span>Entrega em Angola</span></div>
+            <div><i class="fa-solid fa-headset"></i><span>Atendimento directo</span></div>
+          </div>
+        </div>
+
+        <div class="hero-side" aria-hidden="true">
+          <div class="hero-badge">
+            <span>BE SPORTY</span>
+            <strong>PLAY<br>YOUR<br>GAME.</strong>
+            <i class="fa-solid fa-arrow-down-long"></i>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="search-section">
+    <div class="scroll-hint"><span>SCROLL</span><i class="fa-solid fa-arrow-down"></i></div>
+
+    <div class="marquee-strip" aria-label="Destaques">
+      <div class="marquee-track">
+        <span>BE SPORTY</span><b>✦</b><span>PLAY YOUR GAME</span><b>✦</b><span>DESPORTO EM ANGOLA</span><b>✦</b>
+        <span>BE SPORTY</span><b>✦</b><span>PLAY YOUR GAME</span><b>✦</b><span>DESPORTO EM ANGOLA</span><b>✦</b>
+      </div>
+    </div>
+
+    <section class="search-section" aria-label="Pesquisa de produtos">
       <div class="container">
         <div class="search-box">
           <i class="fa-solid fa-magnifying-glass"></i>
-          <input id="searchInput" type="search" placeholder="Pesquisar produtos ou categorias..." autocomplete="off">
+          <input id="searchInput" type="search" placeholder="Pesquisar produtos ou categorias..." autocomplete="off" aria-label="Pesquisar produtos">
           <button id="clearSearch" type="button" aria-label="Limpar pesquisa">Limpar</button>
         </div>
       </div>
     </section>
 
+    
+
+    <section class="quick-categories">
+      <div class="container quick-category-inner">
+        <a href="chuteiras.html"><span>01</span> Chuteiras <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        <a href="bolas.html"><span>02</span> Bolas <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        <a href="pastas.html"><span>03</span> Pastas <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        <a href="promo.html"><span>04</span> Acessórios <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+    </section>
+
     <section class="section" id="categorias">
       <div class="container">
-        <div class="section-heading">
+        <div class="section-heading reveal">
+          <span class="heading-line"></span>
           <div>
-            <span class="section-label">EXPLORE</span>
-            <h2>Encontra o que precisas</h2>
+            <span class="section-label">01 / CATEGORIAS</span>
+            <h2>Encontra o que precisas.</h2>
           </div>
-          <p>Escolhe uma categoria e descobre os produtos disponíveis.</p>
+          <p>Escolhe uma categoria e descobre os produtos disponíveis na Be Sporty.</p>
         </div>
 
         <div class="product-grid" id="productGrid">
-          <article class="product-card" data-name="Chuteiras de Futsal chuteiras futebol">
-            <div class="product-image">
+          <article class="product-card reveal" data-name="Chuteiras de Futsal chuteiras futebol">
+            <a href="chuteiras.html" class="product-image" aria-label="Ver chuteiras de futsal">
               <img src="fotos/4.jpg" alt="Chuteiras de Futsal" loading="lazy">
               <span class="product-tag">Destaque</span>
-            </div>
+              <span class="image-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+            </a>
             <div class="product-body">
-              <span class="category">Chuteiras de futsal</span>
-              
-              
+              <span class="category">01 · FUTSAL</span>
+              <h3>Chuteiras de futsal</h3>
+              <p>Modelos selecionados para mais controlo e confiança em campo.</p>
               <a href="chuteiras.html" class="product-link">Ver produtos <i class="fa-solid fa-arrow-right"></i></a>
             </div>
           </article>
 
-          <article class="product-card" data-name="Bolas de Futsal bolas futebol">
-            <div class="product-image">
+          <article class="product-card reveal" data-name="Bolas de Futsal bolas futebol">
+            <a href="bolas.html" class="product-image" aria-label="Ver bolas de futsal">
               <img src="fotos/bolas.JPG" alt="Bolas de Futsal" loading="lazy">
-            </div>
+              <span class="image-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+            </a>
             <div class="product-body">
-              <span class="category">Bolas de futsal</span>
-              
+              <span class="category">02 · BOLAS</span>
+              <h3>Bolas de futsal</h3>
+              <p>Equipamento para treinos, jogos e competição.</p>
               <a href="bolas.html" class="product-link">Ver produtos <i class="fa-solid fa-arrow-right"></i></a>
             </div>
           </article>
 
-          <article class="product-card" data-name="Pastas Desportivas bolsas sacos">
-            <div class="product-image">
+          <article class="product-card reveal" data-name="Pastas Desportivas bolsas sacos">
+            <a href="pastas.html" class="product-image" aria-label="Ver pastas desportivas">
               <img src="fotos/224.JPG" alt="Pastas Desportivas" loading="lazy">
-            </div>
+              <span class="image-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+            </a>
             <div class="product-body">
-              <span class="category">Pastas</span>
-              
+              <span class="category">03 · EQUIPAMENTO</span>
+              <h3>Pastas desportivas</h3>
+              <p>Praticidade para transportar o teu equipamento com estilo.</p>
               <a href="pastas.html" class="product-link">Ver produtos <i class="fa-solid fa-arrow-right"></i></a>
             </div>
           </article>
 
-          <article class="product-card" data-name="Acessórios Desportivos acessórios">
-            <div class="product-image">
+          <article class="product-card reveal" data-name="Acessórios Desportivos acessórios">
+            <a href="promo.html" class="product-image" aria-label="Ver acessórios desportivos">
               <img src="fotos/77.jpg" alt="Acessórios Desportivos" loading="lazy">
-            </div>
+              <span class="product-tag">Essenciais</span>
+              <span class="image-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+            </a>
             <div class="product-body">
-              <span class="category">Acessórios</span>
-              
-              
+              <span class="category">04 · ACESSÓRIOS</span>
+              <h3>Acessórios</h3>
+              <p>Pequenos detalhes que fazem diferença no teu jogo.</p>
               <a href="promo.html" class="product-link">Ver produtos <i class="fa-solid fa-arrow-right"></i></a>
             </div>
           </article>
         </div>
-
         <p class="no-results" id="noResults">Nenhum produto encontrado para a tua pesquisa.</p>
       </div>
     </section>
 
     <section class="about-section" id="sobre">
       <div class="container about-grid">
-        <div class="about-mark">
-          <img src="fotos/IMG_7171.png" alt="Be Sporty">
+        <div class="about-visual reveal">
+          <div class="about-mark">
+            <img src="fotos/IMG_7171.png" alt="Be Sporty">
+          </div>
+          <span class="about-number">ANGOLA<br><strong>01</strong></span>
         </div>
-        <div>
-          <span class="section-label">BE SPORTY</span>
+        <div class="about-copy reveal">
+          <span class="section-label">02 / BE SPORTY</span>
           <h2>Desporto faz parte de nós.</h2>
           <p>A Be Sporty é dedicada aos amantes do desporto, com materiais selecionados para futebol, futsal e outras modalidades.</p>
           <div class="about-points">
@@ -163,16 +237,28 @@
             <div><i class="fa-solid fa-check"></i><span>Produtos para diferentes modalidades</span></div>
             <div><i class="fa-solid fa-check"></i><span>Entrega em toda Angola</span></div>
           </div>
+          <a class="text-btn" href="entrega.html">Saber mais sobre entregas <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
     </section>
 
+    <section class="benefits-section"><div class="container benefits-grid"><div class="benefit-card"><span>01</span><i class="fa-solid fa-shield-halved"></i><h3>Escolha cuidada</h3><p>Produtos seleccionados para diferentes necessidades desportivas.</p></div><div class="benefit-card"><span>02</span><i class="fa-solid fa-comments"></i><h3>Atendimento directo</h3><p>Fala connosco pelo WhatsApp e recebe orientação rápida.</p></div><div class="benefit-card"><span>03</span><i class="fa-solid fa-truck-fast"></i><h3>Entrega em Angola</h3><p>Combinamos contigo a melhor forma de receber a tua encomenda.</p></div></div></section>
+
+    <section class="statement-section">
+      <div class="statement-word">JOGA</div>
+      <div class="container statement-content">
+        <span class="section-label">04 / MINDSET</span>
+        <h2>Não esperes pelo<br><strong>momento perfeito.</strong></h2>
+        <p>Prepara-te. Entra em campo. Faz o teu jogo.</p>
+      </div>
+    </section>
+
     <section class="cta-section">
-      <div class="container cta">
-        <div>
-          <span class="section-label">PRECISAS DE AJUDA?</span>
-          <h2>Fala directamente com a Be Sporty.</h2>
-          <p>Envia-nos o produto que procuras e a nossa equipa ajuda-te com disponibilidade e entrega.</p>
+      <div class="container cta reveal">
+        <div class="cta-content">
+          <span class="section-label">03 / PRECISAS DE AJUDA?</span>
+          <h2>Fala directamente<br>com a Be Sporty.</h2>
+          <p>Envia-nos o produto que procuras e ajudamos-te com disponibilidade, preço e entrega.</p>
         </div>
         <a class="btn btn-primary" href="https://wa.me/244943379573?text=Olá%20Be%20Sporty!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos." target="_blank" rel="noopener">
           <i class="fa-brands fa-whatsapp"></i> Contactar agora
@@ -183,15 +269,24 @@
 
   <footer class="footer">
     <div class="container footer-grid">
-      <div>
+      <div class="footer-brand">
         <img class="footer-logo" src="fotos/IMG_7171.png" alt="Be Sporty">
         <p>Materiais e acessórios desportivos em Angola.</p>
+        <a class="footer-social" href="https://wa.me/244943379573" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Falar no WhatsApp</a>
       </div>
       <div>
         <h4>Navegação</h4>
         <a href="index.html">Início</a>
         <a href="#categorias">Categorias</a>
+        <a href="#sobre">Sobre nós</a>
         <a href="entrega.html">Entregas</a>
+      </div>
+      <div>
+        <h4>Categorias</h4>
+        <a href="chuteiras.html">Chuteiras</a>
+        <a href="bolas.html">Bolas de futsal</a>
+        <a href="pastas.html">Pastas</a>
+        <a href="promo.html">Acessórios</a>
       </div>
       <div>
         <h4>Contacto</h4>
@@ -206,8 +301,8 @@
     </div>
   </footer>
 
-  <a class="floating-whatsapp" href="https://wa.me/244943379573" target="_blank" rel="noopener" aria-label="Contactar Be Sporty pelo WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
+  <a class="floating-whatsapp" href="https://wa.me/244943379573?text=Olá%20Be%20Sporty!%20Gostaria%20de%20saber%20mais." target="_blank" rel="noopener" aria-label="Contactar Be Sporty pelo WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span>
   </a>
 
   <script src="app.js"></script>

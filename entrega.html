@@ -3,351 +3,1887 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Be Sporty — materiais e acessórios desportivos em Angola.">
+
+  <meta
+    name="description"
+    content="Be Sporty — materiais e acessórios desportivos em Angola."
+  >
+
   <meta name="theme-color" content="#111111">
+
   <title>Be Sporty | Materiais Desportivos</title>
 
   <link rel="icon" href="fotos/IMG_7171.png" type="image/png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+  <style>
+
+    /* =====================================================
+       ENTREGA BE SPORTY
+    ===================================================== */
+
+    .delivery-section{
+      padding:100px 0;
+      background:
+        linear-gradient(
+          180deg,
+          #fafaf8 0%,
+          #f4f4f1 100%
+        );
+    }
+
+    .delivery-heading{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:30px;
+      margin-bottom:35px;
+    }
+
+    .delivery-title{
+      max-width:650px;
+    }
+
+    .delivery-title h2{
+      margin:10px 0 12px;
+      color:#111;
+      font-size:40px;
+      line-height:1.05;
+      font-weight:900;
+      letter-spacing:-1.7px;
+    }
+
+    .delivery-title p{
+      max-width:570px;
+      margin:0;
+      color:#777;
+      font-size:13px;
+      line-height:1.7;
+    }
+
+    .delivery-badge{
+      display:flex;
+      align-items:center;
+      gap:9px;
+      padding:10px 14px;
+      border:1px solid #e5e5e1;
+      border-radius:100px;
+      background:#fff;
+      color:#555;
+      font-size:9px;
+      font-weight:800;
+      white-space:nowrap;
+      box-shadow:0 8px 25px rgba(0,0,0,.04);
+    }
+
+    .delivery-badge i{
+      color:var(--orange);
+      font-size:12px;
+    }
+
+    /* =====================================================
+       CARTÃO PRINCIPAL
+    ===================================================== */
+
+    .delivery-card{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      min-height:430px;
+      overflow:hidden;
+      background:#fff;
+      border:1px solid #e6e6e1;
+      border-radius:24px;
+      box-shadow:0 25px 70px rgba(0,0,0,.07);
+    }
+
+    /* =====================================================
+       FORMULÁRIO
+    ===================================================== */
+
+    .delivery-form-area{
+      padding:38px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .delivery-form-header{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      margin-bottom:32px;
+    }
+
+    .delivery-number{
+      width:40px;
+      height:40px;
+      display:grid;
+      place-items:center;
+      border-radius:11px;
+      background:#111;
+      color:#fff;
+      font-size:11px;
+      font-weight:900;
+    }
+
+    .delivery-form-header strong{
+      display:block;
+      margin-bottom:4px;
+      color:#111;
+      font-size:15px;
+      font-weight:900;
+    }
+
+    .delivery-form-header span{
+      color:#999;
+      font-size:9px;
+    }
+
+    .delivery-fields{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      margin-bottom:18px;
+    }
+
+    .form-group{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+
+    .form-group label{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      font-size:9px;
+      font-weight:900;
+      color:#333;
+    }
+
+    .form-group label span{
+      display:flex;
+      align-items:center;
+      gap:7px;
+    }
+
+    .form-group label i{
+      color:var(--orange);
+      font-size:11px;
+    }
+
+    .form-group label small{
+      color:#aaa;
+      font-size:7px;
+      font-weight:700;
+    }
+
+    /* =====================================================
+       SELECT
+    ===================================================== */
+
+    .select-wrapper{
+      position:relative;
+    }
+
+    .select-wrapper select{
+      appearance:none;
+      -webkit-appearance:none;
+
+      width:100%;
+      height:53px;
+
+      padding:0 40px 0 14px;
+
+      border:1px solid #deded9;
+      border-radius:11px;
+
+      background:#fafaf8;
+
+      color:#222;
+
+      font-family:inherit;
+      font-size:11px;
+      font-weight:600;
+
+      outline:none;
+      cursor:pointer;
+
+      transition:
+        border-color .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
+    }
+
+    .select-wrapper select:hover{
+      border-color:#ccc;
+      background:#fff;
+    }
+
+    .select-wrapper select:focus{
+      border-color:var(--orange);
+      background:#fff;
+      box-shadow:0 0 0 4px rgba(244,123,32,.08);
+    }
+
+    .select-wrapper select:disabled{
+      opacity:.55;
+      background:#f1f1ee;
+      cursor:not-allowed;
+    }
+
+    .select-wrapper > i{
+      position:absolute;
+      right:15px;
+      top:50%;
+      transform:translateY(-50%);
+      color:#999;
+      font-size:9px;
+      pointer-events:none;
+    }
+
+    /* =====================================================
+       BOTÃO CALCULAR
+    ===================================================== */
+
+    .delivery-btn{
+      width:100%;
+      min-height:52px;
+
+      display:flex;
+      align-items:center;
+      gap:10px;
+
+      padding:6px 10px;
+
+      border:1px solid #111;
+      border-radius:11px;
+
+      background:#111;
+      color:#fff;
+
+      font-family:inherit;
+      font-size:10px;
+      font-weight:900;
+
+      cursor:pointer;
+
+      transition:
+        background .3s ease,
+        border-color .3s ease,
+        transform .3s ease,
+        box-shadow .3s ease;
+    }
+
+    .delivery-btn:hover{
+      background:var(--orange);
+      border-color:var(--orange);
+      transform:translateY(-2px);
+      box-shadow:0 12px 25px rgba(244,123,32,.20);
+    }
+
+    .delivery-btn-icon{
+      width:34px;
+      height:34px;
+
+      display:grid;
+      place-items:center;
+
+      flex:none;
+
+      border-radius:8px;
+
+      background:#fff;
+      color:#111;
+
+      font-size:11px;
+    }
+
+    .delivery-btn:hover .delivery-btn-icon{
+      color:var(--orange);
+    }
+
+    .delivery-btn-arrow{
+      margin-left:auto;
+      color:#777;
+      font-size:9px;
+      transition:.3s ease;
+    }
+
+    .delivery-btn:hover .delivery-btn-arrow{
+      color:#fff;
+      transform:translateX(3px);
+    }
+
+    .delivery-security{
+      display:flex;
+      align-items:center;
+      gap:7px;
+      margin-top:13px;
+      color:#999;
+      font-size:8px;
+      font-weight:700;
+    }
+
+    .delivery-security i{
+      color:#20ad67;
+    }
+
+    /* =====================================================
+       ÁREA DO RESULTADO
+    ===================================================== */
+
+    .delivery-result-area{
+      position:relative;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      padding:38px;
+
+      background:
+        radial-gradient(
+          circle at 70% 20%,
+          rgba(244,123,32,.14),
+          transparent 38%
+        ),
+        #111;
+
+      color:#fff;
+    }
+
+    .delivery-result-area:before{
+      content:"";
+
+      position:absolute;
+
+      width:180px;
+      height:180px;
+
+      right:-70px;
+      bottom:-80px;
+
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:50%;
+    }
+
+    .delivery-result-area:after{
+      content:"";
+
+      position:absolute;
+
+      width:110px;
+      height:110px;
+
+      right:-35px;
+      bottom:-45px;
+
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:50%;
+    }
+
+    /* =====================================================
+       ESTADO INICIAL
+    ===================================================== */
+
+    .delivery-empty{
+      position:relative;
+      z-index:2;
+
+      width:100%;
+      max-width:340px;
+
+      text-align:center;
+    }
+
+    .delivery-empty-icon{
+      width:65px;
+      height:65px;
+
+      margin:0 auto 20px;
+
+      display:grid;
+      place-items:center;
+
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:18px;
+
+      background:rgba(255,255,255,.06);
+
+      color:var(--orange);
+
+      font-size:21px;
+    }
+
+    .delivery-result-label{
+      display:block;
+
+      margin-bottom:8px;
+
+      color:#777;
+
+      font-size:8px;
+      font-weight:900;
+      letter-spacing:2px;
+    }
+
+    .delivery-empty h3{
+      margin:0 0 9px;
+
+      color:#fff;
+
+      font-size:22px;
+      font-weight:900;
+      letter-spacing:-.7px;
+    }
+
+    .delivery-empty p{
+      max-width:270px;
+
+      margin:0 auto;
+
+      color:#858585;
+
+      font-size:10px;
+      line-height:1.6;
+    }
+
+    .delivery-empty-line{
+      width:35px;
+      height:2px;
+
+      margin:23px auto;
+
+      border-radius:10px;
+
+      background:var(--orange);
+    }
+
+    .delivery-empty small{
+      color:#666;
+
+      font-size:8px;
+      font-weight:700;
+    }
+
+    .delivery-empty small i{
+      margin-right:5px;
+      color:var(--orange);
+    }
+
+    /* =====================================================
+       RESULTADO CALCULADO
+    ===================================================== */
+
+    .delivery-result{
+      position:relative;
+      z-index:2;
+
+      width:100%;
+      max-width:380px;
+    }
+
+    .delivery-result-top{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+
+      margin-bottom:22px;
+    }
+
+    .delivery-result h3{
+      margin:0;
+
+      color:#fff;
+
+      font-size:23px;
+      font-weight:900;
+      letter-spacing:-.7px;
+    }
+
+    .delivery-check{
+      width:37px;
+      height:37px;
+
+      display:grid;
+      place-items:center;
+
+      border-radius:50%;
+
+      background:#25d366;
+      color:#fff;
+
+      font-size:12px;
+    }
+
+    .delivery-location{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+
+      padding:15px;
+
+      margin-bottom:20px;
+
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:12px;
+
+      background:rgba(255,255,255,.045);
+    }
+
+    .delivery-location-row{
+      display:flex;
+      align-items:center;
+      gap:10px;
+
+      color:#bbb;
+
+      font-size:10px;
+    }
+
+    .delivery-location-row i{
+      width:22px;
+      color:var(--orange);
+      text-align:center;
+    }
+
+    .delivery-price{
+      padding-top:18px;
+
+      border-top:1px solid rgba(255,255,255,.09);
+    }
+
+    .delivery-price-label{
+      color:#777;
+
+      font-size:8px;
+      font-weight:800;
+      letter-spacing:1px;
+    }
+
+    .delivery-price strong{
+      display:block;
+
+      margin-top:5px;
+
+      color:#fff;
+
+      font-size:32px;
+      line-height:1;
+
+      font-weight:900;
+      letter-spacing:-1.5px;
+    }
+
+    .delivery-price strong small{
+      margin-left:3px;
+
+      color:#777;
+
+      font-size:10px;
+      letter-spacing:0;
+    }
+
+    /* =====================================================
+       BOTÃO WHATSAPP
+    ===================================================== */
+
+    .share-delivery-btn{
+      width:100%;
+      min-height:47px;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      gap:9px;
+
+      margin-top:20px;
+
+      border:1px solid #25d366;
+      border-radius:10px;
+
+      background:#25d366;
+      color:#fff;
+
+      font-family:inherit;
+
+      font-size:10px;
+      font-weight:900;
+
+      cursor:pointer;
+
+      transition:.3s ease;
+    }
+
+    .share-delivery-btn:hover{
+      background:#1ebe5d;
+      border-color:#1ebe5d;
+
+      transform:translateY(-2px);
+
+      box-shadow:
+        0 10px 25px rgba(37,211,102,.20);
+    }
+
+    .share-delivery-btn i{
+      font-size:13px;
+    }
+
+    /* =====================================================
+       INFORMAÇÕES
+    ===================================================== */
+
+    .delivery-bottom{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+
+      gap:15px;
+
+      margin-top:16px;
+    }
+
+    .delivery-bottom > div{
+      display:flex;
+      align-items:center;
+
+      gap:9px;
+
+      padding:12px 14px;
+
+      border:1px solid #e7e7e2;
+      border-radius:10px;
+
+      background:#fff;
+
+      color:#888;
+
+      font-size:8px;
+      line-height:1.5;
+    }
+
+    .delivery-bottom i{
+      flex:none;
+
+      color:var(--orange);
+      font-size:11px;
+    }
+
+    .delivery-bottom > div:last-child i{
+      color:#25d366;
+    }
+
+    /* =====================================================
+       MOBILE
+    ===================================================== */
+
+    @media(max-width:800px){
+
+      .delivery-section{
+        padding:70px 0;
+      }
+
+      .delivery-heading{
+        align-items:flex-start;
+        flex-direction:column;
+        gap:18px;
+      }
+
+      .delivery-title h2{
+        font-size:31px;
+      }
+
+      .delivery-card{
+        grid-template-columns:1fr;
+      }
+
+      .delivery-result-area{
+        min-height:390px;
+      }
+
+    }
+
+    @media(max-width:600px){
+
+      .delivery-form-area{
+        padding:24px 18px;
+      }
+
+      .delivery-result-area{
+        padding:28px 18px;
+      }
+
+      .delivery-fields{
+        grid-template-columns:1fr;
+      }
+
+      .delivery-bottom{
+        grid-template-columns:1fr;
+      }
+
+      .delivery-title h2{
+        font-size:28px;
+      }
+
+      .delivery-badge{
+        font-size:8px;
+      }
+
+      .delivery-price strong{
+        font-size:28px;
+      }
+
+    }
+
+  </style>
 </head>
 
-<body>
- 
 
-  <header class="header" id="header">
+<body>
+
+
+  <!-- =====================================================
+       HEADER
+  ===================================================== -->
+
+ <header class="header" id="header">
     <div class="container header-inner">
-      <a href="index.html" class="brand" aria-label="Be Sporty - início">
-        <img src="fotos/IMG_7171.png" alt="Be Sporty">
+      <a href="index.html" class="brand" aria-label="Be Sporty — início">
+        <img src="fotos/IMG_7171.png" alt="Be Sporty" width="126" height="56">
       </a>
 
       <nav class="desktop-nav" aria-label="Navegação principal">
-        <a href="index.html">Início</a>
-        <a href="chuteiras.html">Chuteiras</a>
-      <a href="bolas.html">Bolas</a>
-        <a href="pastas.html">Pastas</a>
-          <a href="Promo.html">Acessórios</a>
+        <a class="active" href="index.html">Início</a>
+        <a href="#categorias">Categorias</a>
+        <a href="#sobre">Sobre nós</a>
         <a href="entrega.html">Entregas</a>
       </nav>
 
       <div class="header-actions">
         <a class="header-whatsapp" href="https://wa.me/244943379573" target="_blank" rel="noopener">
-          <i class="fa-brands fa-whatsapp"></i>
-          <span>WhatsApp</span>
+          <i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span>
         </a>
-        <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileNav">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
 
     <nav class="mobile-nav" id="mobileNav" aria-label="Menu mobile">
-      <a href="index.html">Início</a>
-        <a href="chuteiras.html">Chuteiras</a>
-      <a href="bolas.html">Bolas</a>
-        <a href="pastas.html">Pastas</a>
-          <a href="Promo.html">Acessórios</a>
-        <a href="entrega.html">Entregas</a>
+      <div class="mobile-nav-head">
+        <span>MENU</span>
+        <button id="closeMenu" type="button" aria-label="Fechar menu"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <a href="index.html"><i class="fa-solid fa-house"></i> Página Inicial</a>
+      <a href="chuteiras.html"><i class="fa-solid fa-futbol"></i> Chuteiras Futsal</a>
+      <a href="bolas.html"><i class="fa-solid fa-volleyball"></i> Bola de Futsal</a>
+      <a href="pastas.html"><i class="fa-solid fa-bag-shopping"></i> Pastas Desportivas</a>
+      <a href="promo.html"><i class="fa-solid fa-tags"></i> Acessórios Desportivas</a>
+      <a href="entrega.html"><i class="fa-solid fa-truck-fast"></i> Cálculo de Entrega</a>
+      <div class="mobile-nav-contact">
+       
+      </div>
     </nav>
+    <div class="menu-backdrop" id="menuBackdrop"></div>
   </header>
 
+
+  <!-- =====================================================
+       CONTEÚDO
+  ===================================================== -->
+
   <main>
+
+
+    <!-- ===================================================
+         HERO
+    =================================================== -->
+
     <section class="hero">
+
       <div class="hero-overlay"></div>
+
       <div class="container hero-content">
+
         <div class="hero-copy">
-          <span class="eyebrow">BE SPORTY • DESPORTO EM ANGOLA</span>
-          <h1>Equipamento certo.<br><strong>Performance melhor.</strong></h1>
-          <p>Encontra chuteiras, bolas, pastas e acessórios desportivos para elevar o teu jogo.</p>
+
+          <span class="eyebrow">
+            BE SPORTY • DESPORTO EM ANGOLA
+          </span>
+
+
+          <h1>
+            Equipamento certo.<br>
+            <strong>Performance melhor.</strong>
+          </h1>
+
+
+          <p>
+            Encontra chuteiras, bolas, pastas e acessórios
+            desportivos para elevar o teu jogo.
+          </p>
+
 
           <div class="hero-buttons">
-            <a href="#categorias" class="btn btn-primary">Explorar produtos <i class="fa-solid fa-arrow-right"></i></a>
-            <a href="https://wa.me/244943379573" target="_blank" rel="noopener" class="btn btn-outline">
-              <i class="fa-brands fa-whatsapp"></i> Falar connosco
+
+            <a
+              href="#categorias"
+              class="btn btn-primary"
+            >
+              Explorar produtos
+              <i class="fa-solid fa-arrow-right"></i>
             </a>
+
+
+            <a
+              href="https://wa.me/244943379573"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-outline"
+            >
+
+              <i class="fa-brands fa-whatsapp"></i>
+
+              Falar connosco
+
+            </a>
+
           </div>
+
 
           <div class="trust-row">
-            <div><i class="fa-solid fa-circle-check"></i><span>Produtos selecionados</span></div>
-            <div><i class="fa-solid fa-truck"></i><span>Entrega em Angola</span></div>
+
+            <div>
+
+              <i class="fa-solid fa-circle-check"></i>
+
+              <span>
+                Produtos selecionados
+              </span>
+
+            </div>
+
+
+            <div>
+
+              <i class="fa-solid fa-truck"></i>
+
+              <span>
+                Entrega em Angola
+              </span>
+
+            </div>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
 
 
-    <section class="section" id="categorias">
+    <!-- ===================================================
+         CALCULADOR DE ENTREGA
+    =================================================== -->
+
+    <section
+      class="delivery-section"
+      id="categorias"
+    >
+
       <div class="container">
-        <div class="section-heading">
+
+
+        <div class="delivery-heading">
+
+          <div class="delivery-title">
+
+            <span class="section-label">
+              ENTREGA BE SPORTY
+            </span>
+
+
+            <h2>
+              Calcula a tua entrega.
+            </h2>
+
+
+            <p>
+              Escolhe a localização e descobre rapidamente
+              o valor estimado da entrega da Be Sporty.
+            </p>
+
+          </div>
+
+
+          <div class="delivery-badge">
+
+            <i class="fa-solid fa-truck-fast"></i>
+
+            <span>
+              Entrega em Angola
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="delivery-card">
+
+
+          <!-- FORMULÁRIO -->
+
+          <div class="delivery-form-area">
+
+
+            <div class="delivery-form-header">
+
+              <div class="delivery-number">
+                01
+              </div>
+
+
+              <div>
+
+                <strong>
+                  Indica a localização
+                </strong>
+
+                <span>
+                  Preenche os campos abaixo para calcular.
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div class="delivery-fields">
+
+
+              <!-- MUNICÍPIO -->
+
+              <div class="form-group">
+
+                <label for="municipio">
+
+                  <span>
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    Município
+
+                  </span>
+
+                  <small>
+                    Obrigatório
+                  </small>
+
+                </label>
+
+
+                <div class="select-wrapper">
+
+                  <select id="municipio">
+
+                    <option value="">
+                      Selecione o município
+                    </option>
+
+                  </select>
+
+
+                  <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+              </div>
+
+
+              <!-- BAIRRO -->
+
+              <div class="form-group">
+
+                <label for="bairro">
+
+                  <span>
+
+                    <i class="fa-solid fa-map-location-dot"></i>
+
+                    Bairro
+
+                  </span>
+
+                  <small>
+                    Obrigatório
+                  </small>
+
+                </label>
+
+
+                <div class="select-wrapper">
+
+                  <select
+                    id="bairro"
+                    disabled
+                  >
+
+                    <option value="">
+                      Selecione primeiro o município
+                    </option>
+
+                  </select>
+
+
+                  <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <!-- BOTÃO -->
+
+            <button
+              type="button"
+              class="delivery-btn"
+              id="calcularBtn"
+              onclick="calcularEntrega()"
+            >
+
+              <span class="delivery-btn-icon">
+
+                <i class="fa-solid fa-calculator"></i>
+
+              </span>
+
+
+              <span>
+                Calcular valor da entrega
+              </span>
+
+
+              <i
+                class="fa-solid fa-arrow-right delivery-btn-arrow"
+              ></i>
+
+            </button>
+
+
+            <div class="delivery-security">
+
+              <i class="fa-solid fa-circle-check"></i>
+
+              <span>
+                Cálculo rápido e transparente
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <!-- RESULTADO -->
+
+          <div
+            class="delivery-result-area"
+            id="resultado"
+          >
+
+            <div class="delivery-empty">
+
+              <div class="delivery-empty-icon">
+
+                <i class="fa-solid fa-truck"></i>
+
+              </div>
+
+
+              <span class="delivery-result-label">
+                VALOR DA ENTREGA
+              </span>
+
+
+              <h3>
+                Ainda não calculado
+              </h3>
+
+
+              <p>
+                Seleciona o município e o bairro para
+                consultar o valor estimado.
+              </p>
+
+
+              <div class="delivery-empty-line"></div>
+
+
+              <small>
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Preenche os dados ao lado
+
+              </small>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- INFORMAÇÕES -->
+
+        <div class="delivery-bottom">
+
           <div>
-            <span class="section-label">CALCULO BE SPORTY </span>
+
+            <i class="fa-solid fa-circle-info"></i>
+
+            <span>
+              O valor apresentado é uma estimativa de entrega
+              baseada na localização selecionada.
+            </span>
 
           </div>
-          
-        </div>
 
 
-<section class="delivery-section">
-  <div class="container">
+          <div>
 
-    <div class="delivery-header">
-      <span class="section-label">ENTREGA BE SPORTY</span>
-    
-      <p>
-        Selecione o município e o bairro para consultar rapidamente
-        o valor estimado da entrega.
-      </p>
-    </div>
+            <i class="fa-brands fa-whatsapp"></i>
 
-    <div class="delivery-box">
+            <span>
+              Após o cálculo, podes enviar os dados directamente
+              pelo WhatsApp.
+            </span>
 
-      <div class="delivery-form">
-
-        <div class="form-group">
-          <label for="municipio">
-            <i class="fa-solid fa-location-dot"></i>
-            Município
-          </label>
-
-          <select id="municipio">
-            <option value="">Selecione o município</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="bairro">
-            <i class="fa-solid fa-map-location-dot"></i>
-            Bairro
-          </label>
-
-          <select id="bairro">
-            <option value="">Selecione o bairro</option>
-          </select>
-        </div>
-
-        <button class="delivery-btn" onclick="calcularEntrega()">
-          <i class="fa-solid fa-calculator"></i>
-          Calcular entrega
-        </button>
-
-      </div>
-
-      <div id="resultado" class="resultado">
-        <div class="resultado-placeholder">
-          <i class="fa-solid fa-truck"></i>
-          <span>O valor da entrega aparecerá aqui.</span>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="delivery-info">
-      <i class="fa-solid fa-circle-info"></i>
-      <span>
-        O valor apresentado é calculado de acordo com o município e bairro selecionados.
-      </span>
-    </div>
-
-  </div>
-</section>
-
-
-  </main>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Adiciona evento de clique para todos os botões de comprar
-    var buyButtons = document.querySelectorAll('.comprarBtn');
-    buyButtons.forEach(function(button) {
-      button.addEventListener('click', function() {
-        var productName = this.getAttribute('data-product');
-        var productImg = this.getAttribute('data-img');
-        var productPrice = this.getAttribute('data-price');
-
-    // Monta a mensagem inicial com a imagem do produto
-    var mensagem = `Olá, estou interessado no(a) ${productName} por ${productPrice}:`;
-    var linkWhatsApp = `https://api.whatsapp.com/send?phone=244943379573&text=${encodeURIComponent(mensagem)}%0A${encodeURIComponent(productImg)}`;
-
-    // Abre o WhatsApp com a mensagem pré-preenchida e a imagem do produto
-    window.open(linkWhatsApp, '_blank');
-  });
-});
-
-});
-</script>
-<script>
-// Função para alternar a exibição do menu em dispositivos móveis
-function toggleMenu() {
-var navUl = document.querySelector('nav ul');
-navUl.classList.toggle('active');
-}
-function popularMunicipios() {
-// Lista dos 7 municípios de Luanda
-var municipios = ['Luanda', 'Belas', 'Cacuaco', 'Cazenga', 'Kilamba Kiaxi', 'Viana'];
-
-        var selectMunicipio = document.getElementById('municipio');
-        municipios.forEach(function(municipio) {
-            var option = document.createElement('option');
-            option.text = municipio;
-            option.value = municipio;
-            selectMunicipio.add(option);
-        });
-    }
-
-    function popularBairros(municipioSelecionado) {
-        // Exemplo de mapeamento de bairros por município
-        var bairrosPorMunicipio = {
-            'Luanda': ['Ingombota', 'Maianga', 'Samba','Aeroporto'],
-            'Belas': ['Talatona', 'Benfica', 'Morro Bento','Kilamba'],
-            'Cacuaco': ['Sequele', 'Kicolo', 'Cacuaco'],
-            'Cazenga': ['Hoji Ya Henda', 'Tala Hady', 'Cazenga'],
-            'Kilamba Kiaxi': ['Nova Vida', 'Camama', 'Golf 2'],
-            'Viana': ['Estalagem', 'Zango', 'Calumbo']
-        };
-
-        var bairros = bairrosPorMunicipio[municipioSelecionado] || [];
-
-        var selectBairro = document.getElementById('bairro');
-        selectBairro.innerHTML = '<option value="">Selecione...</option>'; // Limpar opções anteriores
-
-        bairros.forEach(function(bairro) {
-            var option = document.createElement('option');
-            option.text = bairro;
-            option.value = bairro;
-            selectBairro.add(option);
-        });
-    }
-
-    function calcularEntrega() {
-        var municipio = document.getElementById('municipio').value;
-        var bairro = document.getElementById('bairro').value;
-
-        if (!municipio || !bairro) {
-            alert('Por favor, selecione um município e um bairro.');
-            return;
-        }
-
-        // Tabela de custos adicionais
-        var custosAdicionais = {
-            'Luanda': {'Ingombota': 2000, 'Maianga': 2050, 'Samba': 2000,'Aeroporto': 1600},
-            'Belas': {'Talatona': 2050, 'Benfica': 2100, 'Morro Bento': 2150, 'Kilamba': 2150},
-            'Cacuaco': {'Sequele': 3900, 'Kicolo': 3250, 'Cacuaco': 3300},
-            'Cazenga': {'Hoji Ya Henda': 2600, 'Tala Hady': 2550, 'Cazenga': 2500},
-            'Kilamba Kiaxi': {'Nova Vida': "", 'Camama': 1100, 'Golf 2': 700},
-            'Viana': {'Estalagem': 3100, 'Zango': 3150, 'Calumbo': 3200}
-        };
-
-        var custoAdicional = custosAdicionais[municipio][bairro] || 0;
-        var custoEntrega = 1500 + custoAdicional;
-
-        var resultado = {
-            municipio: municipio,
-            bairro: bairro,
-            preco: custoEntrega
-        };
-
-        mostrarResultado(resultado);
-    }
-
-    function mostrarResultado(resultado) {
-        var resultadoElement = document.getElementById('resultado');
-        resultadoElement.innerHTML = 
-                                     
-                                     
-                                     '<p>Preço da entrega: ' + resultado.preco.toLocaleString('pt-PT', { style: 'currency', currency: 'AOA' }) + '</p>';
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-        popularMunicipios();
-
-        var selectMunicipio = document.getElementById('municipio');
-        selectMunicipio.addEventListener('change', function() {
-            var municipioSelecionado = selectMunicipio.value;
-            if (municipioSelecionado) {
-                popularBairros(municipioSelecionado);
-            }
-        });
-    });
-
-</script>
-
-<script>
-  function enviarWhatsApp(elemento) {
-    const produto = elemento.closest(".produto");
-    const nome = produto.querySelector("h3").textContent;
-    const imagem = produto.querySelector("img").src;
-
-    const mensagem = `Olá! Gostaria de comprar o produto: *${nome}*%0AImagem: ${imagem}`;
-
-    const link = `https://wa.me/244943379573?text=${mensagem}`; // substitua com seu número
-
-    window.open(link, '_blank');
-  }
-</script>
- <section class="about-section" id="sobre">
-      <div class="container about-grid">
-        <div class="about-mark">
-          <img src="fotos/IMG_7171.png" alt="Be Sporty">
-        </div>
-        <div>
-          <span class="section-label">BE SPORTY</span>
-          <h2>Desporto faz parte de nós.</h2>
-          <p>A Be Sporty é dedicada aos amantes do desporto, com materiais selecionados para futebol, futsal e outras modalidades.</p>
-          <div class="about-points">
-            <div><i class="fa-solid fa-check"></i><span>Atendimento pelo WhatsApp</span></div>
-            <div><i class="fa-solid fa-check"></i><span>Produtos para diferentes modalidades</span></div>
-            <div><i class="fa-solid fa-check"></i><span>Entrega em toda Angola</span></div>
           </div>
+
         </div>
+
       </div>
+
     </section>
+
+
+    <!-- ===================================================
+         SOBRE
+    =================================================== -->
+
+   
+
+
+    <!-- ===================================================
+         CTA
+    =================================================== -->
 
     <section class="cta-section">
+
       <div class="container cta">
+
         <div>
-          <span class="section-label">PRECISAS DE AJUDA?</span>
-          <h2>Fala directamente com a Be Sporty.</h2>
-          <p>Envia-nos o produto que procuras e a nossa equipa ajuda-te com disponibilidade e entrega.</p>
+
+          <span class="section-label">
+            PRECISAS DE AJUDA?
+          </span>
+
+
+          <h2>
+            Fala directamente com a Be Sporty.
+          </h2>
+
+
+          <p>
+            Envia-nos o produto que procuras e a nossa equipa
+            ajuda-te com disponibilidade e entrega.
+          </p>
+
         </div>
-        <a class="btn btn-primary" href="https://wa.me/244943379573?text=Olá%20Be%20Sporty!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos." target="_blank" rel="noopener">
-          <i class="fa-brands fa-whatsapp"></i> Contactar agora
+
+
+        <a
+          class="btn btn-primary"
+          href="https://wa.me/244943379573?text=Ol%C3%A1%20Be%20Sporty!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos."
+          target="_blank"
+          rel="noopener"
+        >
+
+          <i class="fa-brands fa-whatsapp"></i>
+
+          Contactar agora
+
         </a>
+
       </div>
+
     </section>
+
   </main>
 
+
+  <!-- =====================================================
+       FOOTER
+  ===================================================== -->
+
   <footer class="footer">
+
     <div class="container footer-grid">
+
+
       <div>
-        <img class="footer-logo" src="fotos/IMG_7171.png" alt="Be Sporty">
-        <p>Materiais e acessórios desportivos em Angola.</p>
+
+        <img
+          class="footer-logo"
+          src="fotos/IMG_7171.png"
+          alt="Be Sporty"
+        >
+
+
+        <p>
+          Materiais e acessórios desportivos em Angola.
+        </p>
+
       </div>
+
+
       <div>
-        <h4>Navegação</h4>
-        <a href="index.html">Início</a>
-        <a href="#categorias">Categorias</a>
-        <a href="entrega.html">Entregas</a>
+
+        <h4>
+          Navegação
+        </h4>
+
+
+        <a href="index.html">
+          Início
+        </a>
+
+
+        <a href="#categorias">
+          Entregas
+        </a>
+
+
+        <a href="entrega.html">
+          Entregas
+        </a>
+
       </div>
+
+
       <div>
-        <h4>Contacto</h4>
-        <a href="https://wa.me/244943379573" target="_blank" rel="noopener">+244 943 379 573</a>
-        <a href="mailto:besporty2023@gmail.com">besporty2023@gmail.com</a>
-        <span>Projecto Nova Vida</span>
+
+        <h4>
+          Contacto
+        </h4>
+
+
+        <a
+          href="https://wa.me/244943379573"
+          target="_blank"
+          rel="noopener"
+        >
+          +244 943 379 573
+        </a>
+
+
+        <a href="mailto:besporty2023@gmail.com">
+          besporty2023@gmail.com
+        </a>
+
+
+        <span>
+          Projecto Nova Vida
+        </span>
+
       </div>
+
     </div>
+
+
     <div class="container footer-bottom">
-      <span>© <span id="year"></span> Be Sporty. Todos os direitos reservados.</span>
-      <a href="https://be-sporty.netlify.app" target="_blank" rel="noopener">be-sporty.netlify.app</a>
+
+      <span>
+        ©
+        <span id="year"></span>
+        Be Sporty. Todos os direitos reservados.
+      </span>
+
+
+      <a
+        href="https://be-sporty.netlify.app"
+        target="_blank"
+        rel="noopener"
+      >
+        be-sporty.netlify.app
+      </a>
+
     </div>
+
   </footer>
 
-  <a class="floating-whatsapp" href="https://wa.me/244943379573" target="_blank" rel="noopener" aria-label="Contactar Be Sporty pelo WhatsApp">
+
+  <!-- WHATSAPP FLUTUANTE -->
+
+  <a
+    class="floating-whatsapp"
+    href="https://wa.me/244943379573"
+    target="_blank"
+    rel="noopener"
+    aria-label="Contactar Be Sporty pelo WhatsApp"
+  >
+
     <i class="fa-brands fa-whatsapp"></i>
+
   </a>
-      
+
+
+  <!-- =====================================================
+       JAVASCRIPT — ENTREGA
+  ===================================================== -->
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+
+      const municipioSelect =
+        document.getElementById("municipio");
+
+
+      const bairroSelect =
+        document.getElementById("bairro");
+
+
+      const resultado =
+        document.getElementById("resultado");
+
+
+      /* =========================================
+         MUNICÍPIOS
+      ========================================= */
+
+      const municipios = [
+
+        "Luanda",
+        "Belas",
+        "Cacuaco",
+        "Cazenga",
+        "Kilamba Kiaxi",
+        "Viana"
+
+      ];
+
+
+      municipios.forEach(function (municipio) {
+
+        const option =
+          document.createElement("option");
+
+        option.value = municipio;
+
+        option.textContent = municipio;
+
+        municipioSelect.appendChild(option);
+
+      });
+
+
+      /* =========================================
+         BAIRROS
+      ========================================= */
+
+      const bairrosPorMunicipio = {
+
+        "Luanda": [
+
+          "Ingombota",
+          "Maianga",
+          "Samba",
+          "Aeroporto"
+
+        ],
+
+        "Belas": [
+
+          "Talatona",
+          "Benfica",
+          "Morro Bento",
+          "Kilamba"
+
+        ],
+
+        "Cacuaco": [
+
+          "Sequele",
+          "Kicolo",
+          "Cacuaco"
+
+        ],
+
+        "Cazenga": [
+
+          "Hoji Ya Henda",
+          "Tala Hady",
+          "Cazenga"
+
+        ],
+
+        "Kilamba Kiaxi": [
+
+          "Nova Vida",
+          "Camama",
+          "Golf 2"
+
+        ],
+
+        "Viana": [
+
+          "Estalagem",
+          "Zango",
+          "Calumbo"
+
+        ]
+
+      };
+
+
+      /* =========================================
+         CUSTOS
+      ========================================= */
+
+      const custosAdicionais = {
+
+        "Luanda": {
+
+          "Ingombota": 2000,
+          "Maianga": 2050,
+          "Samba": 2000,
+          "Aeroporto": 1600
+
+        },
+
+        "Belas": {
+
+          "Talatona": 2050,
+          "Benfica": 2100,
+          "Morro Bento": 2150,
+          "Kilamba": 2150
+
+        },
+
+        "Cacuaco": {
+
+          "Sequele": 3900,
+          "Kicolo": 3250,
+          "Cacuaco": 3300
+
+        },
+
+        "Cazenga": {
+
+          "Hoji Ya Henda": 2600,
+          "Tala Hady": 2550,
+          "Cazenga": 2500
+
+        },
+
+        "Kilamba Kiaxi": {
+
+          "Nova Vida": 0,
+          "Camama": 1100,
+          "Golf 2": 700
+
+        },
+
+        "Viana": {
+
+          "Estalagem": 3100,
+          "Zango": 3150,
+          "Calumbo": 3200
+
+        }
+
+      };
+
+
+      /* =========================================
+         MUNICÍPIO → BAIRRO
+      ========================================= */
+
+      municipioSelect.addEventListener(
+        "change",
+        function () {
+
+          const municipio = this.value;
+
+
+          bairroSelect.innerHTML = "";
+
+
+          if (!municipio) {
+
+            bairroSelect.disabled = true;
+
+
+            const option =
+              document.createElement("option");
+
+
+            option.value = "";
+
+
+            option.textContent =
+              "Selecione primeiro o município";
+
+
+            bairroSelect.appendChild(option);
+
+
+            return;
+
+          }
+
+
+          bairroSelect.disabled = false;
+
+
+          const defaultOption =
+            document.createElement("option");
+
+
+          defaultOption.value = "";
+
+
+          defaultOption.textContent =
+            "Selecione o bairro";
+
+
+          bairroSelect.appendChild(defaultOption);
+
+
+          const bairros =
+            bairrosPorMunicipio[municipio] || [];
+
+
+          bairros.forEach(function (bairro) {
+
+            const option =
+              document.createElement("option");
+
+
+            option.value = bairro;
+
+
+            option.textContent = bairro;
+
+
+            bairroSelect.appendChild(option);
+
+          });
+
+        }
+      );
+
+
+      /* =========================================
+         CALCULAR ENTREGA
+      ========================================= */
+
+      window.calcularEntrega = function () {
+
+        const municipio =
+          municipioSelect.value;
+
+
+        const bairro =
+          bairroSelect.value;
+
+
+        if (!municipio) {
+
+          mostrarErro(
+            "Seleciona primeiro o município."
+          );
+
+          municipioSelect.focus();
+
+          return;
+
+        }
+
+
+        if (!bairro) {
+
+          mostrarErro(
+            "Agora seleciona o bairro."
+          );
+
+          bairroSelect.focus();
+
+          return;
+
+        }
+
+
+        const adicional =
+          custosAdicionais[municipio]?.[bairro] || 0;
+
+
+        const valorBase = 1500;
+
+
+        const valorEntrega =
+          valorBase + adicional;
+
+
+        mostrarResultado(
+          municipio,
+          bairro,
+          valorEntrega
+        );
+
+      };
+
+
+      /* =========================================
+         ERRO
+      ========================================= */
+
+      function mostrarErro(mensagem) {
+
+        resultado.innerHTML = `
+
+          <div class="delivery-empty">
+
+            <div
+              class="delivery-empty-icon"
+              style="color:#ff5a5a;"
+            >
+
+              <i class="fa-solid fa-triangle-exclamation"></i>
+
+            </div>
+
+
+            <span class="delivery-result-label">
+              ATENÇÃO
+            </span>
+
+
+            <h3>
+              Falta uma informação
+            </h3>
+
+
+            <p>
+              ${mensagem}
+            </p>
+
+          </div>
+
+        `;
+
+      }
+
+
+      /* =========================================
+         RESULTADO
+      ========================================= */
+
+      function mostrarResultado(
+        municipio,
+        bairro,
+        valor
+      ) {
+
+        const valorFormatado =
+          valor.toLocaleString("pt-PT");
+
+
+        resultado.innerHTML = `
+
+          <div class="delivery-result">
+
+
+            <div class="delivery-result-top">
+
+              <div>
+
+                <span class="delivery-result-label">
+                  ENTREGA BE SPORTY
+                </span>
+
+
+                <h3>
+                  Entrega calculada
+                </h3>
+
+              </div>
+
+
+              <div class="delivery-check">
+
+                <i class="fa-solid fa-check"></i>
+
+              </div>
+
+            </div>
+
+
+            <div class="delivery-location">
+
+
+              <div class="delivery-location-row">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <span>
+                  ${municipio}
+                </span>
+
+              </div>
+
+
+              <div class="delivery-location-row">
+
+                <i class="fa-solid fa-map-pin"></i>
+
+                <span>
+                  ${bairro}
+                </span>
+
+              </div>
+
+
+            </div>
+
+
+            <div class="delivery-price">
+
+              <span class="delivery-price-label">
+                VALOR ESTIMADO DA ENTREGA
+              </span>
+
+
+              <strong>
+
+                ${valorFormatado}
+
+                <small>
+                  Kz
+                </small>
+
+              </strong>
+
+            </div>
+
+
+            <button
+              type="button"
+              class="share-delivery-btn"
+              onclick="partilharEntregaWhatsApp()"
+            >
+
+              <i class="fa-brands fa-whatsapp"></i>
+
+              Enviar cálculo pelo WhatsApp
+
+            </button>
+
+
+          </div>
+
+        `;
+
+      }
+
+
+      /* =========================================
+         WHATSAPP
+      ========================================= */
+
+      window.partilharEntregaWhatsApp =
+        function () {
+
+
+          const municipio =
+            municipioSelect.value;
+
+
+          const bairro =
+            bairroSelect.value;
+
+
+          const adicional =
+            custosAdicionais[municipio]?.[bairro] || 0;
+
+
+          const valorEntrega =
+            1500 + adicional;
+
+
+          const valorFormatado =
+            valorEntrega.toLocaleString("pt-PT");
+
+
+          const mensagem =
+
+`Olá, Be Sporty! 👋
+
+Gostaria de confirmar uma entrega.
+
+📍 Município: ${municipio}
+📌 Bairro: ${bairro}
+
+🚚 Valor estimado da entrega:
+${valorFormatado} Kz
+
+Gostaria de confirmar a disponibilidade e finalizar a minha compra.
+
+Obrigado! ⚽`;
+
+
+          const link =
+            "https://wa.me/244943379573?text=" +
+            encodeURIComponent(mensagem);
+
+
+          window.open(
+            link,
+            "_blank",
+            "noopener,noreferrer"
+          );
+
+        };
+
+    });
+
+  </script>
+
 
   <script src="app.js"></script>
+
+
 </body>
 </html>

@@ -1,92 +1,2070 @@
 <!DOCTYPE html>
 <html lang="pt-AO">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Be Sporty — chuteiras, bolas, pastas e acessórios desportivos em Angola.">
-  <meta name="keywords" content="Be Sporty, chuteiras, futsal, futebol, Angola, materiais desportivos">
-  <meta name="author" content="Be Sporty">
-  <meta name="theme-color" content="#111111">
-  <title>Be Sporty | Materiais Desportivos em Angola</title>
-  <link rel="icon" href="fotos/IMG_7171.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Be Sporty — coleção de chuteiras para futsal e futebol em Angola. Consulte disponibilidade, tamanhos e compre pelo WhatsApp.">
+<meta name="theme-color" content="#111111">
+<title>Chuteiras | Be Sporty — Angola</title>
+
+<link rel="icon" href="fotos/IMG_7171.png" type="image/png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+:root{
+  --orange:#f47b20;
+}
+
+body{
+  overflow-x:hidden;
+}
+
+/* =========================
+   LOADER
+========================= */
+
+.page-loader{
+  position:fixed;
+  inset:0;
+  background:#0d0d0d;
+  z-index:9999;
+  display:grid;
+  place-items:center;
+  transition:.65s;
+}
+
+.page-loader.loaded{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+
+.loader-logo{
+  width:105px;
+  animation:pulse 1.2s infinite;
+}
+
+.loader-ring{
+  position:absolute;
+  width:145px;
+  height:145px;
+  border:1px solid #333;
+  border-top-color:var(--orange);
+  border-radius:50%;
+  animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+  to{
+    transform:rotate(360deg);
+  }
+}
+
+@keyframes pulse{
+  50%{
+    transform:scale(.94);
+    opacity:.65;
+  }
+}
+
+/* =========================
+   HERO
+========================= */
+
+.page-hero{
+  position:relative;
+  overflow:hidden;
+  background:#0d0d0d;
+  color:#fff;
+  padding:72px 0 58px;
+}
+
+.page-hero:before{
+  content:"";
+  position:absolute;
+  width:620px;
+  height:620px;
+  right:-220px;
+  top:-330px;
+  border-radius:50%;
+  background:radial-gradient(
+    circle,
+    rgba(244,123,32,.3),
+    transparent 68%
+  );
+}
+
+.page-hero:after{
+  content:"FUTSAL";
+  position:absolute;
+  right:2%;
+  bottom:-38px;
+  font-size:clamp(80px,15vw,170px);
+  font-weight:900;
+  letter-spacing:-9px;
+  color:rgba(255,255,255,.025);
+  pointer-events:none;
+}
+
+.page-hero .container{
+  position:relative;
+  z-index:2;
+}
+
+.breadcrumb{
+  display:flex;
+  gap:9px;
+  align-items:center;
+  color:#8e8e8e;
+  font-size:11px;
+  font-weight:700;
+  margin-bottom:28px;
+}
+
+.breadcrumb i{
+  font-size:8px;
+  color:var(--orange);
+}
+
+.page-hero-grid{
+  display:grid;
+  grid-template-columns:1.25fr .75fr;
+  gap:40px;
+  align-items:end;
+}
+
+.page-hero h1{
+  font-size:clamp(42px,6vw,68px);
+  line-height:.98;
+  letter-spacing:-3.5px;
+  margin:0 0 20px;
+}
+
+.page-hero h1 span{
+  color:var(--orange);
+}
+
+.page-hero p{
+  max-width:620px;
+  color:#bdbdbd;
+  font-size:15px;
+  margin:0;
+}
+
+.hero-badges{
+  display:flex;
+  justify-content:flex-end;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.hero-badge{
+  min-width:130px;
+  padding:17px 16px;
+  border:1px solid #2d2d2d;
+  border-radius:14px;
+  background:rgba(255,255,255,.035);
+  backdrop-filter:blur(8px);
+  transition:.3s;
+}
+
+.hero-badge:hover{
+  transform:translateY(-5px);
+  border-color:#555;
+}
+
+.hero-badge strong{
+  display:block;
+  color:#fff;
+  font-size:22px;
+}
+
+.hero-badge span{
+  display:block;
+  color:#8f8f8f;
+  font-size:9px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin-top:4px;
+}
+
+/* =========================
+   TOOLBAR
+========================= */
+
+.catalog-toolbar{
+  position:relative;
+  z-index:5;
+  margin-top:-24px;
+}
+
+.toolbar-box{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:16px;
+  box-shadow:0 16px 45px rgba(0,0,0,.10);
+  padding:13px;
+  display:flex;
+  gap:10px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.toolbar-search{
+  height:46px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex:1;
+  min-width:220px;
+  padding:0 13px;
+  border:1px solid #e4e4e1;
+  border-radius:10px;
+}
+
+.toolbar-search i{
+  color:#999;
+}
+
+.toolbar-search input{
+  border:0;
+  outline:0;
+  width:100%;
+  font-size:12px;
+}
+
+.filter-btn,
+.sort-select{
+  height:46px;
+  border:1px solid #e4e4e1;
+  background:#fff;
+  border-radius:10px;
+  padding:0 14px;
+  font-size:11px;
+  font-weight:800;
+  color:#333;
+  cursor:pointer;
+}
+
+.filter-btn.active,
+.filter-btn:hover{
+  background:#111;
+  color:#fff;
+  border-color:#111;
+}
+
+.sort-select{
+  outline:none;
+}
+
+/* =========================
+   CATALOGO
+========================= */
+
+.catalog-meta{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin:28px 0 18px;
+  gap:15px;
+}
+
+.catalog-meta h2{
+  margin:0;
+  font-size:24px;
+  letter-spacing:-1px;
+}
+
+.catalog-count{
+  font-size:10px;
+  font-weight:800;
+  color:#888;
+}
+
+.catalog-note{
+  font-size:11px;
+  color:#888;
+  margin:0 0 18px;
+}
+
+.brands{
+  display:flex;
+  gap:9px;
+  flex-wrap:wrap;
+  margin-bottom:14px;
+}
+
+.brand-pill{
+  padding:8px 13px;
+  border-radius:999px;
+  background:#f3f3f1;
+  color:#666;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.8px;
+  cursor:pointer;
+  transition:.25s;
+}
+
+.brand-pill:hover,
+.brand-pill.active{
+  background:#111;
+  color:#fff;
+}
+
+/* =========================
+   PRODUTOS
+========================= */
+
+.product-grid{
+  display:grid !important;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:18px;
+  width:100%;
+}
+
+.product-grid .product-card{
+  display:block !important;
+  visibility:visible !important;
+  opacity:1 !important;
+  position:relative;
+  overflow:hidden;
+  background:#fff;
+  box-shadow:0 4px 15px rgba(0,0,0,.025);
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease;
+}
+
+.product-grid .product-card:hover{
+  box-shadow:0 22px 45px rgba(0,0,0,.12);
+}
+
+.product-grid .product-image{
+  height:270px;
+  background:linear-gradient(135deg,#f7f7f5,#ededeb);
+  position:relative;
+  overflow:hidden;
+  display:block !important;
+  visibility:visible !important;
+  opacity:1 !important;
+}
+
+.product-grid .product-image img{
+  object-fit:contain;
+  padding:12px;
+  width:100%;
+  height:100%;
+  display:block !important;
+  visibility:visible !important;
+  opacity:1 !important;
+  transition:transform .55s;
+}
+
+.product-grid .product-card:hover .product-image img{
+  transform:scale(1.08) rotate(-2deg);
+}
+
+.product-grid .product-body{
+  padding:18px;
+  display:block !important;
+  visibility:visible !important;
+  opacity:1 !important;
+}
+
+.product-grid .product-body h3{
+  margin:5px 0;
+}
+
+.product-grid .price{
+  font-size:18px;
+  margin-top:3px;
+  font-weight:800;
+}
+
+.product-grid .availability{
+  font-size:10px;
+}
+
+.product-grid .buy-btn{
+  height:40px;
+  font-size:11px;
+  border-radius:9px;
+  width:100%;
+  margin-top:10px;
+}
+
+.product-grid .status,
+.product-grid .promo{
+  border-radius:999px;
+  padding:6px 10px;
+  box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.product-grid .status{
+  position:absolute;
+  top:12px;
+  right:12px;
+  z-index:3;
+  font-size:9px;
+  font-weight:800;
+}
+
+.product-grid .promo{
+  position:absolute;
+  top:12px;
+  left:12px;
+  z-index:3;
+  background:var(--orange);
+  color:#fff;
+  font-size:9px;
+  font-weight:900;
+}
+
+.product-grid .status.available{
+  background:#111;
+  color:#fff;
+}
+
+.product-grid .status.sold{
+  background:#eee;
+  color:#555;
+}
+
+.product-grid .category{
+  display:block;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.8px;
+  color:#999;
+  text-transform:uppercase;
+}
+
+.product-grid .sold-text{
+  color:#999;
+}
+
+/* =========================
+   ERRO DE IMAGEM
+========================= */
+
+.product-grid .image-error{
+  position:relative;
+}
+
+.product-grid .image-error:after{
+  content:"Imagem não disponível";
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  color:#999;
+  font-size:11px;
+  font-weight:700;
+  background:#f2f2f0;
+}
+
+/* =========================
+   EMPTY
+========================= */
+
+.empty-state{
+  display:none;
+  text-align:center;
+  padding:55px 20px;
+  border:1px dashed #ddd;
+  border-radius:16px;
+  color:#777;
+}
+
+.empty-state i{
+  display:block;
+  font-size:28px;
+  color:var(--orange);
+  margin-bottom:12px;
+}
+
+.no-results{
+  display:none;
+  text-align:center;
+  padding:25px;
+  color:#888;
+  font-size:12px;
+}
+
+/* =========================
+   QUICK STRIP
+========================= */
+
+.quick-strip{
+  padding:0 0 18px;
+}
+
+.quick-strip-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:18px 20px;
+  border-radius:16px;
+  background:#111;
+  color:#fff;
+  overflow:hidden;
+  position:relative;
+}
+
+.quick-strip-inner:after{
+  content:"";
+  position:absolute;
+  width:180px;
+  height:180px;
+  right:-70px;
+  top:-80px;
+  border-radius:50%;
+  background:rgba(244,123,32,.16);
+}
+
+.quick-strip strong{
+  font-size:13px;
+}
+
+.quick-strip span{
+  display:block;
+  color:#999;
+  font-size:10px;
+  margin-top:4px;
+}
+
+.quick-action{
+  position:relative;
+  z-index:2;
+  color:#fff;
+  font-size:11px;
+  font-weight:800;
+  border:1px solid #444;
+  padding:10px 13px;
+  border-radius:9px;
+  white-space:nowrap;
+}
+
+.quick-action:hover{
+  border-color:var(--orange);
+  color:var(--orange);
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width:1100px){
+
+  .product-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+
+}
+
+@media(max-width:900px){
+
+  .page-hero-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-badges{
+    justify-content:flex-start;
+  }
+
+  .product-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  }
+
+}
+
+@media(max-width:700px){
+
+  .page-hero{
+    padding:48px 0 55px;
+  }
+
+  .page-hero h1{
+    font-size:43px;
+    letter-spacing:-2.5px;
+  }
+
+  .page-hero p{
+    font-size:13px;
+  }
+
+  .hero-badge{
+    min-width:105px;
+    padding:13px;
+  }
+
+  .hero-badge strong{
+    font-size:18px;
+  }
+
+  .catalog-toolbar{
+    margin-top:-22px;
+  }
+
+  .toolbar-box{
+    padding:10px;
+  }
+
+  .toolbar-search{
+    min-width:100%;
+  }
+
+  .filter-btn,
+  .sort-select{
+    flex:1;
+  }
+
+  .catalog-meta{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .catalog-meta h2{
+    font-size:22px;
+  }
+
+  .product-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:12px;
+  }
+
+  .product-grid .product-image{
+    height:215px;
+  }
+
+  .product-grid .product-body{
+    padding:13px;
+  }
+
+  .product-grid .product-body h3{
+    font-size:13px;
+  }
+
+  .product-grid .price{
+    font-size:15px;
+  }
+
+  .page-hero:after{
+    font-size:75px;
+    bottom:-15px;
+  }
+
+  .quick-strip-inner{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .quick-action{
+    width:100%;
+    text-align:center;
+  }
+
+}
+
+@media(max-width:430px){
+
+  .product-grid{
+    gap:10px;
+  }
+
+  .product-grid .product-image{
+    height:190px;
+  }
+
+  .product-grid .product-body{
+    padding:11px;
+  }
+
+  .product-grid .product-body h3{
+    font-size:12px;
+  }
+
+  .product-grid .price{
+    font-size:14px;
+  }
+
+  .product-grid .availability{
+    font-size:9px;
+  }
+
+}
+</style>
 </head>
+
 <body>
-  <header class="header" id="header">
-    <div class="container header-inner">
-      <a href="index.html" class="brand"><img src="fotos/IMG_7171.png" alt="Be Sporty"></a>
-      <nav class="desktop-nav"><a class="active" href="index.html">Início</a><a href="#produtos">Produtos</a><a href="#sobre">Sobre nós</a><a href="entrega.html">Entregas</a></nav>
-      <div class="header-actions"><a class="header-whatsapp" href="https://wa.me/244943379573" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span></a><button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button></div>
-    </div>
-    <nav class="mobile-nav" id="mobileNav">
+
+<!-- LOADER -->
+<div class="page-loader" id="pageLoader">
+  <div class="loader-ring"></div>
+  <img class="loader-logo" src="fotos/IMG_7171.png" alt="Be Sporty">
+</div>
+
+<!-- HEADER -->
+<header class="header" id="header">
+
+  <div class="container header-inner">
+
+    <a href="index.html" class="brand">
+      <img src="fotos/IMG_7171.png" alt="Be Sporty">
+    </a>
+
+    <nav class="desktop-nav">
       <a href="index.html">Início</a>
-        <a href="chuteiras.html">Chuteiras</a>
-      <a href="bolas.html">Bolas</a>
-        <a href="pastas.html">Pastas</a>
-          <a href="Promo.html">Acessórios</a>
-        <a href="entrega.html">Entregas</a>
+      <a class="active" href="#produtos">Produtos</a>
+      <a href="#sobre">Sobre nós</a>
+      <a href="entrega.html">Entregas</a>
     </nav>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-glow"></div><div class="container hero-content">
-        <div class="hero-copy"><span class="eyebrow">BE SPORTY • DESPORTO EM ANGOLA</span><h1>Equipamento certo.<br><strong>Performance melhor.</strong></h1><p>Chuteiras, bolas, pastas e acessórios desportivos selecionados para quem leva o desporto a sério.</p><div class="hero-buttons"><a href="#produtos" class="btn btn-primary">Ver produtos <i class="fa-solid fa-arrow-right"></i></a><a href="https://wa.me/244943379573" target="_blank" rel="noopener" class="btn btn-outline"><i class="fa-brands fa-whatsapp"></i> Falar connosco</a></div><div class="trust-row"><span><i class="fa-solid fa-circle-check"></i> Produtos selecionados</span><span><i class="fa-solid fa-truck"></i> Entrega em Angola</span><span><i class="fa-solid fa-location-dot"></i> Nova Vida</span></div></div>
+    <div class="header-actions">
+
+      <a
+        class="header-whatsapp"
+        href="https://wa.me/244943379573"
+        target="_blank"
+        rel="noopener"
+      >
+        <i class="fa-brands fa-whatsapp"></i>
+        <span>WhatsApp</span>
+      </a>
+
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+
+  </div>
+
+  <nav class="mobile-nav" id="mobileNav" aria-label="Menu mobile">
+
+    <div class="mobile-nav-head">
+      <span>MENU</span>
+      <button id="closeMenu" type="button" aria-label="Fechar menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <a href="index.html"><i class="fa-solid fa-house"></i> Página Inicial</a>
+      <a href="chuteiras.html"><i class="fa-solid fa-futbol"></i> Chuteiras Futsal</a>
+      <a href="bolas.html"><i class="fa-solid fa-volleyball"></i> Bola de Futsal</a>
+      <a href="pastas.html"><i class="fa-solid fa-bag-shopping"></i> Pastas Desportivas</a>
+      <a href="promo.html"><i class="fa-solid fa-tags"></i> Acessórios Desportivas</a>
+      <a href="entrega.html"><i class="fa-solid fa-truck-fast"></i> Cálculo de Entrega</a>
+    <div class="mobile-nav-contact">
+      
+    </div>
+
+  </nav>
+
+</header>
+
+<!-- MAIN -->
+<main>
+
+<!-- HERO -->
+<section class="page-hero">
+
+  <div class="container">
+
+    <div class="breadcrumb">
+      <a href="index.html">Início</a>
+      <i class="fa-solid fa-chevron-right"></i>
+      <span>Chuteiras</span>
+    </div>
+
+    <div class="page-hero-grid">
+
+      <div>
+
+        <span class="eyebrow">
+          COLEÇÃO BE SPORTY
+        </span>
+
+        <h1>
+          Chuteiras para
+          <span>elevar</span>
+          o teu jogo.
+        </h1>
+
+        <p>
+          Modelos selecionados para futsal e futebol.
+          Pesquisa por modelo, marca ou tamanho e confirma
+          a disponibilidade diretamente connosco.
+        </p>
+
       </div>
-    </section>
 
-    <section class="search-section"><div class="container"><div class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input id="searchInput" type="search" placeholder="Pesquisar produto, marca ou categoria..." autocomplete="off"><button id="clearSearch" type="button">Limpar</button></div></div></section>
+      <div class="hero-badges">
 
-    <section class="section" id="produtos"><div class="container">
-      <div class="section-heading"><div><span class="section-label">CATÁLOGO</span><h2>Produtos disponíveis</h2></div><p>Consulta os modelos abaixo. Para comprar, seleciona o tamanho disponível e fala connosco pelo WhatsApp.</p></div>
-      <div class="product-grid" id="productGrid">
+        <div class="hero-badge">
+          <strong>Futsal</strong>
+          <span>Especialidade</span>
+        </div>
 
-        <article class="product-card" data-name="Chuteira Imviso Ginka chuteiras futsal" data-price="47.500,00 kz"><div class="product-image"><img src="fotos/6.jpg" alt="Chuteira Imviso Ginka" loading="lazy"><span class="status sold">Esgotado</span></div><div class="product-body"><span class="category">FUTSAL</span><h3>Chuteira Imviso Ginka</h3><div class="price">47.500,00 Kz</div><div class="availability sold-text">Sem stock</div><button class="buy-btn" disabled>Indisponível</button></div></article>
-        <article class="product-card" data-name="Chuteiras Eskudo chuteiras futsal" data-price="40.500,00 kz"><div class="product-image"><img src="fotos/782D75E9-2F6B-4F53-9713-73CFD3F0FB3D.jpeg" alt="Chuteiras Eskudo" loading="lazy"><span class="promo">-20%</span></div><div class="product-body"><span class="category">FUTSAL</span><h3>Chuteiras Eskudo</h3><div class="price">40.500,00 Kz</div><div class="availability">Promoção • Esgotado</div><button class="buy-btn" disabled>Indisponível</button></div></article>
-        <article class="product-card" data-name="Chuteiras Kipsta chuteiras" data-price="43.500,00 kz"><div class="product-image"><img src="fotos/IMG_1295.jpeg" alt="Chuteiras Kipsta" loading="lazy"><span class="promo">-10%</span></div><div class="product-body"><span class="category">KIPSTA</span><h3>Chuteiras Kipsta</h3><div class="price">43.500,00 Kz</div><div class="availability sold-text">Sem stock</div><button class="buy-btn" disabled>Indisponível</button></div></article>
-        <article class="product-card" data-name="Chuteiras Imviso Ginka chuteiras futsal tamanho 41 tamanho 44" data-price="43.500,00 kz"><div class="product-image"><img src="fotos/4.jpg" alt="Chuteiras Imviso Ginka" loading="lazy"><span class="status available">Disponível</span></div><div class="product-body"><span class="category">FUTSAL</span><h3>Chuteiras Imviso Ginka</h3><div class="price">43.500,00 Kz</div><div class="availability">Tamanhos: 41 e 44</div><button class="buy-btn" onclick="comprar(this)">Comprar <i class="fa-brands fa-whatsapp"></i></button></div></article>
-        <article class="product-card" data-name="Adidas F50 chuteiras adidas" data-price="69.500,00 kz"><div class="product-image"><img src="fotos/F9D4559D-2B4E-4505-A170-B18F8E976A82.jpeg" alt="Adidas F50" loading="lazy"><span class="status sold">Esgotado</span></div><div class="product-body"><span class="category">ADIDAS</span><h3>Adidas F50</h3><div class="price">69.500,00 Kz</div><div class="availability sold-text">Sem stock</div><button class="buy-btn" disabled>Indisponível</button></div></article>
-        <article class="product-card" data-name="Nike Lunar Gato 2 nike futsal tamanho 45" data-price="120.500,00 kz"><div class="product-image"><img src="fotos/gato1.jpeg" alt="Nike Lunar Gato 2" loading="lazy"><span class="status available">Disponível</span></div><div class="product-body"><span class="category">NIKE • FUTSAL</span><h3>Nike Lunar Gato 2</h3><div class="price">120.500,00 Kz</div><div class="availability">Tamanho: 45</div><button class="buy-btn" onclick="comprar(this)">Comprar <i class="fa-brands fa-whatsapp"></i></button></div></article>
-        <article class="product-card" data-name="Nike Lunar Gato 2 nike futsal tamanho 37" data-price="120.500,00 kz"><div class="product-image"><img src="fotos/gato2.jpeg" alt="Nike Lunar Gato 2" loading="lazy"><span class="status available">Disponível</span></div><div class="product-body"><span class="category">NIKE • FUTSAL</span><h3>Nike Lunar Gato 2</h3><div class="price">120.500,00 Kz</div><div class="availability">Tamanho: 37</div><button class="buy-btn" onclick="comprar(this)">Comprar <i class="fa-brands fa-whatsapp"></i></button></div></article>
-        <article class="product-card" data-name="Nike Lunar Gato 2 nike futsal" data-price="125.500,00 kz"><div class="product-image"><img src="fotos/gato3.jpeg" alt="Nike Lunar Gato 2" loading="lazy"><span class="status sold">Esgotado</span></div><div class="product-body"><span class="category">NIKE • FUTSAL</span><h3>Nike Lunar Gato 2</h3><div class="price">125.500,00 Kz</div><div class="availability sold-text">Sem stock</div><button class="buy-btn" disabled>Indisponível</button></div></article>
-        <article class="product-card" data-name="Chuteira Joma Dribling joma" data-price="65.500,00 kz"><div class="product-image"><img src="fotos/13.jpg" alt="Chuteira Joma Dribling" loading="lazy"><span class="status sold">Esgotado</span></div><div class="product-body"><span class="category">JOMA</span><h3>Chuteira Joma Dribling</h3><div class="price">65.500,00 Kz</div><div class="availability sold-text">Sem stock</div><button class="buy-btn" disabled>Indisponível</button></div></article>
-        <article class="product-card" data-name="Chuteira Joma Topflex joma tamanho 45 tamanho 46.5" data-price="90.000,00 kz"><div class="product-image"><img src="fotos/9.jpg" alt="Chuteira Joma Topflex" loading="lazy"><span class="status available">Disponível</span></div><div class="product-body"><span class="category">JOMA • FUTSAL</span><h3>Chuteira Joma Topflex</h3><div class="price">90.000,00 Kz</div><div class="availability">Tamanhos: 45 e 46,5</div><button class="buy-btn" onclick="comprar(this)">Comprar <i class="fa-brands fa-whatsapp"></i></button></div></article>
-        <article class="product-card" data-name="Chuteiras Kipsta" data-price="35.000,00 kz"><div class="product-image"><img src="fotos/1.jpg" alt="Chuteiras Kipsta" loading="lazy"><span class="status sold">Esgotado</span></div><div class="product-body"><span class="category">KIPSTA</span><h3>Chuteiras Kipsta</h3><div class="price">35.000,00 Kz</div><div class="availability sold-text">Sem stock</div><button class="buy-btn" disabled>Indisponível</button></div></article>
-        <article class="product-card" data-name="Chuteiras Kipsta" data-price="43.000,00 kz"><div class="product-image"><img src="fotos/8.jpg" alt="Chuteiras Kipsta" loading="lazy"><span class="status sold">Esgotado</span></div><div class="product-body"><span class="category">KIPSTA</span><h3>Chuteiras Kipsta</h3><div class="price">43.000,00 Kz</div><div class="availability sold-text">Sem stock</div><button class="buy-btn" disabled>Indisponível</button></div></article>
-        <article class="product-card" data-name="Chuteiras Eskudo" data-price="68.000,00 kz"><div class="product-image"><img src="fotos/7.jpg" alt="Chuteiras Eskudo" loading="lazy"><span class="status sold">Esgotado</span></div><div class="product-body"><span class="category">ESKUDO</span><h3>Chuteiras Eskudo</h3><div class="price">68.000,00 Kz</div><div class="availability sold-text">Sem stock</div><button class="buy-btn" disabled>Indisponível</button></div></article>
-        <article class="product-card" data-name="Chuteiras Eskudo 500 tamanho 46" data-price="68.000,00 kz"><div class="product-image"><img src="fotos/12.jpg" alt="Chuteiras Eskudo 500" loading="lazy"><span class="status available">Disponível</span></div><div class="product-body"><span class="category">ESKUDO</span><h3>Chuteiras Eskudo 500</h3><div class="price">68.000,00 Kz</div><div class="availability">Tamanho: 46</div><button class="buy-btn" onclick="comprar(this)">Comprar <i class="fa-brands fa-whatsapp"></i></button></div></article>
-        <article class="product-card" data-name="Chuteiras Imviso" data-price="49.500,00 kz"><div class="product-image"><img src="fotos/5.jpg" alt="Chuteiras Imviso" loading="lazy"><span class="status sold">Esgotado</span></div><div class="product-body"><span class="category">IMVISO</span><h3>Chuteiras Imviso</h3><div class="price">49.500,00 Kz</div><div class="availability sold-text">Sem stock</div><button class="buy-btn" disabled>Indisponível</button></div></article>
-        <article class="product-card" data-name="Chuteiras Imviso Branca" data-price="49.500,00 kz"><div class="product-image"><img src="fotos/11.jpg" alt="Chuteiras Imviso Branca" loading="lazy"><span class="status sold">Esgotado</span></div><div class="product-body"><span class="category">IMVISO</span><h3>Chuteiras Imviso Branca</h3><div class="price">49.500,00 Kz</div><div class="availability sold-text">Sem stock</div><button class="buy-btn" disabled>Indisponível</button></div></article>
-        <article class="product-card" data-name="Chuteiras Imviso CLR 900 tamanho 46" data-price="50.000,00 kz"><div class="product-image"><img src="fotos/2.jpg" alt="Chuteiras Imviso CLR 900" loading="lazy"><span class="status available">Disponível</span></div><div class="product-body"><span class="category">IMVISO</span><h3>Chuteiras Imviso CLR 900</h3><div class="price">50.000,00 Kz</div><div class="availability">Tamanho: 46</div><button class="buy-btn" onclick="comprar(this)">Comprar <i class="fa-brands fa-whatsapp"></i></button></div></article>
-        <article class="product-card" data-name="Chuteiras Imviso tamanho 46" data-price="49.500,00 kz"><div class="product-image"><img src="fotos/g.jpg" alt="Chuteiras Imviso" loading="lazy"><span class="status available">Disponível</span></div><div class="product-body"><span class="category">IMVISO</span><h3>Chuteiras Imviso</h3><div class="price">49.500,00 Kz</div><div class="availability">Tamanho: 46</div><button class="buy-btn" onclick="comprar(this)">Comprar <i class="fa-brands fa-whatsapp"></i></button></div></article>
-        <article class="product-card" data-name="Chuteiras Imviso Especial tamanho 46" data-price="58.000,00 kz"><div class="product-image"><img src="fotos/3.jpg" alt="Chuteiras Imviso Especial" loading="lazy"><span class="status available">Disponível</span></div><div class="product-body"><span class="category">IMVISO</span><h3>Chuteiras Imviso Especial</h3><div class="price">58.000,00 Kz</div><div class="availability">Tamanho: 46</div><button class="buy-btn" onclick="comprar(this)">Comprar <i class="fa-brands fa-whatsapp"></i></button></div></article>
-        <article class="product-card" data-name="Chuteiras Imviso tamanho 45 tamanho 46" data-price="59.000,00 kz"><div class="product-image"><img src="fotos/c.jpg" alt="Chuteiras Imviso" loading="lazy"><span class="status available">Disponível</span></div><div class="product-body"><span class="category">IMVISO</span><h3>Chuteiras Imviso</h3><div class="price">59.000,00 Kz</div><div class="availability">Tamanhos: 45 e 46</div><button class="buy-btn" onclick="comprar(this)">Comprar <i class="fa-brands fa-whatsapp"></i></button></div></article>
-        <article class="product-card" data-name="Chuteiras Imviso Ginka 900 MID tamanho 45 tamanho 46" data-price="58.000,00 kz"><div class="product-image"><img src="fotos/d.jpg" alt="Chuteiras Imviso Ginka 900 MID" loading="lazy"><span class="status available">Disponível</span></div><div class="product-body"><span class="category">IMVISO</span><h3>Imviso Ginka 900 MID</h3><div class="price">58.000,00 Kz</div><div class="availability">Tamanhos: 45 e 46</div><button class="buy-btn" onclick="comprar(this)">Comprar <i class="fa-brands fa-whatsapp"></i></button></div></article>
-        <article class="product-card" data-name="Chuteiras Joma Top Flex" data-price="95.500,00 kz"><div class="product-image"><img src="fotos/221.jpg" alt="Chuteiras Joma Top Flex" loading="lazy"><span class="status sold">Esgotado</span></div><div class="product-body"><span class="category">JOMA</span><h3>Chuteiras Joma Top Flex</h3><div class="price">95.500,00 Kz</div><div class="availability sold-text">Sem stock</div><button class="buy-btn" disabled>Indisponível</button></div></article>
-        <article class="product-card" data-name="Chuteira Adidas X" data-price="69.500,00 kz"><div class="product-image"><img src="fotos/a.jpg" alt="Chuteira Adidas X" loading="lazy"><span class="status sold">Esgotado</span></div><div class="product-body"><span class="category">ADIDAS</span><h3>Chuteira Adidas X</h3><div class="price">69.500,00 Kz</div><div class="availability sold-text">Sem stock</div><button class="buy-btn" disabled>Indisponível</button></div></article>
-        <article class="product-card" data-name="Chuteira Adidas Sala tamanho 46" data-price="70.500,00 kz"><div class="product-image"><img src="fotos/b.jpg" alt="Chuteira Adidas Sala" loading="lazy"><span class="status available">Disponível</span></div><div class="product-body"><span class="category">ADIDAS • FUTSAL</span><h3>Chuteira Adidas Sala</h3><div class="price">70.500,00 Kz</div><div class="availability">Tamanho: 46</div><button class="buy-btn" onclick="comprar(this)">Comprar <i class="fa-brands fa-whatsapp"></i></button></div></article>
-        <article class="product-card" data-name="Chuteira Nike Mercurial tamanho 46" data-price="69.500,00 kz"><div class="product-image"><img src="fotos/f.jpg" alt="Chuteira Nike Mercurial" loading="lazy"><span class="status available">Disponível</span></div><div class="product-body"><span class="category">NIKE</span><h3>Chuteira Nike Mercurial</h3><div class="price">69.500,00 Kz</div><div class="availability">Tamanho: 46</div><button class="buy-btn" onclick="comprar(this)">Comprar <i class="fa-brands fa-whatsapp"></i></button></div></article>
-        <article class="product-card" data-name="Chuteira Imviso Pro tamanho 46" data-price="85.500,00 kz"><div class="product-image"><img src="fotos/10.jpg" alt="Chuteira Imviso Pro" loading="lazy"><span class="status available">Disponível</span></div><div class="product-body"><span class="category">IMVISO</span><h3>Chuteira Imviso Pro</h3><div class="price">85.500,00 Kz</div><div class="availability">Tamanho: 46</div><button class="buy-btn" onclick="comprar(this)">Comprar <i class="fa-brands fa-whatsapp"></i></button></div></article>
-        <article class="product-card" data-name="Nike Tiempo Club" data-price="68.500,00 kz"><div class="product-image"><img src="fotos/IMG_0123.jpeg" alt="Nike Tiempo Club" loading="lazy"><span class="status sold">Esgotado</span></div><div class="product-body"><span class="category">NIKE</span><h3>Nike Tiempo Club</h3><div class="price">68.500,00 Kz</div><div class="availability sold-text">Sem stock</div><button class="buy-btn" disabled>Indisponível</button></div></article>
-        <article class="product-card" data-name="Nike Tiempo Club" data-price="68.500,00 kz"><div class="product-image"><img src="fotos/IMG_0124.jpeg" alt="Nike Tiempo Club" loading="lazy"><span class="status sold">Esgotado</span></div><div class="product-body"><span class="category">NIKE</span><h3>Nike Tiempo Club</h3><div class="price">68.500,00 Kz</div><div class="availability sold-text">Sem stock</div><button class="buy-btn" disabled>Indisponível</button></div></article>
-        <article class="product-card" data-name="Nike Tiempo Club" data-price="68.500,00 kz"><div class="product-image"><img src="fotos/IMG_0125.jpeg" alt="Nike Tiempo Club" loading="lazy"><span class="status sold">Esgotado</span></div><div class="product-body"><span class="category">NIKE</span><h3>Nike Tiempo Club</h3><div class="price">68.500,00 Kz</div><div class="availability sold-text">Sem stock</div><button class="buy-btn" disabled>Indisponível</button></div></article>
+        <div class="hero-badge">
+          <strong>Angola</strong>
+          <span>Entrega nacional</span>
+        </div>
+
       </div>
-      <p class="no-results" id="noResults">Nenhum produto encontrado para a tua pesquisa.</p>
-    </div></section>
 
-    <section class="category-strip"><div class="container"><a href="chuteiras.html"><i class="fa-solid fa-shoe-prints"></i><span>Chuteiras</span></a><a href="bolas.html"><i class="fa-solid fa-futbol"></i><span>Bolas</span></a><a href="pastas.html"><i class="fa-solid fa-bag-shopping"></i><span>Pastas</span></a><a href="promo.html"><i class="fa-solid fa-medal"></i><span>Acessórios</span></a><a href="entrega.html"><i class="fa-solid fa-truck-fast"></i><span>Entregas</span></a></div></section>
+    </div>
 
-    <section class="about-section" id="sobre"><div class="container about-grid"><div class="about-mark"><img src="fotos/IMG_7171.png" alt="Be Sporty"></div><div><span class="section-label">BE SPORTY</span><h2>Desporto faz parte de nós.</h2><p>A Be Sporty é dedicada aos amantes do desporto, com materiais selecionados para futebol, futsal e outras modalidades.</p><div class="about-points"><div><i class="fa-solid fa-check"></i><span>Atendimento pelo WhatsApp</span></div><div><i class="fa-solid fa-check"></i><span>Produtos selecionados</span></div><div><i class="fa-solid fa-check"></i><span>Entrega em toda Angola</span></div><div><i class="fa-solid fa-check"></i><span>Levantamento na Nova Vida</span></div></div></div></div></section>
+  </div>
 
-    <section class="cta-section"><div class="container cta"><div><span class="section-label">PRECISAS DE AJUDA?</span><h2>Fala directamente com a Be Sporty.</h2><p>Envia-nos o produto ou tamanho que procuras e confirmamos a disponibilidade.</p></div><a class="btn btn-primary" href="https://wa.me/244943379573?text=Olá%20Be%20Sporty!%20Gostaria%20de%20saber%20mais%20sobre%20um%20produto." target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Contactar agora</a></div></section>
-  </main>
+</section>
 
-  <footer class="footer"><div class="container footer-grid"><div><img class="footer-logo" src="fotos/IMG_7171.png" alt="Be Sporty"><p>Materiais e acessórios desportivos em Angola.</p></div><div><h4>Navegação</h4><a href="index.html">Início</a><a href="#produtos">Produtos</a><a href="entrega.html">Entregas</a></div><div><h4>Contacto</h4><a href="https://wa.me/244943379573" target="_blank">+244 943 379 573</a><a href="mailto:besporty2023@gmail.com">besporty2023@gmail.com</a><span>Projecto Nova Vida</span></div></div><div class="container footer-bottom"><span>© <span id="year"></span> Be Sporty. Todos os direitos reservados.</span><a href="https://be-sporty.netlify.app" target="_blank">be-sporty.netlify.app</a></div></footer>
-  <a class="floating-whatsapp" href="https://wa.me/244943379573" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-  <script src="app.js"></script>
+<!-- TOOLBAR -->
+<section class="catalog-toolbar">
+
+  <div class="container">
+
+    <div class="toolbar-box">
+
+      <div class="toolbar-search">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input
+          id="catalogSearch"
+          type="search"
+          placeholder="Pesquisar modelo, marca ou tamanho..."
+        >
+
+      </div>
+
+      <button
+        class="filter-btn active"
+        data-filter="all"
+      >
+        Todos
+      </button>
+
+      <button
+        class="filter-btn"
+        data-filter="available"
+      >
+        Disponíveis
+      </button>
+
+      <button
+        class="filter-btn"
+        data-filter="promo"
+      >
+        Promoções
+      </button>
+
+      <select
+        class="sort-select"
+        id="sortProducts"
+        aria-label="Ordenar produtos"
+      >
+        <option value="default">Ordenar: destaque</option>
+        <option value="low">Menor preço</option>
+        <option value="high">Maior preço</option>
+        <option value="name">Nome A–Z</option>
+      </select>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PRODUTOS -->
+<section class="section" id="produtos">
+
+  <div class="container">
+
+    <div class="catalog-meta">
+
+      <div>
+        <span class="section-label">
+          CATÁLOGO
+        </span>
+
+        <h2>
+          Encontra o teu próximo par
+        </h2>
+      </div>
+
+      <span
+        class="catalog-count"
+        id="catalogCount"
+      >
+        0 produtos
+      </span>
+
+    </div>
+
+    <!-- MARCAS -->
+    <div class="brands">
+
+      <span
+        class="brand-pill active"
+        data-brand="all"
+      >
+        TODAS
+      </span>
+
+      <span
+        class="brand-pill"
+        data-brand="NIKE"
+      >
+        NIKE
+      </span>
+
+      <span
+        class="brand-pill"
+        data-brand="ADIDAS"
+      >
+        ADIDAS
+      </span>
+
+      <span
+        class="brand-pill"
+        data-brand="JOMA"
+      >
+        JOMA
+      </span>
+
+      <span
+        class="brand-pill"
+        data-brand="KIPSTA"
+      >
+        KIPSTA
+      </span>
+
+      <span
+        class="brand-pill"
+        data-brand="IMVISO"
+      >
+        IMVISO
+      </span>
+
+      <span
+        class="brand-pill"
+        data-brand="ESKUDO"
+      >
+        ESKUDO
+      </span>
+
+    </div>
+
+    <p class="catalog-note">
+      Os tamanhos e a disponibilidade são confirmados antes da compra.
+      Compra rápida pelo WhatsApp.
+    </p>
+
+    <!-- QUICK CONTACT -->
+    <div class="quick-strip">
+
+      <div class="quick-strip-inner">
+
+        <div>
+
+          <strong>
+            Não encontraste o tamanho?
+          </strong>
+
+          <span>
+            Envia uma mensagem e verificamos outras opções disponíveis.
+          </span>
+
+        </div>
+
+        <a
+          class="quick-action"
+          href="https://wa.me/244943379573?text=Olá%20Be%20Sporty!%20Procuro%20uma%20chuteira%20e%20gostaria%20de%20saber%20a%20disponibilidade."
+          target="_blank"
+          rel="noopener"
+        >
+          Pedir ajuda
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- GRID -->
+    <div
+      class="product-grid"
+      id="productGrid"
+    ></div>
+
+    <!-- EMPTY -->
+    <div
+      class="empty-state"
+      id="emptyState"
+    >
+      <i class="fa-solid fa-shoe-prints"></i>
+
+      <strong>
+        Nenhuma chuteira encontrada.
+      </strong>
+
+      <div>
+        Experimenta outra marca, modelo ou tamanho.
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SOBRE -->
+<section
+  class="about-section"
+  id="sobre"
+>
+
+  <div class="container about-grid">
+
+    <div class="about-visual reveal">
+
+      <div class="about-mark">
+        <img
+          src="fotos/IMG_7171.png"
+          alt="Be Sporty"
+        >
+      </div>
+
+      <span class="about-number">
+        ANGOLA
+        <br>
+        <strong>01</strong>
+      </span>
+
+    </div>
+
+    <div class="about-copy reveal">
+
+      <span class="section-label">
+        02 / BE SPORTY
+      </span>
+
+      <h2>
+        Desporto faz parte de nós.
+      </h2>
+
+      <p>
+        A Be Sporty é dedicada aos amantes do desporto,
+        com materiais selecionados para futebol, futsal
+        e outras modalidades.
+      </p>
+
+      <div class="about-points">
+
+        <div>
+          <i class="fa-solid fa-check"></i>
+          <span>Atendimento pelo WhatsApp</span>
+        </div>
+
+        <div>
+          <i class="fa-solid fa-check"></i>
+          <span>Produtos para diferentes modalidades</span>
+        </div>
+
+        <div>
+          <i class="fa-solid fa-check"></i>
+          <span>Entrega em toda Angola</span>
+        </div>
+
+      </div>
+
+      <a
+        class="text-btn"
+        href="entrega.html"
+      >
+        Saber mais sobre entregas
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+
+  <div class="container cta reveal">
+
+    <div class="cta-content">
+
+      <span class="section-label">
+        03 / PRECISAS DE AJUDA?
+      </span>
+
+      <h2>
+        Fala directamente
+        <br>
+        com a Be Sporty.
+      </h2>
+
+      <p>
+        Envia-nos o produto que procuras e ajudamos-te
+        com disponibilidade, preço e entrega.
+      </p>
+
+    </div>
+
+    <a
+      class="btn btn-primary"
+      href="https://wa.me/244943379573?text=Olá%20Be%20Sporty!%20Gostaria%20de%20saber%20mais%20sobre%20as%20chuteiras."
+      target="_blank"
+      rel="noopener"
+    >
+      <i class="fa-brands fa-whatsapp"></i>
+      Contactar agora
+    </a>
+
+  </div>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+  <div class="container footer-grid">
+
+    <div class="footer-brand">
+
+      <img
+        class="footer-logo"
+        src="fotos/IMG_7171.png"
+        alt="Be Sporty"
+      >
+
+      <p>
+        Materiais e acessórios desportivos em Angola.
+      </p>
+
+      <a
+        class="footer-social"
+        href="https://wa.me/244943379573"
+        target="_blank"
+        rel="noopener"
+      >
+        <i class="fa-brands fa-whatsapp"></i>
+        Falar no WhatsApp
+      </a>
+
+    </div>
+
+    <div>
+
+      <h4>Navegação</h4>
+
+      <a href="index.html">Início</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#sobre">Sobre nós</a>
+      <a href="entrega.html">Entregas</a>
+
+    </div>
+
+    <div>
+
+      <h4>Categorias</h4>
+
+      <a href="chuteiras.html">Chuteiras</a>
+      <a href="bolas.html">Bolas de futsal</a>
+      <a href="pastas.html">Pastas</a>
+      <a href="promo.html">Acessórios</a>
+
+    </div>
+
+    <div>
+
+      <h4>Contacto</h4>
+
+      <a href="https://wa.me/244943379573">
+        +244 943 379 573
+      </a>
+
+      <a href="mailto:besporty2023@gmail.com">
+        besporty2023@gmail.com
+      </a>
+
+      <span>
+        Projecto Nova Vida
+      </span>
+
+    </div>
+
+  </div>
+
+  <div class="container footer-bottom">
+
+    <span>
+      ©
+      <span id="year"></span>
+      Be Sporty. Todos os direitos reservados.
+    </span>
+
+    <a
+      href="https://be-sporty.netlify.app"
+      target="_blank"
+      rel="noopener"
+    >
+      be-sporty.netlify.app
+    </a>
+
+  </div>
+
+</footer>
+
+<!-- WHATSAPP -->
+<a
+  class="floating-whatsapp"
+  href="https://wa.me/244943379573?text=Olá%20Be%20Sporty!%20Gostaria%20de%20saber%20mais."
+  target="_blank"
+  rel="noopener"
+  aria-label="Contactar Be Sporty pelo WhatsApp"
+>
+  <i class="fa-brands fa-whatsapp"></i>
+  <span>WhatsApp</span>
+</a>
+
+<script src="app.js"></script>
+
+<script>
+
+/* =====================================================
+   PRODUTOS
+===================================================== */
+
+const PRODUCTS = [
+
+  {
+    name:"Chuteira Imviso Ginka",
+    category:"FUTSAL",
+    price:"47.500,00",
+    image:"fotos/6.jpg",
+    availability:"Esgotado",
+    available:false,
+    promo:false
+  },
+
+  {
+    name:"Chuteiras Eskudo",
+    category:"FUTSAL",
+    price:"40.500,00",
+    image:"fotos/782D75E9-2F6B-4F53-9713-73CFD3F0FB3D.jpeg",
+    availability:"Promoção • Esgotado",
+    available:false,
+    promo:true
+  },
+
+  {
+    name:"Chuteiras Kipsta",
+    category:"KIPSTA",
+    price:"43.500,00",
+    image:"fotos/IMG_1295.jpeg",
+    availability:"Sem stock",
+    available:false,
+    promo:false
+  },
+
+  {
+    name:"Chuteiras Imviso Ginka",
+    category:"FUTSAL",
+    price:"43.500,00",
+    image:"fotos/4.jpg",
+    availability:"Tamanhos: 41 e 44",
+    available:true,
+    promo:false
+  },
+
+  {
+    name:"Adidas F50",
+    category:"ADIDAS",
+    price:"69.500,00",
+    image:"fotos/F9D4559D-2B4E-4505-A170-B18F8E976A82.jpeg",
+    availability:"Sem stock",
+    available:false,
+    promo:false
+  },
+
+  {
+    name:"Nike Lunar Gato 2",
+    category:"NIKE • FUTSAL",
+    price:"120.500,00",
+    image:"fotos/gato1.jpeg",
+    availability:"Tamanho: 45",
+    available:true,
+    promo:false
+  },
+
+  {
+    name:"Nike Lunar Gato 2",
+    category:"NIKE • FUTSAL",
+    price:"120.500,00",
+    image:"fotos/gato2.jpeg",
+    availability:"Tamanho: 37",
+    available:true,
+    promo:false
+  },
+
+  {
+    name:"Nike Lunar Gato 2",
+    category:"NIKE • FUTSAL",
+    price:"125.500,00",
+    image:"fotos/gato3.jpeg",
+    availability:"Sem stock",
+    available:false,
+    promo:false
+  },
+
+  {
+    name:"Chuteira Joma Dribling",
+    category:"JOMA",
+    price:"65.500,00",
+    image:"fotos/13.jpg",
+    availability:"Sem stock",
+    available:false,
+    promo:false
+  },
+
+  {
+    name:"Chuteira Joma Topflex",
+    category:"JOMA • FUTSAL",
+    price:"90.000,00",
+    image:"fotos/9.jpg",
+    availability:"Tamanhos: 45 e 46,5",
+    available:true,
+    promo:false
+  },
+
+  {
+    name:"Chuteiras Kipsta",
+    category:"KIPSTA",
+    price:"35.000,00",
+    image:"fotos/1.jpg",
+    availability:"Sem stock",
+    available:false,
+    promo:false
+  },
+
+  {
+    name:"Chuteiras Kipsta",
+    category:"KIPSTA",
+    price:"43.000,00",
+    image:"fotos/8.jpg",
+    availability:"Sem stock",
+    available:false,
+    promo:false
+  },
+
+  {
+    name:"Chuteiras Eskudo",
+    category:"ESKUDO",
+    price:"68.000,00",
+    image:"fotos/7.jpg",
+    availability:"Sem stock",
+    available:false,
+    promo:false
+  },
+
+  {
+    name:"Chuteiras Eskudo 500",
+    category:"ESKUDO",
+    price:"68.000,00",
+    image:"fotos/12.jpg",
+    availability:"Tamanho: 46",
+    available:true,
+    promo:false
+  },
+
+  {
+    name:"Chuteiras Imviso",
+    category:"IMVISO",
+    price:"49.500,00",
+    image:"fotos/5.jpg",
+    availability:"Sem stock",
+    available:false,
+    promo:false
+  },
+
+  {
+    name:"Chuteiras Imviso Branca",
+    category:"IMVISO",
+    price:"49.500,00",
+    image:"fotos/11.jpg",
+    availability:"Sem stock",
+    available:false,
+    promo:false
+  },
+
+  {
+    name:"Chuteiras Imviso CLR 900",
+    category:"IMVISO",
+    price:"50.000,00",
+    image:"fotos/2.jpg",
+    availability:"Tamanho: 46",
+    available:true,
+    promo:false
+  },
+
+  {
+    name:"Chuteiras Imviso",
+    category:"IMVISO",
+    price:"49.500,00",
+    image:"fotos/g.jpg",
+    availability:"Tamanho: 46",
+    available:true,
+    promo:false
+  },
+
+  {
+    name:"Chuteiras Imviso Especial",
+    category:"IMVISO",
+    price:"58.000,00",
+    image:"fotos/3.jpg",
+    availability:"Tamanho: 46",
+    available:true,
+    promo:false
+  },
+
+  {
+    name:"Chuteiras Imviso",
+    category:"IMVISO",
+    price:"59.000,00",
+    image:"fotos/c.jpg",
+    availability:"Tamanhos: 45 e 46",
+    available:true,
+    promo:false
+  },
+
+  {
+    name:"Imviso Ginka 900 MID",
+    category:"IMVISO",
+    price:"58.000,00",
+    image:"fotos/d.jpg",
+    availability:"Tamanhos: 45 e 46",
+    available:true,
+    promo:false
+  },
+
+  {
+    name:"Chuteiras Joma Top Flex",
+    category:"JOMA",
+    price:"95.500,00",
+    image:"fotos/221.jpg",
+    availability:"Sem stock",
+    available:false,
+    promo:false
+  },
+
+  {
+    name:"Chuteira Adidas X",
+    category:"ADIDAS",
+    price:"69.500,00",
+    image:"fotos/a.jpg",
+    availability:"Sem stock",
+    available:false,
+    promo:false
+  },
+
+  {
+    name:"Chuteira Adidas Sala",
+    category:"ADIDAS • FUTSAL",
+    price:"70.500,00",
+    image:"fotos/b.jpg",
+    availability:"Tamanho: 46",
+    available:true,
+    promo:false
+  },
+
+  {
+    name:"Chuteira Nike Mercurial",
+    category:"NIKE",
+    price:"69.500,00",
+    image:"fotos/f.jpg",
+    availability:"Tamanho: 46",
+    available:true,
+    promo:false
+  },
+
+  {
+    name:"Chuteira Imviso Pro",
+    category:"IMVISO",
+    price:"85.500,00",
+    image:"fotos/10.jpg",
+    availability:"Tamanho: 46",
+    available:true,
+    promo:false
+  },
+
+  {
+    name:"Nike Tiempo Club",
+    category:"NIKE",
+    price:"68.500,00",
+    image:"fotos/IMG_0123.jpeg",
+    availability:"Sem stock",
+    available:false,
+    promo:false
+  },
+
+  {
+    name:"Nike Tiempo Club",
+    category:"NIKE",
+    price:"68.500,00",
+    image:"fotos/IMG_0124.jpeg",
+    availability:"Sem stock",
+    available:false,
+    promo:false
+  },
+
+  {
+    name:"Nike Tiempo Club",
+    category:"NIKE",
+    price:"68.500,00",
+    image:"fotos/IMG_0125.jpeg",
+    availability:"Sem stock",
+    available:false,
+    promo:false
+  }
+
+];
+
+
+/* =====================================================
+   ELEMENTOS
+===================================================== */
+
+const grid = document.getElementById("productGrid");
+const search = document.getElementById("catalogSearch");
+const count = document.getElementById("catalogCount");
+const empty = document.getElementById("emptyState");
+const sort = document.getElementById("sortProducts");
+
+let activeFilter = "all";
+let activeBrand = "all";
+
+
+/* =====================================================
+   PREÇO
+===================================================== */
+
+function priceNumber(price){
+
+  return Number(
+    price
+      .replace(/\./g,"")
+      .replace(",",".")
+  );
+
+}
+
+
+/* =====================================================
+   ESCAPAR HTML
+===================================================== */
+
+function escapeHTML(value){
+
+  return String(value)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+
+}
+
+
+/* =====================================================
+   WHATSAPP
+===================================================== */
+
+function buyProduct(index){
+
+  const product = PRODUCTS[index];
+
+  if(!product){
+    return;
+  }
+
+  const message =
+    "Olá Be Sporty! Gostaria de comprar/confirmar a disponibilidade de: " +
+    product.name +
+    " — " +
+    product.price +
+    " Kz. " +
+    product.availability +
+    ".";
+
+  window.open(
+    "https://wa.me/244943379573?text=" +
+    encodeURIComponent(message),
+    "_blank"
+  );
+
+}
+
+
+/* =====================================================
+   RENDER
+===================================================== */
+
+function render(){
+
+  if(!grid){
+    return;
+  }
+
+  const query =
+    (search?.value || "")
+      .toLowerCase()
+      .trim();
+
+
+  let list = PRODUCTS.filter(product => {
+
+    const text = (
+      product.name +
+      " " +
+      product.category +
+      " " +
+      product.availability
+    ).toLowerCase();
+
+    const searchOK =
+      !query ||
+      text.includes(query);
+
+    let filterOK = true;
+
+    if(activeFilter === "available"){
+      filterOK = product.available;
+    }
+
+    if(activeFilter === "promo"){
+      filterOK = product.promo;
+    }
+
+    const brandOK =
+      activeBrand === "all" ||
+      product.category.includes(activeBrand);
+
+    return (
+      searchOK &&
+      filterOK &&
+      brandOK
+    );
+
+  });
+
+
+  /* ORDENAR */
+
+  if(sort?.value === "low"){
+
+    list.sort(
+      (a,b) =>
+        priceNumber(a.price) -
+        priceNumber(b.price)
+    );
+
+  }
+
+  if(sort?.value === "high"){
+
+    list.sort(
+      (a,b) =>
+        priceNumber(b.price) -
+        priceNumber(a.price)
+    );
+
+  }
+
+  if(sort?.value === "name"){
+
+    list.sort(
+      (a,b) =>
+        a.name.localeCompare(
+          b.name,
+          "pt"
+        )
+    );
+
+  }
+
+
+  /* CRIAR PRODUTOS */
+
+  grid.innerHTML = list.map((product) => {
+
+    const originalIndex =
+      PRODUCTS.indexOf(product);
+
+    return `
+
+      <article class="product-card">
+
+        <div class="product-image">
+
+          <img
+            src="${escapeHTML(product.image)}"
+            alt="${escapeHTML(product.name)}"
+            loading="lazy"
+            onerror="this.parentElement.classList.add('image-error')"
+          >
+
+          ${
+            product.promo
+              ? '<span class="promo">-20%</span>'
+              : ''
+          }
+
+          <span class="status ${
+            product.available
+              ? 'available'
+              : 'sold'
+          }">
+
+            ${
+              product.available
+                ? 'Disponível'
+                : 'Esgotado'
+            }
+
+          </span>
+
+        </div>
+
+        <div class="product-body">
+
+          <span class="category">
+            ${escapeHTML(product.category)}
+          </span>
+
+          <h3>
+            ${escapeHTML(product.name)}
+          </h3>
+
+          <div class="price">
+            ${escapeHTML(product.price)} Kz
+          </div>
+
+          <div class="availability ${
+            product.available
+              ? ""
+              : "sold-text"
+          }">
+
+            ${escapeHTML(product.availability)}
+
+          </div>
+
+          ${
+            product.available
+
+              ? `
+                <button
+                  class="buy-btn"
+                  type="button"
+                  data-product="${originalIndex}"
+                >
+                  Comprar
+                  <i class="fa-brands fa-whatsapp"></i>
+                </button>
+              `
+
+              : `
+                <button
+                  class="buy-btn"
+                  type="button"
+                  disabled
+                >
+                  Indisponível
+                </button>
+              `
+          }
+
+        </div>
+
+      </article>
+
+    `;
+
+  }).join("");
+
+
+  /* CONTADOR */
+
+  const availableCount =
+    PRODUCTS.filter(
+      product => product.available
+    ).length;
+
+  if(count){
+
+    count.textContent =
+      `${list.length} ${
+        list.length === 1
+          ? "produto"
+          : "produtos"
+      } · ${availableCount} disponíveis`;
+
+  }
+
+
+  /* ESTADO VAZIO */
+
+  if(empty){
+
+    empty.style.display =
+      list.length
+        ? "none"
+        : "block";
+
+  }
+
+
+  /* BOTÕES WHATSAPP */
+
+  grid
+    .querySelectorAll("[data-product]")
+    .forEach(button => {
+
+      button.addEventListener(
+        "click",
+        () => {
+
+          const index =
+            Number(
+              button.dataset.product
+            );
+
+          buyProduct(index);
+
+        }
+      );
+
+    });
+
+
+  /* EFEITO 3D */
+
+  grid
+    .querySelectorAll(".product-card")
+    .forEach(card => {
+
+      card.addEventListener(
+        "pointermove",
+        event => {
+
+          if(window.innerWidth < 900){
+            return;
+          }
+
+          const rect =
+            card.getBoundingClientRect();
+
+          const x =
+            (event.clientX - rect.left) /
+              rect.width -
+            .5;
+
+          const y =
+            (event.clientY - rect.top) /
+              rect.height -
+            .5;
+
+          card.style.transform =
+            `perspective(900px)
+             rotateX(${(-y * 2).toFixed(2)}deg)
+             rotateY(${(x * 2).toFixed(2)}deg)
+             translateY(-7px)`;
+
+        }
+      );
+
+
+      card.addEventListener(
+        "pointerleave",
+        () => {
+
+          card.style.transform = "";
+
+        }
+      );
+
+    });
+
+}
+
+
+/* =====================================================
+   FILTROS
+===================================================== */
+
+document
+  .querySelectorAll(".filter-btn")
+  .forEach(button => {
+
+    button.addEventListener(
+      "click",
+      () => {
+
+        document
+          .querySelectorAll(".filter-btn")
+          .forEach(btn =>
+            btn.classList.remove("active")
+          );
+
+        button.classList.add("active");
+
+        activeFilter =
+          button.dataset.filter;
+
+        render();
+
+      }
+    );
+
+  });
+
+
+/* =====================================================
+   MARCAS
+===================================================== */
+
+document
+  .querySelectorAll(".brand-pill")
+  .forEach(button => {
+
+    button.addEventListener(
+      "click",
+      () => {
+
+        document
+          .querySelectorAll(".brand-pill")
+          .forEach(btn =>
+            btn.classList.remove("active")
+          );
+
+        button.classList.add("active");
+
+        activeBrand =
+          button.dataset.brand;
+
+        render();
+
+      }
+    );
+
+  });
+
+
+/* =====================================================
+   PESQUISA
+===================================================== */
+
+if(search){
+
+  search.addEventListener(
+    "input",
+    render
+  );
+
+}
+
+
+/* =====================================================
+   ORDENAR
+===================================================== */
+
+if(sort){
+
+  sort.addEventListener(
+    "change",
+    render
+  );
+
+}
+
+
+/* =====================================================
+   INICIALIZAÇÃO
+===================================================== */
+
+function initCatalog(){
+
+  const year =
+    document.getElementById("year");
+
+  if(year){
+
+    year.textContent =
+      new Date().getFullYear();
+
+  }
+
+  render();
+
+
+  setTimeout(
+    () => {
+
+      const loader =
+        document.getElementById("pageLoader");
+
+      if(loader){
+
+        loader.classList.add("loaded");
+
+      }
+
+    },
+    450
+  );
+
+}
+
+
+if(document.readyState === "loading"){
+
+  document.addEventListener(
+    "DOMContentLoaded",
+    initCatalog
+  );
+
+}else{
+
+  initCatalog();
+
+}
+
+</script>
+
 </body>
 </html>
