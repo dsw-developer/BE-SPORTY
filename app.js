@@ -42,5 +42,34 @@ clearSearch?.addEventListener("click", () => {
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
+function comprar(botao) {
+    const produto = botao.closest(".product-card");
 
+    if (!produto) return;
+
+    const nome = produto.querySelector("h3")?.textContent.trim() || "Produto";
+    const preco = produto.querySelector(".price")?.textContent.trim() || "";
+    const disponibilidade = produto.querySelector(".availability")?.textContent.trim() || "";
+    const categoria = produto.querySelector(".category")?.textContent.trim() || "";
+
+    const mensagem =
+`Olá, Be Sporty! 👋
+
+Tenho interesse em comprar este produto:
+
+🛍️ Produto: ${nome}
+🏷️ Categoria: ${categoria}
+💰 Preço: ${preco}
+📏 ${disponibilidade}
+
+Gostaria de confirmar a disponibilidade e saber como posso efetuar a compra.
+
+Obrigado!`;
+
+    const telefone = "244943379573";
+
+    const url = "https://wa.me/" + telefone + "?text=" + encodeURIComponent(mensagem);
+
+    window.open(url, "_blank");
+}
 
