@@ -1060,3 +1060,191 @@ img{
 .product-link:hover i{
   transform:translateX(5px);
 }
+
+
+
+/* ================================
+   CALCULADORA DE ENTREGA
+================================ */
+
+.delivery-section{
+  padding:80px 0;
+  background:#f7f7f5;
+}
+
+.delivery-header{
+  max-width:650px;
+  margin-bottom:30px;
+}
+
+.delivery-header h2{
+  font-size:35px;
+  line-height:1.15;
+  letter-spacing:-1.5px;
+  margin:8px 0 12px;
+}
+
+.delivery-header p{
+  color:#727272;
+  font-size:14px;
+  margin:0;
+  max-width:560px;
+}
+
+.delivery-box{
+  background:#fff;
+  border:1px solid #e8e8e5;
+  border-radius:18px;
+  padding:28px;
+  box-shadow:0 15px 40px rgba(0,0,0,.07);
+}
+
+.delivery-form{
+  display:grid;
+  grid-template-columns:1fr 1fr auto;
+  align-items:end;
+  gap:16px;
+}
+
+.form-group{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.form-group label{
+  font-size:11px;
+  font-weight:800;
+  color:#222;
+}
+
+.form-group label i{
+  color:#f47b20;
+  margin-right:5px;
+}
+
+.form-group select{
+  width:100%;
+  height:48px;
+  border:1px solid #dededb;
+  border-radius:9px;
+  background:#fff;
+  padding:0 13px;
+  color:#222;
+  font-size:13px;
+  outline:none;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.form-group select:focus{
+  border-color:#f47b20;
+  box-shadow:0 0 0 3px rgba(244,123,32,.10);
+}
+
+.delivery-btn{
+  height:48px;
+  border:0;
+  border-radius:9px;
+  background:#111;
+  color:#fff;
+  padding:0 22px;
+  font-size:12px;
+  font-weight:800;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  white-space:nowrap;
+  transition:.25s;
+}
+
+.delivery-btn:hover{
+  background:#f47b20;
+  transform:translateY(-1px);
+}
+
+.delivery-btn i{
+  font-size:12px;
+}
+
+.resultado{
+  margin-top:22px;
+  min-height:70px;
+  border-radius:12px;
+  background:#f7f7f5;
+  border:1px dashed #ddd;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:15px;
+}
+
+.resultado-placeholder{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#888;
+  font-size:12px;
+}
+
+.resultado-placeholder i{
+  color:#f47b20;
+  font-size:18px;
+}
+
+.delivery-info{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-top:15px;
+  color:#777;
+  font-size:11px;
+}
+
+.delivery-info i{
+  color:#f47b20;
+}
+
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+  .delivery-section{
+    padding:60px 0;
+  }
+
+  .delivery-header h2{
+    font-size:30px;
+  }
+
+  .delivery-header p{
+    font-size:13px;
+  }
+
+  .delivery-box{
+    padding:20px;
+    border-radius:15px;
+  }
+
+  .delivery-form{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+
+  .delivery-btn{
+    width:100%;
+    height:50px;
+  }
+
+  .resultado{
+    min-height:75px;
+  }
+
+  .delivery-info{
+    align-items:flex-start;
+    line-height:1.5;
+  }
+}
