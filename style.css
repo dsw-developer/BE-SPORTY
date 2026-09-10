@@ -1033,3 +1033,30 @@ img{
     grid-template-columns:repeat(2,1fr)
   }
 }
+
+
+.product-link{
+  margin-top:auto;
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  width:max-content;
+  padding:9px 0;
+  font-size:12px;
+  font-weight:900;
+  color:#111;
+  transition:.25s;
+}
+
+.product-link i{
+  font-size:11px;
+  transition:.25s;
+}
+
+.product-link:hover{
+  color:var(--orange);
+}
+
+.product-link:hover i{
+  transform:translateX(5px);
+}
