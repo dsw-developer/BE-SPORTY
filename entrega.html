@@ -92,28 +92,71 @@
 
 
 
- <div class="container">
-        <h4>Calculadora de Entrega Be Sporty</h4>
+ ```html
+<section class="delivery-section">
+  <div class="container">
 
-    <div class="form">
-        <label for="municipio">Selecione o Município:</label>
-        <select id="municipio">
-            <option value="">Selecione...</option>
-        </select><br><br>
-
-        <label for="bairro">Selecione o Bairro:</label>
-        <select id="bairro">
-            <option value="">Selecione...</option>
-            <!-- Opções de bairros populadas dinamicamente -->
-        </select><br><br>
-
-        <button onclick="calcularEntrega()">Calcular</button>
+    <div class="delivery-header">
+      <span class="section-label">ENTREGA BE SPORTY</span>
+      <h2>Calcule o valor da sua entrega</h2>
+      <p>
+        Selecione o município e o bairro para consultar rapidamente
+        o valor estimado da entrega.
+      </p>
     </div>
 
-    <div id="resultado" class="resultado">
-        <!-- Aqui vai aparecer o resultado do cálculo -->
+    <div class="delivery-box">
+
+      <div class="delivery-form">
+
+        <div class="form-group">
+          <label for="municipio">
+            <i class="fa-solid fa-location-dot"></i>
+            Município
+          </label>
+
+          <select id="municipio">
+            <option value="">Selecione o município</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="bairro">
+            <i class="fa-solid fa-map-location-dot"></i>
+            Bairro
+          </label>
+
+          <select id="bairro">
+            <option value="">Selecione o bairro</option>
+          </select>
+        </div>
+
+        <button class="delivery-btn" onclick="calcularEntrega()">
+          <i class="fa-solid fa-calculator"></i>
+          Calcular entrega
+        </button>
+
+      </div>
+
+      <div id="resultado" class="resultado">
+        <div class="resultado-placeholder">
+          <i class="fa-solid fa-truck"></i>
+          <span>O valor da entrega aparecerá aqui.</span>
+        </div>
+      </div>
+
     </div>
-</div>
+
+    <div class="delivery-info">
+      <i class="fa-solid fa-circle-info"></i>
+      <span>
+        O valor apresentado é calculado de acordo com o município e bairro selecionados.
+      </span>
+    </div>
+
+  </div>
+</section>
+
 
   </main>
 <script>
