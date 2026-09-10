@@ -253,10 +253,10 @@ var municipios = ['Luanda', 'Belas', 'Cacuaco', 'Cazenga', 'Kilamba Kiaxi', 'Via
 
     function mostrarResultado(resultado) {
         var resultadoElement = document.getElementById('resultado');
-        resultadoElement.innerHTML = '<h1>Be Sporty:</h1>' +
-                                     '<p>' + resultado.municipio + '</p>' +
-                                     '<p>' + resultado.bairro + '</p>' +
-                                     '<p>Preço: ' + resultado.preco.toLocaleString('pt-PT', { style: 'currency', currency: 'AOA' }) + '</p>';
+        resultadoElement.innerHTML = 
+                                     
+                                     
+                                     '<p>Preço da entrega: ' + resultado.preco.toLocaleString('pt-PT', { style: 'currency', currency: 'AOA' }) + '</p>';
     }
 
     document.addEventListener('DOMContentLoaded', function() {
