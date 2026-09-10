@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-AO">
 <head>
@@ -17,7 +16,12 @@
 </head>
 
 <body>
-  
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span><i class="fa-solid fa-truck-fast"></i> Entregas em toda Angola</span>
+      <span><i class="fa-solid fa-location-dot"></i> Levantamento: Projecto Nova Vida</span>
+    </div>
+  </div>
 
   <header class="header" id="header">
     <div class="container header-inner">
@@ -27,10 +31,8 @@
 
       <nav class="desktop-nav" aria-label="Navegação principal">
         <a class="active" href="index.html">Início</a>
-        <a href="chuteiras.html">Chuteiras</a>
-         <a href="bolas.html">Bolas</a>
-        <a href="pastas.html">Pastas</a>
-          <a href="Promo.html">Acessórios</a>
+        <a href="#categorias">Categorias</a>
+        <a href="#sobre">Sobre nós</a>
         <a href="entrega.html">Entregas</a>
       </nav>
 
@@ -46,14 +48,10 @@
     </div>
 
     <nav class="mobile-nav" id="mobileNav" aria-label="Menu mobile">
-        <a href="index.html">Início</a>
-        <a href="chuteiras.html">Chuteiras</a>
-             <a href="bolas.html">Bolas</a>
-        <a href="pastas.html">Pastas</a>
-          <a href="Promo.html">Acessórios</a>
-        <a href="entrega.html">Entregas</a>
-      </nav>
-
+      <a href="index.html">Início</a>
+      <a href="#categorias">Categorias</a>
+      <a href="#sobre">Sobre nós</a>
+      <a href="entrega.html">Entregas</a>
     </nav>
   </header>
 
@@ -110,6 +108,7 @@
             <div class="product-body">
               <span class="category">FUTSAL</span>
               <h3>Chuteiras de Futsal</h3>
+              <p>Modelos selecionados para jogadores que procuram conforto e desempenho.</p>
               <a href="chuteiras.html" class="product-link">Ver produtos <i class="fa-solid fa-arrow-right"></i></a>
             </div>
           </article>
@@ -118,49 +117,37 @@
             <div class="product-image">
               <img src="fotos/bolas.JPG" alt="Bolas de Futsal" loading="lazy">
             </div>
-            
-<div class="product-body">
-  <span class="category">FUTSAL</span>
-  <h3>Chuteiras de Futsal</h3>
+            <div class="product-body">
+              <span class="category">BOLAS</span>
+              <h3>Bolas de Futsal</h3>
+              <p>Bolas para treinos, jogos e competição, com opções para diferentes necessidades.</p>
+              <a href="bolas.html" class="product-link">Ver produtos <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
 
-  <a href="chuteiras.html" class="product-link">
-    Explorar chuteiras
-    <i class="fa-solid fa-arrow-right"></i>
-  </a>
-</div>
-</article>
+          <article class="product-card" data-name="Pastas Desportivas bolsas sacos">
+            <div class="product-image">
+              <img src="fotos/224.JPG" alt="Pastas Desportivas" loading="lazy">
+            </div>
+            <div class="product-body">
+              <span class="category">ACESSÓRIOS</span>
+              <h3>Pastas Desportivas</h3>
+              <p>Praticidade para transportar os teus materiais desportivos no dia a dia.</p>
+              <a href="pastas.html" class="product-link">Ver produtos <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
 
-<article class="product-card" data-name="Bolas de Futsal bolas futebol">
-  <div class="product-image">
-    <img src="fotos/bolas.JPG" alt="Bolas de Futsal" loading="lazy">
-  </div>
-
-  <div class="product-body">
-    <span class="category">BOLAS</span>
-    <h3>Bolas de Futsal</h3>
-
-    <a href="bolas.html" class="product-link">
-      Explorar bolas
-      <i class="fa-solid fa-arrow-right"></i>
-    </a>
-  </div>
-</article>
-
-<article class="product-card" data-name="Pastas Desportivas bolsas sacos">
-  <div class="product-image">
-    <img src="fotos/224.JPG" alt="Pastas Desportivas" loading="lazy">
-  </div>
-
-  <div class="product-body">
-    <span class="category">ACESSÓRIOS</span>
-    <h3>Pastas Desportivas</h3>
-    
-    <a href="pastas.html" class="product-link">
-      Explorar acessórios
-      <i class="fa-solid fa-arrow-right"></i>
-    </a>
-  </div>
-</article>
+          <article class="product-card" data-name="Acessórios Desportivos acessórios">
+            <div class="product-image">
+              <img src="fotos/77.jpg" alt="Acessórios Desportivos" loading="lazy">
+            </div>
+            <div class="product-body">
+              <span class="category">DESPORTO</span>
+              <h3>Acessórios Desportivos</h3>
+              <p>Complementos essenciais para treinos, jogos e preparação desportiva.</p>
+              <a href="promo.html" class="product-link">Ver produtos <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </article>
         </div>
 
         <p class="no-results" id="noResults">Nenhum produto encontrado para a tua pesquisa.</p>
